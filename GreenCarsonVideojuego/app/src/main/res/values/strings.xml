@@ -1,9 +1,16 @@
 <resources>
-    <string name="app_name">Green Carson - Videojuego</string>
-    <string name="inicia_sesi_n">Inicia Sesión</string>
-    <string name="email">Email</string>
-    <string name="inicia_sesi_n_con_google">Inicia sesión con Google</string>
-    <string name="contrase_a">Contraseña</string>
-    <string name="olvidaste_la_contrase_a">¿Olvidaste la contraseña?</string>
-    <string name="inicia_sesi_n_con_facebook">Inicia sesión con Facebook</string>
+
+    <!--General-->
+    <string name="app_name">Green Carson - GAME</string>
+
+    <!--Pantalla de login-->
+    <string name="userEmail">Email</string>
+    <string name="userPassword">Contraseña</string>
+    <string name="loginButton">Inicia Sesión</string>
+    <string name="forgotPassword">¿Olvidaste la contraseña?</string>
+    <string name="googleLogin">Inicia sesión con Google</string>
+    <string name="facebookLogin">Inicia sesión con Facebook</string>
+
+    <!--Descripción de imágenes-->
+    <string name="logoDescription">Logotipo de la fundación GreenCarson</string>
 </resources>

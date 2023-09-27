@@ -3,12 +3,8 @@
     android:shape = "rectangle"
     xmlns:android = "http://schemas.android.com/apk/res/android" >
     <gradient
-        android:angle="90"
         android:startColor = "@color/green"
         android:endColor = "@color/cyan"
         android:type = "linear" />
-    <!--Verificar si se cumple con
-    https://m2.material.io/design/iconography/product-icons.html#specs
-    Debe ser el 8.33%-->
-    <corners android:radius="90dp"></corners>
+    <corners android:radius="40dp"></corners>
 </shape>
