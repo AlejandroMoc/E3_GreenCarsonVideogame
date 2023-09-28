@@ -4,13 +4,20 @@
     <string name="app_name">Green Carson - GAME</string>
 
     <!--Pantalla de login-->
-    <string name="userEmail">Email</string>
-    <string name="userPassword">Contraseña</string>
-    <string name="loginButton">Inicia Sesión</string>
-    <string name="forgotPassword">¿Olvidaste la contraseña?</string>
-    <string name="googleLogin">Inicia sesión con Google</string>
-    <string name="facebookLogin">Inicia sesión con Facebook</string>
+    <string name="userEmail">E-mail</string>
+    <string name="userPassword">Password</string>
+    <string name="loginButton">LogIn</string>
+    <string name="forgotPassword">Did you forgot your password?</string>
+    <string name="googleLogin">LogIn with Google</string>
+    <string name="facebookLogin">LogIn with Facebook</string>
+
+    <!--Pantalla de selección de niveles-->
+    <string name="basicLevel">Basic</string>
+    <string name="interLevel">Intermediate</string>
+    <string name="advancedLevel">Advanced</string>
 
     <!--Descripción de imágenes-->
-    <string name="logoDescription">Logotipo de la fundación GreenCarson</string>
+    <string name="logoDescription">GreenCarson Foundation Logotype</string>
+
+
 </resources>

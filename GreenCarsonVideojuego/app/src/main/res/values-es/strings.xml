@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Green Carson - GAME</string>
+    <string name="userEmail">Email</string>
+    <string name="userPassword">Contraseña</string>
+    <string name="loginButton">Inicia Sesión</string>
+    <string name="forgotPassword">¿Olvidaste la contraseña?</string>
+    <string name="googleLogin">Inicia sesión con Google</string>
+    <string name="facebookLogin">Inicia sesión con Facebook</string>
+    <string name="basicLevel">Básico</string>
+    <string name="interLevel">Intermedio</string>
+    <string name="advancedLevel">Avanzado</string>
+    <string name="logoDescription">Logotipo de la fundación GreenCarson</string>
+</resources>

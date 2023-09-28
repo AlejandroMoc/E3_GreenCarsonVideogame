@@ -82,16 +82,16 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLogin"
         android:layout_width="200dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/gradient_button"
+        android:stateListAnimator="@null"
         android:text="@string/loginButton"
-        android:textStyle="bold"
         android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPassword"
-        android:stateListAnimator="@null" />
+        app:layout_constraintTop_toBottomOf="@+id/textPassword" />
 
     <Button
         android:id="@+id/buttonLoginGoogle"
