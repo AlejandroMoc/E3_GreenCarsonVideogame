@@ -6,18 +6,24 @@
     <!--Pantalla de login-->
     <string name="userEmail">E-mail</string>
     <string name="userPassword">Password</string>
-    <string name="loginButton">LogIn</string>
+    <string name="loginButton">Log in</string>
     <string name="forgotPassword">Did you forgot your password?</string>
-    <string name="googleLogin">LogIn with Google</string>
-    <string name="facebookLogin">LogIn with Facebook</string>
+    <string name="googleLogin">Log in with Google</string>
+    <string name="facebookLogin">Log in with Facebook</string>
 
     <!--Pantalla de selección de niveles-->
     <string name="basicLevel">Basic</string>
     <string name="interLevel">Intermediate</string>
     <string name="advancedLevel">Advanced</string>
 
-    <!--Descripción de imágenes-->
+    <!--Descripción de elementos-->
     <string name="logoDescription">GreenCarson Foundation Logotype</string>
+    <string name="start_game_button">Start Game</string>
+    <string name="go_back_button">Go Back</string>
+    <string name="help_button">Help Button</string>
 
+    <string name="basic_level_selection">Basic Level Selection</string>
+    <string name="advanced_level_selection">Advanced Level Selection</string>
+    <string name="intermediate_level_selection">Intermediate Level Selection</string>
 
 </resources>
