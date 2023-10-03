@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_tiles"
+    android:background="@drawable/background_tilesparent"
     tools:context=".RegisterActivity">
 
     <!--Botón de Regresar-->
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoGame"
         android:layout_width="246dp"
         android:layout_height="139dp"
         android:layout_marginTop="120dp"
@@ -43,8 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_reecicla"
-        tools:src="@tools:sample/avatars" />
+        app:srcCompat="@drawable/logo_game" />
 
     <!--Botones de niveles-->
     <androidx.appcompat.widget.AppCompatButton
@@ -53,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="@drawable/gradient_button"
-        android:contentDescription="@string/basic_level_selection"
+        android:contentDescription="@string/bas_levelSel"
         android:stateListAnimator="@null"
         android:text="@string/basicLevel"
         android:textColor="@color/white"
@@ -61,7 +60,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logoGame" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonInter"
@@ -69,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
-        android:contentDescription="@string/intermediate_level_selection"
+        android:contentDescription="@string/inter_levelSel"
         android:stateListAnimator="@null"
         android:text="@string/interLevel"
         android:textColor="@color/white"
@@ -85,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button"
-        android:contentDescription="@string/advanced_level_selection"
+        android:contentDescription="@string/adv_levelSel"
         android:stateListAnimator="@null"
         android:text="@string/advancedLevel"
         android:textColor="@color/white"
@@ -106,12 +105,14 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="VisualLintOverlap" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/buttonCornerText"
         android:layout_width="270dp"
         android:layout_height="270dp"
+        android:contentDescription="@string/readyButton2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/corner_buttontext" />

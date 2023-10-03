@@ -13,11 +13,10 @@
     <string name="logoDescription">Logotipo de la fundación GreenCarson</string>
     <string name="start_game_button">Iniciar juego</string>
     <string name="go_back_button">Regresar</string>
-    <string name="advanced_level_selection">Selección de nivel avanzado</string>
-    <string name="advanced_level_selection">Selección de nivel avanzado</string>
-    <string name="advanced_level_selection">Selección de nivel avanzado</string>
-    <string name="help_button">Botón de ayuda</string>
-    <string name="basic_level_selection">Selección de nivel básico</string>
-    <string name="intermediate_level_selection">Selección de nivel intermedio</string>
-    <string name="readyButton">¿Estás listo?</string>
+    <string name="adv_levelSel">Selección de nivel avanzado</string>
+    <string name="help_button">Ayuda</string>
+    <string name="bas_levelSel">Selección de nivel básico</string>
+    <string name="inter_levelSel">Selección de nivel intermedio</string>
+    <string name="readyButton">Empezar</string>
+    <string name="readyButton2">¿Estás listo?</string>
 </resources>

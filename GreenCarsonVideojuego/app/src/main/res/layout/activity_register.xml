@@ -10,7 +10,7 @@
     <!--Logo Reecicla GAME-->
     <!--984 × 559px-->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoGame"
         android:layout_width="246dp"
         android:layout_height="139dp"
         android:layout_marginTop="120dp"
@@ -18,8 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_reecicla"
-        tools:src="@tools:sample/avatars" />
+        app:srcCompat="@drawable/logo_game" />
 
     <!--Colocar E-mail-->
     <EditText
@@ -40,7 +39,7 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logoGame" />
 
     <!--Colocar Contraseña-->
     <EditText
@@ -86,6 +85,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/loginButton"
+        android:onClick="goToNextScreen"
         android:stateListAnimator="@null"
         android:text="@string/loginButton"
         android:textColor="@color/white"

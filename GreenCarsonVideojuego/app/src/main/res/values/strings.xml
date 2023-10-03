@@ -20,11 +20,12 @@
     <string name="logoDescription">GreenCarson Foundation Logotype</string>
     <string name="start_game_button">Start Game</string>
     <string name="go_back_button">Go Back</string>
-    <string name="help_button">Help Button</string>
+    <string name="help_button">Help</string>
 
-    <string name="basic_level_selection">Basic Level Selection</string>
-    <string name="advanced_level_selection">Advanced Level Selection</string>
-    <string name="intermediate_level_selection">Intermediate Level Selection</string>
-    <string name="readyButton">Are you ready?</string>
+    <string name="bas_levelSel">Basic Level Selection</string>
+    <string name="adv_levelSel">Advanced Level Selection</string>
+    <string name="inter_levelSel">Intermediate Level Selection</string>
+    <string name="readyButton">Let\'s go</string>
+    <string name="readyButton2">Are you ready?</string>
 
 </resources>
