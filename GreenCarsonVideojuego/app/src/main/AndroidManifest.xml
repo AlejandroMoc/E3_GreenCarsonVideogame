@@ -31,7 +31,6 @@
                 android:value="" />
         </activity>
 
-
         <activity
             android:name=".SelectLevelActivity"
             android:exported="false">
@@ -39,10 +38,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-
-
-
 
     </application>
 

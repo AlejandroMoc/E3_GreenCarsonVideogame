@@ -12,11 +12,13 @@
     <color name="googleColor">#ffffff</color>
 
     <!--Colores para el texto-->
-    <color name="turquoiseText">#07676d</color>
+    <color name="turquoiseText">#07676d</color>         <!--Hint de texto-->
 
     <!--Colores para fondos de elementos-->
-    <color name="softBlue">#c6ddeb</color>
-    
+    <color name="softBlue">#c6ddeb</color>              <!--Introducción de datos-->
+    <color name="mustardYellow">#F1D14A</color>         <!--Amarillo botones-->
+    <color name="mustardYellowDark">#D6AF23</color>
+
     <!--Colores default y de la paleta Material-->
     <!--Colores sacados de https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors-->
     <color name="transparent">#00000000</color>
@@ -35,8 +37,5 @@
     <color name="blue_200">#81D4FA</color>
     <color name="blue_500">#2196F3</color>
     <color name="blue_700">#0288D1</color>
-
-
-
 
 </resources>

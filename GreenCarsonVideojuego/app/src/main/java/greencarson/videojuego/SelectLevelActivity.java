@@ -1,9 +1,9 @@
 package greencarson.videojuego;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 
 public class SelectLevelActivity extends AppCompatActivity {
@@ -12,15 +12,15 @@ public class SelectLevelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Ocultar barra de status
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_selectlevel);
     }
 
-    //Para cambiar pantalla
-//    public void goToBackScreen(View v){
-//        Intent intent = new Intent(this, SelectLevelActivity.class);
-//        startActivity(intent);
-//    }
+    //Para regresar
+    public void goToBackScreen(View v){
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
 
     //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente
 

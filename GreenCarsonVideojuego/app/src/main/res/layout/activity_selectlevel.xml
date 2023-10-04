@@ -10,30 +10,30 @@
     <!--Botón de Regresar-->
     <Button
         android:id="@+id/buttonBack"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/gradient_button"
+        android:background="@drawable/logo_back"
         android:contentDescription="@string/go_back_button"
+        android:onClick="goToBackScreen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--Botón de Ayuda-->
-
-    <!--Logo Reecicla GAME-->
-    <!--984 × 559px-->
     <Button
         android:id="@+id/buttonHelp"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/gradient_button"
+        android:background="@drawable/logo_help"
         android:contentDescription="@string/help_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--Logo Reecicla GAME-->
+    <!--984 × 559px-->
     <ImageView
         android:id="@+id/logoGame"
         android:layout_width="246dp"
@@ -53,7 +53,6 @@
         android:layout_marginTop="60dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/bas_levelSel"
-        android:stateListAnimator="@null"
         android:text="@string/basicLevel"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -69,7 +68,6 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
         android:contentDescription="@string/inter_levelSel"
-        android:stateListAnimator="@null"
         android:text="@string/interLevel"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -85,7 +83,6 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/adv_levelSel"
-        android:stateListAnimator="@null"
         android:text="@string/advancedLevel"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -97,24 +94,14 @@
     <!--Botón de Empezar-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonCorner"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="@drawable/gradient_buttoncorner"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/corner_button"
         android:contentDescription="@string/start_game_button"
-        android:stateListAnimator="@null"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="VisualLintOverlap" />
-
-    <ImageView
-        android:id="@+id/buttonCornerText"
-        android:layout_width="270dp"
-        android:layout_height="270dp"
-        android:contentDescription="@string/readyButton2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/corner_buttontext" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
