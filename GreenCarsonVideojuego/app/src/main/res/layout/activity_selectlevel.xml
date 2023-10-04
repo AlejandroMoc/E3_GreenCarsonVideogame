@@ -96,7 +96,7 @@
         android:id="@+id/buttonCorner"
         android:layout_width="220dp"
         android:layout_height="220dp"
-        android:background="@drawable/corner_button"
+        android:background="@drawable/loco_corner"
         android:contentDescription="@string/start_game_button"
         android:textColor="@color/white"
         android:textStyle="bold"
