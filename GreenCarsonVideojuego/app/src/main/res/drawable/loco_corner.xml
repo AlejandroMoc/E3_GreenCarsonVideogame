@@ -1,7 +1,7 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
-    android:width="239.36dp"
-    android:height="226.54dp"
+    android:width="240dp"
+    android:height="240dp"
     android:viewportWidth="179.52"
     android:viewportHeight="169.9">
   <group>
@@ -22,7 +22,6 @@
               android:endX="179.52"
               android:endY="92.55"
               android:type="linear">
-
           </gradient>
         </aapt:attr>
       </path>
