@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
     android:src="@drawable/background_tiles"
-    android:tileMode="disabled"
-    android:gravity="center" >
+    android:layout_centerInParent="true"
+    android:scaleType="centerCrop">
 </bitmap>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<bitmap xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:src="@drawable/background_tiles"-->
+<!--    android:tileMode="repeat"-->
+<!--    android:gravity="clip_vertical" >-->
+<!--</bitmap>-->

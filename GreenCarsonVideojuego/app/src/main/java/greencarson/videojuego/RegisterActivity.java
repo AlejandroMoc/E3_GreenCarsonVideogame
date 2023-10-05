@@ -37,7 +37,6 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente
 
 }

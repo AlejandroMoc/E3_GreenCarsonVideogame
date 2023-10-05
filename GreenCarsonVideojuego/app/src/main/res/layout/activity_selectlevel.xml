@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_tilesparent"
-    tools:context=".RegisterActivity">
+    tools:context=".SelectLevelActivity">
 
     <!--Botón de Regresar-->
     <Button
@@ -101,7 +101,7 @@
         android:id="@+id/buttonCorner"
         android:layout_width="220dp"
         android:layout_height="220dp"
-        android:background="@drawable/loco_corner"
+        android:background="@drawable/logo_corner"
         android:contentDescription="@string/start_game_button"
         android:onClick="startLevel"
         android:textColor="@color/white"
