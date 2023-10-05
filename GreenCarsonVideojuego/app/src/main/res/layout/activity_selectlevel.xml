@@ -55,6 +55,7 @@
         android:layout_marginTop="60dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/bas_levelSel"
+        android:onClick="selectLevel"
         android:text="@string/basicLevel"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -70,6 +71,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
         android:contentDescription="@string/inter_levelSel"
+        android:onClick="selectLevel"
         android:text="@string/interLevel"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -79,12 +81,13 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonBasic" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonBegin"
+        android:id="@+id/buttonAdv"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/adv_levelSel"
+        android:onClick="selectLevel"
         android:text="@string/advancedLevel"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -100,6 +103,7 @@
         android:layout_height="220dp"
         android:background="@drawable/loco_corner"
         android:contentDescription="@string/start_game_button"
+        android:onClick="startLevel"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

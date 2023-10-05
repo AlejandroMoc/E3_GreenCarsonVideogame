@@ -25,7 +25,6 @@
     <string name="bas_levelSel">Basic Level Selection</string>
     <string name="adv_levelSel">Advanced Level Selection</string>
     <string name="inter_levelSel">Intermediate Level Selection</string>
-    <string name="readyButton">Let\'s go</string>
-    <string name="readyButton2">Are you ready?</string>
+
 
 </resources>
