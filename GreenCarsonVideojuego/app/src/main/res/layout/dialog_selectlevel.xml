@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250dp"
+    android:layout_height="500dp"
+    android:background="@drawable/gradient_dialog_selectlevel"
+    android:orientation="vertical" >
+
+    <!--Botón de Ayuda-->
+    <ImageView
+        android:id="@+id/buttonHelp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/logo_help"
+        android:contentDescription="@string/help_button"
+        android:translationX="100dp" />
+
+    <!--Texto de instrucción-->
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonHelp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:minHeight="22dp"
+        android:text="¿Cómo se juega?"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!--Descripción del dialogo-->
+
+    <!--Boton de volver-->
+
+    <TextView
+        android:id="@+id/dialog_description"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_title"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:text="¡La basura cae del cielo! Debes arrastrarla hasta el bote correcto para evitar la contaminación.\n \n Dependiendo el nivel que elijas, será más complicado diferenciar entre los tipos de basura."
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="italic" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonInter"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/gradient_button2"
+        android:text="Volver"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</RelativeLayout>

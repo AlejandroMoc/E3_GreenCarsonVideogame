@@ -11,25 +11,30 @@
     <string name="googleLogin">Log in with Google</string>
     <string name="facebookLogin">Log in with Facebook</string>
 
-    <!--Pantalla de selección de niveles-->
-    <string name="basicLevel">Basic</string>
-    <string name="interLevel">Intermediate</string>
-    <string name="advancedLevel">Advanced</string>
-
-    <!--Descripción de elementos-->
+    <!--Elementos globales-->
     <string name="logoDescription">GreenCarson Foundation Logotype</string>
     <string name="start_game_button">Start Game</string>
     <string name="go_back_button">Go Back</string>
     <string name="help_button">Help</string>
 
+    <!--Pantalla de selección de niveles-->
+    <string name="basicLevel">Basic</string>
+    <string name="interLevel">Intermediate</string>
+    <string name="advancedLevel">Advanced</string>
+
+    <!--Selección de niveles-->
     <string name="bas_levelSel">Basic Level Selection</string>
     <string name="adv_levelSel">Advanced Level Selection</string>
     <string name="inter_levelSel">Intermediate Level Selection</string>
 
+    <!--Tutorial básico (3 botes)-->
     <string name="tutorial_buttonSel">Play</string>
     <string name="tutorial_instruction">Touch the trash cans to learn more</string>
     <string name="trashCan1">Green trash can</string>
     <string name="trashCan2">Blue trash can</string>
     <string name="trashCan3">Red trash can</string>
+    <string name="trashCan1_help">Conoce más sobre el bote verde</string>
+    <string name="trashCan2_help">Conoce más sobre el bote azul</string>
+    <string name="trashCan3_help">Conoce más sobre el bote rojo</string>
 
 </resources>

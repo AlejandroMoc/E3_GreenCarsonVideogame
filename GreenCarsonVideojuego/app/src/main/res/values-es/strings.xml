@@ -22,5 +22,8 @@
     <string name="trashCan1">Bote de basura verde</string>
     <string name="trashCan2">Bote de basura azul</string>
     <string name="trashCan3">Bote de basura rojo</string>
+    <string name="trashCan1_help">Conoce más sobre el bote verde</string>
+    <string name="trashCan2_help">Conoce más sobre el bote azul</string>
+    <string name="trashCan3_help">Conoce más sobre el bote rojo</string>
 
 </resources>
