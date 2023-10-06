@@ -26,5 +26,7 @@
     <string name="adv_levelSel">Advanced Level Selection</string>
     <string name="inter_levelSel">Intermediate Level Selection</string>
 
+    <string name="tutorial_buttonSel">Play</string>
+    <string name="tutorial_instruction">Touch the trash cans to learn more</string>
 
 </resources>

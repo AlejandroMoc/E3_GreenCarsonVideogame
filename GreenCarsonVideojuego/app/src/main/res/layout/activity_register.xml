@@ -63,9 +63,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
     <!--Botón de ¿Olvidaste contraseña? E-mail-->
+        <!--style="?android:attr/borderlessButtonStyle"-->
     <Button
         android:id="@+id/buttonForgot"
-        style="?android:attr/borderlessButtonStyle"
+        android:background="@color/transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -73,6 +74,7 @@
         android:textAllCaps="false"
         android:textColor="@color/turquoiseText"
         android:textStyle="italic"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
@@ -82,7 +84,7 @@
         android:id="@+id/buttonLogin"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/loginButton"
         android:onClick="goToNextScreen"
@@ -98,7 +100,8 @@
         android:id="@+id/buttonLoginGoogle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"
         android:backgroundTint="@color/googleColor"
         android:contentDescription="@string/googleLogin"
         android:drawableLeft="@drawable/logo_google"
@@ -114,7 +117,8 @@
         android:id="@+id/buttonLoginFB"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
         android:backgroundTint="@color/facebookColor"
         android:contentDescription="@string/facebookLogin"
         android:drawableLeft="@drawable/logo_facebook"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_tilesparent"
-    tools:context=".SelectLevelActivity">
+    tools:context=".TutorialActivity">
 
     <!--Botón de Regresar-->
     <Button
@@ -17,7 +17,7 @@
         app:backgroundTint="@null"
         android:background="@drawable/logo_back"
         android:contentDescription="@string/go_back_button"
-        android:onClick="goToLoginScreen"
+        android:onClick="goToSelectScreen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,9 +28,9 @@
         android:layout_height="55dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
+        app:backgroundTint="@null"
         android:background="@drawable/logo_help"
         android:contentDescription="@string/help_button"
-        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,67 +47,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_game" />
 
-    <!--Botones de niveles-->
+    <!--Botón de tutorial-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonTutorial"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/bas_levelSel"
-        android:onClick="selectLevel"
-        android:text="@string/basicLevel"
+        android:onClick="playLevel_basic"
+        android:text="@string/tutorial_buttonSel"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoGame" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonInter"
-        android:layout_width="200dp"
+    <TextView
+        android:id="@+id/tutorialInstruction"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/gradient_button2"
-        android:contentDescription="@string/inter_levelSel"
-        android:onClick="selectLevel"
-        android:text="@string/interLevel"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:text="@string/tutorial_instruction"
+        android:textAlignment="center"
+        android:textColor="@color/turquoiseText"
+        android:textSize="22sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonTutorial" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonAdvan"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/gradient_button"
-        android:contentDescription="@string/adv_levelSel"
-        android:onClick="selectLevel"
-        android:text="@string/advancedLevel"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonInter" />
+    <!--Texto de instrucción-->
 
-    <!--Botón de Empezar-->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonCorner"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:background="@drawable/logo_corner"
-        android:contentDescription="@string/start_game_button"
-        android:onClick="startLevel"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="VisualLintOverlap" />
 
+    <!--Dibujado de botes-->
 </androidx.constraintlayout.widget.ConstraintLayout>

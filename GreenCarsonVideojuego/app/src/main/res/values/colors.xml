@@ -3,9 +3,13 @@
 
     <!--Paleta de Green Carson (Oficial)-->
     <color name="green">#56ab61</color>
-    <color name="turquoise" tools:keep="@color/turquoise">#34b18f</color>
+    <color name="turquoise">#34b18f</color>
     <color name="cyan">#288dc8</color>
-    <color name="royalBlue" tools:keep="@color/royalBlue">#4b82bc</color>
+    <color name="royalBlue">#4b82bc</color>
+
+    <!--Paleta de Green Carson (Variaciones para la app)-->
+    <color name="green_deactivated">#05823b</color>
+    <color name="cyan_deactivated">#07676d</color>
 
     <!--Colores redes sociales-->
     <color name="facebookColor">#4267B2</color>
@@ -13,28 +17,30 @@
 
     <!--Colores para el texto-->
     <color name="turquoiseText">#07676d</color>         <!--Hint de texto-->
+    <color name="white_deactivated">#83bba8</color>
 
     <!--Colores para fondos de elementos-->
     <color name="softBlue">#c6ddeb</color>              <!--Introducción de datos-->
-    <color name="mustardYellow" tools:keep="@color/mustardYellow">#F1D14A</color>         <!--Amarillo botones-->
+    <color name="mustardYellow">#F1D14A</color>         <!--Amarillo botones-->
+    <color name="mustardYellowMid">#eac112</color>
     <color name="mustardYellowDark">#D6AF23</color>
 
     <!--Colores default y de la paleta Material-->
     <!--Colores sacados de https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors-->
-    <color name="transparent" tools:keep="@color/transparent">#00000000</color>
-    <color name="purple_200" tools:keep="@color/purple_200">#FFBB86FC</color>
-    <color name="purple_500" tools:keep="@color/purple_500">#FF6200EE</color>
-    <color name="purple_700" tools:keep="@color/purple_700">#FF3700B3</color>
-    <color name="teal_200" tools:keep="@color/teal_200">#FF03DAC5</color>
-    <color name="teal_700" tools:keep="@color/teal_700">#FF018786</color>
+    <color name="transparent">#00000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
     <color name="green_200">#A5D6A7</color>
-    <color name="green_500" tools:keep="@color/green_500">#4CAF50</color>
+    <color name="green_500">#4CAF50</color>
     <color name="green_700">#388E3C</color>
 
-    <color name="blue_200" tools:keep="@color/blue_200">#81D4FA</color>
+    <color name="blue_200">#81D4FA</color>
     <color name="blue_500">#2196F3</color>
     <color name="blue_700">#0288D1</color>
 

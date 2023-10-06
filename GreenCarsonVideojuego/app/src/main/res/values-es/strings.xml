@@ -17,5 +17,7 @@
     <string name="help_button">Ayuda</string>
     <string name="bas_levelSel">Selección de nivel básico</string>
     <string name="inter_levelSel">Selección de nivel intermedio</string>
+    <string name="tutorial_buttonSel">Jugar</string>
+    <string name="tutorial_instruction">Toca sobre los botes para aprender más</string>
 
 </resources>

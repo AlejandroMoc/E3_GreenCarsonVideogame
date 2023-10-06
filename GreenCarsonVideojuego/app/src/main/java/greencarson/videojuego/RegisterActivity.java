@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    //Declarar variables
+    //Variables
     EditText aTxt;
     EditText bTxt;
 
