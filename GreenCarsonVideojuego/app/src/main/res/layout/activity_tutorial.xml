@@ -74,6 +74,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="22sp"
+        android:minHeight="22dp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

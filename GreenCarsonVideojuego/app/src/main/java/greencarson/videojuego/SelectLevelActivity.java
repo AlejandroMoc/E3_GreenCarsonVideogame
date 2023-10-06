@@ -71,9 +71,11 @@ public class SelectLevelActivity extends AppCompatActivity {
         //Seleccionar nivel
         switch (levelNumber) {
             case 1:
-                Log.d("1", "Se envia a tutorial 1");
+                //Log.d("1", "Se envia a tutorial 1");
                 //Ir al tutorial
-                break;
+                //break;
+                Intent intent = new Intent(this, TutorialActivity.class);
+                startActivity(intent);
             case 2:
                 Log.d("2", "Se envia a tutorial 2");
                 break;

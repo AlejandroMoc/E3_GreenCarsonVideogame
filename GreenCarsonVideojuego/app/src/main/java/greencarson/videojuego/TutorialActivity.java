@@ -19,7 +19,7 @@ public class TutorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //Ocultar barra de status
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_selectlevel);
+        setContentView(R.layout.activity_tutorial);
     }
 
     //Jugar nivel sencillo
