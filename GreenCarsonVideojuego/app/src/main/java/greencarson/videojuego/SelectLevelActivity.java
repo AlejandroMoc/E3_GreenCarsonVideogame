@@ -14,9 +14,6 @@ public class SelectLevelActivity extends AppCompatActivity {
 
     //Variables
     int levelNumber = 0;
-    private Button buttonBasic;
-    private Button buttonInter;
-    private Button buttonAdvan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +27,12 @@ public class SelectLevelActivity extends AppCompatActivity {
     public void selectLevel(View v) {
 
         //Ligar elementos a la pantalla
-        buttonBasic=findViewById(R.id.buttonTutorial);
-        buttonInter=findViewById(R.id.buttonInter);
-        buttonAdvan=findViewById(R.id.buttonAdvan);
+        Button buttonBasic = findViewById(R.id.buttonBasic);
+        Button buttonInter = findViewById(R.id.buttonInter);
+        Button buttonAdvan = findViewById(R.id.buttonAdvan);
 
         switch(v.getId()) {
-            case R.id.buttonTutorial:
+            case R.id.buttonBasic:
                 levelNumber = 1;
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
@@ -84,22 +81,25 @@ public class SelectLevelActivity extends AppCompatActivity {
                 Log.d("3", "Se envia a tutorial 3");
                 break;
             default:
-                Log.d("0", "Se envia a tutorial 1");
+                Log.d("0", "Aun no eliges nivel");
+                //Falta poner pedazo que diga, ¡Aun no eliges nivel!
                 break;
         }
     }
 
     //Para regresar
     public void goToLoginScreen(View v){
-        Intent intent = new Intent(this, RegisterActivity.class);
+        //Falta poner pedazo que diga, ¿Quieres salir del juego?
+
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
     //Para ir a tutorial
-    public void goToTutorial(View v){
+/*    public void goToTutorial(View v){
         Intent intent = new Intent(this, TutorialActivity.class);
         startActivity(intent);
-    }
+    }*/
     //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente
 
 }

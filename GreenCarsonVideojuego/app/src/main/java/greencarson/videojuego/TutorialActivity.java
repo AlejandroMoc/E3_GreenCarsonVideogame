@@ -8,7 +8,6 @@ import android.view.Window;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 public class TutorialActivity extends AppCompatActivity {
 

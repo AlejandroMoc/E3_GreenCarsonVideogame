@@ -19,5 +19,8 @@
     <string name="inter_levelSel">Selección de nivel intermedio</string>
     <string name="tutorial_buttonSel">Jugar</string>
     <string name="tutorial_instruction">Toca sobre los botes para aprender más</string>
+    <string name="trashCan1">Bote de basura verde</string>
+    <string name="trashCan2">Bote de basura azul</string>
+    <string name="trashCan3">Bote de basura rojo</string>
 
 </resources>

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 
-public class RegisterActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     //Variables
     EditText aTxt;
@@ -18,7 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //Ocultar barra de status
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
 
         //Ligar elementos a la pantalla
         aTxt=findViewById(R.id.textEmail);

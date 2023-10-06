@@ -49,7 +49,7 @@
 
     <!--Botones de niveles-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonTutorial"
+        android:id="@+id/buttonBasic"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -78,7 +78,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonTutorial" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonBasic" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAdvan"

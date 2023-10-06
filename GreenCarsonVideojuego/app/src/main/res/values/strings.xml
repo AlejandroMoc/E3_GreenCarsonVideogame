@@ -28,5 +28,8 @@
 
     <string name="tutorial_buttonSel">Play</string>
     <string name="tutorial_instruction">Touch the trash cans to learn more</string>
+    <string name="trashCan1">Green trash can</string>
+    <string name="trashCan2">Blue trash can</string>
+    <string name="trashCan3">Red trash can</string>
 
 </resources>
