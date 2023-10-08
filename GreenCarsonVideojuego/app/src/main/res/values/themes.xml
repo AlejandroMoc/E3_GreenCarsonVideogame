@@ -11,9 +11,12 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
         <!-- Customize your theme here. -->
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--<item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>-->
+<!--        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>-->
     </style>
 
     <!-- ESTE ESTILO HAY QUE BORRARLO. SOLO LO QUIERO USAR DE REFERENCIA. -->

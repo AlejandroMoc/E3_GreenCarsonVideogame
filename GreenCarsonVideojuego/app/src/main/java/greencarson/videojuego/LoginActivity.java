@@ -1,7 +1,11 @@
 package greencarson.videojuego;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
+
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -16,8 +20,21 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Ocultar barra de status
+
+        //Ocultar barra de status y barra de acción
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            // Hide the status bar
+            View decorView = getWindow().getDecorView();
+            int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            // Hide the action bar
+            actionBar.hide();
+        }
+
         setContentView(R.layout.activity_login);
 
         //Ligar elementos a la pantalla

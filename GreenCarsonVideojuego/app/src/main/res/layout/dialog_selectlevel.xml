@@ -22,7 +22,8 @@
         android:contentDescription="@string/help_button"
         android:layout_centerVertical="true" />
 
-    <!--Botón de Ayuda-->
+    <!--Falta revisar posición y asset usado-->
+    <!--Logo de Ayuda-->
     <ImageView
         android:id="@+id/buttonHelp"
         android:layout_width="55dp"
