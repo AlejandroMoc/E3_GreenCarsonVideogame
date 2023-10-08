@@ -12,7 +12,8 @@
     <ImageView
         android:id="@+id/background"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="360dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="50dp"
@@ -26,9 +27,9 @@
         android:id="@+id/buttonHelp"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/background"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-70dp"
         android:background="@drawable/logo_help"
         android:contentDescription="@string/help_button" />
 
@@ -37,14 +38,9 @@
         android:id="@+id/dialog_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/buttonHelp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-
-        android:layout_marginTop="20dp"
-
-        android:minHeight="22dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
         android:text="@string/dialog_selectlevel1"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -54,13 +50,13 @@
     <!--Descripción del dialogo-->
     <TextView
         android:id="@+id/dialog_description"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dialog_title"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:text="@string/dialog_selectlevel2"
         android:textAlignment="viewStart"
@@ -68,14 +64,14 @@
         android:textSize="16sp"
         android:textStyle="italic" />
 
-    <!--Aprende, diviértete y reecicla-->
+    <!--Aprende, diviértete y-->
     <TextView
         android:id="@+id/logo_dialog1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dialog_description"
+        android:layout_above="@+id/logo_dialog2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
         android:contentDescription="@string/dialog_selectlevel3"
         android:text="@string/dialog_selectlevel4"
         android:textAlignment="center"
@@ -83,27 +79,25 @@
         android:textSize="17sp"
         android:textStyle="bold" />
 
-    <!--Boton de volver-->
+    <!--Reecicla-->
     <ImageView
         android:id="@+id/logo_dialog2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/logo_dialog1"
+        android:layout_alignBottom="@+id/background"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:contentDescription="@string/dialog_selectlevel3"
         app:srcCompat="@drawable/logo_reecicla2" />
 
+    <!--Boton de volver-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBack"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/background"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="-70dp"
+        android:layout_below="@+id/logo_dialog2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:background="@drawable/gradient_button2"
         android:text="@string/go_back_button"
         android:textColor="@color/white"

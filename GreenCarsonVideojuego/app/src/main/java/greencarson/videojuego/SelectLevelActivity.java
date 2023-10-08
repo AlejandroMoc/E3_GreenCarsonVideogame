@@ -9,10 +9,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 public class SelectLevelActivity extends AppCompatActivity {
@@ -109,6 +111,13 @@ public class SelectLevelActivity extends AppCompatActivity {
         Button buttonBack = dialogView.findViewById(R.id.buttonBack);
         builder.setView(dialogView);
         final AlertDialog alertDialog = builder.create();
+
+        alertDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        /*Window window = alertDialog.getWindow();
+        WindowManager.LayoutParams layoutParams = window.getAttributes();
+        layoutParams.gravity = Gravity.CENTER_VERTICAL;
+        window.setAttributes(layoutParams);*/
+
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
