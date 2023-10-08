@@ -1,15 +1,17 @@
 package greencarson.videojuego;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 
@@ -100,7 +102,21 @@ public class SelectLevelActivity extends AppCompatActivity {
     }
 
     //Para ir a dialog_selectlevel.xml
-
+    public void dialogSelectLevel(View v) {
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(SelectLevelActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_selectlevel, viewGroup, false);
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+        alertDialog.show();
+    }
 
     //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente
 

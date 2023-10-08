@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!--<item name="android:windowBackground">@color/transparent</item>-->
     </style>
 
     <!-- ESTE ESTILO HAY QUE BORRARLO. SOLO LO QUIERO USAR DE REFERENCIA. -->
