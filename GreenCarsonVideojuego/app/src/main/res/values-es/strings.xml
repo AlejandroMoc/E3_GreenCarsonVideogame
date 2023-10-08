@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--General-->
     <string name="app_name">Green Carson - GAME</string>
+
+    <!--Pantalla de login-->
     <string name="userEmail">Email</string>
     <string name="userPassword">Contraseña</string>
     <string name="loginButton">Inicia Sesión</string>
     <string name="forgotPassword">¿Olvidaste la contraseña?</string>
     <string name="googleLogin">Inicia sesión con Google</string>
     <string name="facebookLogin">Inicia sesión con Facebook</string>
-    <string name="basicLevel">Básico</string>
-    <string name="interLevel">Intermedio</string>
-    <string name="advancedLevel">Avanzado</string>
+
+    <!--Elementos globales-->
     <string name="logoDescription">Logotipo de la fundación GreenCarson</string>
     <string name="start_game_button">Iniciar juego</string>
     <string name="go_back_button">Regresar</string>
-    <string name="adv_levelSel">Selección de nivel avanzado</string>
     <string name="help_button">Ayuda</string>
-    <string name="bas_levelSel">Selección de nivel básico</string>
+
+    <!--Pantalla de selección de niveles-->
+    <string name="basicLevel">Básico</string>
+    <string name="interLevel">Intermedio</string>
+    <string name="advancedLevel">Avanzado</string>
+
+    <string name="adv_levelSel">Selección de nivel avanzado</string>
     <string name="inter_levelSel">Selección de nivel intermedio</string>
+    <string name="bas_levelSel">Selección de nivel básico</string>
+
+    <string name="dialog_selectlevel1">¿Cómo se juega?</string>
+    <string name="dialog_selectlevel2">¡Los residuos caen del cielo! Debes arrastrarlos hasta el bote correcto para evitar la contaminación.\n \n Dependiendo el nivel que elijas, será más complicado diferenciar entre los tipos de residuos.</string>
+    <string name="dialog_selectlevel3">¡Aprende, diviértete y recicla!</string>
+    <string name="dialog_selectlevel4">¡Aprende, diviértete y</string>
+
+    <!--Tutorial básico (3 botes)-->
     <string name="tutorial_buttonSel">Jugar</string>
     <string name="tutorial_instruction">Toca sobre los botes para aprender más</string>
     <string name="trashCan1">Bote de basura verde</string>
@@ -25,9 +40,5 @@
     <string name="trashCan1_help">Conoce más sobre el bote verde</string>
     <string name="trashCan2_help">Conoce más sobre el bote azul</string>
     <string name="trashCan3_help">Conoce más sobre el bote rojo</string>
-    <string name="dialog_selectlevel1">¿Cómo se juega?</string>
-    <string name="dialog_selectlevel2">¡Los residuos caen del cielo! Debes arrastrarlos hasta el bote correcto para evitar la contaminación.\n \n Dependiendo el nivel que elijas, será más complicado diferenciar entre los tipos de residuos.</string>
-    <string name="dialog_selectlevel3">¡Aprende, diviértete y recicla!</string>
-    <string name="dialog_selectlevel4">¡Aprende, diviértete y</string>
 
 </resources>

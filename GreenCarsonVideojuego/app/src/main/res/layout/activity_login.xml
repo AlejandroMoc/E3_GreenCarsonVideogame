@@ -100,7 +100,7 @@
         android:id="@+id/buttonLoginGoogle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textSize="16sp"
         android:backgroundTint="@color/googleColor"
         android:contentDescription="@string/googleLogin"

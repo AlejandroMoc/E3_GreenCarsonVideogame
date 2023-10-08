@@ -33,8 +33,10 @@ public class LoginActivity extends AppCompatActivity {
         String stringPassword = bTxt.getText().toString();
 
         //Falta hacer login antes de hacer intento
-        Intent intent = new Intent(this, SelectLevelActivity.class);
-        startActivity(intent);
+        if (!stringEmail.isEmpty() && !stringPassword.isEmpty()){
+            Intent intent = new Intent(this, SelectLevelActivity.class);
+            startActivity(intent);
+        }
     }
 
     //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente

@@ -3,6 +3,9 @@ package greencarson.videojuego;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,7 +44,8 @@ public class SelectLevelActivity extends AppCompatActivity {
                 buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
                 buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white_deactivated));
                 buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white_deactivated));
-                //Cambiar de pantalla
+
+                //Falta poner para desactivar botones
                 break;
 
             case R.id.buttonInter:
@@ -71,9 +75,7 @@ public class SelectLevelActivity extends AppCompatActivity {
         //Seleccionar nivel
         switch (levelNumber) {
             case 1:
-                //Log.d("1", "Se envia a tutorial 1");
-                //Ir al tutorial
-                //break;
+                //Ir al tutorial 1
                 Intent intent = new Intent(this, TutorialActivity.class);
                 startActivity(intent);
             case 2:
@@ -97,11 +99,9 @@ public class SelectLevelActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Para ir a tutorial
-/*    public void goToTutorial(View v){
-        Intent intent = new Intent(this, TutorialActivity.class);
-        startActivity(intent);
-    }*/
+    //Para ir a dialog_selectlevel.xml
+
+
     //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente
 
 }
