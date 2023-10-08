@@ -25,5 +25,9 @@
     <string name="trashCan1_help">Conoce más sobre el bote verde</string>
     <string name="trashCan2_help">Conoce más sobre el bote azul</string>
     <string name="trashCan3_help">Conoce más sobre el bote rojo</string>
+    <string name="dialog_selectlevel1">¿Cómo se juega?</string>
+    <string name="dialog_selectlevel2">¡Los residuos caen del cielo! Debes arrastrarlos hasta el bote correcto para evitar la contaminación.\n \n Dependiendo el nivel que elijas, será más complicado diferenciar entre los tipos de residuos.</string>
+    <string name="dialog_selectlevel3">¡Aprende, diviértete y recicla!</string>
+    <string name="dialog_selectlevel4">¡Aprende, diviértete y</string>
 
 </resources>
