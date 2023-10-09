@@ -52,7 +52,7 @@ public class TutorialBasicActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    //Para ir a dialogtutorialbasic.xml
+    //Para ir a dialog_trashcan1.xml
     public void dialog_trashcan1(View v) {
         final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(TutorialBasicActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);
@@ -65,4 +65,39 @@ public class TutorialBasicActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    public void dialog_trashcan2(View v) {
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(TutorialBasicActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_trashcan2, viewGroup, false);
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
+        alertDialog.show();
+    }
+
+    public void dialog_trashcan3(View v) {
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(TutorialBasicActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_trashcan3, viewGroup, false);
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
+        alertDialog.show();
+    }
+
+    public void dialog_trashcan4(View v) {
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(TutorialBasicActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_trashcan4, viewGroup, false);
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
+        alertDialog.show();
+    }
 }

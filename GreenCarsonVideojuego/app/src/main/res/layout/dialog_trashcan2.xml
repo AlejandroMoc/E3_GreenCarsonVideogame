@@ -16,7 +16,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="80dp"
-        android:background="@drawable/gradient_dialog_trashcan1"
+        android:background="@drawable/gradient_dialog_trashcan2"
         android:contentDescription="@string/help_button"
         android:layout_centerVertical="true" />
 
@@ -40,7 +40,7 @@
         android:layout_below="@+id/buttonHelp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
-        android:text="@string/dialog_trashcan11"
+        android:text="@string/dialog_trashcan21"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/black"
@@ -58,7 +58,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/dialog_trashcan12"
+        android:text="@string/dialog_trashcan22"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
