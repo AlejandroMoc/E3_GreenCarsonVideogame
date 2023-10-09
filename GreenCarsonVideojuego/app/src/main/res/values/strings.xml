@@ -41,4 +41,13 @@
     <string name="trashCan2_help">Conoce más sobre el bote azul</string>
     <string name="trashCan3_help">Conoce más sobre el bote rojo</string>
 
+                                                                <!--Faltan traducciones al inglés-->
+    <string name="dialog_trashcan11">Valorizables</string>
+    <string name="dialog_trashcan12">Todos aquellos residuos que se pueden reutilizar y no se descomponen con facilidad.\n\nComo:\n\nCartón\nPapel\nPet\nHDPE\nVidrio\nMetales\nElectrodomesticos</string>
+    <string name="dialog_trashcan21">Orgánicos</string>
+    <string name="dialog_trashcan22">Todos aquellos residuos que son restos biodegradables de plantas y animales.\n\nComo:\n\nPlantas\nHuesos\nCáscaras\nExcrementos\nRamas u hojas\nResiduos de Comida\nPapel o cartón sucios</string>
+    <string name="dialog_trashcan31">Inorgánicos aprovechables</string>
+    <string name="dialog_trashcan32">Todos aquellos residuos que no son naturales pero se pueden reciclar.\n\nComo:\n\nPapel\nCartón\nVidrio\nMetales\nRopa\nCuero</string>
+    <string name="dialog_trashcan41">Inorgánicos no aprovechables</string>
+    <string name="dialog_trashcan42">Todos aquellos residuos que ya no se pueden reutilizar y deben ser desechados con precaución.\n\nComo:\n\nResiduos tóxicos\nResiduos médicos\nResiduos industriales\nResiduos peligrosos\nResiduos de construcción</string>
 </resources>
