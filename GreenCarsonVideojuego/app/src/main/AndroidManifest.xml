@@ -39,7 +39,7 @@
         </activity>
 
         <activity
-            android:name=".TutorialActivity"
+            android:name=".TutorialBasicActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

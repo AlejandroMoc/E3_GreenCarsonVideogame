@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_tilesparent"
-    tools:context=".TutorialActivity">
+    tools:context=".TutorialBasicActivity">
 
     <!--Botón de Regresar-->
     <Button
@@ -126,7 +126,8 @@
         android:contentDescription="@string/trashCan1_help"
         app:layout_constraintBottom_toTopOf="@+id/trashCan1"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo_help" />
+        app:srcCompat="@drawable/logo_help"
+        android:onClick="dialog_trashcan1" />
 
     <ImageView
         android:id="@+id/trashCan1_help3"

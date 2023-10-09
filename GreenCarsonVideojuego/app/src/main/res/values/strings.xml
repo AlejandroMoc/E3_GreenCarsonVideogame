@@ -41,13 +41,12 @@
     <string name="trashCan2_help">Conoce más sobre el bote azul</string>
     <string name="trashCan3_help">Conoce más sobre el bote rojo</string>
 
-                                                                <!--Faltan traducciones al inglés-->
-    <string name="dialog_trashcan11">Valorizables</string>
-    <string name="dialog_trashcan12">Todos aquellos residuos que se pueden reutilizar y no se descomponen con facilidad.\n\nComo:\n\nCartón\nPapel\nPet\nHDPE\nVidrio\nMetales\nElectrodomesticos</string>
-    <string name="dialog_trashcan21">Orgánicos</string>
-    <string name="dialog_trashcan22">Todos aquellos residuos que son restos biodegradables de plantas y animales.\n\nComo:\n\nPlantas\nHuesos\nCáscaras\nExcrementos\nRamas u hojas\nResiduos de Comida\nPapel o cartón sucios</string>
-    <string name="dialog_trashcan31">Inorgánicos aprovechables</string>
-    <string name="dialog_trashcan32">Todos aquellos residuos que no son naturales pero se pueden reciclar.\n\nComo:\n\nPapel\nCartón\nVidrio\nMetales\nRopa\nCuero</string>
-    <string name="dialog_trashcan41">Inorgánicos no aprovechables</string>
-    <string name="dialog_trashcan42">Todos aquellos residuos que ya no se pueden reutilizar y deben ser desechados con precaución.\n\nComo:\n\nResiduos tóxicos\nResiduos médicos\nResiduos industriales\nResiduos peligrosos\nResiduos de construcción</string>
+    <string name="dialog_trashcan11">Recoverable waste</string>
+    <string name="dialog_trashcan12">All those waste materials that can be reused and do not decompose easily.\n\n<b>Like:</b>\n\nCardboard\nPaper\nPET\nHDPE\nGlass\nMetals\nAppliances</string>
+    <string name="dialog_trashcan21">Organic waste</string>
+    <string name="dialog_trashcan22">All those waste materials that are biodegradable remains of plants and animals.\n\n<b>Like:</b>\n\nPlants\nBones\nPeels\nExcrements\nBranches or leaves\nFood waste\nDirty paper or cardboard</string>
+    <string name="dialog_trashcan31">Usable inorganic waste</string>
+    <string name="dialog_trashcan32">All those waste materials that are not natural but can be recycled.\n\n<b>Like:</b>\n\nPaper\nCardboard\nGlass\nMetals\nClothes\nLeather</string>
+    <string name="dialog_trashcan41">Unusable inorganic waste</string>
+    <string name="dialog_trashcan42">All those waste materials that can no longer be reused and must be disposed of with caution.\n\n<b>Like:</b>\n\nToxic waste\nMedical waste\nIndustrial waste\nHazardous waste\nConstruction waste</string>
 </resources>

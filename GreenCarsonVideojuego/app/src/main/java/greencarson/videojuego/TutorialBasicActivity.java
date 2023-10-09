@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
-public class TutorialActivity extends AppCompatActivity {
+public class TutorialBasicActivity extends AppCompatActivity {
 
     //Variables
 
@@ -23,7 +23,7 @@ public class TutorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //Ocultar barra de status
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_tutorial);
+        setContentView(R.layout.activity_tutorialbasic);
     }
 
     //Jugar nivel sencillo
@@ -41,15 +41,26 @@ public class TutorialActivity extends AppCompatActivity {
 
     //Para ir a dialog_selectlevel.xml
     public void dialogSelectLevel(View v) {
-        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(TutorialActivity.this);
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(TutorialBasicActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);
         View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_selectlevel, viewGroup, false);
         Button buttonBack = dialogView.findViewById(R.id.buttonBack);
         builder.setView(dialogView);
         final AlertDialog alertDialog = builder.create();
-
         Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
+        alertDialog.show();
+    }
 
+    //Para ir a dialogtutorialbasic.xml
+    public void dialog_trashcan1(View v) {
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(TutorialBasicActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_trashcan1, viewGroup, false);
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
         alertDialog.show();
     }
