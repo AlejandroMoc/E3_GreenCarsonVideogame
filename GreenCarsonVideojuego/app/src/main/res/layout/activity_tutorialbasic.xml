@@ -91,7 +91,7 @@
         android:contentDescription="@string/trashCan3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/trashcan_333"
+        app:srcCompat="@drawable/trashcan_3"
         tools:ignore="VisualLintBounds" />
 
     <ImageView
