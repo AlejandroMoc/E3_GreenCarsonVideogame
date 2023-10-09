@@ -9,29 +9,11 @@
         <item name="colorSecondary">@color/green_200</item>
         <item name="colorSecondaryVariant">@color/green_700</item>
         <item name="colorOnSecondary">@color/black</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-
-        <!-- Customize your theme here. -->
-        <!--<item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>-->
-        <!--        <item name="android:windowFullscreen">true</item>
-                <item name="android:windowContentOverlay">@null</item>-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
     </style>
-
-    <!-- ESTE ESTILO HAY QUE BORRARLO. SOLO LO QUIERO USAR DE REFERENCIA. -->
-<!--    <style name="Theme.defaultBORRAR" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        &lt;!&ndash; Primary brand color. &ndash;&gt;
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        &lt;!&ndash; Secondary brand color. &ndash;&gt;
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        &lt;!&ndash; Status bar color. &ndash;&gt;
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        &lt;!&ndash; Customize your theme here. &ndash;&gt;
-    </style>-->
-
 </resources>

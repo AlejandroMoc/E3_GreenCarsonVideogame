@@ -32,7 +32,8 @@
         android:background="@drawable/logo_help"
         android:contentDescription="@string/help_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="dialogSelectLevel" />
 
     <!--Logo Reecicla GAME-->
     <!--984 × 559px-->
