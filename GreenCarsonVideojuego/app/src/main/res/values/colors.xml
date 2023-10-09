@@ -12,8 +12,11 @@
     <color name="cyan_deactivated">#07676d</color>
     <color name="cyan_lighted">#bddced</color>
     <color name="green_lighted">#cbe5ce</color>
-
-    <!--Colores redes sociales-->
+    <color name="gray_lighted">#dedede</color>
+    <color name="yellow_lighted">#fbf3c8</color>
+    <color name="red_lighted">#f3c1c2</color>
+    
+    <!--Colores redes sociales (Oficiales)-->
     <color name="facebookColor">#4267B2</color>
     <color name="googleColor">#ffffff</color>
 
