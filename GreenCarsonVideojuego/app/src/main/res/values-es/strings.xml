@@ -31,6 +31,10 @@
     <string name="dialog_selectlevel3">¡Aprende, diviértete y recicla!</string>
     <string name="dialog_selectlevel4">¡Aprende, diviértete y</string>
 
+    <string name="dialog_quit">Salir</string>
+    <string name="dialog_warningexit">¿Quieres salir\ndel juego?</string>
+    <string name="dialog_warningalert">¡Aun no eliges\nun nivel!</string>
+
     <!--Tutorial básico (3 botes)-->
     <string name="tutorial_buttonSel">Jugar</string>
     <string name="tutorial_instruction">Toca sobre los botes para aprender más</string>
@@ -49,4 +53,5 @@
     <string name="dialog_trashcan32">Todos aquellos residuos que no son naturales pero se pueden reciclar.\n\n<b>Como:</b>\n\nPapel\nCartón\nVidrio\nMetales\nRopa\nCuero\nLatas</string>
     <string name="dialog_trashcan41">Inorgánicos no aprovechables</string>
     <string name="dialog_trashcan42">Todos aquellos residuos que ya no se pueden reutilizar y deben ser desechados con precaución.\n\nComo:\n\nResiduos tóxicos\nResiduos médicos\nResiduos industriales\nResiduos peligrosos\nResiduos de construcción</string>
+
 </resources>

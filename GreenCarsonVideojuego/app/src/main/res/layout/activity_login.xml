@@ -97,6 +97,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPassword" />
 
+    <!--Botones de redes sociales-->
     <Button
         android:id="@+id/buttonLoginGoogle"
         android:layout_width="250dp"
@@ -109,7 +110,7 @@
         android:stateListAnimator="@null"
         android:text="@string/googleLogin"
         android:textAllCaps="false"
-        android:textColor="#757575"
+        android:textColor="@color/gray_mid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonForgot" />

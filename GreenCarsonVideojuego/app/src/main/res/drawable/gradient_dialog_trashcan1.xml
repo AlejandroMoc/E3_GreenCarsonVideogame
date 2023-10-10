@@ -3,7 +3,7 @@
     android:shape = "rectangle"
     xmlns:android = "http://schemas.android.com/apk/res/android" >
     <gradient
-        android:startColor = "#d8f3cc"
+        android:startColor = "@color/green_200"
         android:endColor = "@color/green_lighted"
         android:type = "linear"
         android:angle = "90"/>

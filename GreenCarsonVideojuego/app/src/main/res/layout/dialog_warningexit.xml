@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:background="@drawable/gradient_warningexit"
-        android:text="¿Quieres salir\ndel juego?"
+        android:text="@string/dialog_warningexit"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="22sp"
@@ -42,7 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:background="@drawable/gradient_warningexit2"
-        android:text="Quit"
+        android:text="@string/dialog_quit"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
