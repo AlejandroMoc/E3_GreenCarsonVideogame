@@ -64,14 +64,28 @@
         android:textSize="16sp"
         android:textStyle="italic" />
 
-    <!--Boton de volver-->
+    <!--Boton de salir-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonBack"
+        android:id="@+id/buttonExit"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dialog_description"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
+        android:background="@drawable/gradient_warningalert"
+        android:text="Quit"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!--Boton de volver-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonBack"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonExit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
         android:text="@string/go_back_button"
         android:textColor="@color/white"

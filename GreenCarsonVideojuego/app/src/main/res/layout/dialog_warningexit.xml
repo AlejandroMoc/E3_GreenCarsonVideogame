@@ -6,72 +6,55 @@
     android:background="@android:color/transparent"
     android:gravity="center">
 
-    <!--Fondo-->
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_height="360dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/gradient_dialog_trashcan4"
-        android:contentDescription="@string/help_button"
-        android:layout_centerVertical="true" />
-
-    <!--Falta revisar posición y asset usado-->
     <!--Logo de Ayuda-->
     <ImageView
         android:id="@+id/buttonHelp"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_above="@+id/background"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-70dp"
-        android:background="@drawable/logo_help"
+        android:background="@drawable/logo_warningexit"
         android:contentDescription="@string/help_button" />
 
-    <!--Categoría-->
-    <TextView
+    <!--Pregunta-->
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dialog_title"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/buttonHelp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
-        android:text="@string/dialog_trashcan41"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="100dp"
+        android:background="@drawable/gradient_warningexit"
+        android:text="¿Quieres salir\ndel juego?"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:singleLine="false"
+        android:maxLines="2" />
 
-    <!--Descripción-->
-    <TextView
-        android:id="@+id/dialog_description"
-        android:layout_width="wrap_content"
+    <!--Boton de salir-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonExit"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dialog_title"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/dialog_trashcan42"
-        android:textAlignment="center"
-        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/gradient_warningexit"
+        android:text="Quit"
+        android:textColor="@color/white"
         android:textSize="16sp"
-        android:textStyle="italic" />
+        android:textStyle="bold" />
 
     <!--Boton de volver-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBack"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dialog_description"
+        android:layout_below="@+id/buttonExit"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
         android:text="@string/go_back_button"
         android:textColor="@color/white"
