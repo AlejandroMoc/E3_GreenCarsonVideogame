@@ -8,13 +8,11 @@
         android:pathData="M-11.11,-10.121L80.971,-10.121L80.971,34.841L-11.11,34.841Z"/>
     <path
         android:pathData="m22.675,24c0.731,-0 1.325,-0.593 1.325,-1.325l0,-21.351c0,-0.732 -0.593,-1.325 -1.325,-1.325l-21.351,-0c-0.732,-0 -1.325,0.593 -1.325,1.325L0,22.676c0,0.731 0.593,1.325 1.325,1.325z"
-        android:fillColor="#ffffff"
-        android:strokeColor="#00000000"
+        android:fillColor="@color/white"
         android:fillType="nonZero"/>
     <path
         android:pathData="m16.56,24l0,-9.294l3.12,-0l0.467,-3.622L16.56,11.084l0,-2.313c0,-1.049 0.291,-1.763 1.795,-1.763l1.918,-0.001l0,-3.24c-0.332,-0.044 -1.47,-0.143 -2.795,-0.143 -2.765,-0 -4.659,1.688 -4.659,4.788l0,2.671l-3.128,-0l0,3.622l3.128,-0L12.819,24Z"
-        android:fillColor="#3b5998"
-        android:strokeColor="#00000000"
+        android:fillColor="@color/facebookColor"
         android:fillType="nonZero"/>
   </group>
 </vector>

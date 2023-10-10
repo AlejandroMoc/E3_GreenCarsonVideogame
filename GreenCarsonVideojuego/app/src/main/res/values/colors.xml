@@ -19,6 +19,10 @@
     <!--Colores redes sociales (Oficiales)-->
     <color name="facebookColor">#4267B2</color>
     <color name="googleColor">#ffffff</color>
+    <color name="googleColor1">#4285F4</color>
+    <color name="googleColor2">#34A853</color>
+    <color name="googleColor3">#FBBC05</color>
+    <color name="googleColor4">#EA4335</color>
 
     <!--Colores para el texto-->
     <color name="turquoiseText">#07676d</color>         <!--Hint de texto-->
