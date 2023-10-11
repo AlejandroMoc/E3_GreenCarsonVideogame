@@ -8,6 +8,20 @@
     tools:context=".LoginActivity"
     android:fitsSystemWindows="true" >
 
+    <!--Botón de Quit-->
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        app:backgroundTint="@null"
+        android:background="@drawable/logo_quit"
+        android:contentDescription="@string/go_back_button"
+        android:onClick="dialogWarningQuit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!--Logo Reecicla GAME-->
     <!--984 × 559px-->
     <ImageView

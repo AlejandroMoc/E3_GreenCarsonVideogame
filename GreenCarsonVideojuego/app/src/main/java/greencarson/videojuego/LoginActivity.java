@@ -2,10 +2,16 @@ package greencarson.videojuego;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -49,6 +55,30 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, SelectLevelActivity.class);
             startActivity(intent);
         }
+    }
+
+    //Para ir a dialog_warningquit.xml
+    public void dialogWarningQuit(View v) {
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(LoginActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_warningquit, viewGroup, false);
+
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+        Button buttonQuit = dialogView.findViewById(R.id.buttonQuit);
+
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+
+        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
+        buttonQuit.setOnClickListener(v1 -> {
+            alertDialog.dismiss();
+            //Cerrar app
+            finishAffinity();
+        });
+
+        alertDialog.show();
     }
 
     //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente

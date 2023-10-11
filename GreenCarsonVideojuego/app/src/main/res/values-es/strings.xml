@@ -31,10 +31,12 @@
     <string name="dialog_selectlevel3">¡Aprende, diviértete y recicla!</string>
     <string name="dialog_selectlevel4">¡Aprende, diviértete y</string>
 
-    <string name="dialog_quit">Salir</string>
+    <string name="dialog_warningquit">¿Quieres salir\nde la aplicación?</string>
     <string name="dialog_warningexit">¿Quieres salir\ndel juego?</string>
     <string name="dialog_warningalert">¡Aun no eliges\nun nivel!</string>
     <string name="dialog_warningleave">¿Quieres salir\\nde la partida?</string>
+    <string name="dialog_quit">Salir</string>
+    <string name="dialog_leave">Salir</string>
 
     <!--Tutorial básico (3 botes)-->
     <string name="tutorial_buttonSel">Jugar</string>

@@ -89,7 +89,7 @@ public class SelectLevelActivity extends AppCompatActivity {
             default:
                 Log.d("0", "Aun no eliges nivel");
                 //Falta poner pedazo que diga, ¡Aun no eliges nivel!
-                break;
+                dialogWarningAlert(v);
         }
     }
 
@@ -97,10 +97,10 @@ public class SelectLevelActivity extends AppCompatActivity {
     public void dialogWarningExit(View v) {
         final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(SelectLevelActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_warningexit, viewGroup, false);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_warninglogout, viewGroup, false);
 
         Button buttonBack = dialogView.findViewById(R.id.buttonBack);
-        Button buttonQuit = dialogView.findViewById(R.id.buttonQuit);
+        Button buttonLogOut = dialogView.findViewById(R.id.buttonLogOut);
 
         builder.setView(dialogView);
 
@@ -108,7 +108,7 @@ public class SelectLevelActivity extends AppCompatActivity {
         Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
         buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
-        buttonQuit.setOnClickListener(v1 -> {
+        buttonLogOut.setOnClickListener(v1 -> {
             //Regresar a pantalla de login
             alertDialog.dismiss();
             Intent intent = new Intent(this, LoginActivity.class);
@@ -123,6 +123,21 @@ public class SelectLevelActivity extends AppCompatActivity {
         final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(SelectLevelActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);
         View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_selectlevel, viewGroup, false);
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+
+        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
+        alertDialog.show();
+    }
+
+    //Para ir a dialog_warningalert.xml
+    public void dialogWarningAlert(View v) {
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(SelectLevelActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_warningalert, viewGroup, false);
         Button buttonBack = dialogView.findViewById(R.id.buttonBack);
         builder.setView(dialogView);
         final AlertDialog alertDialog = builder.create();

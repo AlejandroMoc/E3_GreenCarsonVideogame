@@ -32,7 +32,9 @@
     <string name="dialog_selectlevel4">Learn, have fun and</string>
 
     <string name="dialog_quit">Quit</string>
-    <string name="dialog_warningexit">Do you want to exit\nthe game?</string>
+    <string name="dialog_leave">Exit</string>
+    <string name="dialog_warningquit">Do you want to\nexit the app?</string>
+    <string name="dialog_warningexit">Do you want to\nexit the game?</string>
     <string name="dialog_warningalert">You haven\'t chosen\na level yet!</string>
     <string name="dialog_warningleave">Do you want to\nleave the game?</string>
 

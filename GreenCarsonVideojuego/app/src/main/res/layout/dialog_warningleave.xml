@@ -35,14 +35,14 @@
 
     <!--Boton de salir-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonQuit"
+        android:id="@+id/buttonLeave"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dialog_title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/gradient_warningexit2"
-        android:text="@string/dialog_quit"
+        android:text="@string/dialog_leave"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -52,7 +52,7 @@
         android:id="@+id/buttonBack"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonQuit"
+        android:layout_below="@+id/buttonLeave"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
