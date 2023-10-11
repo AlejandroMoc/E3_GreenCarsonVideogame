@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    android:gravity="center">
+
+    <!--Logo de Ayuda-->
+    <ImageView
+        android:id="@+id/buttonHelp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-70dp"
+        android:background="@drawable/logo_warningexit"
+        android:contentDescription="@string/help_button" />
+
+    <!--Pregunta-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dialog_title"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/buttonHelp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/gradient_warningexit"
+        android:text="@string/dialog_warningexit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:singleLine="false"
+        android:maxLines="2" />
+
+    <!--Boton de salir-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogOut"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/gradient_warningexit2"
+        android:text="@string/dialog_leave"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!--Boton de volver-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonBack"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLogOut"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/gradient_button2"
+        android:text="@string/go_back_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
