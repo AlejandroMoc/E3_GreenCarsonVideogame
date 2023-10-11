@@ -44,8 +44,8 @@ public class SelectLevelActivity extends AppCompatActivity {
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button_d);
                 //buttonBasic.setTextColor(getApplication().getResources().getColor(R.color.white));
                 buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-                buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white_deactivated));
-                buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white_deactivated));
+                buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
+                buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
 
                 //Falta poner para desactivar botones
                 break;
@@ -55,17 +55,17 @@ public class SelectLevelActivity extends AppCompatActivity {
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2);
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button_d);
-                buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white_deactivated));
+                buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-                buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white_deactivated));
+                buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 break;
             case R.id.buttonAdvan:
                 levelNumber = 3;
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
-                buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white_deactivated));
-                buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white_deactivated));
+                buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
+                buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
                 break;
         }

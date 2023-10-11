@@ -29,15 +29,16 @@
     <color name="green_lighted">#cbe5ce</color>
     <color name="yellow_lighted">#fbf3c8</color>
     <color name="mustardYellow">#F1D14A</color>         <!--Amarillo botones-->
-    <color name="mustardYellowMid">#eac112</color>
-    <color name="honeyYellow">#fdb72d</color>
-    <color name="burntHoney">#a24406</color>
+<!--    <color name="mustardYellowMid">#eac112</color>-->
+    <color name="mustardYellowMid">#FFC107</color>
+    <color name="honeyYellow">#fdb72d</color>           <!--Falta combinar este-->
+    <color name="burntHoney">#a24406</color>            <!--con este-->
     <color name="red_intense">#d72e31</color>
     <color name="red_darkened">#500001</color>
 
     <!--Colores para el texto-->
-    <color name="turquoiseText">#07676d</color>         <!--Hint de texto-->
-    <color name="white_deactivated">#83bba8</color>
+    <color name="jadeBlue">#07676d</color>         <!--Hint de texto-->
+    <color name="jade_deactivated">#83bba8</color>
 
     <!--Colores default y de la paleta Material-->
     <!--Colores sacados de https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors-->
