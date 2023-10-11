@@ -36,6 +36,7 @@
     <string name="dialog_warningalert">¡Aun no eliges\nun nivel!</string>
 
     <!--Tutorial básico (3 botes)-->
+    <string name="dialog_warningleave">¿Quieres salir\\nde la partida?</string>
     <string name="tutorial_buttonSel">Jugar</string>
     <string name="tutorial_instruction">Toca sobre los botes para aprender más</string>
     <string name="trashCan1">Bote de basura verde</string>

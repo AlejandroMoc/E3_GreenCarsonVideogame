@@ -93,12 +93,29 @@ public class SelectLevelActivity extends AppCompatActivity {
         }
     }
 
-    //Para regresar
-    public void goToLoginScreen(View v){
-        //Falta poner pedazo que diga, ¿Quieres salir del juego?
+    //Para ir a dialog_warningexit.xml y para regresar
+    public void dialogWarningExit(View v) {
+        final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(SelectLevelActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_warningexit, viewGroup, false);
 
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+        Button buttonQuit = dialogView.findViewById(R.id.buttonQuit);
+
+        builder.setView(dialogView);
+
+        final AlertDialog alertDialog = builder.create();
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+
+        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
+        buttonQuit.setOnClickListener(v1 -> {
+            //Regresar a pantalla de login
+            alertDialog.dismiss();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        });
+
+        alertDialog.show();
     }
 
     //Para ir a dialog_selectlevel.xml

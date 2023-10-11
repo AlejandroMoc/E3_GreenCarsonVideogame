@@ -17,7 +17,7 @@
         app:backgroundTint="@null"
         android:background="@drawable/logo_back"
         android:contentDescription="@string/go_back_button"
-        android:onClick="goToLoginScreen"
+        android:onClick="dialogWarningExit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/logoGame"
         android:layout_width="246dp"
         android:layout_height="139dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="150dp"
         android:contentDescription="@string/logoDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,8 +100,8 @@
     <!--Botón de Empezar-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonCorner"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:background="@drawable/logo_corner"
         android:contentDescription="@string/start_game_button"
         android:onClick="startLevel"

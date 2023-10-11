@@ -34,6 +34,7 @@
     <string name="dialog_quit">Quit</string>
     <string name="dialog_warningexit">Do you want to exit\nthe game?</string>
     <string name="dialog_warningalert">You haven\'t chosen\na level yet!</string>
+    <string name="dialog_warningleave">Do you want to\nleave the game?</string>
 
     <!--Tutorial básico (3 botes)-->
     <string name="tutorial_buttonSel">Play</string>
