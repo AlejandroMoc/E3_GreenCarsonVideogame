@@ -44,9 +44,12 @@
     <string name="trashCan1">Green trash can</string>
     <string name="trashCan2">Blue trash can</string>
     <string name="trashCan3">Red trash can</string>
+    <string name="trashCan4">Gray trash can</string>
+
     <string name="trashCan1_help">Learn more about the green trash can</string>
     <string name="trashCan2_help">Learn more about the blue can</string>
-    <string name="trashCan3_help">Learn more about the red trash can</string>
+    <string name="trashCan3_help">Learn more about the gray trash can</string>
+    <string name="trashCan4_help">Learn more about the red trash can</string>
 
     <string name="dialog_trashcan11">Recoverable waste</string>
     <string name="dialog_trashcan12">All those waste materials that can be reused and do not decompose easily.\n\n<b>Like:</b>\n\nCardboard\nPaper\nPET\nHDPE\nGlass\nMetals\nAppliances</string>

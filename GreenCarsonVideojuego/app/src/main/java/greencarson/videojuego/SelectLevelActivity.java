@@ -74,6 +74,7 @@ public class SelectLevelActivity extends AppCompatActivity {
     //Para empezar nivel
     public void startLevel(View v){
 
+        //Falta ver cómo poder hacer uso del mismo archivo de Java para todos los tutoriales
         //Seleccionar nivel
         switch (levelNumber) {
             case 1:
@@ -84,10 +85,10 @@ public class SelectLevelActivity extends AppCompatActivity {
                 Log.d("2", "Se envia a tutorial 2");
                 break;
             case 3:
-                Log.d("3", "Se envia a tutorial 3");
-                break;
+                Intent intent3 = new Intent(this, TutorialAdvancedActivity.class);
+                startActivity(intent3);
             default:
-                Log.d("0", "Aun no eliges nivel");
+
                 //Falta poner pedazo que diga, ¡Aun no eliges nivel!
                 dialogWarningAlert(v);
         }

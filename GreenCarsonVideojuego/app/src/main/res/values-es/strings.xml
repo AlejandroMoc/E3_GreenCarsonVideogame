@@ -44,9 +44,12 @@
     <string name="trashCan1">Bote de basura verde</string>
     <string name="trashCan2">Bote de basura azul</string>
     <string name="trashCan3">Bote de basura rojo</string>
+    <string name="trashCan4">Bote de basura gris</string>
+
     <string name="trashCan1_help">Conoce más sobre el bote verde</string>
     <string name="trashCan2_help">Conoce más sobre el bote azul</string>
-    <string name="trashCan3_help">Conoce más sobre el bote rojo</string>
+    <string name="trashCan3_help">Conoce más sobre el bote gris</string>
+    <string name="trashCan4_help">Conoce más sobre el bote rojo</string>
 
     <string name="dialog_trashcan11">Valorizables</string>
     <string name="dialog_trashcan12">Todos aquellos residuos que se pueden reutilizar y no se descomponen con facilidad.\n\n<b>Como:</b>\n\nCartón\nPapel\nPet\nHDPE\nVidrio\nMetales\nElectrodomesticos</string>
