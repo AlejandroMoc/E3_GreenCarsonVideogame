@@ -39,6 +39,7 @@ public class SelectLevelActivity extends AppCompatActivity {
         switch(v.getId()) {
             case R.id.buttonBasic:
                 levelNumber = 1;
+                //Log.d("1", "Caso 1");
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button_d);
@@ -46,51 +47,43 @@ public class SelectLevelActivity extends AppCompatActivity {
                 buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
                 buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
-
                 //Falta poner para desactivar botones
-                break;
+                //break;
 
             case R.id.buttonInter:
                 levelNumber = 2;
+                //Log.d("2", "Caso 2");
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2);
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button_d);
                 buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
                 buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
-                break;
+                //break;
             case R.id.buttonAdvan:
                 levelNumber = 3;
+                //Log.d("3", "Caso 3");
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
                 buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-                break;
+                //break;
         }
     }
 
-    //Para empezar nivel
-    public void startLevel(View v){
-
-        //Falta ver cómo poder hacer uso del mismo archivo de Java para todos los tutoriales
-        //Seleccionar nivel
-        switch (levelNumber) {
-            case 1:
-                //Ir al tutorial 1
-                Intent intent = new Intent(this, TutorialBasicActivity.class);
-                startActivity(intent);
-            case 2:
-                Log.d("2", "Se envia a tutorial 2");
-                break;
-            case 3:
-                Intent intent3 = new Intent(this, TutorialAdvancedActivity.class);
-                startActivity(intent3);
-            default:
-
-                //Falta poner pedazo que diga, ¡Aun no eliges nivel!
-                dialogWarningAlert(v);
+    //Para enviar a tutoriales
+    public void startTutorial(View v){
+        Intent intent;
+        //Mandar a java de tutoriales
+        if (levelNumber>0 && levelNumber<4) {
+            Log.d("1", "Se manda a tutorial");
+            intent = new Intent(this, TutorialActivity.class);
+            intent.putExtra("levelNumber", levelNumber);
+            startActivity(intent);
+        } else {
+            dialogWarningAlert(v);
         }
     }
 

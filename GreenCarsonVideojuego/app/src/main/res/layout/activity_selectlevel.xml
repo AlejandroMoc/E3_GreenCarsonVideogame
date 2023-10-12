@@ -104,7 +104,7 @@
         android:layout_height="180dp"
         android:background="@drawable/logo_corner"
         android:contentDescription="@string/start_game_button"
-        android:onClick="startLevel"
+        android:onClick="startTutorial"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

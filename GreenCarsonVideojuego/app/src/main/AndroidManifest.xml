@@ -39,15 +39,7 @@
         </activity>
 
         <activity
-            android:name=".TutorialBasicActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-        <activity
-            android:name=".TutorialAdvancedActivity"
+            android:name=".TutorialActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
