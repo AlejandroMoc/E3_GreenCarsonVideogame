@@ -41,7 +41,7 @@
         android:layout_below="@+id/buttonHelp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
-        android:text="@string/dialog_selectlevel1"
+        android:text="@string/dialog_selectLevel1"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -58,7 +58,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
-        android:text="@string/dialog_selectlevel2"
+        android:text="@string/dialog_selectLevel2"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -72,8 +72,8 @@
         android:layout_above="@+id/logo_dialog2"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
-        android:contentDescription="@string/dialog_selectlevel3"
-        android:text="@string/dialog_selectlevel4"
+        android:contentDescription="@string/dialog_selectLevel3"
+        android:text="@string/dialog_selectLevel4"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="17sp"
@@ -87,7 +87,7 @@
         android:layout_alignBottom="@+id/background"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:contentDescription="@string/dialog_selectlevel3"
+        android:contentDescription="@string/dialog_selectLevel3"
         app:srcCompat="@drawable/logo_reecicla2" />
 
     <!--Boton de volver-->

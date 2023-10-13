@@ -3,7 +3,7 @@
     <!--General-->
     <string name="app_name">Green Carson - GAME</string>
 
-    <!--Pantalla de login-->
+    <!--Login screen-->
     <string name="userEmail">E-mail</string>
     <string name="userPassword">Password</string>
     <string name="loginButton">Log in</string>
@@ -11,13 +11,14 @@
     <string name="googleLogin">Log in with Google</string>
     <string name="facebookLogin">Log in with Facebook</string>
 
-    <!--Elementos globales-->
+    <!--Global elements-->
     <string name="logoDescription">GreenCarson Foundation Logotype</string>
     <string name="start_game_button">Start Game</string>
     <string name="go_back_button">Go Back</string>
     <string name="help_button">Help</string>
+    <string name="background">Background picture</string>
 
-    <!--Pantalla de selección de niveles-->
+    <!--Level selection screen-->
     <string name="basicLevel">Basic</string>
     <string name="interLevel">Intermediate</string>
     <string name="advancedLevel">Advanced</string>
@@ -28,19 +29,19 @@
     <string name="adv_levelSel">Advanced Level Selection</string>
     <string name="nightmare_levelSel">Nightmare Level Selection</string>
 
-    <string name="dialog_selectlevel1">How to play?</string>
-    <string name="dialog_selectlevel2">Waste falls from the sky! You must drag them to the correct bin to avoid contamination.\n \n Depending on the level you chose, it will be more difficult to differentiate between the types of waste.</string>
-    <string name="dialog_selectlevel3">Learn, have fun and reecicla!</string>
-    <string name="dialog_selectlevel4">Learn, have fun and</string>
+    <string name="dialog_selectLevel1">How to play?</string>
+    <string name="dialog_selectLevel2">Waste falls from the sky! You must drag them to the correct bin to avoid contamination.\n \n Depending on the level you chose, it will be more difficult to differentiate between the types of waste.</string>
+    <string name="dialog_selectLevel3">Learn, have fun and reecicla!</string>
+    <string name="dialog_selectLevel4">Learn, have fun and</string>
 
     <string name="dialog_quit">Quit</string>
     <string name="dialog_leave">Exit</string>
-    <string name="dialog_warningquit">Do you want to\nexit the app?</string>
-    <string name="dialog_warningexit">Do you want to\nexit the game?</string>
-    <string name="dialog_warningalert">You haven\'t chosen\na level yet!</string>
-    <string name="dialog_warningleave">Do you want to\nleave the game?</string>
+    <string name="dialog_warningQuit">Do you want to\nexit the app?</string>
+    <string name="dialog_warningExit">Do you want to\nexit the game?</string>
+    <string name="dialog_warningAlert">You haven\'t chosen\na level yet!</string>
+    <string name="dialog_warningLeave">Do you want to\nleave the game?</string>
 
-    <!--Tutorial básico (3 botes)-->
+    <!--Tutorial description-->
     <string name="tutorial_buttonSel">Play</string>
     <string name="tutorial_instruction">Touch the trash cans\nto learn more</string>
     <string name="trashCan1">Green trash can</string>

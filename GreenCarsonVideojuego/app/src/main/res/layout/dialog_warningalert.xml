@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:background="@drawable/gradient_warningalert"
-        android:text="@string/dialog_warningalert"
+        android:text="@string/dialog_warningAlert"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="22sp"

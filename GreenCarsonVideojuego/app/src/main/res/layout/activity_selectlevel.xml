@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/background_tiles"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/background" />
 
     <!--Botón de Regresar-->
     <Button
@@ -128,8 +129,8 @@
     <!--Botón de Empezar-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonCorner"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:background="@drawable/logo_corner"
         android:contentDescription="@string/start_game_button"
         android:onClick="startTutorial"

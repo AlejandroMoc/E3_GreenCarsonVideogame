@@ -31,12 +31,13 @@ public class SelectLevelActivity extends AppCompatActivity {
     //Para seleccionar nivel
     public void selectLevel(View v) {
 
-        //Ligar elementos a la pantalla
+        //Ligar elementos
         Button buttonBasic = findViewById(R.id.buttonBasic);
         Button buttonInter = findViewById(R.id.buttonInter);
         Button buttonAdvan = findViewById(R.id.buttonAdvan);
         Button buttonNightmare = findViewById(R.id.buttonNightmare);
 
+        //Falta cambiar de case a ifs
         switch(v.getId()) {
             case R.id.buttonBasic:
                 levelNumber = 1;

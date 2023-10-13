@@ -16,6 +16,7 @@
     <string name="start_game_button">Iniciar juego</string>
     <string name="go_back_button">Regresar</string>
     <string name="help_button">Ayuda</string>
+    <string name="background">Fondo de pantalla</string>
 
     <!--Pantalla de selección de niveles-->
     <string name="basicLevel">Básico</string>
@@ -28,19 +29,19 @@
     <string name="bas_levelSel">Selección de nivel básico</string>
     <string name="nightmare_levelSel">Selección de nivel pesadilla</string>
 
-    <string name="dialog_selectlevel1">¿Cómo se juega?</string>
-    <string name="dialog_selectlevel2">¡Los residuos caen del cielo! Debes arrastrarlos hasta el bote correcto para evitar la contaminación.\n \n Dependiendo el nivel que elijas, será más complicado diferenciar entre los tipos de residuos.</string>
-    <string name="dialog_selectlevel3">¡Aprende, diviértete y recicla!</string>
-    <string name="dialog_selectlevel4">¡Aprende, diviértete y</string>
+    <string name="dialog_selectLevel1">¿Cómo se juega?</string>
+    <string name="dialog_selectLevel2">¡Los residuos caen del cielo! Debes arrastrarlos hasta el bote correcto para evitar la contaminación.\n \n Dependiendo el nivel que elijas, será más complicado diferenciar entre los tipos de residuos.</string>
+    <string name="dialog_selectLevel3">¡Aprende, diviértete y recicla!</string>
+    <string name="dialog_selectLevel4">¡Aprende, diviértete y</string>
 
-    <string name="dialog_warningquit">¿Quieres salir\nde la aplicación?</string>
-    <string name="dialog_warningexit">¿Quieres salir\ndel juego?</string>
-    <string name="dialog_warningalert">¡Aun no eliges\nun nivel!</string>
-    <string name="dialog_warningleave">¿Quieres salir\\nde la partida?</string>
+    <string name="dialog_warningQuit">¿Quieres salir\nde la aplicación?</string>
+    <string name="dialog_warningExit">¿Quieres salir\ndel juego?</string>
+    <string name="dialog_warningAlert">¡Aun no eliges\nun nivel!</string>
+    <string name="dialog_warningLeave">¿Quieres salir\\nde la partida?</string>
     <string name="dialog_quit">Salir</string>
     <string name="dialog_leave">Salir</string>
 
-    <!--Tutorial básico (3 botes)-->
+    <!--Descripción de los tutoriales-->
     <string name="tutorial_buttonSel">Jugar</string>
     <string name="tutorial_instruction">Toca sobre los botes\npara aprender más</string>
     <string name="trashCan1">Bote de basura verde</string>
