@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_tilesparent"
     tools:context=".SelectLevelActivity">
+
+    <!--android:background="@drawable/background_tilesparent"-->
+
+    <!--Fondo de aplicación-->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_tiles"
+        android:scaleType="centerCrop" />
 
     <!--Botón de Regresar-->
     <Button
@@ -48,12 +57,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_game" />
 
+    <!--Falta verificar el diseño para que la distancia entre los botones
+    sea correcta. Puede que se deba cambiar el diseño de los botones.-->
+
     <!--Botones de niveles-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBasic"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/bas_levelSel"
         android:onClick="selectLevel"
@@ -96,6 +108,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonInter" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonNightmare"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/gradient_button2"
+        android:contentDescription="@string/nightmare_levelSel"
+        android:onClick="selectLevel"
+        android:text="@string/nightmareLevel"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdvan" />
 
     <!--Botón de Empezar-->
     <androidx.appcompat.widget.AppCompatButton

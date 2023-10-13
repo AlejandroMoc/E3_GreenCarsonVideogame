@@ -21,10 +21,12 @@
     <string name="basicLevel">Basic</string>
     <string name="interLevel">Intermediate</string>
     <string name="advancedLevel">Advanced</string>
+    <string name="nightmareLevel">Nightmare</string>
 
     <string name="bas_levelSel">Basic Level Selection</string>
     <string name="inter_levelSel">Intermediate Level Selection</string>
     <string name="adv_levelSel">Advanced Level Selection</string>
+    <string name="nightmare_levelSel">Nightmare Level Selection</string>
 
     <string name="dialog_selectlevel1">How to play?</string>
     <string name="dialog_selectlevel2">Waste falls from the sky! You must drag them to the correct bin to avoid contamination.\n \n Depending on the level you chose, it will be more difficult to differentiate between the types of waste.</string>
@@ -40,7 +42,7 @@
 
     <!--Tutorial básico (3 botes)-->
     <string name="tutorial_buttonSel">Play</string>
-    <string name="tutorial_instruction">Touch the trash cans to learn more</string>
+    <string name="tutorial_instruction">Touch the trash cans\nto learn more</string>
     <string name="trashCan1">Green trash can</string>
     <string name="trashCan2">Blue trash can</string>
     <string name="trashCan3">Red trash can</string>

@@ -4,9 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_tilesparent"
     tools:context=".LoginActivity"
     android:fitsSystemWindows="true" >
+
+    <!--android:background="@drawable/background_tilesparent"-->
+
+    <!--Fondo de aplicación-->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_tiles"
+        android:scaleType="centerCrop" />
 
     <!--Botón de Quit-->
     <Button

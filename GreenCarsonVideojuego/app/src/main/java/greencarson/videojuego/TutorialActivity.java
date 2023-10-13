@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
@@ -22,43 +23,32 @@ public class TutorialActivity extends AppCompatActivity {
 
         //Variables pasadas
         int levelNumber = getIntent().getIntExtra("levelNumber", 0);
-/*        if (levelNumber == 1){
-            Log.d("1", "SI ha pasado la variable");
-        }
-        else if (levelNumber == 2){
-            Log.d("2", "SI ha pasado la variable");
-        }
-        else if (levelNumber == 3){
-            Log.d("3", "SI ha pasado la variable");
-        }
-        else{
-            Log.d("0", "NO SE HA PASADO LA VARIABLE");
-        }*/
 
         //Ocultar barra de status
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        //Dendiendo del valor de levelNumber se dibujen distintos tutoriales
-        if (levelNumber==1 || levelNumber==2){
+        //Dependiendo de levelNumber, enviar a tutorial correspondiente
+        if (levelNumber==1 || levelNumber==2 || levelNumber==3){
             setContentView(R.layout.activity_tutorialbasic);
+            //Mantener la pantalla encendida
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
-        else if (levelNumber==3){
+        else if (levelNumber== 4){
             setContentView(R.layout.activity_tutorialadvanced);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
         else{
-            Log.d("Error TutorialBasicActivity l46", "Jamás de los jamases debería aparecer este caso");
+            Log.d("Error en TutorialActivity", "Número de nivel inválido");
         }
 
     }
 
     //Mandar a respectivos niveles
     public void playLevel_basic(View v){
-        Log.d("1", "Se envia a nivel 1");
+        Log.d("1", "Se envia a nivel básico");
         //Intent intent = new Intent(this, SelectLevelActivity.class);
         //startActivity(intent);
     }
-
-
 
     //Para regresar
     public void goToSelectScreen(View v){

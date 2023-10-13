@@ -35,41 +35,59 @@ public class SelectLevelActivity extends AppCompatActivity {
         Button buttonBasic = findViewById(R.id.buttonBasic);
         Button buttonInter = findViewById(R.id.buttonInter);
         Button buttonAdvan = findViewById(R.id.buttonAdvan);
+        Button buttonNightmare = findViewById(R.id.buttonNightmare);
 
         switch(v.getId()) {
             case R.id.buttonBasic:
                 levelNumber = 1;
-                //Log.d("1", "Caso 1");
+                Log.d("1", "Caso 1");
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button_d);
+                buttonNightmare.setBackgroundResource(R.drawable.gradient_button2_d);
                 //buttonBasic.setTextColor(getApplication().getResources().getColor(R.color.white));
                 buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
                 buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
+                buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 //Falta poner para desactivar botones
-                //break;
-
+                break;
             case R.id.buttonInter:
                 levelNumber = 2;
-                //Log.d("2", "Caso 2");
+                Log.d("2", "Caso 2");
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2);
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button_d);
+                buttonNightmare.setBackgroundResource(R.drawable.gradient_button2_d);
                 buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
                 buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
-                //break;
+                buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
+                break;
             case R.id.buttonAdvan:
                 levelNumber = 3;
-                //Log.d("3", "Caso 3");
+                Log.d("3", "Caso 3");
                 buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
                 buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
                 buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
+                buttonNightmare.setBackgroundResource(R.drawable.gradient_button2_d);
                 buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
                 buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-                //break;
+                buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
+                break;
+            case R.id.buttonNightmare:
+                levelNumber = 4;
+                Log.d("4", "Caso 4");
+                buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
+                buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
+                buttonAdvan.setBackgroundResource(R.drawable.gradient_button_d);
+                buttonNightmare.setBackgroundResource(R.drawable.gradient_button2);
+                buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
+                buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
+                buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
+                buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+                break;
         }
     }
 
@@ -77,8 +95,8 @@ public class SelectLevelActivity extends AppCompatActivity {
     public void startTutorial(View v){
         Intent intent;
         //Mandar a java de tutoriales
-        if (levelNumber>0 && levelNumber<4) {
-            Log.d("1", "Se manda a tutorial");
+        if (levelNumber>0 && levelNumber<5) {
+            Log.d("100", "Se manda a tutorial");
             intent = new Intent(this, TutorialActivity.class);
             intent.putExtra("levelNumber", levelNumber);
             startActivity(intent);

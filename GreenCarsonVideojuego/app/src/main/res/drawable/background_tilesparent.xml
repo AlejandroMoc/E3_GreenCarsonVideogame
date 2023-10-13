@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--<ImageView-->
+<!--    android:id="@+id/backgroundImageView"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:src="@drawable/background_tiles"-->
+<!--    android:scaleType="centerCrop"-->
+<!--/>-->
+
+
+<!--V2-->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/background_tiles"
+    android:tileMode="repeat"
+    android:gravity="fill_vertical"
+    android:scaleX="0.5"
+    android:scaleY="0.5" >
+</bitmap>
+
+
+<!--
+V1
+<?xml version="1.0" encoding="utf-8"?>
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
     android:src="@drawable/background_tiles"
     android:layout_centerInParent="true"
     android:scaleType="centerCrop">
 </bitmap>
-
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<bitmap xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    android:src="@drawable/background_tiles"-->
-<!--    android:tileMode="repeat"-->
-<!--    android:gravity="clip_vertical" >-->
-<!--</bitmap>-->
+-->

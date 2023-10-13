@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_tilesparent"
     tools:context=".TutorialActivity">
+    <!--android:background="@drawable/background_tilesparent"-->
+
+    <!--Fondo de aplicación-->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_tiles"
+        android:scaleType="centerCrop" />
 
     <!--Botón de Regresar-->
     <Button
@@ -70,7 +78,7 @@
         android:id="@+id/tutorialInstruction"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/tutorial_instruction"
         android:textAlignment="center"
         android:textColor="@color/black"

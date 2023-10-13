@@ -21,10 +21,12 @@
     <string name="basicLevel">Básico</string>
     <string name="interLevel">Intermedio</string>
     <string name="advancedLevel">Avanzado</string>
+    <string name="nightmareLevel">Pesadilla</string>
 
     <string name="adv_levelSel">Selección de nivel avanzado</string>
     <string name="inter_levelSel">Selección de nivel intermedio</string>
     <string name="bas_levelSel">Selección de nivel básico</string>
+    <string name="nightmare_levelSel">Selección de nivel pesadilla</string>
 
     <string name="dialog_selectlevel1">¿Cómo se juega?</string>
     <string name="dialog_selectlevel2">¡Los residuos caen del cielo! Debes arrastrarlos hasta el bote correcto para evitar la contaminación.\n \n Dependiendo el nivel que elijas, será más complicado diferenciar entre los tipos de residuos.</string>
@@ -40,7 +42,7 @@
 
     <!--Tutorial básico (3 botes)-->
     <string name="tutorial_buttonSel">Jugar</string>
-    <string name="tutorial_instruction">Toca sobre los botes para aprender más</string>
+    <string name="tutorial_instruction">Toca sobre los botes\npara aprender más</string>
     <string name="trashCan1">Bote de basura verde</string>
     <string name="trashCan2">Bote de basura azul</string>
     <string name="trashCan3">Bote de basura rojo</string>
