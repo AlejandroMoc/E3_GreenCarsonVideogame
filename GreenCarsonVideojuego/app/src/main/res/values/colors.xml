@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!--Paleta de Green Carson (Oficial)-->
     <color name="green">#56ab61</color>
-    <color name="turquoise">#34b18f</color>
+    <color name="turquoise" tools:keep="@color/turquoise">#34b18f</color>
     <color name="cyan">#288dc8</color>
-    <color name="royalBlue">#4b82bc</color>
+    <color name="royalBlue" tools:keep="@color/royalBlue">#4b82bc</color>
 
     <!--Colores redes sociales (Oficiales)-->
     <color name="facebookColor">#4267B2</color>
