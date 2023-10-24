@@ -17,12 +17,14 @@ import java.util.Objects;
 
 public class TutorialActivity extends AppCompatActivity {
 
+    int levelNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //Variables pasadas
-        int levelNumber = getIntent().getIntExtra("levelNumber", 0);
+        levelNumber = getIntent().getIntExtra("levelNumber", 0);
 
         //Ocultar barra de status
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -43,9 +45,17 @@ public class TutorialActivity extends AppCompatActivity {
 
     }
 
-    //Mandar a respectivos niveles
+    //Enviar a respectivos niveles
     public void playLevel_basic(View v){
-        Log.d("1", "Se envia a nivel básico");
+
+        if (levelNumber==4){
+            Log.d("4", "Se envia a nivel avanzado");
+            //FALTA AQUI CONECTAR
+        } else{
+            Log.d("1", "Se envia a nivel básico");
+        }
+
+
         //Intent intent = new Intent(this, SelectLevelActivity.class);
         //startActivity(intent);
     }
@@ -117,4 +127,11 @@ public class TutorialActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
         alertDialog.show();
     }
+
+    //Para iniciar juego
+/*    public void startGame(View view) {
+        GameView gameView = new GameView(this);
+        setContentView(gameView);
+    }*/
+
 }

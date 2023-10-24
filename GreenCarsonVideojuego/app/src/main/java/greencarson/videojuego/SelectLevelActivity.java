@@ -103,6 +103,7 @@ public class SelectLevelActivity extends AppCompatActivity {
             startActivity(intent);
         } else {
             dialogWarningAlert(v);
+            Log.d("--1", "Nunca de los nuncas debería pasar este error");
         }
     }
 
@@ -160,7 +161,4 @@ public class SelectLevelActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
         alertDialog.show();
     }
-
-    //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente
-
 }

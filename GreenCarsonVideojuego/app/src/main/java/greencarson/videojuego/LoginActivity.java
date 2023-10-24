@@ -80,7 +80,4 @@ public class LoginActivity extends AppCompatActivity {
 
         alertDialog.show();
     }
-
-    //Tras haber creadolo, lo unimos con el onClick, seleccionando la función correspondiente
-
 }
