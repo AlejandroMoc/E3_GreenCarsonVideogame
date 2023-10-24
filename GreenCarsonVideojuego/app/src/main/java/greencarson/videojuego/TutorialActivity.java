@@ -45,21 +45,6 @@ public class TutorialActivity extends AppCompatActivity {
 
     }
 
-    //Enviar a respectivos niveles
-    public void playLevel_basic(View v){
-
-        if (levelNumber==4){
-            Log.d("4", "Se envia a nivel avanzado");
-            //FALTA AQUI CONECTAR
-        } else{
-            Log.d("1", "Se envia a nivel básico");
-        }
-
-
-        //Intent intent = new Intent(this, SelectLevelActivity.class);
-        //startActivity(intent);
-    }
-
     //Para regresar
     public void goToSelectScreen(View v){
         Intent intent = new Intent(this, SelectLevelActivity.class);
@@ -128,10 +113,19 @@ public class TutorialActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    //Para iniciar juego
-/*    public void startGame(View view) {
-        GameView gameView = new GameView(this);
-        setContentView(gameView);
-    }*/
+    //Enviar a respectivos niveles
+    public void playLevel(View v){
+
+        if (levelNumber==4){
+            Log.d("4", "Se envia a nivel avanzado");
+            //FALTA AQUI AHORA CONECTAR
+
+        } else{
+            Log.d("1", "Se envia a nivel básico");
+            //GameView gameView = new GameView(this);
+            //setContentView(gameView);
+        }
+
+    }
 
 }

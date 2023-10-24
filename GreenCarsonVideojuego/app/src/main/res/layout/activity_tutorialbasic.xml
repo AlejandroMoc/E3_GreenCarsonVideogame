@@ -65,7 +65,7 @@
         android:layout_marginTop="60dp"
         android:background="@drawable/gradient_button3"
         android:contentDescription="@string/bas_levelSel"
-        android:onClick="playLevel_basic"
+        android:onClick="playLevel"
         android:text="@string/tutorial_buttonSel"
         android:textColor="@color/white"
         android:textSize="35sp"

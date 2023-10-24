@@ -63,4 +63,16 @@
     <string name="dialog_trashcan41">Inorgánicos no aprovechables</string>
     <string name="dialog_trashcan42">Todos aquellos residuos que ya no se pueden reutilizar y deben ser desechados con precaución.\n\nComo:\n\nResiduos tóxicos\nResiduos médicos\nResiduos industriales\nResiduos peligrosos\nResiduos de construcción</string>
 
+    <!--Añadidos para Juego-->
+    <string name="your_points">Tus puntos: </string>
+    <string name="highest_score">Puntaje más alto: </string>
+    <string name="dialog_restart">Reiniciar nivel</string>
+
+    <string name="winning_dialog">¡Limpiaste\nel mundo!</string>
+    <string name="losing_dialog">¡Se contaminó el mundo!</string>
+    <string name="winning_picture">Planeta sano</string>
+    <string name="losing_picture">Planeta enfermo</string>
+
+    <string name="winning_tip1">¿Sabías que únicamente el 9% de los residuos se reciclan en México?</string>
+
 </resources>

@@ -63,4 +63,16 @@
     <string name="dialog_trashcan41">Unusable inorganic waste</string>
     <string name="dialog_trashcan42">All those waste materials that can no longer be reused and must be disposed of with caution.\n\n<b>Like:</b>\n\nToxic waste\nMedical waste\nIndustrial waste\nHazardous waste\nConstruction waste</string>
 
+    <!--Añadidos para Juego-->
+    <string name="your_points">Your score: </string>
+    <string name="highest_score">Highest score: </string>
+    <string name="dialog_restart">Restart level</string>
+
+    <string name="winning_dialog">You cleaned\nthe world!</string>
+    <string name="losing_dialog">The world got polluted!</string>
+    <string name="winning_picture">Healthy planet</string>
+    <string name="losing_picture">Sick planet</string>
+
+    <string name="winning_tip1">Did you know that only 9% of waste is recycled in Mexico?</string>
+
 </resources>

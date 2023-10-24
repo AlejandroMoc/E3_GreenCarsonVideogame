@@ -37,7 +37,7 @@ public class SelectLevelActivity extends AppCompatActivity {
         Button buttonAdvan = findViewById(R.id.buttonAdvan);
         Button buttonNightmare = findViewById(R.id.buttonNightmare);
 
-        //Falta cambiar de case a ifs
+        //Falta cambiar a IFS
         switch(v.getId()) {
             case R.id.buttonBasic:
                 levelNumber = 1;
