@@ -7,8 +7,6 @@
     tools:context=".LoginActivity"
     android:fitsSystemWindows="true" >
 
-    <!--android:background="@drawable/background_tilesparent"-->
-
     <!--Fondo de aplicación-->
     <ImageView
         android:id="@+id/backgroundImageView"

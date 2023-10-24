@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TutorialActivity">
-    <!--android:background="@drawable/background_tilesparent"-->
 
     <!--Fondo de aplicación-->
     <ImageView
