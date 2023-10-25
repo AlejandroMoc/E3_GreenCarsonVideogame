@@ -46,7 +46,6 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
             buttonAdvan.setBackgroundResource(R.drawable.gradient_button_d);
             buttonNightmare.setBackgroundResource(R.drawable.gradient_button2_d);
-            //buttonBasic.setTextColor(getApplication().getResources().getColor(R.color.white));
             buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
             buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
             buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
