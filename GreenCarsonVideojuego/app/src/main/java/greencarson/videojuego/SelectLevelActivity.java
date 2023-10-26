@@ -32,14 +32,14 @@ public class SelectLevelActivity extends AppCompatActivity {
     public void selectLevel(View v) {
 
         //Ligar elementos
-        Button buttonBasic = findViewById(R.id.buttonBasic);
+        Button buttonBasic = findViewById(R.id.buttonLevel);
         Button buttonInter = findViewById(R.id.buttonInter);
         Button buttonAdvan = findViewById(R.id.buttonAdvan);
         Button buttonNightmare = findViewById(R.id.buttonNightmare);
 
         viewId = v.getId();
 
-        if (viewId == R.id.buttonBasic) {
+        if (viewId == R.id.buttonLevel) {
             levelNumber = 1;
             Log.d("1", "Caso 1");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button);
