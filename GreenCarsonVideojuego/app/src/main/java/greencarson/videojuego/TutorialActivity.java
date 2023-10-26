@@ -119,10 +119,12 @@ public class TutorialActivity extends AppCompatActivity {
         if (levelNumber==4){
             Log.d("4", "Se envia a nivel avanzado");
             //FALTA AQUI AHORA CONECTAR
+            //GameView gameView = new GameViewAdvanced(this);
+            //setContentView(gameView);
 
         } else{
             Log.d("1", "Se envia a nivel básico");
-            //GameView gameView = new GameView(this);
+            //GameView gameView = new GameViewBasic(this);
             //setContentView(gameView);
         }
 
