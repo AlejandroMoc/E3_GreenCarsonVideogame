@@ -124,8 +124,8 @@ public class TutorialActivity extends AppCompatActivity {
 
         } else{
             Log.d("1", "Se envia a nivel básico");
-            //GameView gameView = new GameViewBasic(this);
-            //setContentView(gameView);
+            GameView gameView = new GameView(this);
+            setContentView(gameView);
         }
 
     }
