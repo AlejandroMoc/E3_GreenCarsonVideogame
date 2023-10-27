@@ -78,8 +78,7 @@ public class GameView extends View {
     Trash trash;
     Iterator<Explosion> iterator;
 
-    public GameView(
-            Context context){
+    public GameView(Context context){
         super(context);
         this.context = context;
 
@@ -210,6 +209,7 @@ public class GameView extends View {
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
             Intent intent = new Intent(context, GameOver.class);
+
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
             ((Activity)context).finish();

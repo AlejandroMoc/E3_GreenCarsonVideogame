@@ -32,7 +32,6 @@ public class TutorialActivity extends AppCompatActivity {
         //Dependiendo de levelNumber, enviar a tutorial correspondiente
         if (levelNumber==1 || levelNumber==2 || levelNumber==3){
             setContentView(R.layout.activity_tutorialbasic);
-            //Mantener la pantalla encendida
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
         else if (levelNumber== 4){
@@ -118,9 +117,9 @@ public class TutorialActivity extends AppCompatActivity {
 
         if (levelNumber==4){
             Log.d("4", "Se envia a nivel avanzado");
-            //FALTA AQUI AHORA CONECTAR
-            //GameView gameView = new GameViewAdvanced(this);
-            //setContentView(gameView);
+            //FALTA AQUI AHORA CONECTAR NIVEL AVANZADO
+            GameView gameView = new GameView(this);
+            setContentView(gameView);
 
         } else{
             Log.d("1", "Se envia a nivel básico");

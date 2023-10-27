@@ -27,17 +27,17 @@ public class WinningActivity extends Activity {
         else if (winningState==0 && !second)
             setContentView(R.layout.activity_losing);
 
-        else if (winningState==1 && second)
+        //else if (winningState==1 && second)
+        else if (winningState==1)
             setContentView(R.layout.activity_winning2);
-        else if (winningState==0 && second)
+        //else if (winningState==0 && second)
+        else if (winningState==0)
             setContentView(R.layout.activity_losing2);
     }
 
     //Función para ir a pantallas
     public void goToLevels(View v){
-        Intent intent = new Intent(this, TutorialActivity.class);
-        //intent.putExtra("points", points);
-        //AQUI AHORA ADD EXTRA
+        Intent intent = new Intent(this, SelectLevelActivity.class);
         startActivity(intent);
     }
 

@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SelectLevelActivity">
 
-
-
     <!--Fondo de aplicación-->
     <ImageView
         android:id="@+id/backgroundImageView"
