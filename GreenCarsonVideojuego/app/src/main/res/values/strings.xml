@@ -79,4 +79,7 @@
     <string name="space">" "</string>
     <string name="trophy">Trophy</string>
 
+    <string name="points_placeholder">%1$d</string>
+    <string name="highest_placeholder">%1$d</string>
+
 </resources>

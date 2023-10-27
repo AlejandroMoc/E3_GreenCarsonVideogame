@@ -78,4 +78,8 @@
     <string name="dialog_go">¡Vamos!</string>
     <string name="space">" "</string>
     <string name="trophy">Trofeo</string>
+
+    <string name="points_placeholder">%1$d</string>
+    <string name="highest_placeholder">%1$d</string>
+
 </resources>

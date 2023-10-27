@@ -31,8 +31,7 @@ public class GameOver extends AppCompatActivity {
         points = Objects.requireNonNull(getIntent().getExtras()).getInt("points");
         winningState = Objects.requireNonNull(getIntent().getExtras()).getInt("winningState");
 
-        //tvPoints.setText(" "+points);
-        tvPoints.setText(getString(R.string.space)+points);
+        tvPoints.setText(getString(R.string.points_placeholder, points));
         sharedPreferences=getSharedPreferences("my_pref",0);
         int highest = sharedPreferences.getInt("highest",0);
 
@@ -44,8 +43,7 @@ public class GameOver extends AppCompatActivity {
             editor.putInt("highest",highest);
             editor.apply();
         }
-        //tvHighest.setText("  "+highest);
-        tvHighest.setText(getString(R.string.space)+highest);
+        tvHighest.setText(getString(R.string.highest_placeholder, highest));
     }
 
     public void restart(View view){
