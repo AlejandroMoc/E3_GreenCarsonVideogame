@@ -13,18 +13,6 @@
         android:scaleType="centerCrop"
         android:contentDescription="@string/background" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/logo_restart"
-        android:contentDescription="@string/dialog_restart"
-        android:onClick="restart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/ivNewHighest"
         android:layout_width="wrap_content"

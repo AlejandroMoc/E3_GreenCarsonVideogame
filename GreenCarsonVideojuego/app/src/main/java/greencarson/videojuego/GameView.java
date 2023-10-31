@@ -12,6 +12,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
@@ -27,10 +28,7 @@ import java.util.Random;
 public class GameView extends View {
     final Bitmap background;
     final Bitmap ground;
-    final Bitmap dumpsterA;
-    final Bitmap dumpsterB;
-    final Bitmap dumpsterC;
-    final Bitmap dumpsterD;
+    Bitmap dumpsterA, dumpsterB, dumpsterC, dumpsterD;
     final Bitmap heart;
     final Rect rectBackground;
     final Rect rectGround;
@@ -50,19 +48,11 @@ public class GameView extends View {
     final float dumpsterCX;
     final float dumpsterDX;
     final float dumpstersY;
-    float newtrashyX;
-    float newtrashyY;
-    float touchX;
-    float touchY;
-    float dumpsterX;
-    int points;
-    int winningState;
-    final int minPoints = 500;
-    int life = 5;
-    final int trashDensity=2;
-    int action;
-    int i;
-    int trashType;
+    float newtrashyX, newtrashyY, touchX, touchY, dumpsterX;
+    int points, action, i, trashType, winningState, minPoints;
+    //FALTA AQUI CAMBIAR DEPENDIENDO DEL Nivel
+    int trashDensity=2, life = 5;
+    int levelNumber;
     static int dWidth;
     static int dHeight;
     static final int heartSize=120;
@@ -78,9 +68,12 @@ public class GameView extends View {
     Trash trash;
     Iterator<Explosion> iterator;
 
-    public GameView(Context context){
+    public GameView(Context context, int levelNumber){
+
         super(context);
         this.context = context;
+        //Recuperar número de nivel
+        this.levelNumber = levelNumber;
 
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background_tiles);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground2);
@@ -91,8 +84,23 @@ public class GameView extends View {
         dumpsterC = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_3);
         dumpsterD = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_4);
 
-        //Falta aqui redimensionar para cuatro botes
-        //dumpsterB = Bitmap.createScaledBitmap(dumpsterB, dumpsterB.getWidth()-dumpsterB.getWidth()/3, dumpsterB.getHeight()-dumpsterB.getHeight()/3, true);
+        //Redimensionar cuatro botes
+        if (levelNumber ==4){
+
+            Log.d("OK", "Sí se está cambiando el tamaño de los botes");
+            dumpsterA = Bitmap.createScaledBitmap(dumpsterA, dumpsterA.getWidth()-dumpsterA.getWidth()/3, dumpsterA.getHeight()-dumpsterA.getHeight()/3, true);
+            dumpsterB = Bitmap.createScaledBitmap(dumpsterB, dumpsterB.getWidth()-dumpsterB.getWidth()/3, dumpsterB.getHeight()-dumpsterB.getHeight()/3, true);
+            dumpsterC = Bitmap.createScaledBitmap(dumpsterC, dumpsterC.getWidth()-dumpsterC.getWidth()/3, dumpsterC.getHeight()-dumpsterC.getHeight()/3, true);
+            dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth()-dumpsterD.getWidth()/3, dumpsterD.getHeight()-dumpsterD.getHeight()/3, true);
+            minPoints=1000;
+
+        } else if (levelNumber==3){
+            minPoints=800;
+        } else if (levelNumber==2){
+            minPoints=500;
+        } else if (levelNumber==1){
+            minPoints=200;
+        }
 
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -124,12 +132,21 @@ public class GameView extends View {
         random = new Random();
 
         //Posición de los botes
-        dumpsterAX= Math.floorDiv(dWidth,20);
-        dumpsterBX = Math.floorDiv(dWidth,2)-Math.floorDiv(dumpsterB.getWidth(),2);
-        dumpsterCX = dWidth-dumpsterB.getWidth()-dumpsterAX;
-        //Falta cambiar para nivel avanzado
-        dumpsterDX = dWidth-dumpsterC.getWidth()-dumpsterBX;
-        dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight()+100;
+        if (levelNumber==4){
+            dumpsterAX= Math.floorDiv(dWidth,20);
+            dumpsterBX = Math.floorDiv(dWidth,2)-Math.floorDiv(dumpsterB.getWidth(),2);
+            dumpsterCX = dWidth-dumpsterB.getWidth()-dumpsterAX;
+            dumpsterDX = dWidth-dumpsterC.getWidth()-dumpsterBX;
+            dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight()+100;
+        }
+        else{
+            dumpsterAX= Math.floorDiv(dWidth,20);
+            dumpsterBX = Math.floorDiv(dWidth,2)-Math.floorDiv(dumpsterB.getWidth(),4);
+            dumpsterCX = dWidth-dumpsterB.getWidth()-dumpsterBX;
+            dumpsterDX = dWidth-dumpsterC.getWidth()-dumpsterCX;
+            dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight()+100;
+        }
+
 
         //Arrays para elementos
         trashesA= new ArrayList<>();
@@ -148,6 +165,12 @@ public class GameView extends View {
             trashesB.add(trash);
             trash = new Trash(context, 3);
             trashesC.add(trash);
+
+            if (levelNumber==4){
+                trash = new Trash(context, 4);
+                trashesD.add(trash);
+            }
+
         }
     }
 
@@ -156,7 +179,6 @@ public class GameView extends View {
 
         //Checar si es gameOver
         setGameOver();
-
 
         if (!gameOver){
             super.onDraw(canvas);
@@ -178,7 +200,17 @@ public class GameView extends View {
                 floorCollision(trashesA);
                 floorCollision(trashesB);
                 floorCollision(trashesC);
+
+                if (levelNumber==4){
+                    canvas.drawBitmap(trashesD.get(i).getTrash(trashesD.get(i).trashFrame), trashesD.get(i).trashX, trashesD.get(i).trashY, null);
+                    trashesD.get(i).trashY += trashesD.get(i).trashVelocity;
+                    floorCollision(trashesD);
+                }
+
             }
+
+            //AQUI AHORA ACTUALIZAR ESTO PARA QUE CAMBIE SI ES NIVEL AVANZADO
+
 
             //Actualizar frames de explosiones
             iterator = explosions.iterator();
@@ -195,8 +227,14 @@ public class GameView extends View {
             canvas.drawBitmap(dumpsterA, dumpsterAX, dumpstersY, null);
             canvas.drawBitmap(dumpsterB, dumpsterBX, dumpstersY, null);
             canvas.drawBitmap(dumpsterC, dumpsterCX, dumpstersY, null);
+
+            if (levelNumber==4){
+                canvas.drawBitmap(dumpsterD, dumpsterDX, dumpstersY, null);
+            }
+
             heartDrawable.draw(canvas);
-            canvas.drawText(""+points+"/500", Math.floorDiv(dWidth,2)-200, Math.floorDiv(dHeight,7)-pointsTextSize, pointsNumber);
+            //CAMBIAR AQUI PARA PUNTAJE MINIMO POR NIVEL
+            canvas.drawText(""+points+"/"+minPoints, Math.floorDiv(dWidth,2)-200, Math.floorDiv(dHeight,7)-pointsTextSize, pointsNumber);
             canvas.drawText("x"+life, dWidth-150, Math.floorDiv(dHeight, 6)-lifeTextSize-80, lifeNumber);
             handler.postDelayed(runnable, UPDATE_MILLIS);
         }
@@ -205,11 +243,11 @@ public class GameView extends View {
     //Función para enviar a gameOver
     private void setGameOver() {
         //Mandar a pantalla de reinicio o de aceptación
-        if(life==0){
+        if(life<=0){
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
-            Intent intent = new Intent(context, GameOver.class);
 
+            Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
             ((Activity)context).finish();
@@ -229,6 +267,11 @@ public class GameView extends View {
         movementCollision(event, trashesA);
         movementCollision(event, trashesB);
         movementCollision(event, trashesC);
+
+        if (levelNumber==4){
+            movementCollision(event, trashesD);
+        }
+
         return true;
     }
 
@@ -252,9 +295,9 @@ public class GameView extends View {
                     trashNow.oldTrashX = trashNow.trashX;
                     trashNow.oldTrashY = trashNow.trashY;
                 } else if (action == MotionEvent.ACTION_MOVE) {
-                    trashNow.shifX = trashNow.oldX - touchX;
+                    trashNow.shiftX = trashNow.oldX - touchX;
                     trashNow.shiftY = trashNow.oldY - touchY;
-                    newtrashyX = trashNow.oldTrashX - trashNow.shifX;
+                    newtrashyX = trashNow.oldTrashX - trashNow.shiftX;
                     newtrashyY = trashNow.oldTrashY - trashNow.shiftY;
 
                     //Mover en ejes
@@ -276,21 +319,23 @@ public class GameView extends View {
                         dumpsterCollision(trashNow, dumpsterA, true);
                         dumpsterCollision(trashNow, dumpsterB, false);
                         dumpsterCollision(trashNow, dumpsterC, false);
+                        dumpsterCollision(trashNow, dumpsterD, false);
                     } else if (trashType==2){
                         dumpsterCollision(trashNow, dumpsterA, false);
                         dumpsterCollision(trashNow, dumpsterB, true);
                         dumpsterCollision(trashNow, dumpsterC, false);
+                        dumpsterCollision(trashNow, dumpsterD, false);
                     } else if (trashType==3){
                         dumpsterCollision(trashNow, dumpsterA, false);
                         dumpsterCollision(trashNow, dumpsterB, false);
                         dumpsterCollision(trashNow, dumpsterC, true);
-                    } else if (trashType==4){
+                        dumpsterCollision(trashNow, dumpsterD, false);
 
-                        //Falta Bote correcto D
+                    } else if (trashType==4){
                         dumpsterCollision(trashNow, dumpsterA, false);
                         dumpsterCollision(trashNow, dumpsterB, false);
                         dumpsterCollision(trashNow, dumpsterC, false);
-
+                        dumpsterCollision(trashNow, dumpsterD, true);
                     }
 
 
@@ -318,7 +363,7 @@ public class GameView extends View {
                 && trashNow.trashY + trashNow.getTrashWidth()>=dumpstersY
                 && trashNow.trashY + trashNow.getTrashWidth()<=dumpstersY + dumpster.getHeight()){
 
-            //Checar si es el bote correcto o no
+            //FALTA CAMBIAR DE ACUERDO CON EL NIVEL (SOBRE T0D0 EL +10)
             if (state)
                 points +=10;
             else life --;

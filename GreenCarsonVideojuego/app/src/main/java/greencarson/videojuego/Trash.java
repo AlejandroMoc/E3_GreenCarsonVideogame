@@ -8,10 +8,10 @@ import java.util.Random;
 
 public class Trash {
     public final int trashTypeMine;
-    final Bitmap[] trash =new Bitmap[9];
+    final Bitmap[] trash =new Bitmap[12];
     final Random random = new Random();
     int trashFrame;
-    float trashX, trashY, trashVelocity, oldTrashX, oldTrashY, oldX, oldY, shifX, shiftY;
+    float trashX, trashY, trashVelocity, oldTrashX, oldTrashY, oldX, oldY, shiftX, shiftY;
 
     //Constructor
     public Trash(Context context, int trashType){
@@ -32,6 +32,11 @@ public class Trash {
         trash[6] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c1);
         trash[7] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c2);
         trash[8] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);
+
+        //Basura tipo D
+        trash[9] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c1);
+        trash[10] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c2);
+        trash[11] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);
 
         //Crear estado y posición inicial
         resetTrash(trashType);
@@ -64,7 +69,7 @@ public class Trash {
         } else if (trashType == 3){
             trashFrame = new Random().nextInt(3) + 6;
         } else if (trashType == 4){
-            trashFrame = new Random().nextInt(3);
+            trashFrame = new Random().nextInt(3) + 9;
         }
     }
 }

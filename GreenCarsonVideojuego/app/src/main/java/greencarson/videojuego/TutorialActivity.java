@@ -115,18 +115,14 @@ public class TutorialActivity extends AppCompatActivity {
     //Enviar a respectivos niveles
     public void playLevel(View v){
 
-        if (levelNumber==4){
+/*        if (levelNumber==4){
             Log.d("4", "Se envia a nivel avanzado");
-            //FALTA AQUI AHORA CONECTAR NIVEL AVANZADO
-            GameView gameView = new GameView(this);
-            setContentView(gameView);
-
         } else{
             Log.d("1", "Se envia a nivel básico");
-            GameView gameView = new GameView(this);
-            setContentView(gameView);
-        }
+        }*/
 
+        GameView gameView = new GameView(this, levelNumber);
+        setContentView(gameView);
     }
 
 }
