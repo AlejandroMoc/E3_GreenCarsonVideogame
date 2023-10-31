@@ -92,7 +92,6 @@ public class SelectLevelActivity extends AppCompatActivity {
     }
 
     //Para enviar a tutoriales
-    //FALTA AQUI VER SI SE PUEDE CAMBIAR A GOTOTUTORIAL
     public void startTutorial(View v){
         Intent intent;
         //Mandar a java de tutoriales

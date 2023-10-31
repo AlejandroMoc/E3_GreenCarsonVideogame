@@ -3,7 +3,6 @@ package greencarson.videojuego;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import java.util.Objects;
@@ -43,7 +42,6 @@ public class WinningActivity extends Activity {
         startActivity(intent);
     }
 
-
     public void goToSecondPart(View v){
         Intent intent = new Intent(this, WinningActivity.class);
         intent.putExtra("second", true);
@@ -51,25 +49,11 @@ public class WinningActivity extends Activity {
         startActivity(intent);
     }
 
-    //FALTA AQUI ENVIAR A RESPECTIVO TUTORIAL
     public void goToTutorial(View v){
         Intent intent = new Intent(this, TutorialActivity.class);
         intent.putExtra("levelNumber", levelNumber);
         startActivity(intent);
     }
 
-/*    public void startTutorial(View v){
-        Intent intent;
-        //Mandar a java de tutoriales
-        if (levelNumber>0 && levelNumber<5) {
-            Log.d("100", "Se manda a tutorial");
-            intent = new Intent(this, TutorialActivity.class);
-            intent.putExtra("levelNumber", levelNumber);
-            startActivity(intent);
-        } else {
-            dialogWarningAlert(v);
-            Log.d("--1", "Nunca de los nuncas debería pasar este error");
-        }
-    }*/
 
 }

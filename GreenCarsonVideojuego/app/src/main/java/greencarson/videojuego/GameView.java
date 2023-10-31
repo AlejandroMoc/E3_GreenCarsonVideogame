@@ -51,7 +51,7 @@ public class GameView extends View {
     float newtrashyX, newtrashyY, touchX, touchY, dumpsterX;
     int points, action, i, trashType, winningState, minPoints, trashDensity, life;
     //FALTA AQUI CAMBIAR DEPENDIENDO DEL Nivel
-    int levelNumber;
+    final int levelNumber;
     static int dWidth;
     static int dHeight;
     static final int heartSize=120;

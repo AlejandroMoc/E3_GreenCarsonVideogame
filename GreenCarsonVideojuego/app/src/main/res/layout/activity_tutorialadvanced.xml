@@ -22,7 +22,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/logo_quit"
+        android:background="@drawable/logo_back"
         android:contentDescription="@string/go_back_button"
         android:onClick="goToSelectScreen"
         app:backgroundTint="@null"
