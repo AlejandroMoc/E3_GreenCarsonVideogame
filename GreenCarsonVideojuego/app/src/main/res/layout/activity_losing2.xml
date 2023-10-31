@@ -82,6 +82,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/gradient_winning1"
+        android:onClick="goToTutorial"
         android:text="@string/dialog_go"
         android:textColor="@color/white"
         android:textSize="20sp"

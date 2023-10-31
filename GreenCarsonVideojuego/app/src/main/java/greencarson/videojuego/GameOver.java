@@ -18,7 +18,7 @@ public class GameOver extends AppCompatActivity {
     TextView tvHighest;
     SharedPreferences sharedPreferences;
     ImageView ivNewHighest;
-    int winningState, points;
+    int winningState, points, levelNumber;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,7 @@ public class GameOver extends AppCompatActivity {
         ivNewHighest = findViewById(R.id.ivNewHighest);
         points = Objects.requireNonNull(getIntent().getExtras()).getInt("points");
         winningState = Objects.requireNonNull(getIntent().getExtras()).getInt("winningState");
+        levelNumber = Objects.requireNonNull(getIntent().getExtras()).getInt("levelNumber");
 
         tvPoints.setText(getString(R.string.points_placeholder, points));
         sharedPreferences=getSharedPreferences("my_pref",0);
@@ -46,16 +47,12 @@ public class GameOver extends AppCompatActivity {
         tvHighest.setText(getString(R.string.highest_placeholder, highest));
     }
 
-    public void restart(View view){
-        Intent intent = new Intent(GameOver.this, TutorialActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
     public void goToWinningState(View v){
         Intent intent;
         intent = new Intent(this, WinningActivity.class);
         intent.putExtra("winningState", winningState);
+        intent.putExtra("levelNumber", levelNumber);
+        //Pasar aquí levelNumber
         startActivity(intent);
     }
 

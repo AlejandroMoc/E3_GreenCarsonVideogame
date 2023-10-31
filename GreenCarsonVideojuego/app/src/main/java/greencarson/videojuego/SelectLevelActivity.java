@@ -23,6 +23,7 @@ public class SelectLevelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //Ocultar barra de status
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_selectlevel);
@@ -91,6 +92,7 @@ public class SelectLevelActivity extends AppCompatActivity {
     }
 
     //Para enviar a tutoriales
+    //FALTA AQUI VER SI SE PUEDE CAMBIAR A GOTOTUTORIAL
     public void startTutorial(View v){
         Intent intent;
         //Mandar a java de tutoriales

@@ -30,15 +30,15 @@ public class TutorialActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         //Dependiendo de levelNumber, enviar a tutorial correspondiente
-        if (levelNumber==1 || levelNumber==2 || levelNumber==3){
+        if (levelNumber== 4){
+            setContentView(R.layout.activity_tutorialadvanced);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        } else if (levelNumber==1 || levelNumber==2 || levelNumber==3){
             setContentView(R.layout.activity_tutorialbasic);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
-        else if (levelNumber== 4){
-            setContentView(R.layout.activity_tutorialadvanced);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        }
-        else{
+        //FALTA AQUI QUITAR ESTO
+        else {
             Log.d("Error en TutorialActivity", "Número de nivel inválido");
         }
 
@@ -114,13 +114,6 @@ public class TutorialActivity extends AppCompatActivity {
 
     //Enviar a respectivos niveles
     public void playLevel(View v){
-
-/*        if (levelNumber==4){
-            Log.d("4", "Se envia a nivel avanzado");
-        } else{
-            Log.d("1", "Se envia a nivel básico");
-        }*/
-
         GameView gameView = new GameView(this, levelNumber);
         setContentView(gameView);
     }

@@ -49,9 +49,8 @@ public class GameView extends View {
     final float dumpsterDX;
     final float dumpstersY;
     float newtrashyX, newtrashyY, touchX, touchY, dumpsterX;
-    int points, action, i, trashType, winningState, minPoints;
+    int points, action, i, trashType, winningState, minPoints, trashDensity, life;
     //FALTA AQUI CAMBIAR DEPENDIENDO DEL Nivel
-    int trashDensity=2, life = 5;
     int levelNumber;
     static int dWidth;
     static int dHeight;
@@ -86,20 +85,30 @@ public class GameView extends View {
 
         //Redimensionar cuatro botes
         if (levelNumber ==4){
-
-            Log.d("OK", "Sí se está cambiando el tamaño de los botes");
+            Log.d("4", "Se envia a nivel avanzado");
             dumpsterA = Bitmap.createScaledBitmap(dumpsterA, dumpsterA.getWidth()-dumpsterA.getWidth()/3, dumpsterA.getHeight()-dumpsterA.getHeight()/3, true);
             dumpsterB = Bitmap.createScaledBitmap(dumpsterB, dumpsterB.getWidth()-dumpsterB.getWidth()/3, dumpsterB.getHeight()-dumpsterB.getHeight()/3, true);
             dumpsterC = Bitmap.createScaledBitmap(dumpsterC, dumpsterC.getWidth()-dumpsterC.getWidth()/3, dumpsterC.getHeight()-dumpsterC.getHeight()/3, true);
             dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth()-dumpsterD.getWidth()/3, dumpsterD.getHeight()-dumpsterD.getHeight()/3, true);
             minPoints=1000;
+            trashDensity=2;
+            life=5;
 
         } else if (levelNumber==3){
+            Log.d("3", "Se envia a nivel avanzado");
             minPoints=800;
+            trashDensity=2;
+            life=5;
         } else if (levelNumber==2){
+            Log.d("2", "Se envia a nivel intermedio");
             minPoints=500;
+            trashDensity=2;
+            life=5;
         } else if (levelNumber==1){
+            Log.d("1", "Se envia a nivel básico");
             minPoints=200;
+            trashDensity=2;
+            life=5;
         }
 
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
@@ -134,16 +143,16 @@ public class GameView extends View {
         //Posición de los botes
         if (levelNumber==4){
             dumpsterAX= Math.floorDiv(dWidth,20);
-            dumpsterBX = Math.floorDiv(dWidth,2)-Math.floorDiv(dumpsterB.getWidth(),2);
+            dumpsterBX = Math.floorDiv(dWidth,3)-Math.floorDiv(dumpsterB.getWidth(),3);
             dumpsterCX = dWidth-dumpsterB.getWidth()-dumpsterAX;
             dumpsterDX = dWidth-dumpsterC.getWidth()-dumpsterBX;
             dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight()+100;
         }
         else{
             dumpsterAX= Math.floorDiv(dWidth,20);
-            dumpsterBX = Math.floorDiv(dWidth,2)-Math.floorDiv(dumpsterB.getWidth(),4);
-            dumpsterCX = dWidth-dumpsterB.getWidth()-dumpsterBX;
-            dumpsterDX = dWidth-dumpsterC.getWidth()-dumpsterCX;
+            dumpsterBX = Math.floorDiv(dWidth,2)-Math.floorDiv(dumpsterB.getWidth(),2);
+            dumpsterCX = dWidth-dumpsterB.getWidth()-dumpsterAX;
+            dumpsterDX = dWidth-dumpsterC.getWidth()-dumpsterBX;
             dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight()+100;
         }
 
@@ -247,9 +256,12 @@ public class GameView extends View {
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
 
+            //FALTA AQUI PASAR EL LEVELNUMBER
             Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
+            intent.putExtra("levelNumber", levelNumber);
+
             ((Activity)context).finish();
             context.startActivity(intent);
             gameOver=true;
