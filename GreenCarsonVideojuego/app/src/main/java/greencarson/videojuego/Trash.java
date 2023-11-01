@@ -14,7 +14,7 @@ public class Trash {
     float trashX, trashY, trashVelocity, oldTrashX, oldTrashY, oldX, oldY, shiftX, shiftY;
 
     //Constructor
-    public Trash(Context context, int trashType){
+    public Trash(Context context, int trashType, int levelNumber){
 
         trashTypeMine= trashType;
 
@@ -39,7 +39,7 @@ public class Trash {
         trash[11] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);
 
         //Crear estado y posición inicial
-        resetTrash(trashType);
+        resetTrash(trashType, levelNumber);
     }
 
     public Bitmap getTrash(int trashFrame){
@@ -54,7 +54,7 @@ public class Trash {
         return trash[0].getHeight();
     }
 
-    public void resetTrash(int trashType) {
+    public void resetTrash(int trashType, int levelNumber) {
         trashX = random.nextInt(GameView.dWidth - getTrashWidth());
         trashY = -200 + random.nextInt(600) * -1;
         //Falta ver si vale la pena o no tener velocidad individual o por categoría
@@ -63,13 +63,14 @@ public class Trash {
         //Aleatorizar gráfico de acuerdo con el tipo
         //AQUI AHORA falta colapsar esto para usar un solo valor +algo
         if (trashType == 1){
-            trashFrame = new Random().nextInt(3);
+            trashFrame = new Random().nextInt(levelNumber);
         } else if (trashType == 2){
-            trashFrame = new Random().nextInt(3) + 3;
+            trashFrame = new Random().nextInt(levelNumber) + 3;
         } else if (trashType == 3){
-            trashFrame = new Random().nextInt(3) + 6;
+            trashFrame = new Random().nextInt(levelNumber) + 6;
         } else if (trashType == 4){
-            trashFrame = new Random().nextInt(3) + 9;
+            trashFrame = new Random().nextInt(levelNumber) + 9;
         }
     }
+
 }

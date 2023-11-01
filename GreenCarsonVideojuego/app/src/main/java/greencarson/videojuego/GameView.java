@@ -107,7 +107,7 @@ public class GameView extends View {
         } else if (levelNumber==1){
             Log.d("1", "Se envia a nivel básico");
             minPoints=200;
-            trashDensity=2;
+            trashDensity=1;
             life=5;
         }
 
@@ -168,15 +168,15 @@ public class GameView extends View {
         //Falta ver si se puede convertir a un mapa
         for (i=0; i<trashDensity; i++){
             //Falta añadir tipo de basura C y D
-            trash = new Trash(context, 1);
+            trash = new Trash(context, 1, levelNumber);
             trashesA.add(trash);
-            trash = new Trash(context, 2);
+            trash = new Trash(context, 2, levelNumber);
             trashesB.add(trash);
-            trash = new Trash(context, 3);
+            trash = new Trash(context, 3, levelNumber);
             trashesC.add(trash);
 
             if (levelNumber==4){
-                trash = new Trash(context, 4);
+                trash = new Trash(context, 4, levelNumber);
                 trashesD.add(trash);
             }
 
@@ -206,14 +206,14 @@ public class GameView extends View {
                 trashesC.get(i).trashY += trashesC.get(i).trashVelocity;
 
                 //Checar colisión con piso
-                floorCollision(trashesA);
-                floorCollision(trashesB);
-                floorCollision(trashesC);
+                floorCollision(trashesA, levelNumber);
+                floorCollision(trashesB, levelNumber);
+                floorCollision(trashesC, levelNumber);
 
                 if (levelNumber==4){
                     canvas.drawBitmap(trashesD.get(i).getTrash(trashesD.get(i).trashFrame), trashesD.get(i).trashX, trashesD.get(i).trashY, null);
                     trashesD.get(i).trashY += trashesD.get(i).trashVelocity;
-                    floorCollision(trashesD);
+                    floorCollision(trashesD, levelNumber);
                 }
 
             }
@@ -328,26 +328,26 @@ public class GameView extends View {
 
                     //Falta cambiar a cases
                     if (trashType==1){
-                        dumpsterCollision(trashNow, dumpsterA, true);
-                        dumpsterCollision(trashNow, dumpsterB, false);
-                        dumpsterCollision(trashNow, dumpsterC, false);
-                        dumpsterCollision(trashNow, dumpsterD, false);
+                        dumpsterCollision(trashNow, dumpsterA, true, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
                     } else if (trashType==2){
-                        dumpsterCollision(trashNow, dumpsterA, false);
-                        dumpsterCollision(trashNow, dumpsterB, true);
-                        dumpsterCollision(trashNow, dumpsterC, false);
-                        dumpsterCollision(trashNow, dumpsterD, false);
+                        dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterB, true, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
                     } else if (trashType==3){
-                        dumpsterCollision(trashNow, dumpsterA, false);
-                        dumpsterCollision(trashNow, dumpsterB, false);
-                        dumpsterCollision(trashNow, dumpsterC, true);
-                        dumpsterCollision(trashNow, dumpsterD, false);
+                        dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterC, true, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
 
                     } else if (trashType==4){
-                        dumpsterCollision(trashNow, dumpsterA, false);
-                        dumpsterCollision(trashNow, dumpsterB, false);
-                        dumpsterCollision(trashNow, dumpsterC, false);
-                        dumpsterCollision(trashNow, dumpsterD, true);
+                        dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
+                        dumpsterCollision(trashNow, dumpsterD, true, levelNumber);
                     }
 
 
@@ -357,7 +357,7 @@ public class GameView extends View {
     }
 
     //AQUI AHORA VERIFICAR COMO SIMPLIFICAR DUMPSTER Y DUMPSTER X EN UN SOLO VALOR (sin ifs)
-    private void dumpsterCollision(Trash trashNow, Bitmap dumpster, boolean state) {
+    private void dumpsterCollision(Trash trashNow, Bitmap dumpster, boolean state, int levelNumber) {
 
         //Falta cambiar a cases
         if (dumpster==dumpsterA){
@@ -380,18 +380,18 @@ public class GameView extends View {
                 points +=10;
             else life --;
 
-            trashNow.resetTrash(trashType);
+            trashNow.resetTrash(trashType, levelNumber);
         }
     }
 
-    private void floorCollision(ArrayList<Trash> trashy) {
+    private void floorCollision(ArrayList<Trash> trashy, int levelNumber) {
         if (trashy.get(i).trashY + trashy.get(i).getTrashHeight()>=dHeight-ground.getHeight()){
             life--;
             explosion = new Explosion(context);
             explosion.explosionX = trashy.get(i).trashX;
             explosion.explosionY = trashy.get(i).trashY;
             explosions.add(explosion);
-            trashy.get(i).resetTrash(trashy.get(i).trashTypeMine);
+            trashy.get(i).resetTrash(trashy.get(i).trashTypeMine, levelNumber);
         }
     }
 }
