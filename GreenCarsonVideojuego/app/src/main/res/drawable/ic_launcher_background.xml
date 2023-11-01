@@ -4,9 +4,12 @@
     xmlns:android = "http://schemas.android.com/apk/res/android" >
     <gradient
         android:angle="90"
-        android:startColor = "@color/green"
-        android:endColor = "@color/cyan"
+        android:startColor = "@color/cyan"
+        android:endColor = "@color/purple_700"
         android:type = "linear" />
+    <!--android:startColor = "@color/green"
+        android:endColor = "@color/cyan"-->
+
 
     <!--
     Falta checar qué color dejar como definitivo
