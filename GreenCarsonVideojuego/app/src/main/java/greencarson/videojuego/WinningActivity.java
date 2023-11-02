@@ -49,10 +49,13 @@ public class WinningActivity extends Activity {
         startActivity(intent);
     }
 
-    public void goToTutorial(View v){
-        Intent intent = new Intent(this, TutorialActivity.class);
+    public void playLevelAgain(View v){
+/*        Intent intent = new Intent(this, TutorialActivity.class);
         intent.putExtra("levelNumber", levelNumber);
-        startActivity(intent);
+        startActivity(intent);*/
+
+        GameView gameView = new GameView(this, levelNumber);
+        setContentView(gameView);
     }
 
 

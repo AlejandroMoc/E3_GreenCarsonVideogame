@@ -100,7 +100,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/trashcan_1"
-        tools:ignore="VisualLintBounds" />
+        tools:ignore="VisualLintBounds"
+        android:onClick="dialog_trashcan1" />
 
     <ImageView
         android:id="@+id/trashCan2"
@@ -112,7 +113,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/trashcan_2"
-        tools:ignore="VisualLintBounds" />
+        tools:ignore="VisualLintBounds"
+        android:onClick="dialog_trashcan2" />
 
     <ImageView
         android:id="@+id/trashCan3"
@@ -123,7 +125,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/trashcan_3"
-        tools:ignore="VisualLintBounds" />
+        tools:ignore="VisualLintBounds"
+        android:onClick="dialog_trashcan3" />
 
     <ImageView
         android:id="@+id/trashCan1_help"

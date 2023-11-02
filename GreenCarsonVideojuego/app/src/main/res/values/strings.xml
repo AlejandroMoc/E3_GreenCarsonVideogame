@@ -1,5 +1,7 @@
 <resources>
 
+    <!--FALTA AQUI QUITAR NO USADOS EN LA VERSION FINAL-->
+
     <!--General-->
     <string name="app_name">Green Carson - GAME</string>
 

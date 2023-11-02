@@ -30,17 +30,18 @@
         app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/decoration_losing"  />
 
+    <!--Falta aquí revisar este botón y su interacción-->
     <Button
         android:id="@+id/levelName"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/logo_foward"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/logo_back"
         android:contentDescription="@string/help_button"
         android:onClick="goToLevels"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--Nivel-->
@@ -82,7 +83,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/gradient_winning1"
-        android:onClick="goToTutorial"
+        android:onClick="playLevelAgain"
         android:text="@string/dialog_go"
         android:textColor="@color/white"
         android:textSize="20sp"
