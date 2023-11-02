@@ -18,25 +18,25 @@ public class Trash {
 
         trashTypeMine= trashType;
 
-        //Basura tipo A
+        //Basura tipo A - Valorizables
         trash[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);
         trash[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a2);
         trash[2] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a3);
 
-        //Basura tipo B
+        //Basura tipo B - Orgánicos
         trash[3] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b1);
         trash[4] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b2);
         trash[5] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b3);
 
-        //Basura tipo C
+        //Basura tipo C - Inorgánicos
         trash[6] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c1);
         trash[7] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c2);
         trash[8] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);
 
-        //Basura tipo D
-        trash[9] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c1);
-        trash[10] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c2);
-        trash[11] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);
+        //Basura tipo D - Manejo Especial
+        trash[9] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_d1);
+        trash[10] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_d2);
+        trash[11] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_d3);
 
         //Crear estado y posición inicial
         resetTrash(trashType, levelNumber);
