@@ -26,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+            <!--AQUI AHORA ver si SEGURAMENTE se puede borrar metadata-->
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -49,8 +49,7 @@ public class GameView extends View {
     final float dumpsterDX;
     final float dumpstersY;
     float newtrashyX, newtrashyY, touchX, touchY, dumpsterX;
-    int points, action, i, trashType, winningState, minPoints, trashDensity, life;
-    //FALTA AQUI CAMBIAR DEPENDIENDO DEL Nivel
+    int points, pointsSum, action, i, trashType, winningState, minPoints, trashDensity, life;
     final int levelNumber;
     static int dWidth;
     static int dHeight;
@@ -97,22 +96,28 @@ public class GameView extends View {
             minPoints=1000;
             trashDensity=2;
             life=25;
+            pointsSum=30;
 
         } else if (levelNumber==3){
             Log.d("3", "Se envia a nivel avanzado");
             minPoints=800;
             trashDensity=2;
             life=20;
+            pointsSum=20;
+
         } else if (levelNumber==2){
             Log.d("2", "Se envia a nivel intermedio");
             minPoints=500;
             trashDensity=2;
             life=15;
+            pointsSum=15;
+
         } else if (levelNumber==1){
             Log.d("1", "Se envia a nivel básico");
             minPoints=200;
             trashDensity=1;
             life=10;
+            pointsSum=10;
         }
 
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
@@ -376,9 +381,9 @@ public class GameView extends View {
                 && trashNow.trashY + trashNow.getTrashWidth()>=dumpstersY
                 && trashNow.trashY + trashNow.getTrashWidth()<=dumpstersY + dumpster.getHeight()){
 
-            //FALTA CAMBIAR DE ACUERDO CON EL NIVEL (SOBRE T0D0 EL +10)
+            //FALTA AQUI CAMBIAR DE ACUERDO CON EL NIVEL (SOBRE T0D0 EL +10)
             if (state)
-                points +=10;
+                points +=pointsSum;
             else life --;
 
             trashNow.resetTrash(trashType, levelNumber);
