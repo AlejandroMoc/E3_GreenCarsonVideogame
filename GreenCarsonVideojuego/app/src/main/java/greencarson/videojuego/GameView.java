@@ -288,7 +288,7 @@ public class GameView extends View {
     }
 
     //Funciones colisiones
-    private void movementCollision(MotionEvent event, ArrayList<Trash> trashy) {
+    private int movementCollision(MotionEvent event, ArrayList<Trash> trashy) {
         for (Trash trashNow : trashy) {
 
             //Obtener tipo de basura
@@ -298,6 +298,7 @@ public class GameView extends View {
             if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
                     && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth()))
             {
+                Log.d("8", "Tocando " + trashType);
                 action = event.getAction();
                 if (action == MotionEvent.ACTION_DOWN) {
                     //Obtener toque
@@ -312,6 +313,7 @@ public class GameView extends View {
                     newtrashyX = trashNow.oldTrashX - trashNow.shiftX;
                     newtrashyY = trashNow.oldTrashY - trashNow.shiftY;
 
+                    //chambeale
                     //Mover en ejes
                     if (newtrashyX <= 0)
                         trashNow.trashX = 0;
