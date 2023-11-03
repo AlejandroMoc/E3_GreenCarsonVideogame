@@ -294,7 +294,7 @@ public class GameView extends View {
     }
 
     //Funciones colisiones
-    private int movementCollision(MotionEvent event, ArrayList<Trash> trashy) {
+    private void movementCollision(MotionEvent event, ArrayList<Trash> trashy) {
         for (Trash trashNow : trashy) {
 
             //Obtener tipo de basura
