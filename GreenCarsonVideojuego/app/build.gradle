@@ -10,9 +10,8 @@ android {
         applicationId "greencarson.videojuego"
         minSdk 24
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
-
+        versionCode 60
+        versionName "0.60"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

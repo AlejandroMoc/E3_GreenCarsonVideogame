@@ -49,8 +49,7 @@ public class GameView extends View {
     final float dumpsterDX;
     final float dumpstersY;
     float newtrashyX, newtrashyY, touchX, touchY, dumpsterX;
-    int points, action, i, trashType, winningState, minPoints, trashDensity, life;
-    //FALTA AQUI CAMBIAR DEPENDIENDO DEL Nivel
+    int points, pointsSum, action, i, trashType, winningState, minPoints, trashDensity, life;
     final int levelNumber;
     static int dWidth;
     static int dHeight;
@@ -75,8 +74,12 @@ public class GameView extends View {
         this.levelNumber = levelNumber;
 
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background_tiles);
-        ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground2);
-        heart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_heart);
+        ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
+        if (levelNumber==4){
+            heart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_heart_golden);
+        } else {
+            heart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_heart);
+        }
 
         dumpsterA = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_1);
         dumpsterB = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_2);
@@ -92,23 +95,29 @@ public class GameView extends View {
             dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth()-dumpsterD.getWidth()/3, dumpsterD.getHeight()-dumpsterD.getHeight()/3, true);
             minPoints=1000;
             trashDensity=2;
-            life=5;
+            life=25;
+            pointsSum=30;
 
         } else if (levelNumber==3){
             Log.d("3", "Se envia a nivel avanzado");
             minPoints=800;
             trashDensity=2;
-            life=5;
+            life=20;
+            pointsSum=20;
+
         } else if (levelNumber==2){
             Log.d("2", "Se envia a nivel intermedio");
             minPoints=500;
             trashDensity=2;
-            life=5;
+            life=15;
+            pointsSum=15;
+
         } else if (levelNumber==1){
             Log.d("1", "Se envia a nivel básico");
             minPoints=200;
             trashDensity=1;
-            life=5;
+            life=10;
+            pointsSum=10;
         }
 
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
@@ -218,9 +227,6 @@ public class GameView extends View {
 
             }
 
-            //AQUI AHORA ACTUALIZAR ESTO PARA QUE CAMBIE SI ES NIVEL AVANZADO
-
-
             //Actualizar frames de explosiones
             iterator = explosions.iterator();
             while (iterator.hasNext()) {
@@ -251,7 +257,7 @@ public class GameView extends View {
 
     //Función para enviar a gameOver
     private void setGameOver() {
-        //Mandar a pantalla de reinicio o de aceptación
+        //Falta aqui verificar si es correcto
         if(life<=0){
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
@@ -377,9 +383,9 @@ public class GameView extends View {
                 && trashNow.trashY + trashNow.getTrashWidth()>=dumpstersY
                 && trashNow.trashY + trashNow.getTrashWidth()<=dumpstersY + dumpster.getHeight()){
 
-            //FALTA CAMBIAR DE ACUERDO CON EL NIVEL (SOBRE T0D0 EL +10)
+            //FALTA AQUI CAMBIAR DE ACUERDO CON EL NIVEL (SOBRE T0D0 EL +10)
             if (state)
-                points +=10;
+                points +=pointsSum;
             else life --;
 
             trashNow.resetTrash(trashType, levelNumber);

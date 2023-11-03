@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,60 +12,76 @@
     <ImageView
         android:id="@+id/background"
         android:layout_width="match_parent"
-        android:layout_centerHorizontal="true"
         android:layout_height="360dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/gradient_dialog_selectlevel"
         android:contentDescription="@string/help_button"
-        android:layout_centerVertical="true" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--Falta revisar posición y asset usado-->
     <!--Logo de Ayuda-->
     <ImageView
         android:id="@+id/buttonHelp"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/background"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-70dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/logo_help"
-        android:contentDescription="@string/help_button" />
+        android:contentDescription="@string/help_button"
+        app:layout_constraintBottom_toTopOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!--Texto de instrucción-->
+    <!--Categoría-->
     <TextView
         android:id="@+id/dialog_title"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonHelp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="30dp"
         android:text="@string/dialog_selectLevel1"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/background" />
 
-    <!--Descripción del dialogo-->
+    <!--Descripción-->
     <TextView
         android:id="@+id/dialog_description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dialog_title"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="50dp"
         android:text="@string/dialog_selectLevel2"
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_title" />
 
     <!--Aprende, diviértete y-->
+
+    <!--Reecicla-->
+
+    <!--Boton de volver-->
     <TextView
         android:id="@+id/logo_dialog1"
         android:layout_width="wrap_content"
@@ -77,31 +94,38 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/logo_dialog2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!--Reecicla-->
     <ImageView
         android:id="@+id/logo_dialog2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/background"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:contentDescription="@string/dialog_selectLevel3"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo_reecicla2" />
 
-    <!--Boton de volver-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBack"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/logo_dialog2"
+        android:layout_below="@+id/dialog_description"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
         android:text="@string/go_back_button"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

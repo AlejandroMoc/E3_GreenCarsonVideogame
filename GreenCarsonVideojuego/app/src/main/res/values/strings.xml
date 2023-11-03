@@ -1,5 +1,7 @@
 <resources>
 
+    <!--FALTA AQUI QUITAR NO USADOS EN LA VERSION FINAL-->
+
     <!--General-->
     <string name="app_name">Green Carson - GAME</string>
 
@@ -58,9 +60,9 @@
     <string name="dialog_trashcan12">All those waste materials that can be reused and do not decompose easily.\n\n<b>Like:</b>\n\nCardboard\nPaper\nPET\nHDPE\nGlass\nMetals\nAppliances</string>
     <string name="dialog_trashcan21">Organic waste</string>
     <string name="dialog_trashcan22">All those waste materials that are biodegradable remains of plants and animals.\n\n<b>Like:</b>\n\nPlants\nBones\nPeels\nExcrements\nBranches or leaves\nFood waste\nDirty paper or cardboard</string>
-    <string name="dialog_trashcan31">Usable inorganic waste</string>
+    <string name="dialog_trashcan31">Inorganic waste</string>
     <string name="dialog_trashcan32">All those waste materials that are not natural but can be recycled.\n\n<b>Like:</b>\n\nPaper\nCardboard\nGlass\nMetals\nClothes\nLeather\nCans</string>
-    <string name="dialog_trashcan41">Unusable inorganic waste</string>
+    <string name="dialog_trashcan41">Special handling waste</string>
     <string name="dialog_trashcan42">All those waste materials that can no longer be reused and must be disposed of with caution.\n\n<b>Like:</b>\n\nToxic waste\nMedical waste\nIndustrial waste\nHazardous waste\nConstruction waste</string>
 
     <!--Añadidos para Juego-->
