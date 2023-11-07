@@ -269,16 +269,6 @@ public class GameView extends View {
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
             intent.putExtra("levelNumber", levelNumber);
-            /*if (levelNumber == 1) {
-                intent.putExtra("pointsLvl1", points);
-            } else if (levelNumber == 2) {
-                intent.putExtra("pointsLvl2", points);
-            } else if (levelNumber == 3) {
-                intent.putExtra("pointsLvl3", points);
-            }
-            else {
-                intent.putExtra("pointsLvl4", points);
-            }*/
 
             ((Activity)context).finish();
             context.startActivity(intent);

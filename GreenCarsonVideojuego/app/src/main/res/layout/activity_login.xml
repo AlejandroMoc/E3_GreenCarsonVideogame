@@ -110,7 +110,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/loginButton"
-        android:onClick="goToNextScreen"
+        android:onClick="dialogWarningQuit"
         android:text="@string/loginButton"
         android:textColor="@color/white"
         android:textSize="18sp"
