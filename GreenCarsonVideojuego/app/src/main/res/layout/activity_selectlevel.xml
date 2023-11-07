@@ -7,15 +7,18 @@
     tools:context=".SelectLevelActivity">
 
     <!--Fondo de aplicación-->
+
+    <!--Botón de Regresar-->
     <ImageView
         android:id="@+id/backgroundImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/background_tiles"
+        android:contentDescription="@string/background"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/background" />
+        android:src="@drawable/background_tiles"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="0dp" />
 
-    <!--Botón de Regresar-->
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="50dp"
@@ -137,5 +140,46 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="VisualLintOverlap" />
+
+    <ImageView
+        android:id="@+id/lock1"
+        android:layout_width="32dp"
+        android:layout_height="43dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533"
+        app:srcCompat="@drawable/logo_lock" />
+
+    <ImageView
+        android:id="@+id/lock2"
+        android:layout_width="32dp"
+        android:layout_height="43dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lock1"
+        app:layout_constraintVertical_bias="0.089"
+        app:srcCompat="@drawable/logo_lock" />
+
+    <ImageView
+        android:id="@+id/lock3"
+        android:layout_width="32dp"
+        android:layout_height="43dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lock2"
+        app:layout_constraintVertical_bias="0.123"
+        app:srcCompat="@drawable/logo_lock" />
+
+    <!--Candados (chambear)-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

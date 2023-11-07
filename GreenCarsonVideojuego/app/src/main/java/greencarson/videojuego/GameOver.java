@@ -35,6 +35,7 @@ public class GameOver extends AppCompatActivity {
         tvPoints.setText(getString(R.string.points_placeholder, points));
         sharedPreferences=getSharedPreferences("my_pref",0);
         int highest = sharedPreferences.getInt("highest",0);
+        int progress = sharedPreferences.getInt("progress",0);
 
         //Comparar con mayor puntuación
         if (points > highest){
@@ -45,6 +46,20 @@ public class GameOver extends AppCompatActivity {
             editor.apply();
         }
         tvHighest.setText(getString(R.string.highest_placeholder, highest));
+
+        if (winningState == 1 && levelNumber == 1) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("progress", 1);
+            editor.apply();
+        } else if (winningState == 1 && levelNumber == 2) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("progress", 2);
+            editor.apply();
+        } else if (winningState == 1 && levelNumber == 3) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("progress", 3);
+            editor.apply();
+        }
     }
 
     public void goToWinningState(View v){

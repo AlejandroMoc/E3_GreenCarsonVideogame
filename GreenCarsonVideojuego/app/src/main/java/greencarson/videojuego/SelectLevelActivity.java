@@ -1,6 +1,7 @@
 package greencarson.videojuego;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,15 +20,55 @@ import java.util.Objects;
 public class SelectLevelActivity extends AppCompatActivity {
 
     //Variables
+    SharedPreferences sharedPreferences;
     int levelNumber = 0, viewId, buttonSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        //Ocultar barra de status
+        super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_selectlevel);
+
+        Button buttonBasic = findViewById(R.id.buttonLevel);
+        Button buttonInter = findViewById(R.id.buttonInter);
+        Button buttonAdvan = findViewById(R.id.buttonAdvan);
+        Button buttonNightmare = findViewById(R.id.buttonNightmare);
+
+        ImageView lock1 = findViewById(R.id.lock1);
+        ImageView lock2 = findViewById(R.id.lock2);
+        ImageView lock3 = findViewById(R.id.lock3);
+
+        sharedPreferences=getSharedPreferences("my_pref",0);
+        int points = sharedPreferences.getInt("highest", 0);
+        int progress = sharedPreferences.getInt("progress",0);
+        Log.d("0", progress + " " + points);
+
+        if (progress == 0) {
+            Log.d("10", "NINGUNO DESBLOQUEDADO");
+            buttonInter.setClickable(false);
+            buttonAdvan.setClickable(false);
+            buttonNightmare.setClickable(false);
+        } else if (progress == 1) {
+            Log.d("10", "NIVEL 2 DESBLOQUEADO");
+            buttonAdvan.setClickable(false);
+            buttonNightmare.setClickable(false);
+            lock1.setVisibility(View.INVISIBLE);
+        }
+        else if (progress == 2) {
+            Log.d("10", "NIVEL 2 Y 3 DESBLOQUEADO");
+            buttonNightmare.setClickable(false);
+            lock1.setVisibility(View.INVISIBLE);
+            lock2.setVisibility(View.INVISIBLE);
+        }
+        else {
+            Log.d("10", "TODOS DESBLOQUEADO");
+            lock1.setVisibility(View.INVISIBLE);
+            lock2.setVisibility(View.INVISIBLE);
+            lock3.setVisibility(View.INVISIBLE);
+        }
+
+        //Ocultar barra de status
     }
 
     //Para seleccionar nivel

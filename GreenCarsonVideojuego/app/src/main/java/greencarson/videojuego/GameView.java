@@ -262,11 +262,23 @@ public class GameView extends View {
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
 
+            Log.d("12", String.valueOf(levelNumber));
+
             //FALTA AQUI PASAR EL LEVELNUMBER
             Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
             intent.putExtra("levelNumber", levelNumber);
+            /*if (levelNumber == 1) {
+                intent.putExtra("pointsLvl1", points);
+            } else if (levelNumber == 2) {
+                intent.putExtra("pointsLvl2", points);
+            } else if (levelNumber == 3) {
+                intent.putExtra("pointsLvl3", points);
+            }
+            else {
+                intent.putExtra("pointsLvl4", points);
+            }*/
 
             ((Activity)context).finish();
             context.startActivity(intent);
@@ -280,87 +292,103 @@ public class GameView extends View {
         touchX = event.getX();
         touchY = event.getY();
 
+        for (Trash trashNow : trashesA) {
+
+            //Si se está tocando la basura
+            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
+                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth())) {
+                movementCollision(event, trashNow);
+            }
+        }
+
+        for (Trash trashNow : trashesB) {
+
+            //Si se está tocando la basura
+            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
+                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth())) {
+                movementCollision(event, trashNow);
+            }
+        }
+
+        for (Trash trashNow : trashesC) {
+
+            //Si se está tocando la basura
+            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
+                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth())) {
+                movementCollision(event, trashNow);
+            }
+        }
+
+        for (Trash trashNow : trashesD) {
+
+            //Si se está tocando la basura
+            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
+                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth())) {
+                movementCollision(event, trashNow);
+            }
+        }
+
         //Colisiones con botes
         //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
-        movementCollision(event, trashesA);
-        movementCollision(event, trashesB);
-        movementCollision(event, trashesC);
-
-        if (levelNumber==4){
-            movementCollision(event, trashesD);
-        }
 
         return true;
     }
 
     //Funciones colisiones
-    private void movementCollision(MotionEvent event, ArrayList<Trash> trashy) {
-        for (Trash trashNow : trashy) {
+    private void movementCollision(MotionEvent event, Trash trashNow) {
+        trashType = trashNow.trashTypeMine;
+        action = event.getAction();
+        if (action == MotionEvent.ACTION_DOWN) {
+            //Obtener toque
+            trashNow.oldX = event.getX();
+            trashNow.oldY = event.getY();
+            //Obtener posición de basura
+            trashNow.oldTrashX = trashNow.trashX;
+            trashNow.oldTrashY = trashNow.trashY;
+        } else if (action == MotionEvent.ACTION_MOVE) {
+            trashNow.shiftX = trashNow.oldX - touchX;
+            trashNow.shiftY = trashNow.oldY - touchY;
+            newtrashyX = trashNow.oldTrashX - trashNow.shiftX;
+            newtrashyY = trashNow.oldTrashY - trashNow.shiftY;
 
-            //Obtener tipo de basura
-            trashType = trashNow.trashTypeMine;
+            //Mover en ejes
+            if (newtrashyX <= 0)
+                trashNow.trashX = 0;
+            else if (newtrashyX >= dWidth - trashNow.getTrashWidth())
+                trashNow.trashX = dWidth - trashNow.getTrashWidth();
+            else
+                trashNow.trashX = newtrashyX;
+            if (newtrashyY <= 0)
+                trashNow.trashY = 0;
+            else if (newtrashyY >= dHeight - trashNow.getTrashHeight())
+                trashNow.trashY = dHeight - trashNow.getTrashHeight();
+            else
+                trashNow.trashY = newtrashyY;
 
-            //Si se está tocando la basura
-            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
-                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth()))
-            {
-                Log.d("8", "Tocando " + trashType);
-                action = event.getAction();
-                if (action == MotionEvent.ACTION_DOWN) {
-                    //Obtener toque
-                    trashNow.oldX = event.getX();
-                    trashNow.oldY = event.getY();
-                    //Obtener posición de basura
-                    trashNow.oldTrashX = trashNow.trashX;
-                    trashNow.oldTrashY = trashNow.trashY;
-                } else if (action == MotionEvent.ACTION_MOVE) {
-                    trashNow.shiftX = trashNow.oldX - touchX;
-                    trashNow.shiftY = trashNow.oldY - touchY;
-                    newtrashyX = trashNow.oldTrashX - trashNow.shiftX;
-                    newtrashyY = trashNow.oldTrashY - trashNow.shiftY;
-
-                    //chambeale
-                    //Mover en ejes
-                    if (newtrashyX <= 0)
-                        trashNow.trashX = 0;
-                    else if (newtrashyX >= dWidth - trashNow.getTrashWidth())
-                        trashNow.trashX = dWidth - trashNow.getTrashWidth();
-                    else
-                        trashNow.trashX = newtrashyX;
-                    if (newtrashyY <= 0)
-                        trashNow.trashY = 0;
-                    else if (newtrashyY >= dHeight - trashNow.getTrashHeight())
-                        trashNow.trashY = dHeight - trashNow.getTrashHeight();
-                    else
-                        trashNow.trashY = newtrashyY;
-
-                    //Falta cambiar a cases
-                    if (trashType==1){
-                        dumpsterCollision(trashNow, dumpsterA, true, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
-                    } else if (trashType==2){
-                        dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterB, true, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
-                    } else if (trashType==3){
-                        dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterC, true, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
-
-                    } else if (trashType==4){
-                        dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
-                        dumpsterCollision(trashNow, dumpsterD, true, levelNumber);
-                    }
-
-
-                }
+            //Falta cambiar a cases
+            if (trashType==1){
+                dumpsterCollision(trashNow, dumpsterA, true, levelNumber);
+                dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
+            } else if (trashType==2){
+                dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterB, true, levelNumber);
+                dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
+            } else if (trashType==3){
+                dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterC, true, levelNumber);
+                dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
+            } else if (trashType==4){
+                dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
+                dumpsterCollision(trashNow, dumpsterD, true, levelNumber);
             }
+
+
         }
     }
 
