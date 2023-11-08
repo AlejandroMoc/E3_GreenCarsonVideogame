@@ -23,16 +23,17 @@ public class WinningActivity extends Activity {
         second = getIntent().getExtras().getBoolean("second");
 
         //Decidir a qué pantalla enviar
+
+        //Si se ganó
         if (winningState==1 && !second)
             setContentView(R.layout.activity_winning);
+        else if (winningState==1 && second)
+            setContentView(R.layout.activity_winning2);
+
+        //Si se perdió
         else if (winningState==0 && !second)
             setContentView(R.layout.activity_losing);
-
-        //else if (winningState==1 && second)
-        else if (winningState==1)
-            setContentView(R.layout.activity_winning2);
-        //else if (winningState==0 && second)
-        else if (winningState==0)
+        else if (winningState==0 && second)
             setContentView(R.layout.activity_losing2);
     }
 
@@ -46,17 +47,14 @@ public class WinningActivity extends Activity {
         Intent intent = new Intent(this, WinningActivity.class);
         intent.putExtra("second", true);
         intent.putExtra("levelNumber", levelNumber);
+        intent.putExtra("winningState", winningState);
+        //Falta aquí pasar el winningState
         startActivity(intent);
     }
 
     public void playLevelAgain(View v){
-/*        Intent intent = new Intent(this, TutorialActivity.class);
-        intent.putExtra("levelNumber", levelNumber);
-        startActivity(intent);*/
-
         GameView gameView = new GameView(this, levelNumber);
         setContentView(gameView);
     }
-
 
 }

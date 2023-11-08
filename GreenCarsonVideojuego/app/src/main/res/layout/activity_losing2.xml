@@ -36,12 +36,12 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"
-        android:background="@drawable/logo_back"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/logo_foward"
         android:contentDescription="@string/help_button"
         android:onClick="goToLevels"
         app:backgroundTint="@null"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--Nivel-->

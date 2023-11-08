@@ -25,6 +25,7 @@
     <string name="interLevel">Intermediate</string>
     <string name="advancedLevel">Advanced</string>
     <string name="nightmareLevel">Nightmare</string>
+    <string name="padlock">Padlock</string>
 
     <string name="bas_levelSel">Basic Level Selection</string>
     <string name="inter_levelSel">Intermediate Level Selection</string>
@@ -36,12 +37,13 @@
     <string name="dialog_selectLevel3">Learn, have fun and reecicla!</string>
     <string name="dialog_selectLevel4">Learn, have fun and</string>
 
-    <string name="dialog_quit">Quit</string>
-    <string name="dialog_leave">Exit</string>
     <string name="dialog_warningQuit">Do you want to\nexit the app?</string>
-    <string name="dialog_warningExit">Do you want to\nexit the game?</string>
+    <string name="dialog_warningExit">Do you want \nto logout?</string>
     <string name="dialog_warningAlert">You haven\'t chosen\na level yet!</string>
     <string name="dialog_warningLeave">Do you want to\nleave the game?</string>
+    <string name="dialog_quit">Quit</string>
+    <string name="dialog_leave">Exit</string>
+    <string name="dialog_logout">Sign out</string>
 
     <!--Tutorial description-->
     <string name="tutorial_buttonSel">Play</string>

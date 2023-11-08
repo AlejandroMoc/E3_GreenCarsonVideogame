@@ -50,6 +50,8 @@ public class TutorialActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //FALTA AQUI AHORA SIMPLIFICAR TODAS ESTAS FUNCIONES A UNA SOLA RECIBIENDO EL ID (URGENTE)
+
     //Para ir a dialog_selectlevel.xml
     public void dialogSelectLevel(View v) {
         final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(TutorialActivity.this);

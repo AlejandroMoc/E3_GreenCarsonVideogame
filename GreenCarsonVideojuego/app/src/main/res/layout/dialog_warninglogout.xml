@@ -42,7 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/gradient_warningexit2"
-        android:text="@string/dialog_leave"
+        android:text="@string/dialog_logout"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />

@@ -34,20 +34,20 @@ public class GameView extends View {
     final Rect rectGround;
     final Rect rectHeart;
     final Drawable heartDrawable = ContextCompat.getDrawable(getContext(), R.drawable.logo_heart);
+    final Drawable heartDrawableGolden = ContextCompat.getDrawable(getContext(), R.drawable.logo_heart_golden);
     final Context context;
     final Handler handler;
     final long UPDATE_MILLIS = 30;
     final Runnable runnable;
     final Paint pointsNumber = new Paint();
     final Paint lifeNumber = new Paint();
-    //Falta verificar cuáles deben ser float y cuáles int
-    final float pointsTextSize = 120;
-    final float lifeTextSize = 70;
-    final float dumpsterAX;
-    final float dumpsterBX;
-    final float dumpsterCX;
-    final float dumpsterDX;
-    final float dumpstersY;
+    final int pointsTextSize = 120;
+    final int lifeTextSize = 70;
+    final int dumpsterAX;
+    final int dumpsterBX;
+    final int dumpsterCX;
+    final int dumpsterDX;
+    final int dumpstersY;
     float newtrashyX, newtrashyY, touchX, touchY, dumpsterX;
     int points, pointsSum, action, i, trashType, winningState, minPoints, trashDensity, life;
     final int levelNumber;
@@ -75,12 +75,15 @@ public class GameView extends View {
 
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background_tiles);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
-        if (levelNumber==4){
+        //Falta cambiar esto para que de verdad funcione
+/*        if (levelNumber==4){
             heart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_heart_golden);
         } else {
             heart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_heart);
-        }
+        }*/
 
+        //Para medidas de corazón
+        heart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_heart);
         dumpsterA = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_1);
         dumpsterB = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_2);
         dumpsterC = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_3);
@@ -93,7 +96,7 @@ public class GameView extends View {
             dumpsterB = Bitmap.createScaledBitmap(dumpsterB, dumpsterB.getWidth()-dumpsterB.getWidth()/3, dumpsterB.getHeight()-dumpsterB.getHeight()/3, true);
             dumpsterC = Bitmap.createScaledBitmap(dumpsterC, dumpsterC.getWidth()-dumpsterC.getWidth()/3, dumpsterC.getHeight()-dumpsterC.getHeight()/3, true);
             dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth()-dumpsterD.getWidth()/3, dumpsterD.getHeight()-dumpsterD.getHeight()/3, true);
-            minPoints=1000;
+            minPoints = Integer.MAX_VALUE;
             trashDensity=2;
             life=25;
             pointsSum=30;
@@ -145,7 +148,9 @@ public class GameView extends View {
         lifeNumber.setTypeface(Typeface.DEFAULT_BOLD);
 
         Objects.requireNonNull(heartDrawable).setBounds(rectHeart.left, rectHeart.top, rectHeart.left + rectHeart.width(), rectHeart.top + rectHeart.height());
+        Objects.requireNonNull(heartDrawableGolden).setBounds(rectHeart.left, rectHeart.top, rectHeart.left + rectHeart.width(), rectHeart.top + rectHeart.height());
         heartDrawable.setBounds(dWidth - heartSize - heartMargin, heartMargin, dWidth - heartMargin, heartMargin + heartSize);
+        heartDrawableGolden.setBounds(dWidth - heartSize - heartMargin, heartMargin, dWidth - heartMargin, heartMargin + heartSize);
 
         random = new Random();
 
@@ -245,11 +250,14 @@ public class GameView extends View {
 
             if (levelNumber==4){
                 canvas.drawBitmap(dumpsterD, dumpsterDX, dumpstersY, null);
+                heartDrawableGolden.draw(canvas);
+                canvas.drawText(""+points, Math.floorDiv(dWidth,2)-200, Math.floorDiv(dHeight,7)-pointsTextSize, pointsNumber);
+
+            } else {
+                heartDrawable.draw(canvas);
+                canvas.drawText(""+points+"/"+minPoints, Math.floorDiv(dWidth,2)-200, Math.floorDiv(dHeight,7)-pointsTextSize, pointsNumber);
             }
 
-            heartDrawable.draw(canvas);
-            //CAMBIAR AQUI PARA PUNTAJE MINIMO POR NIVEL
-            canvas.drawText(""+points+"/"+minPoints, Math.floorDiv(dWidth,2)-200, Math.floorDiv(dHeight,7)-pointsTextSize, pointsNumber);
             canvas.drawText("x"+life, dWidth-150, Math.floorDiv(dHeight, 6)-lifeTextSize-80, lifeNumber);
             handler.postDelayed(runnable, UPDATE_MILLIS);
         }
@@ -257,14 +265,14 @@ public class GameView extends View {
 
     //Función para enviar a gameOver
     private void setGameOver() {
-        //Falta aqui verificar si es correcto
+
         if(life<=0){
+            gameOver=true;
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
 
             Log.d("12", String.valueOf(levelNumber));
 
-            //FALTA AQUI PASAR EL LEVELNUMBER
             Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
@@ -272,7 +280,6 @@ public class GameView extends View {
 
             ((Activity)context).finish();
             context.startActivity(intent);
-            gameOver=true;
         }
     }
 
@@ -282,6 +289,7 @@ public class GameView extends View {
         touchX = event.getX();
         touchY = event.getY();
 
+        //FALTA AQUI AHORA SIMPLIFICAR ESTO A UN SOLO CICLO (URGENTE)
         for (Trash trashNow : trashesA) {
 
             //Si se está tocando la basura
@@ -401,7 +409,6 @@ public class GameView extends View {
                 && trashNow.trashY + trashNow.getTrashWidth()>=dumpstersY
                 && trashNow.trashY + trashNow.getTrashWidth()<=dumpstersY + dumpster.getHeight()){
 
-            //FALTA AQUI CAMBIAR DE ACUERDO CON EL NIVEL (SOBRE T0D0 EL +10)
             if (state)
                 points +=pointsSum;
             else life --;

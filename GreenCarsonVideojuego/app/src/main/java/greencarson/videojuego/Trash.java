@@ -18,7 +18,7 @@ public class Trash {
 
         trashTypeMine= trashType;
 
-        //Lo esperado es que se tengan 9 elementos de cada tipo de basura (5 en el último bote hasta ahora)
+        //FALTA AQUI reemplazar por otros assets (algunos, no todos)
 
         //Basura tipo A - Valorizables
         trash[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);
@@ -83,16 +83,6 @@ public class Trash {
         trashVelocity = 4 + random.nextInt(4);
 
         //Aleatorizar gráfico de acuerdo con el tipo
-/*        if (trashType == 1){
-            trashSum=0;
-        } else if (trashType == 2){
-            trashSum=3;
-        } else if (trashType == 3){
-            trashSum=8;
-        } else if (trashType == 4){
-            trashSum=11;
-        }*/
-
         switch (trashType) {
             case 1:
                 trashSum = 0;
