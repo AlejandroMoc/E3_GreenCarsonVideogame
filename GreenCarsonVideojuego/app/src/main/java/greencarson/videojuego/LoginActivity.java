@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        //Si hay usuario loggeado, enviar a SelectLevel
         if(currentUser != null){
             Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
             startActivity(intent);
@@ -57,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         //Imprimir pantalla
         setContentView(R.layout.activity_login);
 
-        //Ligar elementos a la pantalla
+        //Ligar elementos
         aTxt=findViewById(R.id.textEmail);
         bTxt=findViewById(R.id.textPassword);
         buttonLog = findViewById(R.id.buttonLogin);

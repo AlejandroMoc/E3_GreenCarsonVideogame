@@ -26,20 +26,15 @@ public class TutorialActivity extends AppCompatActivity {
         //Variables pasadas
         levelNumber = getIntent().getIntExtra("levelNumber", 0);
 
-        //Ocultar barra de status
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        //Dependiendo de levelNumber, enviar a tutorial correspondiente
+        //Enviar a tutorial correspondiente
         if (levelNumber== 4){
             setContentView(R.layout.activity_tutorialadvanced);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        } else if (levelNumber==1 || levelNumber==2 || levelNumber==3){
+        } else {
             setContentView(R.layout.activity_tutorialbasic);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        }
-        //FALTA AQUI QUITAR ESTO
-        else {
-            Log.d("Error en TutorialActivity", "Número de nivel inválido");
         }
     }
 

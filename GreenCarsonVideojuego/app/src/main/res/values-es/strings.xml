@@ -14,6 +14,8 @@
     <string name="facebookLogin">Inicia sesión con Facebook</string>
     <string name="login_success">Inicio de sesión exitoso.</string>
     <string name="login_failed">Inicio de sesión fallido.</string>
+    <string name="logout_success">Cerrado de sesión exitoso.</string>
+    <string name="logout_failed">Cerrado de sesión fallido.</string>
 
     <!--Elementos globales-->
     <string name="logoDescription">Logotipo de la fundación GreenCarson</string>

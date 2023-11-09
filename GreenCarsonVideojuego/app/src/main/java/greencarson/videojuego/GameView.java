@@ -71,7 +71,6 @@ public class GameView extends View {
 
         super(context);
         this.context = context;
-        //Recuperar número de nivel
         this.levelNumber = levelNumber;
 
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background_tiles);
@@ -84,7 +83,7 @@ public class GameView extends View {
         dumpsterC = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_3);
         dumpsterD = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_4);
 
-        //Redimensionar cuatro botes
+        //Por niveles
         if (levelNumber ==4){
             Log.d("4", "Se envia a nivel avanzado");
             dumpsterA = Bitmap.createScaledBitmap(dumpsterA, dumpsterA.getWidth()-dumpsterA.getWidth()/3, dumpsterA.getHeight()-dumpsterA.getHeight()/3, true);
@@ -204,7 +203,7 @@ public class GameView extends View {
             canvas.drawBitmap(background, null, rectBackground, null);
             canvas.drawBitmap(ground, null, rectGround, null);
 
-            //Dibujar basuras, por ahora todas con la misma densidad
+            //Dibujar basuras
             for (i = 0; i< trashDensity; i++){
 
                 canvas.drawBitmap(trashesA.get(i).getTrash(trashesA.get(i).trashFrame), trashesA.get(i).trashX, trashesA.get(i).trashY, null);
@@ -224,10 +223,9 @@ public class GameView extends View {
                     trashesD.get(i).trashY += trashesD.get(i).trashVelocity;
                     floorCollision(trashesD, levelNumber);
                 }
-
             }
 
-            //Actualizar frames de explosiones
+            //Actualizar frames explosiones
             iterator = explosions.iterator();
             while (iterator.hasNext()) {
                 explosion = iterator.next();
