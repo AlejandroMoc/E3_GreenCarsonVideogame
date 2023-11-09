@@ -44,6 +44,7 @@ public class GameOver extends AppCompatActivity {
         int highest3 = sharedPreferences.getInt("highest3",0);
         int highest4 = sharedPreferences.getInt("highest4",0);
         int rankpoints = sharedPreferences.getInt("rankpoints", 0);
+
         //int highest = sharedPreferences.getInt("highest",0);
         //Falta ver si se puede borrar (segun unused)
         int progress = sharedPreferences.getInt("progress",0);
