@@ -35,6 +35,7 @@ public class GameOver extends AppCompatActivity {
         tvPoints.setText(getString(R.string.points_placeholder, points));
         sharedPreferences=getSharedPreferences("my_pref",0);
         int highest = sharedPreferences.getInt("highest",0);
+        //Falta ver si se puede borrar (segun unused)
         int progress = sharedPreferences.getInt("progress",0);
 
         //Comparar con mayor puntuación

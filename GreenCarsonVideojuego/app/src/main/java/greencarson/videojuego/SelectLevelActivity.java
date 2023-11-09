@@ -42,6 +42,7 @@ public class SelectLevelActivity extends AppCompatActivity {
         sharedPreferences=getSharedPreferences("my_pref",0);
         int points = sharedPreferences.getInt("highest", 0);
         int progress = sharedPreferences.getInt("progress",0);
+        //int progress = 3;
         Log.d("0", progress + " " + points);
 
         if (progress == 0) {
@@ -62,13 +63,11 @@ public class SelectLevelActivity extends AppCompatActivity {
             lock2.setVisibility(View.INVISIBLE);
         }
         else {
-            Log.d("10", "TODOS DESBLOQUEADO");
+            Log.d("10", "TODOS DESBLOQUEADOS");
             lock1.setVisibility(View.INVISIBLE);
             lock2.setVisibility(View.INVISIBLE);
             lock3.setVisibility(View.INVISIBLE);
         }
-
-        //Ocultar barra de status
     }
 
     //Para seleccionar nivel
@@ -136,6 +135,7 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         }
 
+        //FALTA AQUI VER SI ES POSIBLE 'DESACTIVAR' BOTONES
 /*        else {
             levelNumber=0;
             buttonSelected=0;

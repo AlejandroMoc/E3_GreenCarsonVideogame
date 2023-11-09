@@ -10,12 +10,13 @@ public class Trash {
     public final int trashTypeMine;
     final Bitmap[] trash =new Bitmap[32];
     final Random random = new Random();
-    int trashFrame, trashSum;
-    float trashX, trashY, trashVelocity, oldTrashX, oldTrashY, oldX, oldY, shiftX, shiftY;
+    int trashFrame, trashSum, trashVelocity;
+    float trashX, trashY, oldTrashX, oldTrashY, oldX, oldY, shiftX, shiftY;
 
     //Constructor
     public Trash(Context context, int trashType, int levelNumber){
 
+        //FALTA AQUI ESTO SIMPLIFICAR (PARECE QUE NO SE PUEDE)
         trashTypeMine= trashType;
 
         //FALTA AQUI reemplazar por otros assets (algunos, no todos)
@@ -79,10 +80,8 @@ public class Trash {
     public void resetTrash(int trashType, int levelNumber) {
         trashX = random.nextInt(GameView.dWidth - getTrashWidth());
         trashY = -200 + random.nextInt(600) * -1;
-        //Falta ver si vale la pena o no tener velocidad individual o por categoría
-        trashVelocity = 4 + random.nextInt(4);
 
-        //Aleatorizar gráfico de acuerdo con el tipo
+        //Gráfico aleatorio de acuerdo con el tipo
         switch (trashType) {
             case 1:
                 trashSum = 0;
@@ -99,13 +98,17 @@ public class Trash {
             default:
                 break;
         }
-        //AQUI EL 3 DEBE SER CAMBIADO A 9 CUANDO TENGAMOS SUFICIENTES ASSETS
+
+        //AQUI AHORA ESTO SE DEBE AJUSTAR DE ACUERDO CON EL NIVEL (3 BASURAS INICIALES PARA UN NIVEL, 6 PARA EL 2, 9 PARA EL 3)
         if (levelNumber < 4) {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
         } else {
             trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
         }
-        //trashFrame = new Random().nextInt(levelNumber + trashSum);
+
+        //FALTA VER SI ESTÁ BIEN ASÍ
+        trashVelocity = levelNumber*2 + random.nextInt(3);
+        //trashVelocity = 4 + random.nextInt(4);
     }
 
 }
