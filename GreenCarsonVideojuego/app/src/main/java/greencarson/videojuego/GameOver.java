@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Objects;
 
 public class GameOver extends AppCompatActivity {
@@ -19,6 +22,8 @@ public class GameOver extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     ImageView ivNewHighest;
     int winningState, points, levelNumber;
+    FirebaseDatabase fData;
+    DatabaseReference dRef;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,19 +39,56 @@ public class GameOver extends AppCompatActivity {
 
         tvPoints.setText(getString(R.string.points_placeholder, points));
         sharedPreferences=getSharedPreferences("my_pref",0);
-        int highest = sharedPreferences.getInt("highest",0);
+        int highest1 = sharedPreferences.getInt("highest1",0);
+        int highest2 = sharedPreferences.getInt("highest2",0);
+        int highest3 = sharedPreferences.getInt("highest3",0);
+        int highest4 = sharedPreferences.getInt("highest4",0);
+        int rankpoints = sharedPreferences.getInt("rankpoints", 0);
+        //int highest = sharedPreferences.getInt("highest",0);
         //Falta ver si se puede borrar (segun unused)
         int progress = sharedPreferences.getInt("progress",0);
 
         //Comparar con mayor puntuación
-        if (points > highest){
+        if (levelNumber == 1 && points > highest1) {
             ivNewHighest.setVisibility(View.VISIBLE);
-            highest=points;
+            highest1=points;
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("highest",highest);
+            editor.putInt("highest1",highest1);
             editor.apply();
         }
-        tvHighest.setText(getString(R.string.highest_placeholder, highest));
+        if (levelNumber == 1) {
+            tvHighest.setText(getString(R.string.highest_placeholder, highest1));
+        }
+        if (levelNumber == 2 && points > highest2) {
+            ivNewHighest.setVisibility(View.VISIBLE);
+            highest2=points;
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("highest2",highest2);
+            editor.apply();
+        }
+        if (levelNumber == 2) {
+            tvHighest.setText(getString(R.string.highest_placeholder, highest2));
+        }
+        if (levelNumber == 3 && points > highest3) {
+            ivNewHighest.setVisibility(View.VISIBLE);
+            highest3=points;
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("highest3",highest3);
+            editor.apply();
+        }
+        if (levelNumber == 3) {
+            tvHighest.setText(getString(R.string.highest_placeholder, highest3));
+        }
+        if (levelNumber == 4 && points > highest4) {
+            ivNewHighest.setVisibility(View.VISIBLE);
+            highest4=points;
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("highest4",highest4);
+            editor.apply();
+        }
+        if (levelNumber == 4) {
+            tvHighest.setText(getString(R.string.highest_placeholder, highest4));
+        }
 
         if (winningState == 1 && levelNumber == 1) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -61,6 +103,12 @@ public class GameOver extends AppCompatActivity {
             editor.putInt("progress", 3);
             editor.apply();
         }
+
+        rankpoints = highest1 + highest2 + highest3 + highest4;
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("rankpoints",rankpoints);
+        editor.apply();
+
     }
 
     public void goToWinningState(View v){
