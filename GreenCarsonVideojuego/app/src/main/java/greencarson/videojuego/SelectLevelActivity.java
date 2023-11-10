@@ -10,18 +10,21 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
 import java.util.Objects;
 
 public class SelectLevelActivity extends AppCompatActivity {
 
     //Variables
     SharedPreferences sharedPreferences;
-    int levelNumber = 0, viewId, buttonSelected;
+    int levelNumber, viewId;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,6 @@ public class SelectLevelActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_selectlevel);
 
-        Button buttonBasic = findViewById(R.id.buttonLevel);
         Button buttonInter = findViewById(R.id.buttonInter);
         Button buttonAdvan = findViewById(R.id.buttonAdvan);
         Button buttonNightmare = findViewById(R.id.buttonNightmare);
@@ -42,8 +44,10 @@ public class SelectLevelActivity extends AppCompatActivity {
         sharedPreferences=getSharedPreferences("my_pref",0);
         int points = sharedPreferences.getInt("highest", 0);
         int progress = sharedPreferences.getInt("progress",0);
+        //progress = 3;
         Log.d("0", progress + " " + points);
 
+        //Verificar si es necesario el primer ciclo del if
         if (progress == 0) {
             Log.d("10", "NINGUNO DESBLOQUEDADO");
             buttonInter.setClickable(false);
@@ -62,29 +66,74 @@ public class SelectLevelActivity extends AppCompatActivity {
             lock2.setVisibility(View.INVISIBLE);
         }
         else {
-            Log.d("10", "TODOS DESBLOQUEADO");
+            Log.d("10", "TODOS DESBLOQUEADOS");
             lock1.setVisibility(View.INVISIBLE);
             lock2.setVisibility(View.INVISIBLE);
             lock3.setVisibility(View.INVISIBLE);
         }
-
-        //Ocultar barra de status
     }
 
     //Para seleccionar nivel
     public void selectLevel(View v) {
 
         //Ligar elementos
-        Button buttonBasic = findViewById(R.id.buttonLevel);
+        Button buttonBasic = findViewById(R.id.buttonBasic);
         Button buttonInter = findViewById(R.id.buttonInter);
         Button buttonAdvan = findViewById(R.id.buttonAdvan);
         Button buttonNightmare = findViewById(R.id.buttonNightmare);
 
         viewId = v.getId();
 
-        if (viewId == R.id.buttonLevel) {
+        //FALTA AQUI CAMBIAR buttonBasic A BUTTONBASIC O ALGO ASÍ
+
+        //FALTA AQUI SIMPLIFICAR PARA QUE LOS PRIMEROS 4 CASOS USEN LO MISMO
+        if (levelNumber == 1 && viewId == R.id.buttonBasic){
+            levelNumber = 0;
+            Log.d("0", "Caso 0");
+            buttonBasic.setBackgroundResource(R.drawable.gradient_button);
+            buttonInter.setBackgroundResource(R.drawable.gradient_button2);
+            buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
+            buttonNightmare.setBackgroundResource(R.drawable.gradient_button2);
+            buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        } else if (levelNumber == 2 && viewId == R.id.buttonInter){
+            levelNumber = 0;
+            Log.d("0", "Caso 0");
+            buttonBasic.setBackgroundResource(R.drawable.gradient_button);
+            buttonInter.setBackgroundResource(R.drawable.gradient_button2);
+            buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
+            buttonNightmare.setBackgroundResource(R.drawable.gradient_button2);
+            buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        } else if (levelNumber == 3 && viewId == R.id.buttonAdvan){
+            levelNumber = 0;
+            Log.d("0", "Caso 0");
+            buttonBasic.setBackgroundResource(R.drawable.gradient_button);
+            buttonInter.setBackgroundResource(R.drawable.gradient_button2);
+            buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
+            buttonNightmare.setBackgroundResource(R.drawable.gradient_button2);
+            buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+        } else if (levelNumber == 4 && viewId == R.id.buttonNightmare){
+            levelNumber = 0;
+            Log.d("0", "Caso 0");
+            buttonBasic.setBackgroundResource(R.drawable.gradient_button);
+            buttonInter.setBackgroundResource(R.drawable.gradient_button2);
+            buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
+            buttonNightmare.setBackgroundResource(R.drawable.gradient_button2);
+            buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+            buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+
+        } else if (viewId == R.id.buttonBasic) {
             levelNumber = 1;
-            buttonSelected = 1;
             Log.d("1", "Caso 1");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button);
             buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
@@ -94,11 +143,8 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
             buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
             buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
-            //Falta poner para desactivar botones
-
         } else if (viewId == R.id.buttonInter) {
             levelNumber = 2;
-            buttonSelected = 1;
             Log.d("2", "Caso 2");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
             buttonInter.setBackgroundResource(R.drawable.gradient_button2);
@@ -108,10 +154,8 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
             buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
             buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
-
         } else if (viewId == R.id.buttonAdvan) {
             levelNumber = 3;
-            buttonSelected = 1;
             Log.d("3", "Caso 3");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
             buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
@@ -121,10 +165,8 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
             buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
             buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
-            
         } else if (viewId == R.id.buttonNightmare) {
             levelNumber = 4;
-            buttonSelected = 1;
             Log.d("4", "Caso 4");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button_d);
             buttonInter.setBackgroundResource(R.drawable.gradient_button2_d);
@@ -135,20 +177,6 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.jade_deactivated));
             buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         }
-
-/*        else {
-            levelNumber=0;
-            buttonSelected=0;
-            Log.d("0", "Caso 0");
-            buttonBasic.setBackgroundResource(R.drawable.gradient_button);
-            buttonInter.setBackgroundResource(R.drawable.gradient_button2);
-            buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
-            buttonNightmare.setBackgroundResource(R.drawable.gradient_button2);
-            buttonBasic.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-            buttonInter.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-            buttonAdvan.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-            buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-        }*/
     }
 
     //Para enviar a tutoriales
@@ -166,7 +194,7 @@ public class SelectLevelActivity extends AppCompatActivity {
         }
     }
 
-    //Para ir a dialog_warningexit.xml y para regresar
+    //Para ir a dialog_warningexit.xml, cerrar sesión y regresar
     public void dialogWarningExit(View v) {
         final androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(SelectLevelActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);
@@ -174,6 +202,7 @@ public class SelectLevelActivity extends AppCompatActivity {
 
         Button buttonBack = dialogView.findViewById(R.id.buttonBack);
         Button buttonLogOut = dialogView.findViewById(R.id.buttonLogOut);
+        mAuth=FirebaseAuth.getInstance();
 
         builder.setView(dialogView);
 
@@ -182,10 +211,52 @@ public class SelectLevelActivity extends AppCompatActivity {
 
         buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
         buttonLogOut.setOnClickListener(v1 -> {
-            //Regresar a pantalla de login
+
+            //Cerrar sesión
             alertDialog.dismiss();
+            mAuth.signOut();
+
+/*            mAuth.getInstance()
+                    .signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(this, LoginActivity.class);
+                                startActivity(intent);
+                                Toast.makeText(getApplicationContext(), getString(R.string.logout_success), Toast.LENGTH_SHORT).show();
+                                finish();
+                            } else {
+                                //Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+
+
+            //Checar si sirve (MIO)
+/*            mAuth.getInstance()
+                .signOut(this)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(this, LoginActivity.class);
+                            startActivity(intent);
+                            Toast.makeText(getApplicationContext(), getString(R.string.logout_success), Toast.LENGTH_SHORT).show();
+                            finish();
+                        } else {
+                            //Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });*/
+
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
+            finish();
+
+            Toast.makeText(getApplicationContext(), getString(R.string.logout_success), Toast.LENGTH_SHORT).show();
         });
 
         alertDialog.show();

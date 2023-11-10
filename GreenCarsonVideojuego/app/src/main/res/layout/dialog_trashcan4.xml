@@ -23,7 +23,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--Falta revisar posición y asset usado-->
     <!--Logo de Ayuda-->
     <ImageView
         android:id="@+id/buttonHelp"

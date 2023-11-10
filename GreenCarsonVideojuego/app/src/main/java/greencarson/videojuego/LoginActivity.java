@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        //Si hay usuario loggeado, enviar a SelectLevel
         if(currentUser != null){
             Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
             startActivity(intent);
@@ -46,8 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //Ocultar barras
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE
                         | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -60,47 +58,41 @@ public class LoginActivity extends AppCompatActivity {
         //Imprimir pantalla
         setContentView(R.layout.activity_login);
 
-        //Ligar elementos a la pantalla
+        //Ligar elementos
         aTxt=findViewById(R.id.textEmail);
         bTxt=findViewById(R.id.textPassword);
         buttonLog = findViewById(R.id.buttonLogin);
         mAuth = FirebaseAuth.getInstance();
 
-        buttonLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = String.valueOf(aTxt.getText());
-                String password = String.valueOf(bTxt.getText());
+        buttonLog.setOnClickListener(v -> {
+            String email = String.valueOf(aTxt.getText());
+            String password = String.valueOf(bTxt.getText());
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(LoginActivity.this, "Correo", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(LoginActivity.this, "Contraseña", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "Login Successful.",
-                                            Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+            if (TextUtils.isEmpty(email)) {
+                Toast.makeText(LoginActivity.this, getString(R.string.userEmail), Toast.LENGTH_SHORT).show();
+                return;
             }
+            if (TextUtils.isEmpty(password)) {
+                Toast.makeText(LoginActivity.this, getString(R.string.userPassword), Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
         });
     }
-
 
     //Para ir a dialog_warningquit.xml
     public void dialogWarningQuit(View v) {

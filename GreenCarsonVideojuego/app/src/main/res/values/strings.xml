@@ -1,17 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!--FALTA AQUI QUITAR NO USADOS EN LA VERSION FINAL-->
-
     <!--General-->
     <string name="app_name">Green Carson - GAME</string>
 
     <!--Login screen-->
     <string name="userEmail">E-mail</string>
     <string name="userPassword">Password</string>
+    <string name="userEmail_missing">Please introduce a valid e-mail.</string>
+    <string name="userPassword_missing">Please introduce a valid password.</string>
     <string name="loginButton">Log in</string>
     <string name="forgotPassword">Did you forgot your password?</string>
     <string name="googleLogin">Log in with Google</string>
     <string name="facebookLogin">Log in with Facebook</string>
+    <string name="login_success">Login Successful.</string>
+    <string name="login_failed">Login Failed.</string>
+    <string name="logout_success">Logout Successful.</string>
+    <string name="logout_failed">Logout Failed.</string>
 
     <!--Global elements-->
     <string name="logoDescription">GreenCarson Foundation Logotype</string>

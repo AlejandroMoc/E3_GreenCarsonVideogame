@@ -6,10 +6,16 @@
     <!--Pantalla de login-->
     <string name="userEmail">Email</string>
     <string name="userPassword">Contraseña</string>
+    <string name="userEmail_missing">Por favor introduzca un correo válido.</string>
+    <string name="userPassword_missing">Por favor introduzca una contraseña válida.</string>
     <string name="loginButton">Inicia Sesión</string>
     <string name="forgotPassword">¿Olvidaste la contraseña?</string>
     <string name="googleLogin">Inicia sesión con Google</string>
     <string name="facebookLogin">Inicia sesión con Facebook</string>
+    <string name="login_success">Inicio de sesión exitoso.</string>
+    <string name="login_failed">Inicio de sesión fallido.</string>
+    <string name="logout_success">Cerrado de sesión exitoso.</string>
+    <string name="logout_failed">Cerrado de sesión fallido.</string>
 
     <!--Elementos globales-->
     <string name="logoDescription">Logotipo de la fundación GreenCarson</string>
