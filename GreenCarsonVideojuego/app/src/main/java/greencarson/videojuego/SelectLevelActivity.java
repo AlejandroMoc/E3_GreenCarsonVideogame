@@ -12,19 +12,27 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Objects;
 
 public class SelectLevelActivity extends AppCompatActivity {
 
     //Variables
     SharedPreferences sharedPreferences;
-    int levelNumber, viewId;
+    int levelNumber, viewId, highest1, highest2, highest3;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,35 +50,51 @@ public class SelectLevelActivity extends AppCompatActivity {
         ImageView lock3 = findViewById(R.id.lock3);
 
         sharedPreferences=getSharedPreferences("my_pref",0);
-        int points = sharedPreferences.getInt("highest", 0);
-        int progress = sharedPreferences.getInt("progress",0);
         //progress = 3;
-        Log.d("0", progress + " " + points);
 
-        //Verificar si es necesario el primer ciclo del if
-        if (progress == 0) {
-            Log.d("10", "NINGUNO DESBLOQUEDADO");
-            buttonInter.setClickable(false);
-            buttonAdvan.setClickable(false);
-            buttonNightmare.setClickable(false);
-        } else if (progress == 1) {
-            Log.d("10", "NIVEL 2 DESBLOQUEADO");
-            buttonAdvan.setClickable(false);
-            buttonNightmare.setClickable(false);
-            lock1.setVisibility(View.INVISIBLE);
-        }
-        else if (progress == 2) {
-            Log.d("10", "NIVEL 2 Y 3 DESBLOQUEADO");
-            buttonNightmare.setClickable(false);
-            lock1.setVisibility(View.INVISIBLE);
-            lock2.setVisibility(View.INVISIBLE);
-        }
-        else {
-            Log.d("10", "TODOS DESBLOQUEADOS");
-            lock1.setVisibility(View.INVISIBLE);
-            lock2.setVisibility(View.INVISIBLE);
-            lock3.setVisibility(View.INVISIBLE);
-        }
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        String userId = mAuth.getCurrentUser().getUid();
+
+        db.collection("usuarios").document(userId).get().
+                addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists())  {
+                                highest1 = document.contains("highest1") ? document.getLong("highest1").intValue() : 0;
+                                highest2 = document.contains("highest2") ? document.getLong("highest2").intValue() : 0;
+                                highest3 = document.contains("highest3") ? document.getLong("highest3").intValue() : 0;
+
+                                if (highest1 < 200) {
+                                    Log.d("10", "NINGUNO DESBLOQUEDADO");
+                                    buttonInter.setClickable(false);
+                                    buttonAdvan.setClickable(false);
+                                    buttonNightmare.setClickable(false);
+                                } else if (highest2 < 500) {
+                                    Log.d("10", "NIVEL 2 DESBLOQUEADO");
+                                    buttonAdvan.setClickable(false);
+                                    buttonNightmare.setClickable(false);
+                                    lock1.setVisibility(View.INVISIBLE);
+                                }
+                                else if (highest3 < 800) {
+                                    Log.d("10", "NIVEL 2 Y 3 DESBLOQUEADO");
+                                    buttonNightmare.setClickable(false);
+                                    lock1.setVisibility(View.INVISIBLE);
+                                    lock2.setVisibility(View.INVISIBLE);
+                                }
+                                else {
+                                    Log.d("10", "TODOS DESBLOQUEADOS");
+                                    lock1.setVisibility(View.INVISIBLE);
+                                    lock2.setVisibility(View.INVISIBLE);
+                                    lock3.setVisibility(View.INVISIBLE);
+                                }
+                            }
+                        }
+                    }
+                });
+
     }
 
     //Para seleccionar nivel

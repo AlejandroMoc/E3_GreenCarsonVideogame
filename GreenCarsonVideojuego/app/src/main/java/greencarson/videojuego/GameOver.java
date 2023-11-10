@@ -3,6 +3,7 @@ package greencarson.videojuego;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,12 +13,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
@@ -28,7 +32,7 @@ public class GameOver extends AppCompatActivity {
     TextView tvHighest;
     SharedPreferences sharedPreferences;
     ImageView ivNewHighest;
-    int winningState, points, levelNumber;
+    int winningState, points, levelNumber, highest1, highest2, highest3, highest4;
 
     FirebaseAuth mAuth;
     FirebaseFirestore db;
@@ -48,87 +52,64 @@ public class GameOver extends AppCompatActivity {
 
         tvPoints.setText(getString(R.string.points_placeholder, points));
         sharedPreferences=getSharedPreferences("my_pref",0);
-        int highest1 = sharedPreferences.getInt("highest1",0);
-        int highest2 = sharedPreferences.getInt("highest2",0);
-        int highest3 = sharedPreferences.getInt("highest3",0);
-        int highest4 = sharedPreferences.getInt("highest4",0);
-        int progress = sharedPreferences.getInt("progress",0);
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        //Comparar con mayor puntuación
-        if (levelNumber == 1 && points > highest1) {
-            ivNewHighest.setVisibility(View.VISIBLE);
-            highest1=points;
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("highest1",highest1);
-            editor.apply();
-        }
-        if (levelNumber == 1) {
-            tvHighest.setText(getString(R.string.highest_placeholder, highest1));
-        }
-        if (levelNumber == 2 && points > highest2) {
-            ivNewHighest.setVisibility(View.VISIBLE);
-            highest2=points;
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("highest2",highest2);
-            editor.apply();
-        }
-        if (levelNumber == 2) {
-            tvHighest.setText(getString(R.string.highest_placeholder, highest2));
-        }
-        if (levelNumber == 3 && points > highest3) {
-            ivNewHighest.setVisibility(View.VISIBLE);
-            highest3=points;
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("highest3",highest3);
-            editor.apply();
-        }
-        if (levelNumber == 3) {
-            tvHighest.setText(getString(R.string.highest_placeholder, highest3));
-        }
-        if (levelNumber == 4 && points > highest4) {
-            ivNewHighest.setVisibility(View.VISIBLE);
-            highest4=points;
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("highest4",highest4);
-            editor.apply();
-        }
-        if (levelNumber == 4) {
-            tvHighest.setText(getString(R.string.highest_placeholder, highest4));
-        }
-
-        if (winningState == 1 && levelNumber == 1) {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("progress", 1);
-            editor.apply();
-        } else if (winningState == 1 && levelNumber == 2) {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("progress", 2);
-            editor.apply();
-        } else if (winningState == 1 && levelNumber == 3) {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("progress", 3);
-            editor.apply();
-        }
-
         String userId = mAuth.getCurrentUser().getUid();
         DocumentReference docRef = db.collection("usuarios").document(userId);
 
-        int rank_points = highest1 + highest2 + highest3 + highest4;
+        db.collection("usuarios").document(userId).get().
+                addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists())  {
+                                highest1 = document.contains("highest1") ? document.getLong("highest1").intValue() : 0;
+                                highest2 = document.contains("highest2") ? document.getLong("highest2").intValue() : 0;
+                                highest3 = document.contains("highest3") ? document.getLong("highest3").intValue() : 0;
+                                highest4 = document.contains("highest4") ? document.getLong("highest4").intValue() : 0;
 
-        docRef.update("puntuacion_videojuego", rank_points)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(getApplicationContext(), "Puntuación Actualizada", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), "Actualización Fallida", Toast.LENGTH_SHORT).show();
+                                if (levelNumber == 1 && points > highest1) {
+                                    ivNewHighest.setVisibility(View.VISIBLE);
+                                    highest1 = points;
+                                    docRef.update("highest1", points);
+                                }
+                                if (levelNumber == 1) {
+                                    tvHighest.setText(getString(R.string.highest_placeholder, highest1));
+                                }
+                                if (levelNumber == 2 && points > highest2) {
+                                    ivNewHighest.setVisibility(View.VISIBLE);
+                                    highest2 = points;
+                                    docRef.update("highest2", points);
+                                }
+                                if (levelNumber == 2) {
+                                    tvHighest.setText(getString(R.string.highest_placeholder, highest2));
+                                }
+                                if (levelNumber == 3 && points > highest3) {
+                                    ivNewHighest.setVisibility(View.VISIBLE);
+                                    highest3 = points;
+                                    docRef.update("highest3", points);
+                                }
+                                if (levelNumber == 3) {
+                                    tvHighest.setText(getString(R.string.highest_placeholder, highest3));
+                                }
+                                if (levelNumber == 4 && points > highest4) {
+                                    ivNewHighest.setVisibility(View.VISIBLE);
+                                    highest4 = points;
+                                    docRef.update("highest4", highest4);
+                                }
+                                if (levelNumber == 4) {
+                                    tvHighest.setText(getString(R.string.highest_placeholder, highest4));
+                                }
+
+                                int rank_points = highest1 + highest2 + highest3 + highest4;
+
+                                docRef.update("rank_points", rank_points);
+                                
+                            }
+                        }
                     }
                 });
 
