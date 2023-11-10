@@ -6,12 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
 
@@ -22,6 +29,9 @@ public class GameOver extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     ImageView ivNewHighest;
     int winningState, points, levelNumber;
+
+    FirebaseAuth mAuth;
+    FirebaseFirestore db;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,8 +52,10 @@ public class GameOver extends AppCompatActivity {
         int highest2 = sharedPreferences.getInt("highest2",0);
         int highest3 = sharedPreferences.getInt("highest3",0);
         int highest4 = sharedPreferences.getInt("highest4",0);
-        int rankpoints = sharedPreferences.getInt("rankpoints", 0);
         int progress = sharedPreferences.getInt("progress",0);
+
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         //Comparar con mayor puntuación
         if (levelNumber == 1 && points > highest1) {
@@ -100,6 +112,25 @@ public class GameOver extends AppCompatActivity {
             editor.putInt("progress", 3);
             editor.apply();
         }
+
+        String userId = mAuth.getCurrentUser().getUid();
+        DocumentReference docRef = db.collection("usuarios").document(userId);
+
+        int rank_points = highest1 + highest2 + highest3 + highest4;
+
+        docRef.update("puntuacion_videojuego", rank_points)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(getApplicationContext(), "Puntuación Actualizada", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), "Actualización Fallida", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
     }
 
