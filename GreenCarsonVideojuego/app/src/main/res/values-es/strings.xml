@@ -21,6 +21,7 @@
     <string name="logoDescription">Logotipo de la fundación GreenCarson</string>
     <string name="start_game_button">Iniciar juego</string>
     <string name="go_back_button">Regresar</string>
+    <string name="go_forward">Continuar</string>
     <string name="help_button">Ayuda</string>
     <string name="background">Fondo de pantalla</string>
 
