@@ -37,10 +37,11 @@ public class WinningActivity extends Activity {
             setContentView(R.layout.activity_losing2);
     }
 
-    //Función para ir a pantallas
+    //Para ir a niveles
     public void goToLevels(View v){
         Intent intent = new Intent(this, SelectLevelActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void goToSecondPart(View v){
@@ -50,11 +51,13 @@ public class WinningActivity extends Activity {
         intent.putExtra("winningState", winningState);
         //Falta aquí pasar el winningState
         startActivity(intent);
+        finish();
     }
 
     public void playLevelAgain(View v){
         GameView gameView = new GameView(this, levelNumber);
         setContentView(gameView);
+        //finish();
     }
 
 }

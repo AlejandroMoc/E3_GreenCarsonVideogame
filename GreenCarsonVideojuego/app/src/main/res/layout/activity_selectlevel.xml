@@ -46,6 +46,20 @@
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="dialogSelectLevel"/>
 
+    <!--Botón de Trofeo-->
+    <Button
+        android:id="@+id/buttonTrophy"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/logo_trophy"
+        android:contentDescription="@string/help_button"
+        android:onClick="goToRanking"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toStartOf="@+id/buttonHelp"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!--Logo Reecicla GAME-->
     <!--984 × 559px-->
     <ImageView

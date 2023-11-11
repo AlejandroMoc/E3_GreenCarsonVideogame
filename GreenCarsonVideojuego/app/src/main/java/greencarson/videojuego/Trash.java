@@ -81,7 +81,7 @@ public class Trash {
         trashX = random.nextInt(GameView.dWidth - getTrashWidth());
         trashY = -200 + random.nextInt(600) * -1;
 
-        //Gráfico aleatorio de acuerdo con el tipo
+        //Asset aleatorio de acuerdo con tipo
         switch (trashType) {
             case 1:
                 trashSum = 0;
@@ -100,14 +100,22 @@ public class Trash {
         }
 
         //AQUI AHORA ESTO SE DEBE AJUSTAR DE ACUERDO CON EL NIVEL (3 BASURAS INICIALES PARA UN NIVEL, 6 PARA EL 2, 9 PARA EL 3)
-        if (levelNumber < 4) {
-            trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
-        } else {
+        if (levelNumber == 4) {
             trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
+            trashVelocity = 6 + random.nextInt(4);
+        } else if (levelNumber == 3) {
+            trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
+            trashVelocity = 5 + random.nextInt(4);
+        } else if (levelNumber == 2) {
+            trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
+            trashVelocity = 4 + random.nextInt(4);
+        } else {
+            trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;  //FALTA ADAPTAR ESTE (NO SE SI ASÍ ESTÁ BIEN)
+            trashVelocity = 3 + random.nextInt(4);
         }
 
-        //FALTA VER SI ESTÁ BIEN ASÍ
-        trashVelocity = levelNumber*2 + random.nextInt(3);
+        //posibles velocidades por nivel que se pueden usar
+        //trashVelocity = levelNumber*2 + random.nextInt(3);
         //trashVelocity = 4 + random.nextInt(4);
     }
 

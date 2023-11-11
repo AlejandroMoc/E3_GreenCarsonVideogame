@@ -71,7 +71,7 @@
     <string name="dialog_trashcan41">Manejo especial</string>
     <string name="dialog_trashcan42">Todos aquellos residuos que ya no se pueden reutilizar y deben ser desechados con precaución.\n\nComo:\n\nResiduos tóxicos\nResiduos médicos\nResiduos industriales\nResiduos peligrosos\nResiduos de construcción</string>
 
-    <!--Añadidos para Juego-->
+    <!--Juego-->
     <string name="your_points">Tus puntos: </string>
     <string name="highest_score">Puntaje más alto: </string>
     <string name="dialog_restart">Reiniciar nivel</string>
@@ -89,5 +89,11 @@
 
     <string name="points_placeholder">%1$d</string>
     <string name="highest_placeholder">%1$d</string>
+
+    <!--Ranking-->
+    <string name="name_ranking">Volovin Volovan</string>
+    <string name="points_ranking">%1$d pts</string>
+    <string name="ranking_ranking">Puesto</string>
+    <string name="number_ranking">73</string>
 
 </resources>

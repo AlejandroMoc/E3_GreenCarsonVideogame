@@ -89,9 +89,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLevel" />
 
-    <!--Guideline-->
+    <!--Guías-->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.375" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.625" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.875" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -106,39 +134,41 @@
         android:layout_marginBottom="-70dp"
         android:contentDescription="@string/trashCan1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.25"
         app:srcCompat="@drawable/trashcan_1"
         tools:ignore="VisualLintBounds"
-        android:onClick="dialog_trashcans" />
-        
+        android:onClick="dialog_trashcans"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline1" />
+
     <ImageView
         android:id="@+id/trashCan2"
         android:layout_width="0dp"
         android:layout_height="220dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="-70dp"
         android:contentDescription="@string/trashCan2"
+        android:onClick="dialog_trashcans"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/trashCan3"
+        app:layout_constraintStart_toEndOf="@+id/trashCan1"
         app:layout_constraintWidth_percent="0.25"
         app:srcCompat="@drawable/trashcan_2"
-        tools:ignore="VisualLintBounds"
-        android:onClick="dialog_trashcans" />
-    
+        tools:ignore="VisualLintBounds" />
+
     <ImageView
         android:id="@+id/trashCan3"
         android:layout_width="0dp"
         android:layout_height="220dp"
-        android:layout_marginEnd="95dp"
         android:layout_marginBottom="-70dp"
         android:contentDescription="@string/trashCan3"
+        android:onClick="dialog_trashcans"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintWidth_percent="0.25"
         app:srcCompat="@drawable/trashcan_3"
-        tools:ignore="VisualLintBounds"
-        android:onClick="dialog_trashcans" />
+        tools:ignore="VisualLintBounds" />
 
     <ImageView
         android:id="@+id/trashCan4"
@@ -147,23 +177,24 @@
         android:layout_marginBottom="-70dp"
         android:contentDescription="@string/trashCan4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.25"
         app:srcCompat="@drawable/trashcan_4"
         tools:ignore="VisualLintBounds"
-        android:onClick="dialog_trashcans" />
+        android:onClick="dialog_trashcans"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintEnd_toEndOf="@id/guideline4" />
     
     <ImageView
         android:id="@+id/trashCan1_help"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginStart="30dp"
         android:layout_marginBottom="10dp"
         android:contentDescription="@string/trashCan1_help"
         app:layout_constraintBottom_toTopOf="@+id/trashCan1"
-        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo_help"
-        android:onClick="dialog_trashcans" />
+        android:onClick="dialog_trashcans"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline1" />
 
     <ImageView
         android:id="@+id/trashCan2_help"
@@ -173,9 +204,10 @@
         android:contentDescription="@string/trashCan2_help"
         android:onClick="dialog_trashcans"
         app:layout_constraintBottom_toTopOf="@+id/trashCan2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toEndOf="@+id/trashCan1_help"
-        app:srcCompat="@drawable/logo_help" />
+        app:srcCompat="@drawable/logo_help"
+        tools:layout_editor_absoluteX="151dp"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/guideline2" />
 
     <ImageView
         android:id="@+id/trashCan3_help"
@@ -185,20 +217,21 @@
         android:contentDescription="@string/trashCan3_help"
         android:onClick="dialog_trashcans"
         app:layout_constraintBottom_toTopOf="@+id/trashCan3"
-        app:layout_constraintEnd_toStartOf="@+id/trashCan4_help"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:srcCompat="@drawable/logo_help" />
+        app:srcCompat="@drawable/logo_help"
+        tools:layout_editor_absoluteX="278dp"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="@id/guideline3" />
 
     <ImageView
         android:id="@+id/trashCan4_help"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="30dp"
         android:layout_marginBottom="10dp"
         android:contentDescription="@string/trashCan4_help"
         app:layout_constraintBottom_toTopOf="@id/trashCan4"
-        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/logo_help"
-        android:onClick="dialog_trashcans" />
+        android:onClick="dialog_trashcans"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintEnd_toEndOf="@id/guideline4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

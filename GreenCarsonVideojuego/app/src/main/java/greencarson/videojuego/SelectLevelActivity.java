@@ -212,6 +212,7 @@ public class SelectLevelActivity extends AppCompatActivity {
             intent = new Intent(this, TutorialActivity.class);
             intent.putExtra("levelNumber", levelNumber);
             startActivity(intent);
+            finish();
         } else {
             dialogWarningAlert(v);
             Log.d("--1", "Nunca de los nuncas debería pasar este error");
@@ -238,7 +239,13 @@ public class SelectLevelActivity extends AppCompatActivity {
 
             //Cerrar sesión
             alertDialog.dismiss();
+
             mAuth.signOut();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(getApplicationContext(), getString(R.string.logout_success), Toast.LENGTH_SHORT).show();
+
 
 /*            mAuth.getInstance()
                     .signOut(this)
@@ -276,11 +283,6 @@ public class SelectLevelActivity extends AppCompatActivity {
                     }
                 });*/
 
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-            finish();
-
-            Toast.makeText(getApplicationContext(), getString(R.string.logout_success), Toast.LENGTH_SHORT).show();
         });
 
         alertDialog.show();
@@ -311,4 +313,12 @@ public class SelectLevelActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
         alertDialog.show();
     }
+
+    //Para ir a ranking
+    public void goToRanking(View v) {
+        Intent intent = new Intent(this, RankingActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

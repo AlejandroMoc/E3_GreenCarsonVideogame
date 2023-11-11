@@ -72,7 +72,7 @@
     <string name="dialog_trashcan41">Special handling waste</string>
     <string name="dialog_trashcan42">All those waste materials that can no longer be reused and must be disposed of with caution.\n\n<b>Like:</b>\n\nToxic waste\nMedical waste\nIndustrial waste\nHazardous waste\nConstruction waste</string>
 
-    <!--Añadidos para Juego-->
+    <!--Juego-->
     <string name="your_points">Your score: </string>
     <string name="highest_score">Highest score: </string>
     <string name="dialog_restart">Restart level</string>
@@ -90,5 +90,11 @@
 
     <string name="points_placeholder">%1$d</string>
     <string name="highest_placeholder">%1$d</string>
+
+    <!--Ranking-->
+    <string name="name_ranking">Volovin Volovan</string>
+    <string name="points_ranking">%1$d pts</string>
+    <string name="ranking_ranking">Rank</string>
+    <string name="number_ranking">73</string>
 
 </resources>

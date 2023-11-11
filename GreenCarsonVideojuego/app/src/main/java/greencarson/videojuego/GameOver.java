@@ -122,15 +122,6 @@ public class GameOver extends AppCompatActivity {
         intent.putExtra("levelNumber", levelNumber);
         //Pasar aquí levelNumber (experimental)
         startActivity(intent);
+        finish();
     }
-
-    //AQUI AHORA VERIFICAR SI ES NECESARIO PASAR EL CONTEXTO (YO CREO QUE YA NO)
-/*
-        Intent intent = new Intent(context, GameOver.class);
-        intent.putExtra("points", points);
-        intent.putExtra("winningState", winningState);
-        //FALTA AQUI VER SI ESTA LINEA SE TIENE QUE PONER EN OTROS LAODS
-        ((Activity)context).finish();
-        context.startActivity(intent);
-    }*/
 }

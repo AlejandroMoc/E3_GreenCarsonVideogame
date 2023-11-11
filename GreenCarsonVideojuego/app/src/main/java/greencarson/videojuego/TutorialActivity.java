@@ -42,6 +42,7 @@ public class TutorialActivity extends AppCompatActivity {
     public void goToSelectScreen(View v){
         Intent intent = new Intent(this, SelectLevelActivity.class);
         startActivity(intent);
+        finish();
     }
 
     //Para ir a dialog_selectlevel.xml
