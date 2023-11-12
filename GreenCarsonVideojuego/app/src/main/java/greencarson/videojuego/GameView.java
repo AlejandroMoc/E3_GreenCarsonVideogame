@@ -348,7 +348,6 @@ public class GameView extends View {
             else
                 trashNow.trashY = newtrashyY;
 
-            //FALTA VER SI DEJAR CON CASES O MEJOR EQUALS
             switch (trashType) {
                 case 1:
                     dumpsterCollision(trashNow, dumpsterA, true, levelNumber);

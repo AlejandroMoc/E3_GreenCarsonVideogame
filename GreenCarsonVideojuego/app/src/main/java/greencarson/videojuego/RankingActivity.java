@@ -32,16 +32,16 @@ public class RankingActivity extends Activity {
         numberRanking = findViewById(R.id.numberRanking);
 
         n1 = findViewById(R.id.nameRanking1);
-        n2 = findViewById(R.id.nameRanking7);
-        n3 = findViewById(R.id.nameRanking10);
-        n4 = findViewById(R.id.nameRanking11);
-        n5 = findViewById(R.id.nameRanking12);
+        n2 = findViewById(R.id.nameRanking2);
+        n3 = findViewById(R.id.nameRanking3);
+        n4 = findViewById(R.id.nameRanking4);
+        n5 = findViewById(R.id.nameRanking5);
 
         p1 = findViewById(R.id.pointsRanking1);
         p2 = findViewById(R.id.pointsRanking2);
-        p3 = findViewById(R.id.pointsRanking6);
-        p4 = findViewById(R.id.pointsRanking7);
-        p5 = findViewById(R.id.pointsRanking10);
+        p3 = findViewById(R.id.pointsRanking3);
+        p4 = findViewById(R.id.pointsRanking4);
+        p5 = findViewById(R.id.pointsRanking5);
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -88,7 +88,6 @@ public class RankingActivity extends Activity {
 
                     }
                 });
-
     }
 
     //Para ir a niveles

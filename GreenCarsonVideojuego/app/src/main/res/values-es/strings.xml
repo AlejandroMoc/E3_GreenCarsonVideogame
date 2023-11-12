@@ -92,9 +92,15 @@
     <string name="highest_placeholder">%1$d</string>
 
     <!--Ranking-->
-    <string name="name_ranking">Volovin Volovan</string>
     <string name="points_ranking">%1$d pts</string>
     <string name="ranking_ranking">Puesto</string>
-    <string name="number_ranking">73</string>
+    <string name="number_ranking">0</string>
+    <string name="ranking_null_name">----------</string>
+    <string name="ranking_null_number">----</string>
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
 
 </resources>

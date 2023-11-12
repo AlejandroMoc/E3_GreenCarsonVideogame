@@ -7,75 +7,15 @@
     tools:context=".RankingActivity">
 
     <!--Fondo de aplicación-->
-
-    <!--Guías verticales-->
-
-    <TextView
-        android:id="@+id/pointsRanking5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginBottom="512dp"
-        android:text="1000"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/nameRanking6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="512dp"
-        android:text="@string/name_ranking"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pos3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="512dp"
-        android:text="1"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pointsRanking3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginBottom="512dp"
-        android:text="1000"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
     <ImageView
         android:id="@+id/backgroundImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/background"
-        android:scaleType="centerCrop"
         android:src="@drawable/background_tiles"
-        tools:layout_editor_absoluteX="-91dp"
-        tools:layout_editor_absoluteY="-96dp" />
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/background" />
 
+    <!--Guías verticales-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonLeft1"
         android:layout_width="1dp"
@@ -89,7 +29,42 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.19" />
+    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRankingName"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineName"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLogoHorizontal1"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLogoRight"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineNumber"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+    
     <!--Guías horizontales-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonTop"
@@ -105,6 +80,69 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.11" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLogoBottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH1"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH2"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH3"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH4"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH5"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom2"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRankHorizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom3"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+    
     <!--Botón de Regresar-->
     <Button
         android:id="@+id/buttonBack"
@@ -121,19 +159,200 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
 
     <!--Logo Reecicla Ranking-->
-    <!--984 × 559px-->
+    <!--FALTA AQUI CAMBAIR EL LOGO Y PONER EL CONSTRAINT CORRECTO(COMO 2:1)-->
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="190dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/logoDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_game" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLogoBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineLogoRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLogoHorizontal1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop"
+        android:background="@drawable/logo_game"
+        app:layout_constraintDimensionRatio="H,1.6:1" />
 
-    <!--Ranking grupal (falta)-->
+    <!--Ranking grupal-->
+    <TextView
+        android:id="@+id/nameRanking1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_name"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineRankingName" />
+
+    <TextView
+        android:id="@+id/nameRanking2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_name"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineRankingName" />
+
+    <TextView
+        android:id="@+id/nameRanking3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_name"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineRankingName" />
+
+    <TextView
+        android:id="@+id/nameRanking4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_name"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineRankingName" />
+
+    <TextView
+        android:id="@+id/nameRanking5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_name"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineRankingName" />
+
+    <TextView
+        android:id="@+id/pointsRanking1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_number"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber" />
+
+    <TextView
+        android:id="@+id/pointsRanking2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_number"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber" />
+
+    <TextView
+        android:id="@+id/pointsRanking3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_number"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber" />
+
+    <TextView
+        android:id="@+id/pointsRanking4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_number"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber" />
+
+    <TextView
+        android:id="@+id/pointsRanking5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ranking_null_number"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber" />
+
+
+    <TextView
+        android:id="@+id/pos1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_1"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2" />
+
+    <TextView
+        android:id="@+id/pos4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_2"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2" />
+
+    <TextView
+        android:id="@+id/pos5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_3"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH3"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2" />
+
+    <TextView
+        android:id="@+id/pos6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_4"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2" />
+
+    <TextView
+        android:id="@+id/pos7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_5"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH5"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2" />
 
     <!--Ranking personal-->
     <ImageView
@@ -152,301 +371,53 @@
         android:id="@+id/nameRanking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:text="----------"
+        android:text="@string/ranking_null_name"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/nameRanking1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="512dp"
-        android:text="----------"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/nameRanking7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="444dp"
-        android:text="----------"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/nameRanking10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="372dp"
-        android:text="----------"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/nameRanking12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="236dp"
-        android:text="----------"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/nameRanking11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="304dp"
-        android:text="----------"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pointsRanking1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginBottom="512dp"
-        android:text="----"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pointsRanking6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginBottom="372dp"
-        android:text="----"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pointsRanking7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginBottom="304dp"
-        android:text="----"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pointsRanking10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginBottom="236dp"
-        android:text="----"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pointsRanking2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginBottom="444dp"
-        android:text="----"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="512dp"
-        android:text="1"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pos4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="444dp"
-        android:text="2"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pos5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="372dp"
-        android:text="3"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pos6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="304dp"
-        android:text="4"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <TextView
-        android:id="@+id/pos7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="236dp"
-        android:text="5"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
+        app:layout_constraintStart_toStartOf="@id/guidelineName"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRankHorizontal" />
 
     <TextView
         android:id="@+id/pointsRanking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
         android:text="@string/points_ranking"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineName" />
-
-    <!--Guías horizontales-->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineName"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineNumber"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.77" />
-
-    <!--Guías verticales-->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTop"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottom"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.69" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottom2"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom3"
+        app:layout_constraintStart_toStartOf="@id/guidelineName"
+        app:layout_constraintTop_toTopOf="@+id/guidelineBottom3" />
 
     <TextView
         android:id="@+id/numberRanking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
         android:text="@string/number_ranking"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="80sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom3"
+        app:layout_constraintEnd_toEndOf="@id/guidelineNumber"
         app:layout_constraintStart_toStartOf="@id/guidelineNumber"
-        app:layout_constraintEnd_toEndOf="@id/guidelineNumber" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineBottom3" />
 
     <TextView
         android:id="@+id/rankinRanking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
         android:text="@string/ranking_ranking"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRankHorizontal"
+        app:layout_constraintEnd_toEndOf="@id/guidelineNumber"
         app:layout_constraintStart_toStartOf="@id/guidelineNumber"
-        app:layout_constraintEnd_toEndOf="@id/guidelineNumber" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineRankHorizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
