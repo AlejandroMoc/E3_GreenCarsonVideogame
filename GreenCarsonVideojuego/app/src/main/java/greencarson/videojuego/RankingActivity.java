@@ -18,7 +18,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class RankingActivity extends Activity {
 
-    TextView nameRanking, pointsRanking, numberRanking;
+    TextView nameRanking, pointsRanking, numberRanking, n1, p1, n2, p2, n3, p3, n4, p4, n5, p5;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
 
@@ -30,6 +30,18 @@ public class RankingActivity extends Activity {
         nameRanking = findViewById(R.id.nameRanking);
         pointsRanking = findViewById(R.id.pointsRanking);
         numberRanking = findViewById(R.id.numberRanking);
+
+        n1 = findViewById(R.id.nameRanking1);
+        n2 = findViewById(R.id.nameRanking7);
+        n3 = findViewById(R.id.nameRanking10);
+        n4 = findViewById(R.id.nameRanking11);
+        n5 = findViewById(R.id.nameRanking12);
+
+        p1 = findViewById(R.id.pointsRanking1);
+        p2 = findViewById(R.id.pointsRanking2);
+        p3 = findViewById(R.id.pointsRanking6);
+        p4 = findViewById(R.id.pointsRanking7);
+        p5 = findViewById(R.id.pointsRanking10);
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -48,6 +60,23 @@ public class RankingActivity extends Activity {
                                     nameRanking.setText(document.getString("nombre_s"));
                                     pointsRanking.setText(document.getLong("rank_points").toString());
                                     numberRanking.setText(Integer.toString(position));
+                                }
+
+                                if (position == 1) {
+                                    n1.setText(document.getString("nombre_s"));
+                                    p1.setText(document.getLong("rank_points").toString());
+                                } else if (position == 2) {
+                                    n2.setText(document.getString("nombre_s"));
+                                    p2.setText(document.getLong("rank_points").toString());
+                                } else if (position == 3) {
+                                    n3.setText(document.getString("nombre_s"));
+                                    p3.setText(document.getLong("rank_points").toString());
+                                } else if (position == 4) {
+                                    n4.setText(document.getString("nombre_s"));
+                                    p4.setText(document.getLong("rank_points").toString());
+                                } else if (position == 5) {
+                                    n5.setText(document.getString("nombre_s"));
+                                    p5.setText(document.getLong("rank_points").toString());
                                 }
 
                                 Log.d("20", position + " - " + document.getId() + " => " + document.getData());
