@@ -57,7 +57,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.11" />
 
-    <!--Botón de Regresar-->
+    <!--Botón de Siguiente-->
     <Button
         android:id="@+id/levelName"
         android:layout_width="0dp"
@@ -71,8 +71,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight1"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
-
-    <!--Botón de Siguiente-->
 
     <!--Estado del juego-->
     <androidx.appcompat.widget.AppCompatButton

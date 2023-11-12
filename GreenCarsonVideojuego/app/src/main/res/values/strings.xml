@@ -93,7 +93,7 @@
     <string name="highest_placeholder">%1$d</string>
 
     <!--Ranking-->
-    <string name="points_ranking">%1$d pts</string>
+    <string name="points_ranking">" pts"</string>
     <string name="ranking_ranking">Rank</string>
     <string name="number_ranking">0</string>
     <string name="ranking_null_name">----------</string>

@@ -18,7 +18,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class RankingActivity extends Activity {
 
-    TextView nameRanking, pointsRanking, numberRanking, n1, p1, n2, p2, n3, p3, n4, p4, n5, p5;
+    TextView nameRanking, pointsPersonal, numberPersonal;
+    String pointsString, rankPoints, pointsSum;
+    TextView n1, n2, n3, n4, n5, p1, p2, p3, p4, p5;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
 
@@ -28,8 +30,8 @@ public class RankingActivity extends Activity {
         setContentView(R.layout.activity_ranking);
 
         nameRanking = findViewById(R.id.nameRanking);
-        pointsRanking = findViewById(R.id.pointsRanking);
-        numberRanking = findViewById(R.id.numberRanking);
+        pointsPersonal = findViewById(R.id.pointsPersonal);
+        numberPersonal = findViewById(R.id.numberPersonal);
 
         n1 = findViewById(R.id.nameRanking1);
         n2 = findViewById(R.id.nameRanking2);
@@ -58,25 +60,49 @@ public class RankingActivity extends Activity {
 
                                 if (document.getId().equals(userId)) {
                                     nameRanking.setText(document.getString("nombre_s"));
-                                    pointsRanking.setText(document.getLong("rank_points").toString());
-                                    numberRanking.setText(Integer.toString(position));
+
+                                    //pointsPersonal.setText(document.getLong("rank_points").toString(), TextView.BufferType.valueOf(getResources().getString(R.string.points_ranking)));
+
+                                    pointsPersonal.setText(document.getLong("rank_points").toString());
+                                    pointsString = getResources().getString(R.string.points_ranking);
+                                    rankPoints = document.getLong("rank_points").toString();
+                                    pointsSum = rankPoints + pointsString;
+                                    pointsPersonal.setText(pointsSum);
+
+                                    numberPersonal.setText(Integer.toString(position));
                                 }
 
                                 if (position == 1) {
                                     n1.setText(document.getString("nombre_s"));
-                                    p1.setText(document.getLong("rank_points").toString());
+                                    //p1.setText(document.getLong("rank_points").toString());
+                                    pointsSum=document.getLong("rank_points").toString();
+                                    pointsSum = pointsSum + pointsString;
+                                    p1.setText(pointsSum);
+
                                 } else if (position == 2) {
                                     n2.setText(document.getString("nombre_s"));
-                                    p2.setText(document.getLong("rank_points").toString());
+                                    pointsSum=document.getLong("rank_points").toString();
+                                    pointsSum = pointsSum + pointsString;
+                                    p2.setText(pointsSum);
+
                                 } else if (position == 3) {
                                     n3.setText(document.getString("nombre_s"));
-                                    p3.setText(document.getLong("rank_points").toString());
+                                    pointsSum=document.getLong("rank_points").toString();
+                                    pointsSum = pointsSum + pointsString;
+                                    p3.setText(pointsSum);
+
                                 } else if (position == 4) {
                                     n4.setText(document.getString("nombre_s"));
-                                    p4.setText(document.getLong("rank_points").toString());
+                                    pointsSum=document.getLong("rank_points").toString();
+                                    pointsSum = pointsSum + pointsString;
+                                    p4.setText(pointsSum);
+
                                 } else if (position == 5) {
                                     n5.setText(document.getString("nombre_s"));
-                                    p5.setText(document.getLong("rank_points").toString());
+                                    pointsSum=document.getLong("rank_points").toString();
+                                    pointsSum = pointsSum + pointsString;
+                                    p5.setText(pointsSum);
+
                                 }
 
                                 Log.d("20", position + " - " + document.getId() + " => " + document.getData());
@@ -85,7 +111,6 @@ public class RankingActivity extends Activity {
                         } else {
                             Log.w("20", "Error getting documents.", task.getException());
                         }
-
                     }
                 });
     }
