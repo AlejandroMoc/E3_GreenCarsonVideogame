@@ -108,8 +108,6 @@ public class SelectLevelActivity extends AppCompatActivity {
 
         viewId = v.getId();
 
-        //FALTA AQUI CAMBIAR buttonBasic A BUTTONBASIC O ALGO ASÍ
-
         //FALTA AQUI SIMPLIFICAR PARA QUE LOS PRIMEROS 4 CASOS USEN LO MISMO
         if (levelNumber == 1 && viewId == R.id.buttonBasic){
             levelNumber = 0;

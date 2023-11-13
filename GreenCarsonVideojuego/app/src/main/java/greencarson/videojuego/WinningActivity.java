@@ -49,7 +49,6 @@ public class WinningActivity extends Activity {
         intent.putExtra("second", true);
         intent.putExtra("levelNumber", levelNumber);
         intent.putExtra("winningState", winningState);
-        //Falta aquí pasar el winningState
         startActivity(intent);
         finish();
     }

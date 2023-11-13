@@ -70,8 +70,8 @@
         android:contentDescription="@string/go_forward"
         android:onClick="goToLevels"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight1"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />

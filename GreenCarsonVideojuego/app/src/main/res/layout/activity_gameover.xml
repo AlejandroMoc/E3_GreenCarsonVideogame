@@ -25,6 +25,21 @@
         android:importantForAccessibility="no" />
 
     <!--Guías verticales-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTrophyLeft"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTrophyRight"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonRight1"
         android:layout_width="1dp"
@@ -54,6 +69,34 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.11" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTrophyTop"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTrophyBottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTableTop"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTableBottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
     <!--Botón de Regresar-->
     <Button
         android:id="@+id/imageButton"
@@ -63,19 +106,19 @@
         android:contentDescription="@string/go_forward"
         android:onClick="goToWinningState"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight1"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
 
     <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundImageView"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTableBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backgroundImageView">
+        app:layout_constraintTop_toTopOf="@+id/guidelineTableTop">
 
         <TableRow
             android:layout_width="match_parent"
@@ -86,14 +129,15 @@
                 android:layout_height="wrap_content"
                 android:text="@string/your_points"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvPoints"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="=@font/kenney_blocks"
-                android:text= "@string/space"
+                android:text="@string/space"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="40sp" />
         </TableRow>
@@ -121,18 +165,16 @@
         </TableRow>
     </TableLayout>
 
-    <!--Falta poner aquí tabla de scores-->
-
     <!--Trofeo-->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/trophy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backgroundImageView"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTrophyBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineTrophyRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineTrophyLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTrophyTop"
         app:srcCompat="@drawable/logo_trophy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

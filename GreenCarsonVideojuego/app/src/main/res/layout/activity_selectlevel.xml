@@ -35,6 +35,27 @@
         app:layout_constraintGuide_percent="0.19" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonsCenterLeft"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonCenter1"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonCenter2"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonRight1"
         android:layout_width="1dp"
         android:layout_height="match_parent"
@@ -63,6 +84,27 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.11" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineGAMETop"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineGAMEBottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartTop"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
     <!--Botón de Quit-->
     <Button
         android:id="@+id/buttonBack"
@@ -72,8 +114,8 @@
         android:contentDescription="@string/go_back_button"
         android:onClick="dialogWarningExit"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft1"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
@@ -87,8 +129,8 @@
         android:contentDescription="@string/help_button"
         android:onClick="dialogSelectLevel"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight1"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
@@ -96,28 +138,29 @@
     <!--Botón de Trofeo-->
     <Button
         android:id="@+id/buttonTrophy"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/logo_trophy"
         android:contentDescription="@string/help_button"
         android:onClick="goToRanking"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHelp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonCenter1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
 
     <!--Logo Reecicla GAME-->
     <!--984 × 559px-->
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="246dp"
-        android:layout_height="139dp"
-        android:layout_marginTop="150dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/logoDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineGAMEBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft2"
+        app:layout_constraintTop_toTopOf="@+id/guidelineGAMETop"
         app:srcCompat="@drawable/logo_game" />
 
     <!--Falta verificar el diseño para que la distancia entre los botones
@@ -126,7 +169,7 @@
     <!--Botones de niveles-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBasic"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/gradient_button"
@@ -136,13 +179,13 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
         app:layout_constraintTop_toBottomOf="@+id/logoGame" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonInter"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
@@ -152,13 +195,13 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonBasic" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAdvan"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button"
@@ -168,13 +211,13 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonInter" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonNightmare"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/gradient_button2"
@@ -184,35 +227,39 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTop"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonAdvan" />
 
     <!--Botón de Empezar-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonCorner"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/logo_corner"
         android:contentDescription="@string/start_game_button"
         android:onClick="startTutorial"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTop"
         tools:ignore="VisualLintOverlap" />
 
+    <!--Falta corregir constraints de locks-->
     <ImageView
         android:id="@+id/lock1"
         android:layout_width="32dp"
         android:layout_height="43dp"
         android:contentDescription="@string/padlock"
         android:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonInter"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
         app:layout_constraintHorizontal_bias="0.744"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonCenter2"
+        app:layout_constraintTop_toTopOf="@+id/buttonInter"
         app:layout_constraintVertical_bias="0.533"
         app:srcCompat="@drawable/logo_lock" />
 
@@ -222,11 +269,11 @@
         android:layout_height="43dp"
         android:contentDescription="@string/padlock"
         android:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonAdvan"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
         app:layout_constraintHorizontal_bias="0.744"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lock1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonCenter2"
+        app:layout_constraintTop_toTopOf="@+id/buttonAdvan"
         app:layout_constraintVertical_bias="0.089"
         app:srcCompat="@drawable/logo_lock" />
 
@@ -236,11 +283,11 @@
         android:layout_height="43dp"
         android:contentDescription="@string/padlock"
         android:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTop"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
         app:layout_constraintHorizontal_bias="0.744"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lock2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonCenter2"
+        app:layout_constraintTop_toTopOf="@+id/buttonNightmare"
         app:layout_constraintVertical_bias="0.123"
         app:srcCompat="@drawable/logo_lock" />
 

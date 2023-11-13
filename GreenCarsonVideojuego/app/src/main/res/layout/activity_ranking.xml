@@ -152,25 +152,25 @@
         android:contentDescription="@string/go_back_button"
         android:onClick="goToLevels"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft1"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
 
     <!--Logo Reecicla Ranking-->
-    <!--FALTA AQUI CAMBAIR EL LOGO Y PONER EL CONSTRAINT CORRECTO(COMO 2:1)-->
+    <!--FALTA AQUI CORREGIR EL LOGO, SE ESTÁ ESTIRANDO DE FORMAS MUY RARAS-->
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="0dp"
+        android:background="@drawable/logo_game"
+        app:layout_constraintDimensionRatio="H,1.6:1"
         android:contentDescription="@string/logoDescription"
         app:layout_constraintBottom_toTopOf="@+id/guidelineLogoBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineLogoRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLogoHorizontal1"
-        app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop"
-        android:background="@drawable/logo_game"
-        app:layout_constraintDimensionRatio="H,1.6:1" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
 
     <!--Fondos de Ranking Grupal-->
     <ImageView

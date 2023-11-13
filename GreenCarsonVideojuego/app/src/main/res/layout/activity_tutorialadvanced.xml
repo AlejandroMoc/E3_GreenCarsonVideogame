@@ -59,6 +59,20 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.11" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineGAMETop"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineGAMEBottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
     <!--Botón de Regresar-->
     <Button
         android:id="@+id/buttonBack"
@@ -68,8 +82,8 @@
         android:contentDescription="@string/go_back_button"
         android:onClick="goToSelectScreen"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft1"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
@@ -83,8 +97,8 @@
         android:contentDescription="@string/help_button"
         android:onClick="dialogSelectLevel"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight1"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
@@ -94,13 +108,13 @@
     <!--984 × 559px-->
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="246dp"
-        android:layout_height="139dp"
-        android:layout_marginTop="150dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/logoDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineGAMEBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft2"
+        app:layout_constraintTop_toTopOf="@+id/guidelineGAMETop"
         app:srcCompat="@drawable/logo_game" />
 
     <!--Botón de tutorial-->
