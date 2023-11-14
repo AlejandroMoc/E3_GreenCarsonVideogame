@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--General-->
+    <string name="app_name">Green Carson - JOGO</string>
+
+    <!--Login screen-->
+    <string name="userEmail">E-mail</string>
+    <string name="userPassword">Senha</string>
+    <string name="userEmail_missing">Por favor, insira um e-mail válido.</string>
+    <string name="userPassword_missing">Por favor, insira uma senha válida.</string>
+    <string name="loginButton">Entrar</string>
+    <string name="forgotPassword">Esqueceu sua senha?</string>
+    <string name="googleLogin">Entrar com o Google</string>
+    <string name="facebookLogin">Entrar com o Facebook</string>
+    <string name="login_success">Login realizado com sucesso.</string>
+    <string name="login_failed">Falha no login.</string>
+    <string name="logout_success">Logout realizado com sucesso.</string>
+    <string name="logout_failed">Falha no logout.</string>
+
+    <!--Global elements-->
+    <string name="logoDescription">Logotipo da Fundação GreenCarson</string>
+    <string name="start_game_button">Iniciar Jogo</string>
+    <string name="go_back_button">Voltar</string>
+    <string name="go_forward">Avançar</string>
+    <string name="help_button">Ajuda</string>
+    <string name="background">Imagem de Fundo</string>
+
+    <!--Level selection screen-->
+    <string name="basicLevel">Básico</string>
+    <string name="interLevel">Intermediário</string>
+    <string name="advancedLevel">Avançado</string>
+    <string name="nightmareLevel">Pesadelo</string>
+    <string name="padlock">Cadeado</string>
+
+    <string name="bas_levelSel">Seleção de Nível Básico</string>
+    <string name="inter_levelSel">Seleção de Nível Intermediário</string>
+    <string name="adv_levelSel">Seleção de Nível Avançado</string>
+    <string name="nightmare_levelSel">Seleção de Nível Pesadelo</string>
+
+    <string name="dialog_selectLevel1">Como jogar?</string>
+    <string name="dialog_selectLevel2">O lixo cai do céu! Você deve arrastá-lo para a lixeira correta para evitar a contaminação.\n \n Dependendo do nível escolhido, será mais difícil diferenciar entre os tipos de lixo.</string>
+    <string name="dialog_selectLevel3">Aprenda, divirta-se e reecicla!</string>
+    <string name="dialog_selectLevel4">Aprenda, divirta-se e</string>
+
+    <string name="dialog_warningQuit">Você deseja\nsair do aplicativo?</string>
+    <string name="dialog_warningExit">Você deseja \nsair?</string>
+    <string name="dialog_warningAlert">Você ainda não escolheu\num nível!</string>
+    <string name="dialog_warningLeave">Você deseja\nsair do jogo?</string>
+    <string name="dialog_quit">Sair</string>
+    <string name="dialog_leave">Sair</string>
+    <string name="dialog_logout">Sair</string>
+
+    <!--Tutorial description-->
+    <string name="tutorial_buttonSel">Jogar</string>
+    <string name="tutorial_instruction">Toque nas lixeiras\npara aprender mais</string>
+    <string name="trashCan1">Lixeira verde</string>
+    <string name="trashCan2">Lixeira azul</string>
+    <string name="trashCan3">Lixeira vermelha</string>
+    <string name="trashCan4">Lixeira cinza</string>
+
+    <string name="trashCan1_help">Saiba mais sobre a lixeira verde</string>
+    <string name="trashCan2_help">Saiba mais sobre a lixeira azul</string>
+    <string name="trashCan3_help">Saiba mais sobre a lixeira cinza</string>
+    <string name="trashCan4_help">Saiba mais sobre a lixeira vermelha</string>
+
+    <string name="dialog_trashcan11">Resíduos recuperáveis</string>
+    <string name="dialog_trashcan12">Todos os materiais residuais que podem ser reutilizados e não se decompõem facilmente.\n\n<b>Como:</b>\n\nPapelão\nPapel\nPET\nHDPE\nVidro\nMetais\nEletrodomésticos</string>
+    <string name="dialog_trashcan21">Resíduos orgânicos</string>
+    <string name="dialog_trashcan22">Todos os materiais residuais que são restos biodegradáveis de plantas e animais.\n\n<b>Como:</b>\n\nPlantas\nOssos\nCasca\nExcrementos\nGalhos ou folhas\nResíduos de alimentos\nPapel ou papelão sujos</string>
+    <string name="dialog_trashcan31">Resíduos inorgânicos</string>
+    <string name="dialog_trashcan32">Todos os materiais residuais que não são naturais, mas podem ser reciclados.\n\n<b>Como:</b>\n\nPapel\nPapelão\nVidro\nMetais\nRoupas\nCouro\nLatinhas</string>
+    <string name="dialog_trashcan41">Resíduos de manuseio especial</string>
+    <string name="dialog_trashcan42">Todos os materiais residuais que não podem mais ser reutilizados e devem ser descartados com cuidado.\n\n<b>Como:</b>\n\nResíduos tóxicos\nResíduos médicos\nResíduos industriais\nResíduos perigosos\nResíduos de construção</string>
+    <!--Juego-->
+
+    <string name="your_points">Sua pontuação: </string>
+    <string name="highest_score">Pontuação mais alta: </string>
+    <string name="dialog_restart">Reiniciar nível</string>
+
+    <string name="winning_dialog">Você limpou\no mundo!</string>
+    <string name="losing_dialog">O mundo ficou poluído!</string>
+    <string name="winning_picture">Planeta saudável</string>
+    <string name="losing_picture">Planeta doente</string>
+
+    <string name="winning_tip1">Você sabia que apenas 9% dos resíduos são reciclados no México?</string>
+    <string name="losing_tip">No entanto, nunca é tarde demais para mudar o mundo real. Gostaria de tentar novamente?</string>
+    <string name="dialog_go">Vamos lá!</string>
+    <string name="space">" "</string>
+    <string name="trophy">Troféu</string>
+
+    <string name="points_placeholder">%1$d</string>
+    <string name="highest_placeholder">%1$d</string>
+
+    <!--Ranking-->
+    <string name="points_ranking">" pts"</string>
+    <string name="ranking_ranking">Classificação</string>
+    <string name="number_ranking">0</string>
+    <string name="ranking_null_name">----------</string>
+    <string name="ranking_null_number">----</string>
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
+
+</resources>

@@ -39,7 +39,7 @@
 
     <string name="dialog_selectLevel1">¿Cómo se juega?</string>
     <string name="dialog_selectLevel2">¡Los residuos caen del cielo! Debes arrastrarlos hasta el bote correcto para evitar la contaminación.\n \n Dependiendo el nivel que elijas, será más complicado diferenciar entre los tipos de residuos.</string>
-    <string name="dialog_selectLevel3">¡Aprende, diviértete y recicla!</string>
+    <string name="dialog_selectLevel3">¡Aprende, diviértete y reecicla!</string>
     <string name="dialog_selectLevel4">¡Aprende, diviértete y</string>
 
     <string name="dialog_warningQuit">¿Quieres salir\nde la aplicación?</string>

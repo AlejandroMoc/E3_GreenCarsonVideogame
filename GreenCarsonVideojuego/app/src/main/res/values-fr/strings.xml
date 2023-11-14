@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--General-->
+    <string name="app_name">Green Carson - JEU</string>
+
+    <!--Login screen-->
+    <string name="userEmail">E-mail</string>
+    <string name="userPassword">Mot de passe</string>
+    <string name="userEmail_missing">Veuillez entrer une adresse e-mail valide.</string>
+    <string name="userPassword_missing">Veuillez entrer un mot de passe valide.</string>
+    <string name="loginButton">Se connecter</string>
+    <string name="forgotPassword">Avez-vous oublié votre mot de passe ?</string>
+    <string name="googleLogin">Se connecter avec Google</string>
+    <string name="facebookLogin">Se connecter avec Facebook</string>
+    <string name="login_success">Connexion réussie.</string>
+    <string name="login_failed">Échec de la connexion.</string>
+    <string name="logout_success">Déconnexion réussie.</string>
+    <string name="logout_failed">Échec de la déconnexion.</string>
+
+    <!--Global elements-->
+    <string name="logoDescription">Logo de la Fondation GreenCarson</string>
+    <string name="start_game_button">Démarrer le jeu</string>
+    <string name="go_back_button">Retour</string>
+    <string name="go_forward">Avancer</string>
+    <string name="help_button">Aide</string>
+    <string name="background">Image de fond</string>
+
+    <!--Level selection screen-->
+    <string name="basicLevel">Niveau de base</string>
+    <string name="interLevel">Niveau intermédiaire</string>
+    <string name="advancedLevel">Niveau avancé</string>
+    <string name="nightmareLevel">Niveau cauchemar</string>
+    <string name="padlock">Cadenas</string>
+
+    <string name="bas_levelSel">Sélection du niveau de base</string>
+    <string name="inter_levelSel">Sélection du niveau intermédiaire</string>
+    <string name="adv_levelSel">Sélection du niveau avancé</string>
+    <string name="nightmare_levelSel">Sélection du niveau cauchemar</string>
+
+    <string name="dialog_selectLevel1">Comment jouer ?</string>
+    <string name="dialog_selectLevel2">Les déchets tombent du ciel ! Vous devez les glisser dans la poubelle appropriée pour éviter la contamination.\n\nSelon le niveau que vous avez choisi, il sera plus difficile de différencier les types de déchets.</string>
+    <string name="dialog_selectLevel3">Apprenez, amusez-vous et reecicla !</string>
+    <string name="dialog_selectLevel4">Apprenez, amusez-vous et</string>
+
+    <string name="dialog_warningQuit">Voulez-vous\nquitter l\'application ?</string>
+    <string name="dialog_warningExit">Voulez-vous\nvous déconnecter ?</string>
+    <string name="dialog_warningAlert">Vous n\'avez pas encore choisi\nun niveau !</string>
+    <string name="dialog_warningLeave">Voulez-vous\nquitter le jeu ?</string>
+    <string name="dialog_quit">Quitter</string>
+    <string name="dialog_leave">Sortir</string>
+    <string name="dialog_logout">Se déconnecter</string>
+
+    <!--Tutorial description-->
+    <string name="tutorial_buttonSel">Jouer</string>
+    <string name="tutorial_instruction">Appuyez sur les poubelles\npour en savoir plus</string>
+    <string name="trashCan1">Poubelle verte</string>
+    <string name="trashCan2">Poubelle bleue</string>
+    <string name="trashCan3">Poubelle rouge</string>
+    <string name="trashCan4">Poubelle grise</string>
+
+    <string name="trashCan1_help">En savoir plus sur la poubelle verte</string>
+    <string name="trashCan2_help">En savoir plus sur la poubelle bleue</string>
+    <string name="trashCan3_help">En savoir plus sur la poubelle grise</string>
+    <string name="trashCan4_help">En savoir plus sur la poubelle rouge</string>
+
+    <string name="dialog_trashcan11">Déchets récupérables</string>
+    <string name="dialog_trashcan12">Tous les matériaux de déchets qui peuvent être réutilisés et ne se décomposent pas facilement.\n\n<b>Comme :</b>\n\nCarton\nPapier\nPET\nHDPE\nVerre\nMétaux\nAppareils électroménagers</string>
+    <string name="dialog_trashcan21">Déchets organiques</string>
+    <string name="dialog_trashcan22">Tous les matériaux de déchets qui sont des restes biodégradables de plantes et d'animaux.\n\n<b>Comme :</b>\n\nPlantes\nOs\nÉpluchures\nExcréments\nBranches ou feuilles\nDéchets alimentaires\nPapier ou carton souillés</string>
+    <string name="dialog_trashcan31">Déchets inorganiques</string>
+    <string name="dialog_trashcan32">Tous les matériaux de déchets qui ne sont pas naturels mais peuvent être recyclés.\n\n<b>Comme :</b>\n\nPapier\nCarton\nVerre\nMétaux\nVêtements\nCuir\nBoîtes de conserve</string>
+    <string name="dialog_trashcan41">Déchets nécessitant une manipulation spéciale</string>
+    <string name="dialog_trashcan42">Tous les matériaux de déchets qui ne peuvent plus être réutilisés et doivent être éliminés avec précaution.\n\n<b>Comme :</b>\n\nDéchets toxiques\nDéchets médicaux\nDéchets industriels\nDéchets dangereux\nDéchets de construction</string>
+
+    <!--Jeu-->
+    <string name="your_points">Votre score : </string>
+    <string name="highest_score">Meilleur score : </string>
+    <string name="dialog_restart">Recommencer le niveau</string>
+
+    <string name="winning_dialog">Vous avez nettoyé\nle monde !</string>
+    <string name="losing_dialog">Le monde s\'est pollué !</string>
+    <string name="winning_picture">Planète saine</string>
+    <string name="losing_picture">Planète malade</string>
+
+    <string name="winning_tip1">Saviez-vous que seulement 9 % des déchets sont recyclés au Mexique ?</string>
+    <string name="losing_tip">Cependant, il n\'est jamais trop tard pour changer le monde réel. Voulez-vous essayer à nouveau ?</string>
+    <string name="dialog_go">Allons-y !</string>
+    <string name="space">" "</string>
+    <string name="trophy">Trophée</string>
+
+    <string name="points_placeholder">%1$d</string>
+    <string name="highest_placeholder">%1$d</string>
+
+    <!--Classement-->
+    <string name="points_ranking">" pts"</string>
+    <string name="ranking_ranking">Classement</string>
+    <string name="number_ranking">0</string>
+    <string name="ranking_null_name">----------</string>
+    <string name="ranking_null_number">----</string>
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
+
+</resources>
