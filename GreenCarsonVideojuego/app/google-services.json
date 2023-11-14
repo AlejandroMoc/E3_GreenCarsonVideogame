@@ -8,12 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:901697229886:android:3f70b8f6c5d1964ba32d6f",
+        "mobilesdk_app_id": "1:901697229886:android:f13da4b540fb6116a32d6f",
         "android_client_info": {
-          "package_name": "com.example.Bit_3"
+          "package_name": "com.example.bit_3"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDWtFdrIsOaLEN3q9iZeukgClUJKq2IpXE"
@@ -21,7 +26,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "901697229886-0jmpicgnf24mf8929auf0svg3j73dh34.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.tec.A01735425.RecolectoresIOSApp"
+              }
+            }
+          ]
         }
       }
     },
@@ -32,7 +49,12 @@
           "package_name": "com.example.greencarson"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDWtFdrIsOaLEN3q9iZeukgClUJKq2IpXE"
@@ -40,7 +62,135 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "901697229886-0jmpicgnf24mf8929auf0svg3j73dh34.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.tec.A01735425.RecolectoresIOSApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901697229886:android:cfa020e162c09899a32d6f",
+        "android_client_info": {
+          "package_name": "com.example.greencarson_industria_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWtFdrIsOaLEN3q9iZeukgClUJKq2IpXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "901697229886-0jmpicgnf24mf8929auf0svg3j73dh34.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.tec.A01735425.RecolectoresIOSApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901697229886:android:813527475aa670b2a32d6f",
+        "android_client_info": {
+          "package_name": "com.example.proyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWtFdrIsOaLEN3q9iZeukgClUJKq2IpXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "901697229886-0jmpicgnf24mf8929auf0svg3j73dh34.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.tec.A01735425.RecolectoresIOSApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901697229886:android:bf019325d97d629ca32d6f",
+        "android_client_info": {
+          "package_name": "com.example.reciclaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901697229886-i47uvilfh598vueops47ooisdbhkeqc1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reciclaapp",
+            "certificate_hash": "ef4fb3c4abba66963efe1b10c4c2f7dff07e50d9"
+          }
+        },
+        {
+          "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWtFdrIsOaLEN3q9iZeukgClUJKq2IpXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "901697229886-0jmpicgnf24mf8929auf0svg3j73dh34.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.tec.A01735425.RecolectoresIOSApp"
+              }
+            }
+          ]
         }
       }
     },
@@ -51,7 +201,12 @@
           "package_name": "com.greencarson.reciclaapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDWtFdrIsOaLEN3q9iZeukgClUJKq2IpXE"
@@ -59,7 +214,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "901697229886-0jmpicgnf24mf8929auf0svg3j73dh34.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.tec.A01735425.RecolectoresIOSApp"
+              }
+            }
+          ]
         }
       }
     },
@@ -70,7 +237,20 @@
           "package_name": "greencarson.videojuego"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "901697229886-f5dbq03vqpn2u2i95smfe7jebhudemot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "greencarson.videojuego",
+            "certificate_hash": "7a6666bd9ae8c495abbe92f58ce9c26b783007e9"
+          }
+        },
+        {
+          "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDWtFdrIsOaLEN3q9iZeukgClUJKq2IpXE"
@@ -78,7 +258,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "901697229886-0jmpicgnf24mf8929auf0svg3j73dh34.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mx.tec.A01735425.RecolectoresIOSApp"
+              }
+            }
+          ]
         }
       }
     }

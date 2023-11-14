@@ -6,15 +6,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.Objects;
 
 public class RankingActivity extends Activity {
 
@@ -48,7 +45,7 @@ public class RankingActivity extends Activity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        String userId = mAuth.getCurrentUser().getUid();
+        String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
         db.collection("usuarios").orderBy("rank_points", Query.Direction.DESCENDING).get().
                 addOnCompleteListener(task -> {
@@ -61,9 +58,9 @@ public class RankingActivity extends Activity {
 
                                 //pointsPersonal.setText(document.getLong("rank_points").toString(), TextView.BufferType.valueOf(getResources().getString(R.string.points_ranking)));
 
-                                pointsPersonal.setText(document.getLong("rank_points").toString());
+                                pointsPersonal.setText(Objects.requireNonNull(document.getLong("rank_points")).toString());
                                 pointsString = getResources().getString(R.string.points_ranking);
-                                rankPoints = document.getLong("rank_points").toString();
+                                rankPoints = Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = rankPoints + pointsString;
                                 pointsPersonal.setText(pointsSum);
 
@@ -73,31 +70,31 @@ public class RankingActivity extends Activity {
                             if (position == 1) {
                                 n1.setText(document.getString("nombre_s"));
                                 //p1.setText(document.getLong("rank_points").toString());
-                                pointsSum=document.getLong("rank_points").toString();
+                                pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p1.setText(pointsSum);
 
                             } else if (position == 2) {
                                 n2.setText(document.getString("nombre_s"));
-                                pointsSum=document.getLong("rank_points").toString();
+                                pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p2.setText(pointsSum);
 
                             } else if (position == 3) {
                                 n3.setText(document.getString("nombre_s"));
-                                pointsSum=document.getLong("rank_points").toString();
+                                pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p3.setText(pointsSum);
 
                             } else if (position == 4) {
                                 n4.setText(document.getString("nombre_s"));
-                                pointsSum=document.getLong("rank_points").toString();
+                                pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p4.setText(pointsSum);
 
                             } else if (position == 5) {
                                 n5.setText(document.getString("nombre_s"));
-                                pointsSum=document.getLong("rank_points").toString();
+                                pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p5.setText(pointsSum);
 

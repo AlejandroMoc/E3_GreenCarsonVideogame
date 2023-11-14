@@ -20,7 +20,6 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -32,7 +31,6 @@ public class SelectLevelActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     int levelNumber, viewId, highest1, highest2, highest3;
     private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,43 +51,40 @@ public class SelectLevelActivity extends AppCompatActivity {
         //progress = 3;
 
         mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
-        String userId = mAuth.getCurrentUser().getUid();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
         db.collection("usuarios").document(userId).get().
-                addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists())  {
-                                highest1 = document.contains("highest1") ? document.getLong("highest1").intValue() : 0;
-                                highest2 = document.contains("highest2") ? document.getLong("highest2").intValue() : 0;
-                                highest3 = document.contains("highest3") ? document.getLong("highest3").intValue() : 0;
+                addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists())  {
+                            highest1 = document.contains("highest1") ? document.getLong("highest1").intValue() : 0;
+                            highest2 = document.contains("highest2") ? document.getLong("highest2").intValue() : 0;
+                            highest3 = document.contains("highest3") ? document.getLong("highest3").intValue() : 0;
 
-                                if (highest1 < 200) {
-                                    Log.d("10", "NINGUNO DESBLOQUEDADO");
-                                    buttonInter.setClickable(false);
-                                    buttonAdvan.setClickable(false);
-                                    buttonNightmare.setClickable(false);
-                                } else if (highest2 < 500) {
-                                    Log.d("10", "NIVEL 2 DESBLOQUEADO");
-                                    buttonAdvan.setClickable(false);
-                                    buttonNightmare.setClickable(false);
-                                    lock1.setVisibility(View.INVISIBLE);
-                                }
-                                else if (highest3 < 800) {
-                                    Log.d("10", "NIVEL 2 Y 3 DESBLOQUEADO");
-                                    buttonNightmare.setClickable(false);
-                                    lock1.setVisibility(View.INVISIBLE);
-                                    lock2.setVisibility(View.INVISIBLE);
-                                }
-                                else {
-                                    Log.d("10", "TODOS DESBLOQUEADOS");
-                                    lock1.setVisibility(View.INVISIBLE);
-                                    lock2.setVisibility(View.INVISIBLE);
-                                    lock3.setVisibility(View.INVISIBLE);
-                                }
+                            if (highest1 < 200) {
+                                Log.d("10", "NINGUNO DESBLOQUEDADO");
+                                buttonInter.setClickable(false);
+                                buttonAdvan.setClickable(false);
+                                buttonNightmare.setClickable(false);
+                            } else if (highest2 < 500) {
+                                Log.d("10", "NIVEL 2 DESBLOQUEADO");
+                                buttonAdvan.setClickable(false);
+                                buttonNightmare.setClickable(false);
+                                lock1.setVisibility(View.INVISIBLE);
+                            }
+                            else if (highest3 < 800) {
+                                Log.d("10", "NIVEL 2 Y 3 DESBLOQUEADO");
+                                buttonNightmare.setClickable(false);
+                                lock1.setVisibility(View.INVISIBLE);
+                                lock2.setVisibility(View.INVISIBLE);
+                            }
+                            else {
+                                Log.d("10", "TODOS DESBLOQUEADOS");
+                                lock1.setVisibility(View.INVISIBLE);
+                                lock2.setVisibility(View.INVISIBLE);
+                                lock3.setVisibility(View.INVISIBLE);
                             }
                         }
                     }

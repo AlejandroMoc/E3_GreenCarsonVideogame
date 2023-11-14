@@ -50,59 +50,56 @@ public class GameOver extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        String userId = mAuth.getCurrentUser().getUid();
+        String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         DocumentReference docRef = db.collection("usuarios").document(userId);
 
         db.collection("usuarios").document(userId).get().
-                addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists())  {
-                                highest1 = document.contains("highest1") ? document.getLong("highest1").intValue() : 0;
-                                highest2 = document.contains("highest2") ? document.getLong("highest2").intValue() : 0;
-                                highest3 = document.contains("highest3") ? document.getLong("highest3").intValue() : 0;
-                                highest4 = document.contains("highest4") ? document.getLong("highest4").intValue() : 0;
+                addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists())  {
+                            highest1 = document.contains("highest1") ? document.getLong("highest1").intValue() : 0;
+                            highest2 = document.contains("highest2") ? document.getLong("highest2").intValue() : 0;
+                            highest3 = document.contains("highest3") ? document.getLong("highest3").intValue() : 0;
+                            highest4 = document.contains("highest4") ? document.getLong("highest4").intValue() : 0;
 
-                                if (levelNumber == 1 && points > highest1) {
-                                    ivNewHighest.setVisibility(View.VISIBLE);
-                                    highest1 = points;
-                                    docRef.update("highest1", points);
-                                }
-                                if (levelNumber == 1) {
-                                    tvHighest.setText(getString(R.string.highest_placeholder, highest1));
-                                }
-                                if (levelNumber == 2 && points > highest2) {
-                                    ivNewHighest.setVisibility(View.VISIBLE);
-                                    highest2 = points;
-                                    docRef.update("highest2", points);
-                                }
-                                if (levelNumber == 2) {
-                                    tvHighest.setText(getString(R.string.highest_placeholder, highest2));
-                                }
-                                if (levelNumber == 3 && points > highest3) {
-                                    ivNewHighest.setVisibility(View.VISIBLE);
-                                    highest3 = points;
-                                    docRef.update("highest3", points);
-                                }
-                                if (levelNumber == 3) {
-                                    tvHighest.setText(getString(R.string.highest_placeholder, highest3));
-                                }
-                                if (levelNumber == 4 && points > highest4) {
-                                    ivNewHighest.setVisibility(View.VISIBLE);
-                                    highest4 = points;
-                                    docRef.update("highest4", highest4);
-                                }
-                                if (levelNumber == 4) {
-                                    tvHighest.setText(getString(R.string.highest_placeholder, highest4));
-                                }
-
-                                int rank_points = highest1 + highest2 + highest3 + highest4;
-
-                                docRef.update("rank_points", rank_points);
-                                
+                            if (levelNumber == 1 && points > highest1) {
+                                ivNewHighest.setVisibility(View.VISIBLE);
+                                highest1 = points;
+                                docRef.update("highest1", points);
                             }
+                            if (levelNumber == 1) {
+                                tvHighest.setText(getString(R.string.highest_placeholder, highest1));
+                            }
+                            if (levelNumber == 2 && points > highest2) {
+                                ivNewHighest.setVisibility(View.VISIBLE);
+                                highest2 = points;
+                                docRef.update("highest2", points);
+                            }
+                            if (levelNumber == 2) {
+                                tvHighest.setText(getString(R.string.highest_placeholder, highest2));
+                            }
+                            if (levelNumber == 3 && points > highest3) {
+                                ivNewHighest.setVisibility(View.VISIBLE);
+                                highest3 = points;
+                                docRef.update("highest3", points);
+                            }
+                            if (levelNumber == 3) {
+                                tvHighest.setText(getString(R.string.highest_placeholder, highest3));
+                            }
+                            if (levelNumber == 4 && points > highest4) {
+                                ivNewHighest.setVisibility(View.VISIBLE);
+                                highest4 = points;
+                                docRef.update("highest4", highest4);
+                            }
+                            if (levelNumber == 4) {
+                                tvHighest.setText(getString(R.string.highest_placeholder, highest4));
+                            }
+
+                            int rank_points = highest1 + highest2 + highest3 + highest4;
+
+                            docRef.update("rank_points", rank_points);
+
                         }
                     }
                 });
