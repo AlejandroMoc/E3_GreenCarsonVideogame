@@ -26,8 +26,6 @@ import java.util.Objects;
 import java.util.Random;
 
 public class GameView extends View {
-
-    Trash draggedTrash;
     final Bitmap background;
     final Bitmap ground;
     Bitmap dumpsterA, dumpsterB, dumpsterC, dumpsterD;
@@ -94,28 +92,28 @@ public class GameView extends View {
             dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth()-dumpsterD.getWidth()/3, dumpsterD.getHeight()-dumpsterD.getHeight()/3, true);
             minPoints = Integer.MAX_VALUE;
             trashDensity=2;
-            life=25;
-            pointsSum=30;
+            life=10;
+            pointsSum=10;
 
         } else if (levelNumber==3){
             Log.d("3", "Se envia a nivel avanzado");
-            minPoints=800;
+            minPoints=300;
             trashDensity=2;
-            life=20;
-            pointsSum=20;
+            life=5;
+            pointsSum=10;
 
         } else if (levelNumber==2){
             Log.d("2", "Se envia a nivel intermedio");
-            minPoints=500;
+            minPoints=250;
             trashDensity=2;
-            life=15;
-            pointsSum=15;
+            life=5;
+            pointsSum=10;
 
         } else if (levelNumber==1){
             Log.d("1", "Se envia a nivel básico");
             minPoints=200;
             trashDensity=1;
-            life=10;
+            life=5;
             pointsSum=10;
         }
 
@@ -260,7 +258,7 @@ public class GameView extends View {
 
     //Función para enviar a gameOver
     private void setGameOver() {
-        if(life<=0){
+        if(life<=0 || points >= minPoints){
             gameOver=true;
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
@@ -279,79 +277,44 @@ public class GameView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        // Handle touch events
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
 
-                if (draggedTrash == null) {
-                    touchX = event.getX();
-                    touchY = event.getY();
+        touchX = event.getX();
+        touchY = event.getY();
 
-                    for (Trash trash : trashesA) {
-                        if (isTouchWithinTrash(touchX, touchY, trash)) {
-                            draggedTrash = trash;
-                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
-                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
-                            break;
-                        }
-                    }
-
-                    for (Trash trash : trashesB) {
-                        if (isTouchWithinTrash(touchX, touchY, trash)) {
-                            draggedTrash = trash;
-                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
-                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
-                            break;
-                        }
-                    }
-
-                    for (Trash trash : trashesC) {
-                        if (isTouchWithinTrash(touchX, touchY, trash)) {
-                            draggedTrash = trash;
-                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
-                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
-                            break;
-                        }
-                    }
-
-                    for (Trash trash : trashesD) {
-                        if (isTouchWithinTrash(touchX, touchY, trash)) {
-                            draggedTrash = trash;
-                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
-                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
-                            break;
-                        }
-                    }
-
-                    //Redibujar view
-                    invalidate();
-                }
-                break;
-            case MotionEvent.ACTION_MOVE:
-                //Actualizar posición
-                if (draggedTrash != null) {
-                    draggedTrash.setTrashX(event.getX() - draggedTrash.getTrashWidth() / 2);
-                    draggedTrash.setTrashY(event.getY() - draggedTrash.getTrashHeight() / 2);
-                    invalidate();
-                }
-                break;
-            case MotionEvent.ACTION_UP:
-            case MotionEvent.ACTION_CANCEL:
-                // Reset the dragged trash
-                draggedTrash = null;
-                invalidate();
-                break;
+        //FALTA AQUI AHORA SIMPLIFICAR ESTO A UN SOLO CICLO (URGENTE)
+        for (Trash trashNow : trashesA) {
+            //Si se está tocando la basura
+            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
+                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth())) {
+                movementCollision(event, trashNow);
+            }
         }
 
-        return true;
-    }
+        for (Trash trashNow : trashesB) {
+            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
+                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth())) {
+                movementCollision(event, trashNow);
+            }
+        }
 
-    private boolean isTouchWithinTrash(float touchX, float touchY, Trash trash) {
-        // Check if the touch coordinates are within the bounds of the given trash
-        return touchX >= trash.getTrashX() &&
-                touchX <= trash.getTrashX() + trash.getTrashWidth() &&
-                touchY >= trash.getTrashY() &&
-                touchY <= trash.getTrashY() + trash.getTrashHeight();
+        for (Trash trashNow : trashesC) {
+            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
+                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth())) {
+                movementCollision(event, trashNow);
+            }
+        }
+
+        for (Trash trashNow : trashesD) {
+            if (touchY >= trashNow.trashY && touchY <= (trashNow.trashY + trashNow.getTrashHeight())
+                    && touchX >= trashNow.trashX && touchX <= (trashNow.trashX + trashNow.getTrashWidth())) {
+                movementCollision(event, trashNow);
+            }
+        }
+
+        //FALTA Colisiones con botes (URGENTE)
+        //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
+
+        return true;
     }
 
     //Funciones colisiones
