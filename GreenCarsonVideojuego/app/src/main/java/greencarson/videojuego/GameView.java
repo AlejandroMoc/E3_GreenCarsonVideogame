@@ -265,8 +265,6 @@ public class GameView extends View {
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
 
-            //Log.d("12", String.valueOf(levelNumber));
-
             Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
@@ -280,57 +278,140 @@ public class GameView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        //AQUI VER SI DEBE IR EL CASES
 
-        if (draggedTrash == null) {
-            touchX = event.getX();
-            touchY = event.getY();
 
-            //FALTA AQUI AHORA SIMPLIFICAR A UN SOLO CICLO (PARECE QUE NO SE PUEDE)
-            for (Trash trashNow : trashesA) {
-                if (isTouchWithinTrash(touchX, touchY, trashNow)) {
-                    draggedTrash = trashNow;
+        switch (event.getAction()) {
 
-                    //FALTA VER SI ESTO ES NECESARIO (PARECIERA QUE NO PERO NO ESTOY SEGURO)
-                    draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
-                    draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
-                    //Ver si poner draggedTrash
-                    movementCollision(event, trashNow);
+            case (MotionEvent.ACTION_MOVE):
+
+                if (draggedTrash == null) {
+                    touchX = event.getX();
+                    touchY = event.getY();
+
+                    //FALTA AQUI AHORA SIMPLIFICAR A UN SOLO CICLO (PARECE QUE NO SE PUEDE)
+                    for (Trash trashNow : trashesA) {
+                        if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                            draggedTrash = trashNow;
+
+                            //FALTA VER SI ESTO ES NECESARIO (PARECIERA QUE NO PERO NO ESTOY SEGURO)
+                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
+                            //Ver si poner draggedTrash
+                            movementCollision(event, trashNow);
+
+                            //FALTA VER SI LOS BREAKS SON NECESARIOS
+                            break;
+                        }
+                    }
+
+                    for (Trash trashNow : trashesB) {
+                        if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                            draggedTrash = trashNow;
+                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
+                            movementCollision(event, trashNow);
+                            break;
+                        }
+                    }
+
+                    for (Trash trashNow : trashesC) {
+                        if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                            draggedTrash = trashNow;
+                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
+                            movementCollision(event, trashNow);
+                            break;
+                        }
+                    }
+
+                    for (Trash trashNow : trashesD) {
+                        if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                            draggedTrash = trashNow;
+                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
+                            movementCollision(event, trashNow);
+                            break;
+                        }
+                    }
+
+                    //Resetear el draggedTrash
+                    draggedTrash = null;
+
+                    //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
                 }
-            }
 
-            for (Trash trashNow : trashesB) {
-                if (isTouchWithinTrash(touchX, touchY, trashNow)) {
-                    draggedTrash = trashNow;
-                    draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
-                    draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
-                    movementCollision(event, trashNow);
+
+            case (MotionEvent.ACTION_DOWN):
+
+                if (draggedTrash == null) {
+                    touchX = event.getX();
+                    touchY = event.getY();
+
+                    //FALTA AQUI AHORA SIMPLIFICAR A UN SOLO CICLO (PARECE QUE NO SE PUEDE)
+                    for (Trash trashNow : trashesA) {
+                        if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                            draggedTrash = trashNow;
+
+                            //FALTA VER SI ESTO ES NECESARIO (PARECIERA QUE NO PERO NO ESTOY SEGURO)
+                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
+                            //Ver si poner draggedTrash
+                            movementCollision(event, trashNow);
+
+                            //FALTA VER SI LOS BREAKS SON NECESARIOS
+                            break;
+                        }
+                    }
+
+                    for (Trash trashNow : trashesB) {
+                        if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                            draggedTrash = trashNow;
+                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
+                            movementCollision(event, trashNow);
+                            break;
+                        }
+                    }
+
+                    for (Trash trashNow : trashesC) {
+                        if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                            draggedTrash = trashNow;
+                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
+                            movementCollision(event, trashNow);
+                            break;
+                        }
+                    }
+
+                    for (Trash trashNow : trashesD) {
+                        if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                            draggedTrash = trashNow;
+                            draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                            draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
+                            movementCollision(event, trashNow);
+                            break;
+                        }
+                    }
+
+                    //Resetear el draggedTrash
+                    draggedTrash = null;
+
+                    //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
                 }
-            }
 
-            for (Trash trashNow : trashesC) {
-                if (isTouchWithinTrash(touchX, touchY, trashNow)) {
-                    draggedTrash = trashNow;
-                    draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
-                    draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
-                    movementCollision(event, trashNow);
-                }
-            }
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+                // Reset the dragged trash
+                draggedTrash = null;
+                invalidate();
+                break;
 
-            for (Trash trashNow : trashesD) {
-                if (isTouchWithinTrash(touchX, touchY, trashNow)) {
-                    draggedTrash = trashNow;
-                    draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
-                    draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
-                    movementCollision(event, trashNow);
-                }
-            }
-
-            //Resetear el draggedTrash
-            draggedTrash = null;
-
-            //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
         }
+
+
+            //AQUI VER SI DEBE IR EL CASES
+
+
 
         return true;
     }
