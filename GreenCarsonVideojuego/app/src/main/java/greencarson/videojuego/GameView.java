@@ -280,36 +280,44 @@ public class GameView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        touchX = event.getX();
-        touchY = event.getY();
+        //AQUI VER SI DEBE IR EL CASES
 
-        //FALTA AQUI AHORA SIMPLIFICAR A UN SOLO CICLO (PARECE QUE NO SE PUEDE)
-        for (Trash trashNow : trashesA) {
-            if (isTouchWithinTrash(touchX, touchY, trashNow)) {
-                movementCollision(event, trashNow);
+        if (draggedTrash == null) {
+            touchX = event.getX();
+            touchY = event.getY();
+
+            //FALTA AQUI AHORA SIMPLIFICAR A UN SOLO CICLO (PARECE QUE NO SE PUEDE)
+            for (Trash trashNow : trashesA) {
+                if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                    draggedTrash = trashNow;
+                    //Ver si poner draggedTrash
+                    movementCollision(event, trashNow);
+                }
             }
-        }
 
-        for (Trash trashNow : trashesB) {
-            if (isTouchWithinTrash(touchX, touchY, trashNow)) {
-                movementCollision(event, trashNow);
+            for (Trash trashNow : trashesB) {
+                if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                    movementCollision(event, trashNow);
+                }
             }
-        }
 
-        for (Trash trashNow : trashesC) {
-            if (isTouchWithinTrash(touchX, touchY, trashNow)) {
-                movementCollision(event, trashNow);
+            for (Trash trashNow : trashesC) {
+                if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                    movementCollision(event, trashNow);
+                }
             }
-        }
 
-        for (Trash trashNow : trashesD) {
-            if (isTouchWithinTrash(touchX, touchY, trashNow)) {
-                movementCollision(event, trashNow);
+            for (Trash trashNow : trashesD) {
+                if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                    movementCollision(event, trashNow);
+                }
             }
-        }
 
-        //FALTA Colisiones con botes (URGENTE)
-        //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
+            //Resetear el draggedTrash
+            draggedTrash = null;
+
+            //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
+        }
 
         return true;
     }
