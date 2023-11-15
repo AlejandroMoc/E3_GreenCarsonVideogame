@@ -290,6 +290,10 @@ public class GameView extends View {
             for (Trash trashNow : trashesA) {
                 if (isTouchWithinTrash(touchX, touchY, trashNow)) {
                     draggedTrash = trashNow;
+
+                    //FALTA VER SI ESTO ES NECESARIO (PARECIERA QUE NO PERO NO ESTOY SEGURO)
+                    draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                    draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
                     //Ver si poner draggedTrash
                     movementCollision(event, trashNow);
                 }
@@ -297,18 +301,27 @@ public class GameView extends View {
 
             for (Trash trashNow : trashesB) {
                 if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                    draggedTrash = trashNow;
+                    draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                    draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
                     movementCollision(event, trashNow);
                 }
             }
 
             for (Trash trashNow : trashesC) {
                 if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                    draggedTrash = trashNow;
+                    draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                    draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
                     movementCollision(event, trashNow);
                 }
             }
 
             for (Trash trashNow : trashesD) {
                 if (isTouchWithinTrash(touchX, touchY, trashNow)) {
+                    draggedTrash = trashNow;
+                    draggedTrash.setTrashX(touchX - draggedTrash.getTrashWidth() / 2);
+                    draggedTrash.setTrashY(touchY - draggedTrash.getTrashHeight() / 2);
                     movementCollision(event, trashNow);
                 }
             }
