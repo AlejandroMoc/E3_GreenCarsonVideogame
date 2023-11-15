@@ -26,6 +26,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class GameView extends View {
+
     Trash draggedTrash;
     final Bitmap background;
     final Bitmap ground;
@@ -93,28 +94,28 @@ public class GameView extends View {
             dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth()-dumpsterD.getWidth()/3, dumpsterD.getHeight()-dumpsterD.getHeight()/3, true);
             minPoints = Integer.MAX_VALUE;
             trashDensity=2;
-            life=25;
-            pointsSum=30;
+            life=10;
+            pointsSum=10;
 
         } else if (levelNumber==3){
             Log.d("3", "Se envia a nivel avanzado");
-            minPoints=800;
+            minPoints=300;
             trashDensity=2;
-            life=20;
-            pointsSum=20;
+            life=5;
+            pointsSum=10;
 
         } else if (levelNumber==2){
             Log.d("2", "Se envia a nivel intermedio");
-            minPoints=500;
+            minPoints=250;
             trashDensity=2;
-            life=15;
-            pointsSum=15;
+            life=5;
+            pointsSum=10;
 
         } else if (levelNumber==1){
             Log.d("1", "Se envia a nivel básico");
             minPoints=200;
             trashDensity=1;
-            life=10;
+            life=5;
             pointsSum=10;
         }
 
@@ -259,7 +260,7 @@ public class GameView extends View {
 
     //Función para enviar a gameOver
     private void setGameOver() {
-        if(life<=0){
+        if(life<=0 || points >= minPoints){
             gameOver=true;
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
