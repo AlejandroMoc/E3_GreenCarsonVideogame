@@ -77,6 +77,23 @@ public class Trash {
         return trash[0].getHeight();
     }
 
+    //Sets y gets para posiciones
+    public float getTrashX() {
+        return trashX;
+    }
+
+    public void setTrashX(float x) {
+        trashX = x;
+    }
+
+    public float getTrashY() {
+        return trashY;
+    }
+
+    public void setTrashY(float y) {
+        trashY = y;
+    }
+
     public void resetTrash(int trashType, int levelNumber) {
         trashX = random.nextInt(GameView.dWidth - getTrashWidth());
         trashY = -200 + random.nextInt(600) * -1;

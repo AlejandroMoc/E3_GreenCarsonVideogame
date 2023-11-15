@@ -66,7 +66,7 @@
     <string name="dialog_trashcan11">Déchets récupérables</string>
     <string name="dialog_trashcan12">Tous les matériaux de déchets qui peuvent être réutilisés et ne se décomposent pas facilement.\n\n<b>Comme :</b>\n\nCarton\nPapier\nPET\nHDPE\nVerre\nMétaux\nAppareils électroménagers</string>
     <string name="dialog_trashcan21">Déchets organiques</string>
-    <string name="dialog_trashcan22">Tous les matériaux de déchets qui sont des restes biodégradables de plantes et d'animaux.\n\n<b>Comme :</b>\n\nPlantes\nOs\nÉpluchures\nExcréments\nBranches ou feuilles\nDéchets alimentaires\nPapier ou carton souillés</string>
+    <string name="dialog_trashcan22">Tous les matériaux de déchets qui sont des restes biodégradables de plantes et d\'animaux.\n\n<b>Comme :</b>\n\nPlantes\nOs\nÉpluchures\nExcréments\nBranches ou feuilles\nDéchets alimentaires\nPapier ou carton souillés</string>
     <string name="dialog_trashcan31">Déchets inorganiques</string>
     <string name="dialog_trashcan32">Tous les matériaux de déchets qui ne sont pas naturels mais peuvent être recyclés.\n\n<b>Comme :</b>\n\nPapier\nCarton\nVerre\nMétaux\nVêtements\nCuir\nBoîtes de conserve</string>
     <string name="dialog_trashcan41">Déchets nécessitant une manipulation spéciale</string>
