@@ -278,13 +278,11 @@ public class GameView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-
-
         switch (event.getAction()) {
 
             case (MotionEvent.ACTION_MOVE):
 
-                if (draggedTrash == null) {
+                if (draggedTrash != null) {
                     touchX = event.getX();
                     touchY = event.getY();
 
@@ -398,6 +396,12 @@ public class GameView extends View {
 
                     //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
                 }
+                break;
+
+
+
+
+
 
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
