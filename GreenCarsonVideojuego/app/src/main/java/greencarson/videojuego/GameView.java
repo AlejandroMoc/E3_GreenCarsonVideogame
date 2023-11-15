@@ -323,7 +323,6 @@ public class GameView extends View {
                 touchY <= trash.getTrashY() + trash.getTrashHeight();
     }
 
-
     //Funciones colisiones
     private void movementCollision(MotionEvent event, Trash trashNow) {
         trashType = trashNow.trashTypeMine;
