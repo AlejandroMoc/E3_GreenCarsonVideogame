@@ -332,12 +332,10 @@ public class GameView extends View {
                         }
                     }
 
-                    //Resetear el draggedTrash
-                    draggedTrash = null;
-
-                    //AQUI AHORA checar cómo hacer para que las basuras no se junten al presionarlas si están en el mismo lugar
+                    //VER SI ES NECESARIO EL INVALIDATE
+                    invalidate();
+                    //AQUI AHORA hacer para que las basuras no se junten al presionarlas (URGENTISIMO)
                 }
-
 
             case (MotionEvent.ACTION_DOWN):
 
@@ -440,6 +438,7 @@ public class GameView extends View {
             //Obtener posición de basura
             trashNow.oldTrashX = trashNow.trashX;
             trashNow.oldTrashY = trashNow.trashY;
+
         } else if (action == MotionEvent.ACTION_MOVE) {
             trashNow.shiftX = trashNow.oldX - touchX;
             trashNow.shiftY = trashNow.oldY - touchY;
