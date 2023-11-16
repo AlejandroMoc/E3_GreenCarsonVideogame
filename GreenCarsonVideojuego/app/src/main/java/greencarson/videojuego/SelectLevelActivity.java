@@ -106,7 +106,6 @@ public class SelectLevelActivity extends AppCompatActivity {
         //FALTA AQUI SIMPLIFICAR PARA QUE LOS PRIMEROS 4 CASOS USEN LO MISMO
         if (levelNumber == 1 && viewId == R.id.buttonBasic){
             levelNumber = 0;
-            Log.d("0", "Caso 0");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button);
             buttonInter.setBackgroundResource(R.drawable.gradient_button2);
             buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
@@ -117,7 +116,6 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         } else if (levelNumber == 2 && viewId == R.id.buttonInter){
             levelNumber = 0;
-            Log.d("0", "Caso 0");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button);
             buttonInter.setBackgroundResource(R.drawable.gradient_button2);
             buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
@@ -128,7 +126,6 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         } else if (levelNumber == 3 && viewId == R.id.buttonAdvan){
             levelNumber = 0;
-            Log.d("0", "Caso 0");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button);
             buttonInter.setBackgroundResource(R.drawable.gradient_button2);
             buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
@@ -139,7 +136,6 @@ public class SelectLevelActivity extends AppCompatActivity {
             buttonNightmare.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
         } else if (levelNumber == 4 && viewId == R.id.buttonNightmare){
             levelNumber = 0;
-            Log.d("0", "Caso 0");
             buttonBasic.setBackgroundResource(R.drawable.gradient_button);
             buttonInter.setBackgroundResource(R.drawable.gradient_button2);
             buttonAdvan.setBackgroundResource(R.drawable.gradient_button);
