@@ -21,8 +21,8 @@ public class Trash {
         //FALTA AQUI reemplazar algunos assets (URGENTE) FOTOREALISMO
 
         //Basura tipo A - Valorizables                                                              //Listo
-        trash[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);       //v
-        trash[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a2);       //v
+        trash[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);
+        trash[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a2);
         trash[2] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a3);
         trash[3] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a4);
         trash[4] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a5);
@@ -31,7 +31,7 @@ public class Trash {
         trash[7] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a8);
         trash[8] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a9);
 
-        //Basura tipo B - Orgánicos
+        //Basura tipo B - Orgánicos                                                                 //Falta
         trash[9] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b1);
         trash[10] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b2);
         trash[11] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b3);
@@ -51,7 +51,7 @@ public class Trash {
         trash[23] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c6);
         trash[24] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c7);
         trash[25] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);      //FALTAN NUEVOS ASSETS
-        trash[26] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c4);
+        trash[26] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c4);      //FALTAN NUEVOS ASSETS
 
         //Basura tipo D - Manejo Especial
         trash[27] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_d1);
