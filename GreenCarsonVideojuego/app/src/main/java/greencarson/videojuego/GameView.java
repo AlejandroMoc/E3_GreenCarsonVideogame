@@ -164,7 +164,7 @@ public class GameView extends View {
         random = new Random();
 
         //Posición de los botes
-        //FALTA AQUI SIMPLIFICAR ESTO CON EL IF DE ARRIBA (no se si se pueda)
+        //FALTA AQUI SIMPLIFICAR
         if (levelNumber==4){
             dumpsterAX= Math.floorDiv(dWidth,20);
             dumpsterBX = Math.floorDiv(dWidth,3)-Math.floorDiv(dumpsterB.getWidth(),3);

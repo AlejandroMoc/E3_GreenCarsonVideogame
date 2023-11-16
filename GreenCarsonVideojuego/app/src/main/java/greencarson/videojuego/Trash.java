@@ -16,32 +16,31 @@ public class Trash {
     //Constructor
     public Trash(Context context, int trashType, int levelNumber){
 
-        //FALTA AQUI ESTO SIMPLIFICAR (PARECE QUE NO SE PUEDE)
         trashTypeMine= trashType;
 
-        //FALTA AQUI reemplazar por otros assets (algunos, no todos)
+        //FALTA AQUI reemplazar algunos assets (URGENTE) FOTOREALISMO
 
-        //Basura tipo A - Valorizables
-        trash[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);
-        trash[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a2);
+        //Basura tipo A - Valorizables                                                              //Listo
+        trash[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);       //v
+        trash[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a2);       //v
         trash[2] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a3);
-        trash[3] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);
-        trash[4] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a2);
-        trash[5] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a3);
-        trash[6] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);
-        trash[7] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a2);
-        trash[8] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a3);
+        trash[3] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a4);
+        trash[4] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a5);
+        trash[5] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a6);
+        trash[6] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a7);
+        trash[7] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a8);
+        trash[8] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a9);
 
         //Basura tipo B - Orgánicos
         trash[9] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b1);
         trash[10] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b2);
         trash[11] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b3);
-        trash[12] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b1);
-        trash[13] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b2);
-        trash[14] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b3);
-        trash[15] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b1);
-        trash[16] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b2);
-        trash[17] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b3);
+        trash[12] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b4);
+        trash[13] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b5);
+        trash[14] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b6);
+        trash[15] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b7);
+        trash[16] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b8);
+        trash[17] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b9);
 
         //Basura tipo C - Inorgánicos
         trash[18] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c1);
@@ -49,9 +48,9 @@ public class Trash {
         trash[20] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);
         trash[21] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c4);
         trash[22] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c5);
-        trash[23] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c1);
-        trash[24] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c2);
-        trash[25] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);
+        trash[23] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c6);
+        trash[24] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c7);
+        trash[25] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);      //FALTAN NUEVOS ASSETS
         trash[26] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c4);
 
         //Basura tipo D - Manejo Especial
@@ -127,7 +126,8 @@ public class Trash {
             trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
             trashVelocity = 4 + random.nextInt(4);
         } else {
-            trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;  //FALTA ADAPTAR ESTE (NO SE SI ASÍ ESTÁ BIEN)
+            //FALTA ADAPTAR ESTE (NO SE SI ASÍ ESTÁ BIEN)
+            trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
             trashVelocity = 3 + random.nextInt(4);
         }
 
