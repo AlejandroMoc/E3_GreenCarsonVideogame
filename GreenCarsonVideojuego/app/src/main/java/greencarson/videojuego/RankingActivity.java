@@ -104,7 +104,7 @@ public class RankingActivity extends Activity {
                             position++;
                         }
                     } else {
-                        Log.w("20", "Error getting documents.", task.getException());
+                        Log.w("20", "Error obteniendo documentos.", task.getException());
                     }
                 });
     }

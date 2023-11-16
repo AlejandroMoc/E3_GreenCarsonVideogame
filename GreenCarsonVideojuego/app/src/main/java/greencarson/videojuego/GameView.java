@@ -52,7 +52,7 @@ public class GameView extends View {
     final int dumpsterCX;
     final int dumpsterDX;
     final int dumpstersY;
-    float newtrashyX, newtrashyY, touchX, touchY, dumpsterX;
+    float dumpsterX;
     int points, pointsSum, action, i, trashType, winningState, minPoints, trashDensity, life;
     final int levelNumber;
     static int dWidth;
@@ -96,28 +96,38 @@ public class GameView extends View {
             dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth()-dumpsterD.getWidth()/3, dumpsterD.getHeight()-dumpsterD.getHeight()/3, true);
             minPoints = Integer.MAX_VALUE;
             trashDensity=2;
-            life=10;
-            pointsSum=10;
+            //life=10;
+            //pointsSum=10;
+            life=25;
+            pointsSum=30;
 
         } else if (levelNumber==3){
             Log.d("3", "Se envia a nivel avanzado");
-            minPoints=300;
-            trashDensity=2;
-            life=5;
-            pointsSum=10;
+            //minPoints=300;
+            //life=5;
+            //pointsSum=10;
+            minPoints=800;
+            life=20;
+            pointsSum=20;
 
         } else if (levelNumber==2){
             Log.d("2", "Se envia a nivel intermedio");
-            minPoints=250;
             trashDensity=2;
-            life=5;
-            pointsSum=10;
+            //minPoints=250;
+            //life=5;
+            //pointsSum=10;
+            minPoints=500;
+            life=15;
+            pointsSum=15;
 
         } else if (levelNumber==1){
             Log.d("1", "Se envia a nivel básico");
-            minPoints=200;
             trashDensity=1;
-            life=5;
+            //minPoints=200;
+            //life=5;
+            //pointsSum=10;
+            minPoints=250;
+            life=10;
             pointsSum=10;
         }
 
@@ -201,7 +211,7 @@ public class GameView extends View {
 
         boolean collisionHandled = false;
 
-        //Checar si es gameOver
+        //Checar si es gameOver en cada iteración
         setGameOver();
 
         if (!gameOver){
@@ -265,7 +275,10 @@ public class GameView extends View {
 
     //Función para enviar a gameOver
     private void setGameOver() {
-        if(life<=0){
+
+        //Falta checar qué condición dejar
+        if(life<=0 || points >= minPoints){
+        //if(life<=0){
             gameOver=true;
             if(points >= minPoints){winningState=1;}
             else{winningState=0;}
@@ -344,12 +357,14 @@ public class GameView extends View {
                     draggedTrash.trashX = touchX - trashTouchOffsetX;
                     draggedTrash.trashY = touchY - trashTouchOffsetY;
                 }
+                break;
+
+            case MotionEvent.ACTION_UP:
 
                 //FALTA AQUI URGENTISIMO VER CÓMO HACER PARA QUE NO SE SUME MUCHAS VECES POINTSSUM
                 //Parece ser que este movementCollision es el importante
                 movementCollision(event, draggedTrash);
-                break;
-            case MotionEvent.ACTION_UP:
+
                 trashTouched = false;
                 draggedTrash = null;
                 break;
