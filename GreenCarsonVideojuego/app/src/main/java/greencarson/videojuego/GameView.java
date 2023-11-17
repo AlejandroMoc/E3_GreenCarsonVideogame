@@ -481,6 +481,10 @@ public class GameView extends View {
             explosion.explosionY = trashy.get(i).trashY;
             explosions.add(explosion);
             trashy.get(i).resetTrash(trashy.get(i).trashTypeMine, levelNumber);
+            if (draggedTrash != null) {
+                trashTouched = false;
+                draggedTrash = null;
+            }
         }
     }
 
