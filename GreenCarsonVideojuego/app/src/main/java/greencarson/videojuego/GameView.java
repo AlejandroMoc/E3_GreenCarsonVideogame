@@ -11,6 +11,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
@@ -70,6 +71,7 @@ public class GameView extends View {
     Explosion explosion;
     Trash trash;
     Iterator<Explosion> iterator;
+    MediaPlayer mediaPlayer, trashcan_ad;
 
     public GameView(Context context, int levelNumber){
 
@@ -79,6 +81,11 @@ public class GameView extends View {
 
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background_tiles);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
+
+        mediaPlayer = MediaPlayer.create(context, R.raw.lvl_music);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+        trashcan_ad = MediaPlayer.create(context, R.raw.trashcan);
 
         //Para medidas de corazón
         heart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_heart);
@@ -288,6 +295,8 @@ public class GameView extends View {
             intent.putExtra("winningState", winningState);
             intent.putExtra("levelNumber", levelNumber);
 
+            stopAudio();
+
             ((Activity)context).finish();
             context.startActivity(intent);
         }
@@ -441,6 +450,7 @@ public class GameView extends View {
             else life --;
 
             trashNow.resetTrash(trashType, levelNumber);
+            trashcan_ad.start();
         }
     }
 
@@ -455,4 +465,13 @@ public class GameView extends View {
             trashy.get(i).resetTrash(trashy.get(i).trashTypeMine, levelNumber);
         }
     }
+
+    public void stopAudio() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
 }
