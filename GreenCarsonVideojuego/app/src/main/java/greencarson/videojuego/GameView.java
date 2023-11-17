@@ -311,44 +311,23 @@ public class GameView extends View {
             case MotionEvent.ACTION_DOWN:
 
                 //AQUI CHECAR LÍMITES DEL TOUCH
+                if (touchY < dHeight-ground.getHeight()-200) {
+                    Log.d("11", "Tocando");
+                    for (Trash trash : trashesA) {
+                        if (isTouchWithinTrash(trash, touchX, touchY)) {
 
-                //Checar si se está tocando alguna basura
-                for (Trash trash : trashesA) {
-                    if (isTouchWithinTrash(trash, touchX, touchY)) {
+                            //FALTA AQUÍ SIMPLIFICAR CON UNA SOLA FUNCIÓN
+                            trashTouched = true;
 
-                        //FALTA AQUÍ SIMPLIFICAR CON UNA SOLA FUNCIÓN
-                        trashTouched = true;
-
-                        //Parece que con estas lineas funciona por alguna razón moviendose al centro
-                        trashTouchOffsetX = touchX - trash.trashX;
-                        trashTouchOffsetY = touchY - trash.trashY;
-                        draggedTrash = trash;
-                        //movementCollision(event, draggedTrash);
-                        break;
+                            //Parece que con estas lineas funciona por alguna razón moviendose al centro
+                            trashTouchOffsetX = touchX - trash.trashX;
+                            trashTouchOffsetY = touchY - trash.trashY;
+                            draggedTrash = trash;
+                            //movementCollision(event, draggedTrash);
+                            break;
+                        }
                     }
-                }
-                for (Trash trash : trashesB) {
-                    if (isTouchWithinTrash(trash, touchX, touchY)) {
-                        trashTouched = true;
-                        trashTouchOffsetX = touchX - trash.trashX;
-                        trashTouchOffsetY = touchY - trash.trashY;
-                        draggedTrash = trash;
-                        //movementCollision(event, draggedTrash);
-                        break;
-                    }
-                }
-                for (Trash trash : trashesC) {
-                    if (isTouchWithinTrash(trash, touchX, touchY)) {
-                        trashTouched = true;
-                        trashTouchOffsetX = touchX - trash.trashX;
-                        trashTouchOffsetY = touchY - trash.trashY;
-                        draggedTrash = trash;
-                        //movementCollision(event, draggedTrash);
-                        break;
-                    }
-                }
-                if (levelNumber == 4) {
-                    for (Trash trash : trashesD) {
+                    for (Trash trash : trashesB) {
                         if (isTouchWithinTrash(trash, touchX, touchY)) {
                             trashTouched = true;
                             trashTouchOffsetX = touchX - trash.trashX;
@@ -358,17 +337,41 @@ public class GameView extends View {
                             break;
                         }
                     }
+                    for (Trash trash : trashesC) {
+                        if (isTouchWithinTrash(trash, touchX, touchY)) {
+                            trashTouched = true;
+                            trashTouchOffsetX = touchX - trash.trashX;
+                            trashTouchOffsetY = touchY - trash.trashY;
+                            draggedTrash = trash;
+                            //movementCollision(event, draggedTrash);
+                            break;
+                        }
+                    }
+                    if (levelNumber == 4) {
+                        for (Trash trash : trashesD) {
+                            if (isTouchWithinTrash(trash, touchX, touchY)) {
+                                trashTouched = true;
+                                trashTouchOffsetX = touchX - trash.trashX;
+                                trashTouchOffsetY = touchY - trash.trashY;
+                                draggedTrash = trash;
+                                //movementCollision(event, draggedTrash);
+                                break;
+                            }
+                        }
+                    }
+                    //Seguramente el movement collision tiene que ir acá (no estoy seguro)
                 }
-                //Seguramente el movement collision tiene que ir acá (no estoy seguro)
-
                 break;
-            case MotionEvent.ACTION_MOVE:
+                //Checar si se está tocando alguna basura
 
-                //Mover basura tocada
-                if (trashTouched) {
-                    draggedTrash.trashX = touchX - trashTouchOffsetX;
-                    draggedTrash.trashY = touchY - trashTouchOffsetY;
+            case MotionEvent.ACTION_MOVE:
+                if (touchY < dHeight-ground.getHeight()-200) {
+                    if (trashTouched) {
+                        draggedTrash.trashX = touchX - trashTouchOffsetX;
+                        draggedTrash.trashY = touchY - trashTouchOffsetY;
+                    }
                 }
+                //Mover basura tocada
                 break;
 
             //Cuando
