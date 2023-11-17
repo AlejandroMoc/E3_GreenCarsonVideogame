@@ -209,7 +209,6 @@ public class GameView extends View {
                 trash = new Trash(context, 4, levelNumber);
                 trashesD.add(trash);
             }
-
         }
     }
 
@@ -311,6 +310,8 @@ public class GameView extends View {
         switch (action) {
             case MotionEvent.ACTION_DOWN:
 
+                //AQUI CHECAR LÍMITES DEL TOUCH
+
                 //Checar si se está tocando alguna basura
                 for (Trash trash : trashesA) {
                     if (isTouchWithinTrash(trash, touchX, touchY)) {
@@ -358,6 +359,8 @@ public class GameView extends View {
                         }
                     }
                 }
+                //Seguramente el movement collision tiene que ir acá (no estoy seguro)
+
                 break;
             case MotionEvent.ACTION_MOVE:
 
@@ -368,11 +371,16 @@ public class GameView extends View {
                 }
                 break;
 
+            //Cuando
             case MotionEvent.ACTION_UP:
 
                 //FALTA AQUI URGENTISIMO VER CÓMO HACER PARA QUE NO SE SUME MUCHAS VECES POINTSSUM
                 //Parece ser que este movementCollision es el importante
-                movementCollision(event, draggedTrash);
+
+                //Si basura seleccionada existe, checa colisiones
+                if (draggedTrash != null) {
+                    movementCollision(event, draggedTrash);
+                }
 
                 trashTouched = false;
                 draggedTrash = null;
@@ -386,7 +394,7 @@ public class GameView extends View {
 
     //Función para reemplazar el toque
     private boolean isTouchWithinTrash(Trash trash, float touchX, float touchY) {
-        // Check if the touch coordinates are within the bounds of the trash
+        //Checar si el touch está tocando el área de la basura
         return touchX >= trash.trashX && touchX <= (trash.trashX + trash.getTrash(trash.trashFrame).getWidth()) &&
                 touchY >= trash.trashY && touchY <= (trash.trashY + trash.getTrash(trash.trashFrame).getHeight());
     }
@@ -397,6 +405,7 @@ public class GameView extends View {
         trashType = trashNow.trashTypeMine;
         action = event.getAction();
 
+        //FALTA AQUÍ SIMPLIFICAR PARA SOLO USAR LOS TRUES Y DEJAR EL RESTO EN FALSES
         switch (trashType) {
             case 1:
                 dumpsterCollision(trashNow, dumpsterA, true, levelNumber);
@@ -439,15 +448,21 @@ public class GameView extends View {
             dumpsterX = dumpsterDX;
         }
 
+        //AQUI LIMITAR MOVIMIENTO
+
         if (trashNow.trashX + trashNow.getTrashWidth()>=dumpsterX
                 && trashNow.trashX <= dumpsterX + dumpster.getWidth()
                 && trashNow.trashY + trashNow.getTrashWidth()>=dumpstersY
                 && trashNow.trashY + trashNow.getTrashWidth()<=dumpstersY + dumpster.getHeight()){
 
+            //AQUI URGENTE SOLO LLAMAR UNA VEZ (TAL VEZ PODEMOS USAR UNA FLAG)
             //Sumar puntos o restar vida
-            if (state)
+            if (state){
                 points +=pointsSum;
-            else life --;
+            }
+            else {
+                life --;
+            }
 
             trashNow.resetTrash(trashType, levelNumber);
             trashcan_ad.start();
