@@ -83,7 +83,17 @@
     <string name="winning_picture">Healthy planet</string>
     <string name="losing_picture">Sick planet</string>
 
-    <string name="winning_tip1">Did you know that only 9% of waste is recycled in Mexico?</string>
+    <string name="winning_tip1">Did you know that only 9\% of waste is recycled in Mexico?</string>
+    <string name="winning_tip2">Did you know that 500,000 bottles are produced per minute? Most of them end up in the ocean.</string>
+    <string name="winning_tip3">Did you know that everyday plastic can take over 450 years to degrade?</string>
+    <string name="winning_tip4">Did you know that in Mexico, over 50\% of PET plastic is recycled?</string>
+    <string name="winning_tip5">Did you know that recycling has increased by approximately 200\% in the last 10 years?</string>
+    <string name="winning_tip6">Did you know that in Mexico, recycled tires are used for floors and furniture?</string>
+    <string name="winning_tip7">Did you know that in Mexico, the General Law for Waste Prevention exists?</string>
+    <string name="winning_tip8">Did you know that glass can take up to 5000 years to decompose?</string>
+    <string name="winning_tip9">Did you know that producing a recycled can reduces 95\% of materials?</string>
+    <string name="winning_tip10">Did you know that one million marine creatures die each year due to waste?</string>
+
     <string name="losing_tip">However, it\'s never too late to change the real world. Would you like to try again?</string>
     <string name="dialog_go">Let\'s go!</string>
     <string name="space">" "</string>

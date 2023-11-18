@@ -71,8 +71,8 @@
     <string name="dialog_trashcan32">Todos os materiais residuais que não são naturais, mas podem ser reciclados.\n\n<b>Como:</b>\n\nPapel\nPapelão\nVidro\nMetais\nRoupas\nCouro\nLatinhas</string>
     <string name="dialog_trashcan41">Resíduos de manuseio especial</string>
     <string name="dialog_trashcan42">Todos os materiais residuais que não podem mais ser reutilizados e devem ser descartados com cuidado.\n\n<b>Como:</b>\n\nResíduos tóxicos\nResíduos médicos\nResíduos industriais\nResíduos perigosos\nResíduos de construção</string>
-    <!--Juego-->
 
+    <!--Juego-->
     <string name="your_points">Sua pontuação: </string>
     <string name="highest_score">Pontuação mais alta: </string>
     <string name="dialog_restart">Reiniciar nível</string>
@@ -82,7 +82,17 @@
     <string name="winning_picture">Planeta saudável</string>
     <string name="losing_picture">Planeta doente</string>
 
-    <string name="winning_tip1">Você sabia que apenas 9% dos resíduos são reciclados no México?</string>
+    <string name="winning_tip1">Você sabia que apenas 9\% dos resíduos são reciclados no México?</string>
+    <string name="winning_tip2">Você sabia que são produzidas 500.000 garrafas por minuto? A maioria delas acaba no mar.</string>
+    <string name="winning_tip3">Você sabia que o plástico comum pode levar mais de 450 anos para se decompor?</string>
+    <string name="winning_tip4">Você sabia que no México mais de 50\% do plástico PET é reciclado?</string>
+    <string name="winning_tip5">Você sabia que a reciclagem aumentou aproximadamente 200\% nos últimos 10 anos?</string>
+    <string name="winning_tip6">Você sabia que no México pneus reciclados são utilizados para pisos e móveis?</string>
+    <string name="winning_tip7">Você sabia que no México existe a Lei Geral de Prevenção de Resíduos?</string>
+    <string name="winning_tip8">Você sabia que o vidro pode levar até 5000 anos para se decompor?</string>
+    <string name="winning_tip9">Você sabia que a produção de uma lata reciclada reduz 95\% dos materiais?</string>
+    <string name="winning_tip10">Você sabia que um milhão de criaturas marinhas morrem a cada ano por causa de resíduos?</string>
+
     <string name="losing_tip">No entanto, nunca é tarde demais para mudar o mundo real. Gostaria de tentar novamente?</string>
     <string name="dialog_go">Vamos lá!</string>
     <string name="space">" "</string>

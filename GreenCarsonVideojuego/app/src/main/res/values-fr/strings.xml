@@ -82,7 +82,17 @@
     <string name="winning_picture">Planète saine</string>
     <string name="losing_picture">Planète malade</string>
 
-    <string name="winning_tip1">Saviez-vous que seulement 9 % des déchets sont recyclés au Mexique ?</string>
+    <string name="winning_tip1">Saviez-vous que seulement 9 \% des déchets sont recyclés au Mexique ?</string>
+    <string name="winning_tip2">Saviez-vous que 500 000 bouteilles sont produites chaque minute ? La plupart finissent dans l\'océan.</string>
+    <string name="winning_tip3">Saviez-vous que le plastique ordinaire peut prendre plus de 450 ans pour se dégrader ?</string>
+    <string name="winning_tip4">Saviez-vous qu\'au Mexique, plus de 50 \% du plastique PET est recyclé ?</string>
+    <string name="winning_tip5">Saviez-vous que le recyclage a augmenté d\'environ 200 \% au cours des 10 dernières années ?</string>
+    <string name="winning_tip6">Saviez-vous qu\'au Mexique, les pneus recyclés sont utilisés pour les sols et les meubles ?</string>
+    <string name="winning_tip7">Saviez-vous qu\'au Mexique, il existe la Loi générale sur la prévention des déchets ?</string>
+    <string name="winning_tip8">Saviez-vous que le verre peut mettre jusqu\'à 5000 ans pour se décomposer ?</string>
+    <string name="winning_tip9">Saviez-vous que la production d\'une canette recyclée réduit de 95 \% les matériaux utilisés ?</string>
+    <string name="winning_tip10">Saviez-vous qu\'un million de créatures marines meurent chaque année à cause des déchets ?</string>
+
     <string name="losing_tip">Cependant, il n\'est jamais trop tard pour changer le monde réel. Voulez-vous essayer à nouveau ?</string>
     <string name="dialog_go">Allons-y !</string>
     <string name="space">" "</string>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Login screen-->
+    <string name="app_name">Green Carson - खेल</string>
+    <string name="userEmail">ईमेल</string>
+    <string name="userPassword">पासवर्ड</string>
+    <string name="userEmail_missing">कृपया एक मान्य ईमेल दर्ज करें।</string>
+    <string name="userPassword_missing">कृपया एक मान्य पासवर्ड दर्ज करें।</string>
+    <string name="loginButton">लॉग इन करें</string>
+    <string name="forgotPassword">क्या आप अपना पासवर्ड भूल गए हैं?</string>
+    <string name="googleLogin">Google के साथ लॉग इन करें</string>
+    <string name="facebookLogin">Facebook के साथ लॉग इन करें</string>
+    <string name="login_success">लॉग इन सफल।</string>
+    <string name="login_failed">लॉग इन विफल।</string>
+    <string name="logout_success">लॉगआउट सफल।</string>
+    <string name="logout_failed">लॉगआउट विफल।</string>
+
+    <!--Global elements-->
+    <string name="logoDescription">ग्रीनकार्सन फाउंडेशन लोगो</string>
+    <string name="start_game_button">खेल शुरू करें</string>
+    <string name="go_back_button">पीछे जाएं</string>
+    <string name="go_forward">आगे जाएं</string>
+    <string name="help_button">सहायता</string>
+    <string name="background">पृष्ठभूमि चित्र</string>
+
+    <!--Level selection screen-->
+    <string name="basicLevel">मूलभूत</string>
+    <string name="interLevel">इंटरमीडिएट</string>
+    <string name="advancedLevel">उन्नत</string>
+    <string name="nightmareLevel">नाइटमेयर</string>
+    <string name="padlock">पैडलॉक</string>
+
+    <string name="bas_levelSel">मूलभूत स्तर चयन</string>
+    <string name="inter_levelSel">इंटरमीडिएट स्तर चयन</string>
+    <string name="adv_levelSel">उन्नत स्तर चयन</string>
+    <string name="nightmare_levelSel">नाइटमेयर स्तर चयन</string>
+
+    <string name="dialog_selectLevel1">कैसे खेलें?</string>
+    <string name="dialog_selectLevel2">कचरा आसमान से गिरता है! आपको उचित डिब्बे में उन्हें खींचना होगा ताकि प्रदूषण न हो। चयनित स्तर के आधार पर, कचरे के प्रकारों को पहचानना मुश्किल होगा।</string>
+    <string name="dialog_selectLevel3">सीखें, मज़े करें और पुन:संचार करें!</string>
+    <string name="dialog_selectLevel4">सीखें, मज़े करें और</string>
+
+    <string name="dialog_warningQuit">क्या आप ऐप से\nबाहर निकलना चाहते हैं?</string>
+    <string name="dialog_warningExit">क्या आप\nलॉगआउट करना चाहते हैं?</string>
+    <string name="dialog_warningAlert">आपने अभी तक\nकोई स्तर चुना नहीं है!</string>
+    <string name="dialog_warningLeave">क्या आप खेल से\nबाहर निकलना चाहते हैं?</string>
+    <string name="dialog_quit">बंद करें</string>
+    <string name="dialog_leave">निकलें</string>
+    <string name="dialog_logout">लॉगआउट</string>
+
+    <!--Tutorial description-->
+    <string name="tutorial_buttonSel">प्ले करें</string>
+    <string name="tutorial_instruction">और जानने के लिए कूड़ादान पर टच करें</string>
+    <string name="trashCan1">हरा कूड़ादान</string>
+    <string name="trashCan2">नीला कूड़ादान</string>
+    <string name="trashCan3">ग्रे कूड़ादान</string>
+    <string name="trashCan4">लाल कूड़ादान</string>
+
+    <string name="trashCan1_help">हरे कूड़ादान के बारे में और जानें</string>
+    <string name="trashCan2_help">नीले कूड़ादान के बारे में और जानें</string>
+    <string name="trashCan3_help">ग्रे कूड़ादान के बारे में और जानें</string>
+    <string name="trashCan4_help">लाल कूड़ादान के बारे में और जानें</string>
+
+    <string name="dialog_trashcan11">पुनर्चक्रण योग्य कचरा</string>
+    <string name="dialog_trashcan12">वे सभी कचरे के सामग्री हैं जो पुनः उपयोग की जा सकती हैं और आसानी से अपचय नहीं करती हैं।\n\n<b>जैसे:</b>\n\nकार्डबोर्ड\nकागज\nपीईटी\nएचडीपीई\nकांच\nधातु\nउपकरण</string>
+    <string name="dialog_trashcan21">कार्बनिक कचरा</string>
+    <string name="dialog_trashcan22">वे सभी अपशिष्ट पदार्थ हैं जो पौधों और जानवरों के जीवाश्म रहित होते हैं और जो जीवाश्म होते हैं वे जैविक होते हैं।\n\n<b>जैसे:</b>\n\nपौधे\nहड्डियाँ\nछिलके\nविषैले पदार्थ\nडाली या पत्ते\nखाद्य अपशिष्ट\nगंदा पेपर या कार्डबोर्ड</string>
+    <string name="dialog_trashcan31">अजीविका अपशिष्ट</string>
+    <string name="dialog_trashcan32">वे सभी अपशिष्ट पदार्थ हैं जो प्राकृतिक नहीं होते हैं, लेकिन उन्हें पुनर्चक्रण किया जा सकता है।\n\n<b>जैसे:</b>\n\nकागज\nकार्डबोर्ड\nकांच\nधातु\nकपड़े\nचमड़ा\nकैंस</string>
+    <string name="dialog_trashcan41">विशेष हैंडलिंग अपशिष्ट</string>
+    <string name="dialog_trashcan42">वे सभी अपशिष्ट पदार्थ हैं जो अब और उपयोग नहीं हो सकते हैं और सतर्कता के साथ निपटाने की आवश्यकता होती है।\n\n<b>जैसे:</b>\n\nविषाक्त अपशिष्ट\nचिकित्सा अपशिष्ट\nऔद्योगिक अपशिष्ट\nखतरनाक अपशिष्ट\nनिर्माण अपशिष्ट</string>
+
+    <!--खेल-->
+    <string name="your_points">तुम्हारे स्कोर: </string>
+    <string name="highest_score">सबसे उच्च स्कोर: </string>
+    <string name="dialog_restart">स्तर रीस्टार्ट करें</string>
+
+    <string name="winning_dialog">तुमने\nदुनिया को साफ कर दिया है!</string>
+    <string name="losing_dialog">दुनिया को दूषित कर दिया गया है!</string>
+    <string name="winning_picture">स्वस्थ ग्रह</string>
+    <string name="losing_picture">बीमार ग्रह</string>
+
+    <string name="winning_tip1">क्या आप जानते हैं कि मेक्सिको में केवल 9\% कचरा पुनर्चक्रण होता है?</string>
+    <string name="winning_tip2">क्या आप जानते हैं कि प्रति मिनट 500,000 बोतलें उत्पन्न होती हैं? उनमें से अधिकांश समुद्र में जाती हैं।</string>
+    <string name="winning_tip3">क्या आप जानते हैं कि प्लास्टिक का अस्तित्व 450 साल तक बच सकता है?</string>
+    <string name="winning_tip4">क्या आप जानते हैं कि मेक्सिको में पीईटी प्लास्टिक का लगभग 50\% पुनर्चक्रण होता है?</string>
+    <string name="winning_tip5">क्या आप जानते हैं कि पिछले 10 वर्षों में पुनर्चक्रण करने में लगभग 200\% की वृद्धि हुई है?</string>
+    <string name="winning_tip6">क्या आप जानते हैं कि मेक्सिको में पुनर्चक्रण की गई टायर फर्नीचर और फर्शों में उपयोग होती हैं?</string>
+    <string name="winning_tip7">क्या आप जानते हैं कि मेक्सिको में कचरे की रोकथाम के लिए सामान्य कानून मौजूद है?</string>
+    <string name="winning_tip8">क्या आप जानते हैं कि कांच को 5000 साल तक टूटने में लग सकता है?</string>
+    <string name="winning_tip9">क्या आप जानते हैं कि पुनर्चक्रण की गई एक कैन से 95\% सामग्री की कमी होती है?</string>
+    <string name="winning_tip10">क्या आप जानते हैं कि हर साल एक मिलियन समुद्री प्राणियों की मृत्यु कार्यक्षमता के कारण होती है?</string>
+
+    <string name="losing_tip">हालांकि, वास्तविक दुनिया को बदलने के लिए कभी भी देर नहीं होती। क्या आप फिर से प्रयास करना चाहेंगे?</string>
+    <string name="dialog_go">चलो चलते हैं!</string>
+    <string name="space">" "</string>
+    <string name="trophy">ट्रॉफ़ी</string>
+
+    <string name="points_placeholder">%1$d</string>
+    <string name="highest_placeholder">%1$d</string>
+
+    <!--Ranking-->
+    <string name="points_ranking">" अंक"</string>
+    <string name="ranking_ranking">रैंक</string>
+    <string name="number_ranking">0</string>
+    <string name="ranking_null_name">----------</string>
+    <string name="ranking_null_number">----</string>
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
+
+
+
+</resources>

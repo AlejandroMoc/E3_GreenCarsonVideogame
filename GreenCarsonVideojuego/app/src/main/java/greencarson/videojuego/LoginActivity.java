@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        // If a user is already logged in, redirect to SelectLevelActivity
+        //Si el usuario ya inició sesión, redirigirlo a niveles
         if (currentUser != null) {
             Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
             startActivity(intent);
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Hide system bars
+        //Ocultar barras
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE
                         | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -65,16 +65,15 @@ public class LoginActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
         );
 
-        // Set content view
         setContentView(R.layout.activity_login);
 
-        // Initialize UI elements
+        //Recuperar elementos
         aTxt = findViewById(R.id.textEmail);
         bTxt = findViewById(R.id.textPassword);
         buttonLog = findViewById(R.id.buttonLogin);
         mAuth = FirebaseAuth.getInstance();
 
-        // Initialize Google Sign-In
+        //Iniciar login de Google
         textViewGoogle = findViewById(R.id.buttonLoginGoogle);
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -127,23 +126,25 @@ public class LoginActivity extends AppCompatActivity {
                     FirebaseAuth.getInstance().signInWithCredential(credential)
                             .addOnCompleteListener(this, task1 -> {
                                 if (task1.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), getString(R.string.login_success), Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    Toast.makeText(LoginActivity.this, "Google sign-in failed", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(LoginActivity.this, "Google sign-in failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
             } catch (ApiException e) {
                 e.printStackTrace();
-                Toast.makeText(LoginActivity.this, "Google sign-in failed", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LoginActivity.this, "Google sign-in failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    // Open dialog_warningquit.xml
-
+    //Diálogo de advertencia
     public void dialogWarningQuit(View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);

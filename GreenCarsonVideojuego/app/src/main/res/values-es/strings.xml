@@ -82,7 +82,17 @@
     <string name="winning_picture">Planeta sano</string>
     <string name="losing_picture">Planeta enfermo</string>
 
-    <string name="winning_tip1">¿Sabías que únicamente el 9% de los residuos se reciclan en México?</string>
+    <string name="winning_tip1">¿Sabías que únicamente el 9\% de los residuos se reciclan en México?</string>
+    <string name="winning_tip2">¿Sabías que por minuto se producen 500,000 botellas? La mayoría termina en el mar.</string>
+    <string name="winning_tip3">¿Sabías que el plástico cotidiano puede tardar más de 450 años en degradarse?</string>
+    <string name="winning_tip4">¿Sabías que en México, más del 50\% de plástico PET logra reciclarse?</string>
+    <string name="winning_tip5">¿Sabías que en 10 años el reciclaje ha crecido un 200\% aproximadamente?</string>
+    <string name="winning_tip6">¿Sabías que en México las llantas recicladas sirven para pisos y muebles?</string>
+    <string name="winning_tip7">¿Sabías que en México la Ley General para la Prevención de Residuos existe?</string>
+    <string name="winning_tip8">¿Sabías que el vidrio puede tardar en descomponerse hasta 5000 años?</string>
+    <string name="winning_tip9">¿Sabías que producir una lata reciclada reduce el 95\% de los materiales?</string>
+    <string name="winning_tip10">¿Sabías que un millón de criaturas marinas muere al año por residuos?</string>
+
     <string name="losing_tip">No obstante nunca es tarde para cambiar el mundo real. ¿Te gustaría volver a intentarlo?</string>
     <string name="dialog_go">¡Vamos!</string>
     <string name="space">" "</string>

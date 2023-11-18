@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.widget.AppCompatButton;
+
 import java.util.Objects;
+import java.util.Random;
 
 public class WinningActivity extends Activity {
 
@@ -22,13 +25,21 @@ public class WinningActivity extends Activity {
         levelNumber = Objects.requireNonNull(getIntent().getExtras()).getInt("levelNumber");
         second = getIntent().getExtras().getBoolean("second");
 
-        //Decidir a qué pantalla enviar
 
+        //Decidir a qué pantalla enviar
         //Si se ganó
         if (winningState==1 && !second)
             setContentView(R.layout.activity_winning);
-        else if (winningState==1 && second)
+        else if (winningState==1 && second){
             setContentView(R.layout.activity_winning2);
+
+            //Seleccionar cadena aleatoria y poner tip aleatorio
+            AppCompatButton buttonTip = findViewById(R.id.stateDescription);
+            Random random = new Random();
+            int randomNumber = random.nextInt(10) + 1;
+            int stringResource = getResources().getIdentifier("winning_tip" + randomNumber, "string", getPackageName());
+            buttonTip.setText(stringResource);
+        }
 
         //Si se perdió
         else if (winningState==0 && !second)
