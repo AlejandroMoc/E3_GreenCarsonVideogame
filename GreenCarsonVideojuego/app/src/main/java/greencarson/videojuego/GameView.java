@@ -1,6 +1,8 @@
 package greencarson.videojuego;
 
 import android.app.Activity;
+import android.app.usage.UsageStats;
+import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,7 +14,9 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -23,10 +27,11 @@ import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
-public class GameView extends View {
+public class GameView<ActivityManager> extends View {
 
     private boolean trashTouched = false;
     private float trashTouchOffsetX, trashTouchOffsetY;
@@ -58,8 +63,8 @@ public class GameView extends View {
     final int levelNumber;
     static int dWidth;
     static int dHeight;
-    static final int heartSize=120;
-    static final int heartMargin=100;
+    static final int heartSize = 120;
+    static final int heartMargin = 100;
     boolean gameOver = false;
     final Random random;
     //FALTA AQUI VER CÓMO CONVERTIR A MAPA
@@ -73,7 +78,7 @@ public class GameView extends View {
     Iterator<Explosion> iterator;
     MediaPlayer mediaPlayer, trashcan_ad;
 
-    public GameView(Context context, int levelNumber){
+    public GameView(Context context, int levelNumber) {
 
         super(context);
         this.context = context;
@@ -82,9 +87,9 @@ public class GameView extends View {
         background = BitmapFactory.decodeResource(getResources(), R.drawable.background_tiles);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
 
-        mediaPlayer = MediaPlayer.create(context, R.raw.lvl_music);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
+        startMusic(context);
+        //stopAudio(context);
+
         trashcan_ad = MediaPlayer.create(context, R.raw.trashcan);
 
         //Para medidas de corazón
@@ -95,47 +100,47 @@ public class GameView extends View {
         dumpsterD = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_4);
 
         //Por niveles
-        if (levelNumber ==4){
+        if (levelNumber == 4) {
             Log.d("4", "Se envia a nivel avanzado");
-            dumpsterA = Bitmap.createScaledBitmap(dumpsterA, dumpsterA.getWidth()-dumpsterA.getWidth()/3, dumpsterA.getHeight()-dumpsterA.getHeight()/3, true);
-            dumpsterB = Bitmap.createScaledBitmap(dumpsterB, dumpsterB.getWidth()-dumpsterB.getWidth()/3, dumpsterB.getHeight()-dumpsterB.getHeight()/3, true);
-            dumpsterC = Bitmap.createScaledBitmap(dumpsterC, dumpsterC.getWidth()-dumpsterC.getWidth()/3, dumpsterC.getHeight()-dumpsterC.getHeight()/3, true);
-            dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth()-dumpsterD.getWidth()/3, dumpsterD.getHeight()-dumpsterD.getHeight()/3, true);
+            dumpsterA = Bitmap.createScaledBitmap(dumpsterA, dumpsterA.getWidth() - dumpsterA.getWidth() / 3, dumpsterA.getHeight() - dumpsterA.getHeight() / 3, true);
+            dumpsterB = Bitmap.createScaledBitmap(dumpsterB, dumpsterB.getWidth() - dumpsterB.getWidth() / 3, dumpsterB.getHeight() - dumpsterB.getHeight() / 3, true);
+            dumpsterC = Bitmap.createScaledBitmap(dumpsterC, dumpsterC.getWidth() - dumpsterC.getWidth() / 3, dumpsterC.getHeight() - dumpsterC.getHeight() / 3, true);
+            dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth() - dumpsterD.getWidth() / 3, dumpsterD.getHeight() - dumpsterD.getHeight() / 3, true);
             minPoints = Integer.MAX_VALUE;
-            trashDensity=2;
+            trashDensity = 2;
             //life=10;
             //pointsSum=10;
-            life=25;
-            pointsSum=30;
+            life = 25;
+            pointsSum = 30;
 
-        } else if (levelNumber==3){
+        } else if (levelNumber == 3) {
             Log.d("3", "Se envia a nivel avanzado");
             //minPoints=300;
             //life=5;
             //pointsSum=10;
-            minPoints=800;
-            life=20;
-            pointsSum=20;
+            minPoints = 800;
+            life = 20;
+            pointsSum = 20;
 
-        } else if (levelNumber==2){
+        } else if (levelNumber == 2) {
             Log.d("2", "Se envia a nivel intermedio");
-            trashDensity=2;
+            trashDensity = 2;
             //minPoints=250;
             //life=5;
             //pointsSum=10;
-            minPoints=500;
-            life=15;
-            pointsSum=15;
+            minPoints = 500;
+            life = 15;
+            pointsSum = 15;
 
-        } else if (levelNumber==1){
+        } else if (levelNumber == 1) {
             Log.d("1", "Se envia a nivel básico");
-            trashDensity=1;
+            trashDensity = 1;
             //minPoints=200;
             //life=5;
             //pointsSum=10;
-            minPoints=250;
-            life=10;
-            pointsSum=10;
+            minPoints = 250;
+            life = 10;
+            pointsSum = 10;
         }
 
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
@@ -145,9 +150,9 @@ public class GameView extends View {
         dHeight = size.y;
 
         //Rectangulos para fondo y piso
-        rectBackground = new Rect(0,0,dWidth,dHeight);
-        rectGround= new Rect(0,dHeight-ground.getHeight(),dWidth,dHeight);
-        rectHeart = new Rect(0,0,dWidth,dHeight);
+        rectBackground = new Rect(0, 0, dWidth, dHeight);
+        rectGround = new Rect(0, dHeight - ground.getHeight(), dWidth, dHeight);
+        rectHeart = new Rect(0, 0, dWidth, dHeight);
         handler = new Handler();
         runnable = this::invalidate;
 
@@ -172,23 +177,22 @@ public class GameView extends View {
 
         //Posición de los botes
         //FALTA AQUI SIMPLIFICAR
-        if (levelNumber==4){
-            dumpsterAX= Math.floorDiv(dWidth,20);
-            dumpsterBX = Math.floorDiv(dWidth,3)-Math.floorDiv(dumpsterB.getWidth(),3);
-            dumpsterCX = dWidth-dumpsterB.getWidth()-dumpsterAX;
-            dumpsterDX = dWidth-dumpsterC.getWidth()-dumpsterBX;
-            dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight()+100;
-        }
-        else{
-            dumpsterAX= Math.floorDiv(dWidth,20);
-            dumpsterBX = Math.floorDiv(dWidth,2)-Math.floorDiv(dumpsterB.getWidth(),2);
-            dumpsterCX = dWidth-dumpsterB.getWidth()-dumpsterAX;
-            dumpsterDX = dWidth-dumpsterC.getWidth()-dumpsterBX;
-            dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight()+100;
+        if (levelNumber == 4) {
+            dumpsterAX = Math.floorDiv(dWidth, 20);
+            dumpsterBX = Math.floorDiv(dWidth, 3) - Math.floorDiv(dumpsterB.getWidth(), 3);
+            dumpsterCX = dWidth - dumpsterB.getWidth() - dumpsterAX;
+            dumpsterDX = dWidth - dumpsterC.getWidth() - dumpsterBX;
+            dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight() + 100;
+        } else {
+            dumpsterAX = Math.floorDiv(dWidth, 20);
+            dumpsterBX = Math.floorDiv(dWidth, 2) - Math.floorDiv(dumpsterB.getWidth(), 2);
+            dumpsterCX = dWidth - dumpsterB.getWidth() - dumpsterAX;
+            dumpsterDX = dWidth - dumpsterC.getWidth() - dumpsterBX;
+            dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight() + 100;
         }
 
         //Arrays para elementos
-        trashesA= new ArrayList<>();
+        trashesA = new ArrayList<>();
         trashesB = new ArrayList<>();
         trashesC = new ArrayList<>();
         trashesD = new ArrayList<>();
@@ -196,7 +200,7 @@ public class GameView extends View {
 
         //Generar basuras en arreglos
         //Falta ver si se puede convertir a un mapa
-        for (i=0; i<trashDensity; i++){
+        for (i = 0; i < trashDensity; i++) {
 
             trash = new Trash(context, 1, levelNumber);
             trashesA.add(trash);
@@ -205,29 +209,28 @@ public class GameView extends View {
             trash = new Trash(context, 3, levelNumber);
             trashesC.add(trash);
 
-            if (levelNumber==4){
+            if (levelNumber == 4) {
                 trash = new Trash(context, 4, levelNumber);
                 trashesD.add(trash);
             }
         }
     }
 
+
     @Override
     protected void onDraw(@NonNull Canvas canvas) {
-
-        boolean collisionHandled = false;
 
         //Checar si es gameOver en cada iteración
         setGameOver();
 
-        if (!gameOver){
+        if (!gameOver) {
             super.onDraw(canvas);
             //Falta cambiar fondo para que se dibuje sin estiramiento
             canvas.drawBitmap(background, null, rectBackground, null);
             canvas.drawBitmap(ground, null, rectGround, null);
 
             //Dibujar basuras
-            for (i = 0; i< trashDensity; i++){
+            for (i = 0; i < trashDensity; i++) {
 
                 canvas.drawBitmap(trashesA.get(i).getTrash(trashesA.get(i).trashFrame), trashesA.get(i).trashX, trashesA.get(i).trashY, null);
                 canvas.drawBitmap(trashesB.get(i).getTrash(trashesB.get(i).trashFrame), trashesB.get(i).trashX, trashesB.get(i).trashY, null);
@@ -241,7 +244,7 @@ public class GameView extends View {
                 floorCollision(trashesB, levelNumber);
                 floorCollision(trashesC, levelNumber);
 
-                if (levelNumber==4){
+                if (levelNumber == 4) {
                     canvas.drawBitmap(trashesD.get(i).getTrash(trashesD.get(i).trashFrame), trashesD.get(i).trashX, trashesD.get(i).trashY, null);
                     trashesD.get(i).trashY += trashesD.get(i).trashVelocity;
                     floorCollision(trashesD, levelNumber);
@@ -264,17 +267,17 @@ public class GameView extends View {
             canvas.drawBitmap(dumpsterB, dumpsterBX, dumpstersY, null);
             canvas.drawBitmap(dumpsterC, dumpsterCX, dumpstersY, null);
 
-            if (levelNumber==4){
+            if (levelNumber == 4) {
                 canvas.drawBitmap(dumpsterD, dumpsterDX, dumpstersY, null);
                 heartDrawableGolden.draw(canvas);
-                canvas.drawText(""+points, Math.floorDiv(dWidth,2)-200, Math.floorDiv(dHeight,7)-pointsTextSize, pointsNumber);
+                canvas.drawText("" + points, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
 
             } else {
                 heartDrawable.draw(canvas);
-                canvas.drawText(""+points+"/"+minPoints, Math.floorDiv(dWidth,2)-200, Math.floorDiv(dHeight,7)-pointsTextSize, pointsNumber);
+                canvas.drawText("" + points + "/" + minPoints, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
             }
 
-            canvas.drawText("x"+life, dWidth-150, Math.floorDiv(dHeight, 6)-lifeTextSize-80, lifeNumber);
+            canvas.drawText("x" + life, dWidth - 150, Math.floorDiv(dHeight, 6) - lifeTextSize - 80, lifeNumber);
             handler.postDelayed(runnable, UPDATE_MILLIS);
         }
     }
@@ -283,20 +286,23 @@ public class GameView extends View {
     private void setGameOver() {
 
         //Falta checar qué condición dejar
-        if(life<=0 || points >= minPoints){
-        //if(life<=0){
-            gameOver=true;
-            if(points >= minPoints){winningState=1;}
-            else{winningState=0;}
+        if (life <= 0 || points >= minPoints) {
+            //if(life<=0){
+            gameOver = true;
+            if (points >= minPoints) {
+                winningState = 1;
+            } else {
+                winningState = 0;
+            }
 
             Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
             intent.putExtra("levelNumber", levelNumber);
 
-            stopAudio();
+            stopAudio(context);
 
-            ((Activity)context).finish();
+            ((Activity) context).finish();
             context.startActivity(intent);
         }
     }
@@ -311,7 +317,7 @@ public class GameView extends View {
             case MotionEvent.ACTION_DOWN:
 
                 //AQUI CHECAR LÍMITES DEL TOUCH
-                if (touchY < dHeight-ground.getHeight()-200) {
+                if (touchY < dHeight - ground.getHeight() - 200) {
                     Log.d("11", "Tocando");
                     for (Trash trash : trashesA) {
                         if (isTouchWithinTrash(trash, touchX, touchY)) {
@@ -362,10 +368,10 @@ public class GameView extends View {
                     //Seguramente el movement collision tiene que ir acá (no estoy seguro)
                 }
                 break;
-                //Checar si se está tocando alguna basura
 
+            //Checar si se está tocando alguna basura
             case MotionEvent.ACTION_MOVE:
-                if (touchY < dHeight-ground.getHeight()-200) {
+                if (touchY < dHeight - ground.getHeight() - 200) {
                     if (trashTouched) {
                         draggedTrash.trashX = touchX - trashTouchOffsetX;
                         draggedTrash.trashY = touchY - trashTouchOffsetY;
@@ -374,7 +380,7 @@ public class GameView extends View {
                 //Mover basura tocada
                 break;
 
-            //Cuando
+            //Cuando el dedo se levanta
             case MotionEvent.ACTION_UP:
 
                 //FALTA AQUI URGENTISIMO VER CÓMO HACER PARA QUE NO SE SUME MUCHAS VECES POINTSSUM
@@ -384,25 +390,23 @@ public class GameView extends View {
                 if (draggedTrash != null) {
                     movementCollision(event, draggedTrash);
                 }
-
                 trashTouched = false;
                 draggedTrash = null;
                 break;
         }
 
-        //Redibujar la vista
+        //Redibujar vista
         invalidate();
         return true;
     }
 
-    //Función para reemplazar el toque
+    //Checar si se toca basura
     private boolean isTouchWithinTrash(Trash trash, float touchX, float touchY) {
         //Checar si el touch está tocando el área de la basura
         return touchX >= trash.trashX && touchX <= (trash.trashX + trash.getTrash(trash.trashFrame).getWidth()) &&
                 touchY >= trash.trashY && touchY <= (trash.trashY + trash.getTrash(trash.trashFrame).getHeight());
     }
 
-    //FALTA ACTUALIZAR MOVEMENT COLLISION
     private void movementCollision(MotionEvent event, Trash trashNow) {
 
         trashType = trashNow.trashTypeMine;
@@ -453,18 +457,17 @@ public class GameView extends View {
 
         //AQUI LIMITAR MOVIMIENTO
 
-        if (trashNow.trashX + trashNow.getTrashWidth()>=dumpsterX
+        if (trashNow.trashX + trashNow.getTrashWidth() >= dumpsterX
                 && trashNow.trashX <= dumpsterX + dumpster.getWidth()
-                && trashNow.trashY + trashNow.getTrashWidth()>=dumpstersY
-                && trashNow.trashY + trashNow.getTrashWidth()<=dumpstersY + dumpster.getHeight()){
+                && trashNow.trashY + trashNow.getTrashWidth() >= dumpstersY
+                && trashNow.trashY + trashNow.getTrashWidth() <= dumpstersY + dumpster.getHeight()) {
 
             //AQUI URGENTE SOLO LLAMAR UNA VEZ (TAL VEZ PODEMOS USAR UNA FLAG)
             //Sumar puntos o restar vida
-            if (state){
-                points +=pointsSum;
-            }
-            else {
-                life --;
+            if (state) {
+                points += pointsSum;
+            } else {
+                life--;
             }
 
             trashNow.resetTrash(trashType, levelNumber);
@@ -473,7 +476,7 @@ public class GameView extends View {
     }
 
     private void floorCollision(ArrayList<Trash> trashy, int levelNumber) {
-        if (trashy.get(i).trashY + trashy.get(i).getTrashHeight()>=dHeight-ground.getHeight()){
+        if (trashy.get(i).trashY + trashy.get(i).getTrashHeight() >= dHeight - ground.getHeight()) {
             //Restar vida
             life--;
             explosion = new Explosion(context);
@@ -488,8 +491,34 @@ public class GameView extends View {
         }
     }
 
-    public void stopAudio() {
+    //Para manejar la música
+    private void startMusic(Context context) {
+        mediaPlayer = MediaPlayer.create(context, R.raw.lvl_music);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+    }
+
+    private boolean isAppInForeground(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            UsageStatsManager usageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
+            if (usageStatsManager != null) {
+                long currentTime = System.currentTimeMillis();
+                List<UsageStats> appUsageStats = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, currentTime - 1000 * 10, currentTime);
+                if (appUsageStats != null && appUsageStats.size() > 0) {
+                    UsageStats recentStats = appUsageStats.get(0);
+                    return recentStats.getPackageName().equals(context.getPackageName());
+                }
+            }
+        }
+        return false;
+    }
+
+    public void stopAudio(Context context) {
+        //FALTA AQUI URGENTÍSIMO AÑADIR LA CAPACIDAD DE DETECTAR SI LA PANTALLA ESTÁ APAGADA, SI SE ESTÁ EN SEGUNDO PLANO, ETC
+        //Y PODER RETOMARLO
+        //if (mediaPlayer != null || !isAppInForeground(context)) {
         if (mediaPlayer != null) {
+        //if (isScreenOff()) {
             mediaPlayer.stop();
             mediaPlayer.release();
             mediaPlayer = null;
