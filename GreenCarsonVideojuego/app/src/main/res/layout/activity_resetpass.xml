@@ -39,6 +39,13 @@
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonCenter2"
         android:layout_width="1dp"
         android:layout_height="match_parent"
@@ -101,12 +108,12 @@
     <!--984 × 559px-->
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:contentDescription="@string/logoDescription"
         app:layout_constraintBottom_toTopOf="@+id/guidelineGAMEBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight1"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toTopOf="@+id/guidelineGAMETop"
         app:srcCompat="@drawable/logo_game" />
 

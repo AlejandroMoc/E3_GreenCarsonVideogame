@@ -7,12 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -58,10 +55,10 @@ public class GameOver extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists())  {
-                            highest1 = document.contains("highest1") ? document.getLong("highest1").intValue() : 0;
-                            highest2 = document.contains("highest2") ? document.getLong("highest2").intValue() : 0;
-                            highest3 = document.contains("highest3") ? document.getLong("highest3").intValue() : 0;
-                            highest4 = document.contains("highest4") ? document.getLong("highest4").intValue() : 0;
+                            highest1 = document.contains("highest1") ? Objects.requireNonNull(document.getLong("highest1")).intValue() : 0;
+                            highest2 = document.contains("highest2") ? Objects.requireNonNull(document.getLong("highest2")).intValue() : 0;
+                            highest3 = document.contains("highest3") ? Objects.requireNonNull(document.getLong("highest3")).intValue() : 0;
+                            highest4 = document.contains("highest4") ? Objects.requireNonNull(document.getLong("highest4")).intValue() : 0;
 
                             if (levelNumber == 1 && points > highest1) {
                                 ivNewHighest.setVisibility(View.VISIBLE);

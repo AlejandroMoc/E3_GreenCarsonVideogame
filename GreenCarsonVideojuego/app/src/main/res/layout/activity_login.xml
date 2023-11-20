@@ -39,6 +39,13 @@
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonCenter2"
         android:layout_width="1dp"
         android:layout_height="match_parent"
@@ -101,12 +108,12 @@
     <!--984 × 559px-->
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:contentDescription="@string/logoDescription"
         app:layout_constraintBottom_toTopOf="@+id/guidelineGAMEBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight1"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toTopOf="@+id/guidelineGAMETop"
         app:srcCompat="@drawable/logo_game" />
 
@@ -191,37 +198,39 @@
         android:id="@+id/buttonLoginGoogle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/googleColor"
         android:contentDescription="@string/googleLogin"
         android:drawableLeft="@drawable/logo_google"
+        android:maxWidth="250dp"
         android:stateListAnimator="@null"
         android:text="@string/googleLogin"
         android:textAllCaps="false"
         android:textColor="@color/gray_mid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@+id/buttonForgot" />
 
-    <Button
-        android:id="@+id/buttonLoginFB"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textSize="16sp"
-        android:backgroundTint="@color/facebookColor"
-        android:contentDescription="@string/facebookLogin"
-        android:drawableLeft="@drawable/logo_facebook"
-        android:stateListAnimator="@null"
-        android:text="@string/facebookLogin"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLoginGoogle"
-        app:layout_constraintVertical_bias="0"
-        tools:ignore="HardcodedText" />
+    <!--    <Button
+            android:id="@+id/buttonLoginFB"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:backgroundTint="@color/facebookColor"
+            android:contentDescription="@string/facebookLogin"
+            android:drawableLeft="@drawable/logo_facebook"
+            android:stateListAnimator="@null"
+            android:text="@string/facebookLogin"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLoginGoogle"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="HardcodedText" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

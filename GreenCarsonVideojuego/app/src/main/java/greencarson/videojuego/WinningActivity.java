@@ -30,7 +30,7 @@ public class WinningActivity extends Activity {
         //Si se ganó
         if (winningState==1 && !second)
             setContentView(R.layout.activity_winning);
-        else if (winningState==1 && second){
+        else if (winningState == 1){
             setContentView(R.layout.activity_winning2);
 
             //Seleccionar cadena aleatoria y poner tip aleatorio
@@ -44,7 +44,7 @@ public class WinningActivity extends Activity {
         //Si se perdió
         else if (winningState==0 && !second)
             setContentView(R.layout.activity_losing);
-        else if (winningState==0 && second)
+        else if (winningState == 0)
             setContentView(R.layout.activity_losing2);
     }
 

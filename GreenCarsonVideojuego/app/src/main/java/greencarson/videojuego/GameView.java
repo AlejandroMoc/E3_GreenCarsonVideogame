@@ -16,7 +16,6 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Handler;
-import android.os.PowerManager;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -31,7 +30,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
-public class GameView<ActivityManager> extends View {
+public class GameView extends View {
 
     private boolean trashTouched = false;
     private float trashTouchOffsetX, trashTouchOffsetY;
@@ -76,7 +75,8 @@ public class GameView<ActivityManager> extends View {
     Explosion explosion;
     Trash trash;
     Iterator<Explosion> iterator;
-    MediaPlayer mediaPlayer, trashcan_ad;
+    MediaPlayer mediaPlayer;
+    final MediaPlayer trashcan_ad;
 
     public GameView(Context context, int levelNumber) {
 
@@ -180,16 +180,14 @@ public class GameView<ActivityManager> extends View {
         if (levelNumber == 4) {
             dumpsterAX = Math.floorDiv(dWidth, 20);
             dumpsterBX = Math.floorDiv(dWidth, 3) - Math.floorDiv(dumpsterB.getWidth(), 3);
-            dumpsterCX = dWidth - dumpsterB.getWidth() - dumpsterAX;
-            dumpsterDX = dWidth - dumpsterC.getWidth() - dumpsterBX;
-            dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight() + 100;
         } else {
             dumpsterAX = Math.floorDiv(dWidth, 20);
             dumpsterBX = Math.floorDiv(dWidth, 2) - Math.floorDiv(dumpsterB.getWidth(), 2);
-            dumpsterCX = dWidth - dumpsterB.getWidth() - dumpsterAX;
-            dumpsterDX = dWidth - dumpsterC.getWidth() - dumpsterBX;
-            dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight() + 100;
         }
+        //Esto siempre pasa
+        dumpsterCX = dWidth - dumpsterB.getWidth() - dumpsterAX;
+        dumpsterDX = dWidth - dumpsterC.getWidth() - dumpsterBX;
+        dumpstersY = dHeight - ground.getHeight() - dumpsterB.getHeight() + 100;
 
         //Arrays para elementos
         trashesA = new ArrayList<>();
@@ -499,15 +497,13 @@ public class GameView<ActivityManager> extends View {
     }
 
     private boolean isAppInForeground(Context context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-            UsageStatsManager usageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
-            if (usageStatsManager != null) {
-                long currentTime = System.currentTimeMillis();
-                List<UsageStats> appUsageStats = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, currentTime - 1000 * 10, currentTime);
-                if (appUsageStats != null && appUsageStats.size() > 0) {
-                    UsageStats recentStats = appUsageStats.get(0);
-                    return recentStats.getPackageName().equals(context.getPackageName());
-                }
+        UsageStatsManager usageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
+        if (usageStatsManager != null) {
+            long currentTime = System.currentTimeMillis();
+            List<UsageStats> appUsageStats = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, currentTime - 1000 * 10, currentTime);
+            if (appUsageStats != null && appUsageStats.size() > 0) {
+                UsageStats recentStats = appUsageStats.get(0);
+                return recentStats.getPackageName().equals(context.getPackageName());
             }
         }
         return false;

@@ -11,7 +11,8 @@ public class Trash {
     final Bitmap[] trash =new Bitmap[32];
     final Random random = new Random();
     int trashFrame, trashSum, trashVelocity;
-    float trashX, trashY, oldTrashX, oldTrashY, oldX, oldY, shiftX, shiftY;
+    float trashX;
+    float trashY;
 
     //Constructor
     public Trash(Context context, int trashType, int levelNumber){
@@ -76,23 +77,6 @@ public class Trash {
         return trash[0].getHeight();
     }
 
-    //Sets y gets para posiciones
-    public float getTrashX() {
-        return trashX;
-    }
-
-    public void setTrashX(float x) {
-        trashX = x;
-    }
-
-    public float getTrashY() {
-        return trashY;
-    }
-
-    public void setTrashY(float y) {
-        trashY = y;
-    }
-
     public void resetTrash(int trashType, int levelNumber) {
         trashX = random.nextInt(GameView.dWidth - getTrashWidth());
         trashY = -200 + random.nextInt(600) * -1;
@@ -130,10 +114,6 @@ public class Trash {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
             trashVelocity = 3 + random.nextInt(4);
         }
-
-        //posibles velocidades por nivel que se pueden usar
-        //trashVelocity = levelNumber*2 + random.nextInt(3);
-        //trashVelocity = 4 + random.nextInt(4);
     }
 
 }
