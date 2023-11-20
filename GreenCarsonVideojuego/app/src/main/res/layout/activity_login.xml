@@ -154,6 +154,7 @@
 
     <!--Botón de ¿Olvidaste contraseña? E-mail-->
         <!--style="?android:attr/borderlessButtonStyle"-->
+<!--
     <Button
         android:id="@+id/buttonForgot"
         android:layout_width="wrap_content"
@@ -168,6 +169,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight1"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft2"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+-->
 
     <!--Botones de inicio de sesión-->
     <androidx.appcompat.widget.AppCompatButton
@@ -201,7 +203,7 @@
         android:textColor="@color/gray_mid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonForgot" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
 <!--    <Button
         android:id="@+id/buttonLoginFB"
