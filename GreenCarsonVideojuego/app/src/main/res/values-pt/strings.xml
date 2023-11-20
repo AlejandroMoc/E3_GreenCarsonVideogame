@@ -16,6 +16,8 @@
     <string name="login_failed">Falha no login.</string>
     <string name="logout_success">Logout realizado com sucesso.</string>
     <string name="logout_failed">Falha no logout.</string>
+    <string name="reset_password">Redefinir senha</string>
+    <string name="reset_password2">Insira o endereço de e-mail da conta para a qual você deseja redefinir a senha.</string>
 
     <!--Global elements-->
     <string name="logoDescription">Logotipo da Fundação GreenCarson</string>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".ResetPassActivity"
     android:fitsSystemWindows="true" >
 
     <!--Fondo de aplicación-->
@@ -87,9 +87,9 @@
         android:id="@+id/buttonBack"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/logo_quit"
+        android:background="@drawable/logo_back"
         android:contentDescription="@string/go_back_button"
-        android:onClick="dialogWarningQuit"
+        android:onClick="goToLogin"
         app:backgroundTint="@null"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
@@ -115,7 +115,7 @@
         android:id="@+id/textEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:autofillHints=""
         android:background="@drawable/gradient_textview"
         android:ems="10"
@@ -129,46 +129,26 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight1"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft2"
-        app:layout_constraintTop_toBottomOf="@+id/logoGame" />
+        app:layout_constraintTop_toBottomOf="@+id/textForgot" />
 
     <!--Colocar Contraseña-->
-    <EditText
-        android:id="@+id/textPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:autofillHints=""
-        android:background="@drawable/gradient_textview"
-        android:ems="10"
-        android:hint="@string/userPassword"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textColor="@color/jadeBlue"
-        android:textColorHint="@color/jadeBlue"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight1"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft2"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
     <!--Botón de ¿Olvidaste contraseña? E-mail-->
         <!--style="?android:attr/borderlessButtonStyle"-->
     <Button
-        android:id="@+id/buttonForgot"
+        android:id="@+id/textForgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@color/transparent"
-        android:text="@string/forgotPassword"
+        android:text="@string/reset_password2"
         android:textAllCaps="false"
         android:textColor="@color/jadeBlue"
         android:textSize="16sp"
         android:textStyle="italic"
-        android:onClick="goToResetPass"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight1"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft2"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+        app:layout_constraintEnd_toEndOf="@+id/backgroundImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineGAMEBottom" />
 
     <!--Botones de inicio de sesión-->
     <androidx.appcompat.widget.AppCompatButton
@@ -177,51 +157,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/gradient_button"
-        android:contentDescription="@string/loginButton"
-        android:text="@string/loginButton"
+        android:contentDescription="@string/reset_password"
+        android:text="@string/reset_password"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
-        app:layout_constraintTop_toBottomOf="@+id/textPassword" />
-
-    <!--Botones de redes sociales-->
-    <Button
-        android:id="@+id/buttonLoginGoogle"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:backgroundTint="@color/googleColor"
-        android:contentDescription="@string/googleLogin"
-        android:drawableLeft="@drawable/logo_google"
-        android:stateListAnimator="@null"
-        android:text="@string/googleLogin"
-        android:textAllCaps="false"
-        android:textColor="@color/gray_mid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonForgot" />
-
-    <Button
-        android:id="@+id/buttonLoginFB"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textSize="16sp"
-        android:backgroundTint="@color/facebookColor"
-        android:contentDescription="@string/facebookLogin"
-        android:drawableLeft="@drawable/logo_facebook"
-        android:stateListAnimator="@null"
-        android:text="@string/facebookLogin"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLoginGoogle"
-        app:layout_constraintVertical_bias="0"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

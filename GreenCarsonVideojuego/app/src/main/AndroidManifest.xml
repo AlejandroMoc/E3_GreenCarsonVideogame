@@ -68,6 +68,12 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity
+            android:name=".ResetPassActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
 
 </manifest>

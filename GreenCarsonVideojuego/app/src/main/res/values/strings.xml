@@ -17,6 +17,8 @@
     <string name="login_failed">Login Failed.</string>
     <string name="logout_success">Logout Successful.</string>
     <string name="logout_failed">Logout Failed.</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="reset_password2">Enter the email address of the account for which you want to reset the password.</string>
 
     <!--Global elements-->
     <string name="logoDescription">GreenCarson Foundation Logotype</string>

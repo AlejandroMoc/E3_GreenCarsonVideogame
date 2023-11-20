@@ -14,6 +14,8 @@
     <string name="login_failed">लॉग इन विफल।</string>
     <string name="logout_success">लॉगआउट सफल।</string>
     <string name="logout_failed">लॉगआउट विफल।</string>
+    <string name="reset_password">पासवर्ड रीसेट करें</string>
+    <string name="reset_password2">पासवर्ड रीसेट करने के लिए खाते का ईमेल पता दर्ज करें।</string>
 
     <!--Global elements-->
     <string name="logoDescription">ग्रीनकार्सन फाउंडेशन लोगो</string>
@@ -110,7 +112,5 @@
     <string name="number_3">3</string>
     <string name="number_4">4</string>
     <string name="number_5">5</string>
-
-
 
 </resources>

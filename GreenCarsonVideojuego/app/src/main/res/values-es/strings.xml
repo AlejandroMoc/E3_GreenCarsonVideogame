@@ -16,6 +16,8 @@
     <string name="login_failed">Inicio de sesión fallido.</string>
     <string name="logout_success">Cerrado de sesión exitoso.</string>
     <string name="logout_failed">Cerrado de sesión fallido.</string>
+    <string name="reset_password">Restablecer contraseña</string>
+    <string name="reset_password2">Ingresa la dirección de correo electrónico de la cuenta para la cual deseas restablecer la contraseña.</string>
 
     <!--Elementos globales-->
     <string name="logoDescription">Logotipo de la fundación GreenCarson</string>

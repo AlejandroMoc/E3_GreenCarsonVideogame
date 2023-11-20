@@ -35,8 +35,6 @@ public class LoginActivity extends AppCompatActivity {
     Button buttonLog;
     FirebaseAuth mAuth;
 
-    // Login Google
-    private TextView textViewGoogle;
     private GoogleSignInClient client;
 
     @Override
@@ -74,7 +72,8 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Iniciar login de Google
-        textViewGoogle = findViewById(R.id.buttonLoginGoogle);
+        // Login Google
+        TextView textViewGoogle = findViewById(R.id.buttonLoginGoogle);
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -167,4 +166,12 @@ public class LoginActivity extends AppCompatActivity {
 
         alertDialog.show();
     }
+
+    //Ir a reestablecer contraseña
+    public void goToResetPass(View v){
+        Intent intent = new Intent(this, ResetPassActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

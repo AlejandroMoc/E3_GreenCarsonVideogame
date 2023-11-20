@@ -16,6 +16,8 @@
     <string name="login_failed">Échec de la connexion.</string>
     <string name="logout_success">Déconnexion réussie.</string>
     <string name="logout_failed">Échec de la déconnexion.</string>
+    <string name="reset_password">Réinitialiser le mot de passe</string>
+    <string name="reset_password2">Entrez l\'adresse e-mail du compte pour lequel vous souhaitez réinitialiser le mot de passe.</string>
 
     <!--Global elements-->
     <string name="logoDescription">Logo de la Fondation GreenCarson</string>
