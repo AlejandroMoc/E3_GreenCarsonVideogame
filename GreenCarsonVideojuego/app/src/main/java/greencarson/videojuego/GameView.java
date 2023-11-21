@@ -14,7 +14,6 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
@@ -138,7 +137,7 @@ public class GameView extends View {
             //minPoints=200;
             //life=5;
             //pointsSum=10;
-            minPoints = 250;
+            minPoints = 200;
             life = 10;
             pointsSum = 10;
         }
@@ -176,7 +175,6 @@ public class GameView extends View {
         random = new Random();
 
         //Posición de los botes
-        //FALTA AQUI SIMPLIFICAR
         if (levelNumber == 4) {
             dumpsterAX = Math.floorDiv(dWidth, 20);
             dumpsterBX = Math.floorDiv(dWidth, 3) - Math.floorDiv(dumpsterB.getWidth(), 3);
@@ -197,7 +195,7 @@ public class GameView extends View {
         explosions = new ArrayList<>();
 
         //Generar basuras en arreglos
-        //Falta ver si se puede convertir a un mapa
+        //FALTA ver si se puede convertir a un mapa
         for (i = 0; i < trashDensity; i++) {
 
             trash = new Trash(context, 1, levelNumber);
@@ -213,7 +211,6 @@ public class GameView extends View {
             }
         }
     }
-
 
     @Override
     protected void onDraw(@NonNull Canvas canvas) {
@@ -337,7 +334,6 @@ public class GameView extends View {
                             trashTouchOffsetX = touchX - trash.trashX;
                             trashTouchOffsetY = touchY - trash.trashY;
                             draggedTrash = trash;
-                            //movementCollision(event, draggedTrash);
                             break;
                         }
                     }
@@ -347,7 +343,6 @@ public class GameView extends View {
                             trashTouchOffsetX = touchX - trash.trashX;
                             trashTouchOffsetY = touchY - trash.trashY;
                             draggedTrash = trash;
-                            //movementCollision(event, draggedTrash);
                             break;
                         }
                     }
@@ -358,12 +353,10 @@ public class GameView extends View {
                                 trashTouchOffsetX = touchX - trash.trashX;
                                 trashTouchOffsetY = touchY - trash.trashY;
                                 draggedTrash = trash;
-                                //movementCollision(event, draggedTrash);
                                 break;
                             }
                         }
                     }
-                    //Seguramente el movement collision tiene que ir acá (no estoy seguro)
                 }
                 break;
 
@@ -375,15 +368,10 @@ public class GameView extends View {
                         draggedTrash.trashY = touchY - trashTouchOffsetY;
                     }
                 }
-                //Mover basura tocada
                 break;
 
             //Cuando el dedo se levanta
             case MotionEvent.ACTION_UP:
-
-                //FALTA AQUI URGENTISIMO VER CÓMO HACER PARA QUE NO SE SUME MUCHAS VECES POINTSSUM
-                //Parece ser que este movementCollision es el importante
-
                 //Si basura seleccionada existe, checa colisiones
                 if (draggedTrash != null) {
                     movementCollision(event, draggedTrash);
@@ -453,15 +441,12 @@ public class GameView extends View {
             dumpsterX = dumpsterDX;
         }
 
-        //AQUI LIMITAR MOVIMIENTO
-
+        //Limitar movimientos
         if (trashNow.trashX + trashNow.getTrashWidth() >= dumpsterX
                 && trashNow.trashX <= dumpsterX + dumpster.getWidth()
                 && trashNow.trashY + trashNow.getTrashWidth() >= dumpstersY
                 && trashNow.trashY + trashNow.getTrashWidth() <= dumpstersY + dumpster.getHeight()) {
 
-            //AQUI URGENTE SOLO LLAMAR UNA VEZ (TAL VEZ PODEMOS USAR UNA FLAG)
-            //Sumar puntos o restar vida
             if (state) {
                 points += pointsSum;
             } else {
@@ -494,19 +479,6 @@ public class GameView extends View {
         mediaPlayer = MediaPlayer.create(context, R.raw.lvl_music);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
-    }
-
-    private boolean isAppInForeground(Context context) {
-        UsageStatsManager usageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
-        if (usageStatsManager != null) {
-            long currentTime = System.currentTimeMillis();
-            List<UsageStats> appUsageStats = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, currentTime - 1000 * 10, currentTime);
-            if (appUsageStats != null && appUsageStats.size() > 0) {
-                UsageStats recentStats = appUsageStats.get(0);
-                return recentStats.getPackageName().equals(context.getPackageName());
-            }
-        }
-        return false;
     }
 
     public void stopAudio(Context context) {

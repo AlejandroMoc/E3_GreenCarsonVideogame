@@ -12,10 +12,14 @@
     <string name="facebookLogin">Facebook के साथ लॉग इन करें</string>
     <string name="login_success">लॉग इन सफल।</string>
     <string name="login_failed">लॉग इन विफल।</string>
-    <string name="logout_success">लॉगआउट सफल।</string>
-    <string name="logout_failed">लॉगआउट विफल।</string>
+    <string name="logingoogle_success">Google लॉगिन सफल हुआ।</string>
+    <string name="logingoogle_failed">Google लॉगिन विफल हुआ।</string>
+    <string name="logout_success">लॉगआउट सफल हुआ।</string>
+    <string name="logout_failed">लॉगआउट विफल हुआ।</string>
     <string name="reset_password">पासवर्ड रीसेट करें</string>
     <string name="reset_password2">पासवर्ड रीसेट करने के लिए खाते का ईमेल पता दर्ज करें।</string>
+    <string name="reset_successful">पासवर्ड रीसेट लिंक आपके अनुरोधित ईमेल पर भेजा गया है।</string>
+    <string name="reset_failed">पासवर्ड रीसेट लिंक विफल हुआ।</string>
 
     <!--Global elements-->
     <string name="logoDescription">ग्रीनकार्सन फाउंडेशन लोगो</string>

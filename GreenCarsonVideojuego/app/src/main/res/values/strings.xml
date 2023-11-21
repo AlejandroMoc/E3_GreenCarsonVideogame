@@ -15,10 +15,14 @@
     <string name="facebookLogin">Log in with Facebook</string>
     <string name="login_success">Login Successful.</string>
     <string name="login_failed">Login Failed.</string>
+    <string name="logingoogle_success">Google Login Successful.</string>
+    <string name="logingoogle_failed">Google Login Failed.</string>
     <string name="logout_success">Logout Successful.</string>
     <string name="logout_failed">Logout Failed.</string>
     <string name="reset_password">Reset Password</string>
     <string name="reset_password2">Enter the email address of the account for which you want to reset the password.</string>
+    <string name="reset_successful">Reset password link has been sent to your requested email.</string>
+    <string name="reset_failed">Reset password link has failed.</string>
 
     <!--Global elements-->
     <string name="logoDescription">GreenCarson Foundation Logotype</string>
@@ -114,7 +118,7 @@
     <string name="number_2">2</string>
     <string name="number_3">3</string>
     <string name="number_4">4</string>
-    <string name="number_5">5</string>
+    <string name="number_5">5</string> />
 
 
 </resources>

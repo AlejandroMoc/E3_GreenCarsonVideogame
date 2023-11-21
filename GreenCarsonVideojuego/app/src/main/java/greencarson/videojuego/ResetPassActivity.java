@@ -34,15 +34,12 @@ public class ResetPassActivity extends Activity {
         mAuth = FirebaseAuth.getInstance();
 
         //Reset button listener
-        btnReset.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                strEmail = edtEmail.getText().toString().trim();
-                if (!TextUtils.isEmpty(strEmail)){
-                    ResetPassword();
-                } else {
-                    edtEmail.setError("Email field can't be empty");
-                }
+        btnReset.setOnClickListener(v -> {
+            strEmail = edtEmail.getText().toString().trim();
+            if (!TextUtils.isEmpty(strEmail)){
+                ResetPassword();
+            } else {
+                edtEmail.setError("Email field can't be empty");
             }
         });
     }
@@ -51,21 +48,16 @@ public class ResetPassActivity extends Activity {
     private void ResetPassword(){
         btnReset.setVisibility(View.INVISIBLE);
         mAuth.sendPasswordResetEmail(strEmail)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(ResetPassActivity.this, "Reset password link has been sent to your requested email", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(ResetPassActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
+                .addOnSuccessListener(unused -> {
+                    Toast.makeText(ResetPassActivity.this, "Reset password link has been sent to your requested email", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ResetPassActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(ResetPassActivity.this, "Reset password link has failed", Toast.LENGTH_SHORT).show();
-                        btnReset.setVisibility(View.INVISIBLE);
-                    }
+                .addOnFailureListener(e -> {
+                    Toast.makeText(ResetPassActivity.this, "Reset password link has failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetPassActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                    btnReset.setVisibility(View.INVISIBLE);
                 });
 
     }

@@ -14,10 +14,14 @@
     <string name="facebookLogin">Inicia sesión con Facebook</string>
     <string name="login_success">Inicio de sesión exitoso.</string>
     <string name="login_failed">Inicio de sesión fallido.</string>
-    <string name="logout_success">Cerrado de sesión exitoso.</string>
-    <string name="logout_failed">Cerrado de sesión fallido.</string>
+    <string name="logingoogle_success">Inicio de sesión en Google exitoso.</string>
+    <string name="logingoogle_failed">Error en el inicio de sesión de Google.</string>
+    <string name="logout_success">Cierre de sesión exitoso.</string>
+    <string name="logout_failed">Error al cerrar sesión.</string>
     <string name="reset_password">Restablecer contraseña</string>
-    <string name="reset_password2">Ingresa la dirección de correo electrónico de la cuenta para la cual deseas restablecer la contraseña.</string>
+    <string name="reset_password2">Ingrese la dirección de correo electrónico de la cuenta para la cual desea restablecer la contraseña.</string>
+    <string name="reset_successful">Se ha enviado el enlace para restablecer la contraseña a su correo electrónico solicitado.</string>
+    <string name="reset_failed">Error en el enlace de restablecimiento de contraseña.</string>
 
     <!--Elementos globales-->
     <string name="logoDescription">Logotipo de la fundación GreenCarson</string>

@@ -14,10 +14,14 @@
     <string name="facebookLogin">Se connecter avec Facebook</string>
     <string name="login_success">Connexion réussie.</string>
     <string name="login_failed">Échec de la connexion.</string>
+    <string name="logingoogle_success">Connexion Google réussie.</string>
+    <string name="logingoogle_failed">Échec de la connexion Google.</string>
     <string name="logout_success">Déconnexion réussie.</string>
     <string name="logout_failed">Échec de la déconnexion.</string>
     <string name="reset_password">Réinitialiser le mot de passe</string>
     <string name="reset_password2">Entrez l\'adresse e-mail du compte pour lequel vous souhaitez réinitialiser le mot de passe.</string>
+    <string name="reset_successful">Le lien de réinitialisation du mot de passe a été envoyé à votre adresse e-mail demandée.</string>
+    <string name="reset_failed">Échec du lien de réinitialisation du mot de passe.</string>
 
     <!--Global elements-->
     <string name="logoDescription">Logo de la Fondation GreenCarson</string>

@@ -108,6 +108,8 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         } else {
                             Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                            aTxt.setBackgroundResource(R.drawable.gradient_textview2);
+                            bTxt.setBackgroundResource(R.drawable.gradient_textview2);
                         }
                     });
         });
@@ -125,20 +127,24 @@ public class LoginActivity extends AppCompatActivity {
                     FirebaseAuth.getInstance().signInWithCredential(credential)
                             .addOnCompleteListener(this, task1 -> {
                                 if (task1.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), getString(R.string.logingoogle_success), Toast.LENGTH_SHORT).show();
+                                    aTxt.setBackgroundResource(R.drawable.gradient_textview);
+                                    bTxt.setBackgroundResource(R.drawable.gradient_textview);
                                     Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    //Toast.makeText(LoginActivity.this, "Google sign-in failed", Toast.LENGTH_SHORT).show();
-                                    Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, getString(R.string.logingoogle_failed), Toast.LENGTH_SHORT).show();
+                                    aTxt.setBackgroundResource(R.drawable.gradient_textview2);
+                                    bTxt.setBackgroundResource(R.drawable.gradient_textview2);
                                 }
                             });
                 }
             } catch (ApiException e) {
                 e.printStackTrace();
-                //Toast.makeText(LoginActivity.this, "Google sign-in failed", Toast.LENGTH_SHORT).show();
-                Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getString(R.string.logingoogle_failed), Toast.LENGTH_SHORT).show();
+                aTxt.setBackgroundResource(R.drawable.gradient_textview2);
+                bTxt.setBackgroundResource(R.drawable.gradient_textview2);
             }
         }
     }

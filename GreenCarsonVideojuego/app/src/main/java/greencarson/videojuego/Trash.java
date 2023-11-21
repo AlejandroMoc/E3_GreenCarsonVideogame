@@ -114,6 +114,8 @@ public class Trash {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
             trashVelocity = 3 + random.nextInt(4);
         }
+
+        //FALTA AQUÍ AÑADIR UNA VELOCIDAD ACELERADA PARA QUE CADA VEZ SE VAYA MÁS RÁPIDO
     }
 
 }
