@@ -52,7 +52,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
 
-    <!--Guías verticales-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonRight1"
         android:layout_width="1dp"
@@ -119,7 +118,7 @@
 
     <!--Colocar E-mail-->
     <EditText
-        android:id="@+id/textEmail"
+        android:id="@+id/textEmailReset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -159,7 +158,7 @@
 
     <!--Botones de inicio de sesión-->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonReset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -171,6 +170,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonCenter2"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmailReset" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
