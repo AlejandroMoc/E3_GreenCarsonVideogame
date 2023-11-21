@@ -2,6 +2,7 @@ package greencarson.videojuego;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // Variables
     EditText aTxt, bTxt;
-    Button buttonLog;
+    Button buttonLog, buttonSee;
     FirebaseAuth mAuth;
 
     private GoogleSignInClient client;
@@ -69,7 +70,21 @@ public class LoginActivity extends AppCompatActivity {
         aTxt = findViewById(R.id.textEmail);
         bTxt = findViewById(R.id.textPassword);
         buttonLog = findViewById(R.id.buttonLogin);
+        buttonSee = findViewById(R.id.buttonSee);
         mAuth = FirebaseAuth.getInstance();
+
+        buttonSee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                    bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    buttonSee.setBackground(getDrawable(R.drawable.visible_pass));
+                } else {
+                    bTxt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    buttonSee.setBackground(getDrawable(R.drawable.novisible_pass));
+                }
+            }
+        });
 
         //Iniciar login de Google
         // Login Google

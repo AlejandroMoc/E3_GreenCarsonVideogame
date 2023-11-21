@@ -106,6 +106,8 @@
 
     <!--Logo Reecicla GAME-->
     <!--984 × 559px-->
+
+    <!--Colocar E-mail-->
     <ImageView
         android:id="@+id/logoGame"
         android:layout_width="wrap_content"
@@ -113,11 +115,12 @@
         android:contentDescription="@string/logoDescription"
         app:layout_constraintBottom_toTopOf="@+id/guidelineGAMEBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintHorizontal_bias="0.985"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toTopOf="@+id/guidelineGAMETop"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_game" />
 
-    <!--Colocar E-mail-->
     <EditText
         android:id="@+id/textEmail"
         android:layout_width="0dp"
@@ -161,6 +164,21 @@
 
     <!--Botón de ¿Olvidaste contraseña? E-mail-->
         <!--style="?android:attr/borderlessButtonStyle"-->
+
+    <Button
+        android:id="@+id/buttonSee"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:background="@drawable/visible_pass"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.579" />
+
     <Button
         android:id="@+id/buttonForgot"
         android:layout_width="wrap_content"
