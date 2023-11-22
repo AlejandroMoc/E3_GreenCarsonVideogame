@@ -18,6 +18,8 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -80,12 +82,19 @@ public class GameView extends View {
     public GameView(Context context, int levelNumber) {
 
         super(context);
+        //getHolder().addCallback(this);
         this.context = context;
         this.levelNumber = levelNumber;
 
-        background = BitmapFactory.decodeResource(getResources(), R.drawable.background_tiles);
+        int[] imageList = {R.drawable.bg1, R.drawable.bg2, R.drawable.bg3, R.drawable.bg4, R.drawable.bg5};
+        Random rand = new Random();
+        int randomImage = imageList[rand.nextInt(imageList.length)];
+        background = BitmapFactory.decodeResource(getResources(), randomImage);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
 
+        //mediaPlayer = MediaPlayer.create(context, R.raw.lvl_music);
+        //mediaPlayer.setLooping(true);  // Set looping
+        //mediaPlayer.start();
         startMusic(context);
         //stopAudio(context);
 
@@ -295,7 +304,7 @@ public class GameView extends View {
             intent.putExtra("winningState", winningState);
             intent.putExtra("levelNumber", levelNumber);
 
-            stopAudio(context);
+            //stopAudio(context);
 
             ((Activity) context).finish();
             context.startActivity(intent);
@@ -473,6 +482,31 @@ public class GameView extends View {
             }
         }
     }
+
+    /*@Override
+    public void surfaceCreated(@NonNull SurfaceHolder holder) {
+
+    }
+
+    @Override
+    public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
+
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+        boolean retry = true;
+        while (retry) {
+            try {
+                if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.stop();
+                }
+                retry = false;
+            } catch (Exception e) {
+                // manejar excepción
+            }
+        }
+    }*/
 
     //Para manejar la música
     private void startMusic(Context context) {
