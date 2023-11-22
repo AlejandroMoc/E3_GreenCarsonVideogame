@@ -17,17 +17,14 @@ import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Random;
 
 public class GameView extends View {
-
     private boolean trashTouched = false;
     private float trashTouchOffsetX, trashTouchOffsetY;
     Trash draggedTrash;
@@ -73,7 +70,9 @@ public class GameView extends View {
     Iterator<Explosion> iterator;
     MediaPlayer mediaPlayer;
     final MediaPlayer trashcan_ad;
-
+    final int[] imageList;
+    Random rand;
+    int randomImage;
     public GameView(Context context, int levelNumber) {
 
         super(context);
@@ -81,15 +80,12 @@ public class GameView extends View {
         this.context = context;
         this.levelNumber = levelNumber;
 
-        int[] imageList = {R.drawable.background_1, R.drawable.background_2, R.drawable.background_3, R.drawable.background_4, R.drawable.background_5};
-        Random rand = new Random();
-        int randomImage = imageList[rand.nextInt(imageList.length)];
+        imageList = new int[]{R.drawable.background_1, R.drawable.background_2, R.drawable.background_3, R.drawable.background_4, R.drawable.background_5};
+        rand = new Random();
+        randomImage = imageList[rand.nextInt(imageList.length)];
         background = BitmapFactory.decodeResource(getResources(), randomImage);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
 
-        //mediaPlayer = MediaPlayer.create(context, R.raw.lvl_music);
-        //mediaPlayer.setLooping(true);  // Set looping
-        //mediaPlayer.start();
         startMusic(context);
         //stopAudio(context);
 
@@ -220,7 +216,7 @@ public class GameView extends View {
     protected void onDraw(@NonNull Canvas canvas) {
 
         //Checar si es gameOver en cada iteración
-        setGameOver();
+        setGameOver(context);
 
         if (!gameOver) {
             super.onDraw(canvas);
@@ -270,36 +266,32 @@ public class GameView extends View {
                 canvas.drawBitmap(dumpsterD, dumpsterDX, dumpstersY, null);
                 heartDrawableGolden.draw(canvas);
                 canvas.drawText("" + points, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
-
             } else {
                 heartDrawable.draw(canvas);
                 canvas.drawText("" + points + "/" + minPoints, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
             }
-
             canvas.drawText("x" + life, dWidth - 150, Math.floorDiv(dHeight, 6) - lifeTextSize - 80, lifeNumber);
             handler.postDelayed(runnable, UPDATE_MILLIS);
         }
     }
 
     //Función para enviar a gameOver
-    private void setGameOver() {
+    private void setGameOver(Context context) {
 
         //Falta checar qué condición dejar
         if (life <= 0 || points >= minPoints) {
-            //if(life<=0){
+
+            stopAudio();
             gameOver = true;
             if (points >= minPoints) {
                 winningState = 1;
             } else {
                 winningState = 0;
             }
-
             Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("points", points);
             intent.putExtra("winningState", winningState);
             intent.putExtra("levelNumber", levelNumber);
-
-            //stopAudio(context);
 
             ((Activity) context).finish();
             context.startActivity(intent);
@@ -510,8 +502,8 @@ public class GameView extends View {
         mediaPlayer.start();
     }
 
-    public void stopAudio(Context context) {
-        //FALTA AQUI URGENTÍSIMO AÑADIR LA CAPACIDAD DE DETECTAR SI LA PANTALLA ESTÁ APAGADA, SI SE ESTÁ EN SEGUNDO PLANO, ETC
+    public void stopAudio() {
+        //FALTA AQUI URGENTÍSIMO AÑADIR DETECCION SI LA PANTALLA ESTÁ APAGADA, SI SE ESTÁ EN SEGUNDO PLANO, ETC
         //Y PODER RETOMARLO
         //if (mediaPlayer != null || !isAppInForeground(context)) {
         if (mediaPlayer != null) {
@@ -521,5 +513,4 @@ public class GameView extends View {
             mediaPlayer = null;
         }
     }
-
 }
