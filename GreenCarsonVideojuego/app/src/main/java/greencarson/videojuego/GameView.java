@@ -1,8 +1,6 @@
 package greencarson.videojuego;
 
 import android.app.Activity;
-import android.app.usage.UsageStats;
-import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -18,8 +16,6 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -27,7 +23,6 @@ import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
@@ -86,7 +81,7 @@ public class GameView extends View {
         this.context = context;
         this.levelNumber = levelNumber;
 
-        int[] imageList = {R.drawable.bg1, R.drawable.bg2, R.drawable.bg3, R.drawable.bg4, R.drawable.bg5};
+        int[] imageList = {R.drawable.background_1, R.drawable.background_2, R.drawable.background_3, R.drawable.background_4, R.drawable.background_5};
         Random rand = new Random();
         int randomImage = imageList[rand.nextInt(imageList.length)];
         background = BitmapFactory.decodeResource(getResources(), randomImage);

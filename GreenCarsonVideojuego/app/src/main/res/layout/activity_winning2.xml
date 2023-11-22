@@ -29,14 +29,21 @@
 
     <!--Guías verticales-->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtonRight1"
+        android:id="@+id/guidelineButtonLeft_End"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonRight_Start"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.81" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtonRight2"
+        android:id="@+id/guidelineButtonRight_End"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -44,18 +51,32 @@
 
     <!--Guías horizontales-->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtonTop"
+        android:id="@+id/guidelineButton_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtonBottom"
+        android:id="@+id/guidelineButton_Bottom"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLevelName_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMessage_Horizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
 
     <!--Botón de Siguiente-->
     <Button
@@ -67,41 +88,42 @@
         android:onClick="goToLevels"
         app:backgroundTint="@null"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight2"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight1"
-        app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButton_Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton_Top" />
 
     <!--Nivel-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLevel"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/gradient_winning1"
         android:text="@string/basicLevel"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backgroundImageView" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLevelName_Top" />
 
     <!--Tip-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/stateDescription"
-        android:layout_width="260dp"
+        android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="60dp"
         android:background="@drawable/gradient_winning2"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:text="@string/winning_tip1"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLevel" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineMessage_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineMessage_Horizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,49 +17,49 @@
 
     <!--Guías verticales-->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtonLeft1"
+        android:id="@+id/guidelineButtonLeft_Start"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.07" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtonLeft2"
+        android:id="@+id/guidelineButtonLeft_End"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.19" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineRankingName"
+        android:id="@+id/guidelineRankNames_End"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineName"
+        android:id="@+id/guidelineName_Vertical"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineLogoHorizontal1"
+        android:id="@+id/guidelineGAME_Start"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineLogoRight"
+        android:id="@+id/guidelineGAME_End"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.90" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineNumber"
+        android:id="@+id/guidelineNumber_Vertical"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -67,14 +67,14 @@
 
     <!--Guías horizontales-->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtonTop"
+        android:id="@+id/guidelineButton_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineButtonBottom"
+        android:id="@+id/guidelineButton_Bottom"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -88,56 +88,56 @@
         app:layout_constraintGuide_percent="0.20" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineH1"
+        android:id="@+id/guidelineRank1_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineH2"
+        android:id="@+id/guidelineRank2_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineH3"
+        android:id="@+id/guidelineRank3_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineH4"
+        android:id="@+id/guidelineRank4_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.6" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineH5"
+        android:id="@+id/guidelineRank5_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelinePersonalBGTop"
+        android:id="@+id/guidelinePersonalBG_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.77" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineRankHorizontal"
+        android:id="@+id/guidelineRank_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.82" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottom3"
+        android:id="@+id/guidelinePoints_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -153,10 +153,10 @@
         android:onClick="goToLevels"
         app:backgroundTint="@null"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft2"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft1"
-        app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButton_Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonLeft_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_Start"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton_Top" />
 
     <!--Logo Reecicla Ranking-->
     <!--FALTA AQUI CORREGIR EL LOGO, SE ESTÁ ESTIRANDO DE FORMAS MUY RARAS-->
@@ -168,9 +168,9 @@
         app:layout_constraintDimensionRatio="H,1.6:1"
         android:contentDescription="@string/logoDescription"
         app:layout_constraintBottom_toTopOf="@+id/guidelineLogoBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineLogoRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLogoHorizontal1"
-        app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineGAME_Start"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton_Top" />
 
     <!--Fondos de Ranking Grupal-->
     <ImageView
@@ -179,10 +179,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineH1"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineLogoRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH1"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank1_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank1_Horizontal"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <ImageView
@@ -191,10 +191,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineH2"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineLogoRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH2"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank2_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank2_Horizontal"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <ImageView
@@ -203,10 +203,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineH3"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineLogoRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH3"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank3_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank3_Horizontal"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <ImageView
@@ -215,10 +215,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineH4"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineLogoRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH4"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank4_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank4_Horizontal"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <ImageView
@@ -227,10 +227,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineH5"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineLogoRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH5"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank5_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank5_Horizontal"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <!--Ranking grupal-->
@@ -244,8 +244,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH1"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank1_Horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End" />
 
     <TextView
         android:id="@+id/nameRanking2"
@@ -257,8 +257,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank2_Horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End" />
 
     <TextView
         android:id="@+id/nameRanking3"
@@ -270,8 +270,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH3"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank3_Horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End" />
 
     <TextView
         android:id="@+id/nameRanking4"
@@ -283,8 +283,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank4_Horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End" />
 
     <TextView
         android:id="@+id/nameRanking5"
@@ -296,8 +296,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH5"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank5_Horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End" />
 
     <TextView
         android:id="@+id/pointsRanking1"
@@ -309,8 +309,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH1" />
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank1_Horizontal" />
 
     <TextView
         android:id="@+id/pointsRanking2"
@@ -322,8 +322,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH2" />
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank2_Horizontal" />
 
     <TextView
         android:id="@+id/pointsRanking3"
@@ -335,8 +335,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH3" />
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank3_Horizontal" />
 
     <TextView
         android:id="@+id/pointsRanking4"
@@ -348,8 +348,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH4" />
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank4_Horizontal" />
 
     <TextView
         android:id="@+id/pointsRanking5"
@@ -361,8 +361,8 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineRankingName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH5" />
+        app:layout_constraintEnd_toEndOf="@+id/guidelineRankNames_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank5_Horizontal" />
 
     <TextView
         android:id="@+id/pos1"
@@ -373,10 +373,10 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="45sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH1"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintStart_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH1" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank1_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank1_Horizontal" />
 
     <TextView
         android:id="@+id/pos4"
@@ -387,10 +387,10 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="45sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintStart_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH2" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank2_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank2_Horizontal" />
 
     <TextView
         android:id="@+id/pos5"
@@ -401,10 +401,10 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="45sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH3"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintStart_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH3" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank3_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank3_Horizontal" />
 
     <TextView
         android:id="@+id/pos6"
@@ -415,10 +415,10 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="45sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintStart_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH4" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank4_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank4_Horizontal" />
 
     <TextView
         android:id="@+id/pos7"
@@ -429,10 +429,10 @@
         android:textColor="@color/cyan_deactivated"
         android:textSize="45sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineH5"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintStart_toStartOf="@+id/guidelineNumber"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH5" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank5_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNumber_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank5_Horizontal" />
 
     <!--Ranking personal-->
     <ImageView
@@ -444,7 +444,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelinePersonalBGTop"
+        app:layout_constraintTop_toTopOf="@+id/guidelinePersonalBG_Top"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <TextView
@@ -456,8 +456,8 @@
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/guidelineName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineRankHorizontal" />
+        app:layout_constraintStart_toStartOf="@id/guidelineName_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank_Horizontal" />
 
     <TextView
         android:id="@+id/pointsPersonal"
@@ -468,9 +468,9 @@
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom3"
-        app:layout_constraintStart_toStartOf="@id/guidelineName"
-        app:layout_constraintTop_toTopOf="@+id/guidelineBottom3" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelinePoints_Horizontal"
+        app:layout_constraintStart_toStartOf="@id/guidelineName_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelinePoints_Horizontal" />
 
     <TextView
         android:id="@+id/numberPersonal"
@@ -481,10 +481,10 @@
         android:textColor="@color/white"
         android:textSize="80sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom3"
-        app:layout_constraintEnd_toEndOf="@id/guidelineNumber"
-        app:layout_constraintStart_toStartOf="@id/guidelineNumber"
-        app:layout_constraintTop_toTopOf="@+id/guidelineBottom3" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelinePoints_Horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guidelineNumber_Vertical"
+        app:layout_constraintStart_toStartOf="@id/guidelineNumber_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelinePoints_Horizontal" />
 
     <TextView
         android:id="@+id/rankinRanking"
@@ -495,9 +495,9 @@
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineRankHorizontal"
-        app:layout_constraintEnd_toEndOf="@id/guidelineNumber"
-        app:layout_constraintStart_toStartOf="@id/guidelineNumber"
-        app:layout_constraintTop_toTopOf="@+id/guidelineRankHorizontal" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineRank_Horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guidelineNumber_Vertical"
+        app:layout_constraintStart_toStartOf="@id/guidelineNumber_Vertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank_Horizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

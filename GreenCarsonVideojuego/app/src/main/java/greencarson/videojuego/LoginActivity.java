@@ -78,10 +78,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                     bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    buttonSee.setBackground(getDrawable(R.drawable.visible_pass));
+                    buttonSee.setBackground(getDrawable(R.drawable.logo_visible));
                 } else {
                     bTxt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    buttonSee.setBackground(getDrawable(R.drawable.novisible_pass));
+                    buttonSee.setBackground(getDrawable(R.drawable.logo_invisible));
                 }
             }
         });
