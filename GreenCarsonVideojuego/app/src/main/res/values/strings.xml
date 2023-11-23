@@ -114,15 +114,15 @@
     <string name="trash_b9">Branches</string>
 
     <!--Inorganic waste-->
-    <string name="trash_c1">Placeholder</string>
-    <string name="trash_c2">Placeholder</string>
-    <string name="trash_c3">Placeholder</string>
-    <string name="trash_c4">Placeholder</string>
-    <string name="trash_c5">Placeholder</string>
-    <string name="trash_c6">Placeholder</string>
-    <string name="trash_c7">Placeholder</string>
-    <string name="trash_c8">Placeholder</string>
-    <string name="trash_c9">Placeholder</string>
+    <string name="trash_c1">Rubber</string>
+    <string name="trash_c2">Cement</string>
+    <string name="trash_c3">PVC</string>
+    <string name="trash_c4">Nylon</string>
+    <string name="trash_c5">Stones</string>
+    <string name="trash_c6">Ceramic</string>
+    <string name="trash_c7">Resin</string>
+    <string name="trash_c8">Porcelain</string>
+    <string name="trash_c9">Concrete</string>
 
     <!--Hazardous waste-->
     <string name="trash_d1">Placeholder</string>

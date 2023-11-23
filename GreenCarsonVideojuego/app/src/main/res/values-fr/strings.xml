@@ -112,6 +112,20 @@
     <string name="trash_b8">Cuir</string>
     <string name="trash_b9">Branches</string>
 
+    <!--Déchets inorganiques-->
+    <string name="trash_c1">Caoutchouc</string>
+    <string name="trash_c2">Ciment</string>
+    <string name="trash_c3">PVC</string>
+    <string name="trash_c4">Nylon</string>
+    <string name="trash_c5">Pierres</string>
+    <string name="trash_c6">Céramique</string>
+    <string name="trash_c7">Résine</string>
+    <string name="trash_c8">Porcelaine</string>
+    <string name="trash_c9">Béton</string>
+
+    <!--Déchets dangereux-->
+
+
     <!--Jeu-->
     <string name="your_points">Votre score : </string>
     <string name="highest_score">Meilleur score : </string>

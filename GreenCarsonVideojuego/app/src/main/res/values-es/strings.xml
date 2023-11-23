@@ -112,6 +112,19 @@
     <string name="trash_b8">Cuero</string>
     <string name="trash_b9">Ramas</string>
 
+    <!--Inorgánicos-->
+    <string name="trash_c1">Caucho</string>
+    <string name="trash_c2">Cemento</string>
+    <string name="trash_c3">PVC</string>
+    <string name="trash_c4">Nylon</string>
+    <string name="trash_c5">Piedras</string>
+    <string name="trash_c6">Cerámica</string>
+    <string name="trash_c7">Resina</string>
+    <string name="trash_c8">Porcelana</string>
+    <string name="trash_c9">Hormigón</string>
+
+    <!--Manejo especial-->
+
     <!--Juego-->
     <string name="your_points">Tus puntos: </string>
     <string name="highest_score">Puntaje más alto: </string>

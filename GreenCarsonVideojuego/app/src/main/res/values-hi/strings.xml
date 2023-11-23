@@ -113,7 +113,15 @@
     <string name="trash_b9">डालीयों</string>
 
     <!--अकार्बनिक अपशिष्ट-->
-
+    <string name="trash_c1">रबर</string>
+    <string name="trash_c2">सीमेंट</string>
+    <string name="trash_c3">पीवीसी</string>
+    <string name="trash_c4">नायलॉन</string>
+    <string name="trash_c5">पत्थर</string>
+    <string name="trash_c6">सिरेमिक</string>
+    <string name="trash_c7">रेजिन</string>
+    <string name="trash_c8">पोर्सिलेन</string>
+    <string name="trash_c9">कंक्रीट</string>
 
     <!--विशेष प्रबंधन अपशिष्ट-->
 

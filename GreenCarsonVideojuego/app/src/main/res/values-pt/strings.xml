@@ -112,6 +112,19 @@
     <string name="trash_b8">Couro</string>
     <string name="trash_b9">Galhos</string>
 
+    <!--Resíduos inorgânicos-->
+    <string name="trash_c1">Borracha</string>
+    <string name="trash_c2">Cimento</string>
+    <string name="trash_c3">PVC</string>
+    <string name="trash_c4">Nylon</string>
+    <string name="trash_c5">Pedras</string>
+    <string name="trash_c6">Cerâmica</string>
+    <string name="trash_c7">Resina</string>
+    <string name="trash_c8">Porcelana</string>
+    <string name="trash_c9">Concreto</string>
+
+    <!--Resíduos perigosos-->
+
     <!--Jogo-->
     <string name="your_points">Sua pontuação: </string>
     <string name="highest_score">Pontuação mais alta: </string>
