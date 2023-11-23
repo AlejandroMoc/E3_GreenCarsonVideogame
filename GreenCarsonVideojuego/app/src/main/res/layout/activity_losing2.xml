@@ -97,7 +97,7 @@
 
     <!--Botón de Regresar-->
     <Button
-        android:id="@+id/levelName"
+        android:id="@+id/buttonRight"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/logo_foward"

@@ -70,6 +70,16 @@
     <string name="trashCan4_help">Saiba mais sobre a lixeira vermelha</string>
 
     <string name="dialog_trashcan11">Resíduos recuperáveis</string>
+    <string name="dialog_trashcan12">Todos os materiais residuais que podem ser reutilizados e não se decompõem facilmente.</string>
+    <string name="dialog_trashcan21">Resíduos orgânicos</string>
+    <string name="dialog_trashcan22">Todos os materiais residuais que são restos biodegradáveis de plantas e animais.</string>
+    <string name="dialog_trashcan31">Resíduos inorgânicos</string>
+    <string name="dialog_trashcan32">Todos os materiais residuais que não são naturais, mas podem ser reciclados.</string>
+    <string name="dialog_trashcan41">Resíduos de manuseio especial</string>
+    <string name="dialog_trashcan42">Todos os materiais residuais que não podem mais ser reutilizados e devem ser descartados com cuidado.</string>
+
+<!--
+    <string name="dialog_trashcan11">Resíduos recuperáveis</string>
     <string name="dialog_trashcan12">Todos os materiais residuais que podem ser reutilizados e não se decompõem facilmente.\n\n<b>Como:</b>\n\nPapelão\nPapel\nPET\nHDPE\nVidro\nMetais\nEletrodomésticos</string>
     <string name="dialog_trashcan21">Resíduos orgânicos</string>
     <string name="dialog_trashcan22">Todos os materiais residuais que são restos biodegradáveis de plantas e animais.\n\n<b>Como:</b>\n\nPlantas\nOssos\nCasca\nExcrementos\nGalhos ou folhas\nResíduos de alimentos\nPapel ou papelão sujos</string>
@@ -77,8 +87,20 @@
     <string name="dialog_trashcan32">Todos os materiais residuais que não são naturais, mas podem ser reciclados.\n\n<b>Como:</b>\n\nPapel\nPapelão\nVidro\nMetais\nRoupas\nCouro\nLatinhas</string>
     <string name="dialog_trashcan41">Resíduos de manuseio especial</string>
     <string name="dialog_trashcan42">Todos os materiais residuais que não podem mais ser reutilizados e devem ser descartados com cuidado.\n\n<b>Como:</b>\n\nResíduos tóxicos\nResíduos médicos\nResíduos industriais\nResíduos perigosos\nResíduos de construção</string>
+-->
 
-    <!--Juego-->
+    <!--Lixo-->
+    <string name="trash_a1">Papel</string>
+    <string name="trash_a2">Papelão</string>
+    <string name="trash_a3">Vidro</string>
+    <string name="trash_a4">Plástico</string>
+    <string name="trash_a5">Alumínio</string>
+    <string name="trash_a6">PET</string>
+    <string name="trash_a7">Lata</string>
+    <string name="trash_a8">Aço</string>
+    <string name="trash_a9">Tetra Pak</string>
+
+    <!--Jogo-->
     <string name="your_points">Sua pontuação: </string>
     <string name="highest_score">Pontuação mais alta: </string>
     <string name="dialog_restart">Reiniciar nível</string>
@@ -118,6 +140,5 @@
     <string name="number_3">3</string>
     <string name="number_4">4</string>
     <string name="number_5">5</string>
-
 
 </resources>

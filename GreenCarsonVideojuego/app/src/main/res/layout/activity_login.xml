@@ -89,9 +89,44 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEmail_Horizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePass_Horizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.56" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLogin_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineForgot_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineGoogle_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+
     <!--Botón de Quit-->
     <Button
-        android:id="@+id/buttonBack"
+        android:id="@+id/buttonLeft"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/logo_quit"
@@ -125,7 +160,6 @@
         android:id="@+id/textEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:autofillHints=""
         android:background="@drawable/gradient_textview"
         android:ems="10"
@@ -137,16 +171,16 @@
         android:textColor="@color/jadeBlue"
         android:textColorHint="@color/jadeBlue"
         android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineEmail_Horizontal"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toBottomOf="@+id/logoGame" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Horizontal" />
 
     <!--Colocar Contraseña-->
     <EditText
         android:id="@+id/textPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:autofillHints=""
         android:background="@drawable/gradient_textview"
         android:ems="10"
@@ -158,9 +192,10 @@
         android:textColor="@color/jadeBlue"
         android:textColorHint="@color/jadeBlue"
         android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinePass_Horizontal"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinePass_Horizontal" />
 
     <Button
         android:id="@+id/buttonSee"
@@ -178,24 +213,22 @@
         android:id="@+id/buttonForgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:background="@color/transparent"
+        android:onClick="goToResetPass"
         android:text="@string/forgotPassword"
         android:textAllCaps="false"
         android:textColor="@color/jadeBlue"
         android:textSize="16sp"
         android:textStyle="italic"
-        android:onClick="goToResetPass"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineForgot_Top" />
 
     <!--Botones de inicio de sesión-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/loginButton"
         android:text="@string/loginButton"
@@ -204,14 +237,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
-        app:layout_constraintTop_toBottomOf="@+id/textPassword" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineLogin_Top" />
 
     <!--Botones de redes sociales-->
     <Button
         android:id="@+id/buttonLoginGoogle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:backgroundTint="@color/googleColor"
         android:contentDescription="@string/googleLogin"
         android:drawableLeft="@drawable/logo_google"
@@ -224,7 +256,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintTop_toBottomOf="@+id/buttonForgot" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineGoogle_Top" />
 
     <!--    <Button
             android:id="@+id/buttonLoginFB"

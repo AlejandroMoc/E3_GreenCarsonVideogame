@@ -84,14 +84,14 @@
         app:layout_constraintGuide_percent="0.44" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTableTop"
+        android:id="@+id/guidelineTable_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTableBottom"
+        android:id="@+id/guidelineTable_Bottom"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -99,7 +99,7 @@
 
     <!--Botón de Regresar-->
     <Button
-        android:id="@+id/imageButton"
+        android:id="@+id/buttonRight"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/logo_foward"
@@ -115,10 +115,10 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineTableBottom"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTable_Bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTableTop">
+        app:layout_constraintTop_toTopOf="@+id/guidelineTable_Top">
 
         <TableRow
             android:layout_width="match_parent"
