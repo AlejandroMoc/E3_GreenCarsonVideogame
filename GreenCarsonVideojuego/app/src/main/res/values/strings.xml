@@ -90,18 +90,52 @@
     <string name="dialog_trashcan42">All those waste materials that can no longer be reused and must be disposed of with caution.\n\n<b>Like:</b>\n\nToxic waste\nMedical waste\nIndustrial waste\nHazardous waste\nConstruction waste</string>
 -->
 
-    <!--Basuras-->
+    <!--Trash-->
+    <!--Valorizable waste-->
     <string name="trash_a1">Paper</string>
     <string name="trash_a2">Cardboard</string>
     <string name="trash_a3">Glass</string>
-    <string name="trash_a4">Plastic</string>
+    <string name="trash_a4">LDPE</string>
     <string name="trash_a5">Aluminum</string>
     <string name="trash_a6">PET</string>
     <string name="trash_a7">Tin</string>
     <string name="trash_a8">Steel</string>
     <string name="trash_a9">Tetra Pak</string>
 
-    <!--Juego-->
+    <!--Organic waste-->
+    <string name="trash_b1">Eggshell</string>
+    <string name="trash_b2">Fruit peel</string>
+    <string name="trash_b3">Oil</string>
+    <string name="trash_b4">Wool</string>
+    <string name="trash_b5">Wood</string>
+    <string name="trash_b6">Wax</string>
+    <string name="trash_b7">Clothes</string>
+    <string name="trash_b8">Leather</string>
+    <string name="trash_b9">Branches</string>
+
+    <!--Inorganic waste-->
+    <string name="trash_c1">Placeholder</string>
+    <string name="trash_c2">Placeholder</string>
+    <string name="trash_c3">Placeholder</string>
+    <string name="trash_c4">Placeholder</string>
+    <string name="trash_c5">Placeholder</string>
+    <string name="trash_c6">Placeholder</string>
+    <string name="trash_c7">Placeholder</string>
+    <string name="trash_c8">Placeholder</string>
+    <string name="trash_c9">Placeholder</string>
+
+    <!--Hazardous waste-->
+    <string name="trash_d1">Placeholder</string>
+    <string name="trash_d2">Placeholder</string>
+    <string name="trash_d3">Placeholder</string>
+    <string name="trash_d4">Placeholder</string>
+    <string name="trash_d5">Placeholder</string>
+    <string name="trash_d6">Placeholder</string>
+    <string name="trash_d7">Placeholder</string>
+    <string name="trash_d8">Placeholder</string>
+    <string name="trash_d9">Placeholder</string>
+
+    <!--Game-->
     <string name="your_points">Your score: </string>
     <string name="highest_score">Highest score: </string>
     <string name="dialog_restart">Restart level</string>

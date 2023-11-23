@@ -10,18 +10,95 @@
     <!--Fondo-->
     <ImageView
         android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/gradient_dialog_trashcan2"
         android:contentDescription="@string/help_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBG_Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_Start"
+        app:layout_constraintTop_toTopOf="@+id/guidelineBG_Top" />
+
+    <!--Guías verticales-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonLeft_Start"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonsCenterLeft"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTrophy_End"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonRight_End"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <!--Guías horizontales-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBG_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTitle_Horizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.23" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDescr_Horizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTable_Horizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.56" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBG_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBack_Horizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
     <!--Logo de Ayuda-->
     <ImageView
@@ -30,55 +107,55 @@
         android:layout_height="60dp"
         android:layout_above="@+id/background"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
         android:background="@drawable/logo_help"
         android:contentDescription="@string/help_button"
-        app:layout_constraintBottom_toTopOf="@+id/background"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButton_Bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton_Bottom" />
 
     <!--Categoría-->
     <TextView
         android:id="@+id/dialog_title"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonHelp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
         android:text="@string/dialog_trashcan21"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTitle_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_Start"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTitle_Horizontal" />
 
     <!--Descripción-->
     <TextView
         android:id="@+id/dialog_description"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dialog_title"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp"
         android:text="@string/dialog_trashcan22"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineDescr_Horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/guidelineDescr_Horizontal" />
 
     <!--Boton de volver-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBack"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dialog_description"
         android:layout_centerHorizontal="true"
@@ -88,8 +165,178 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBack_Horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
         app:layout_constraintTop_toBottomOf="@+id/background" />
+
+    <!--Tabla corregida-->
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTable_Horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTable_Horizontal">
+
+        <!--Fila 1-->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b1"
+                android:src="@drawable/trash_b1" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b2"
+                android:src="@drawable/trash_b2" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b3"
+                android:src="@drawable/trash_b3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b1"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b2"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b3"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <!--Fila 2-->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b4"
+                android:src="@drawable/trash_b4" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b5"
+                android:src="@drawable/trash_b5" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b6"
+                android:src="@drawable/trash_b6" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b4"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b5"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b6"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <!--Fila 3-->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b7"
+                android:src="@drawable/trash_b7" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b8"
+                android:src="@drawable/trash_b8" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="7dp"
+                android:contentDescription="@string/trash_b9"
+                android:src="@drawable/trash_b9" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b7"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b8"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash_b9"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

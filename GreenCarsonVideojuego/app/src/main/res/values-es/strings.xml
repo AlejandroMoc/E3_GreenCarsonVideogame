@@ -90,15 +90,27 @@
 -->
 
     <!--Basuras-->
+    <!--Valorizables-->
     <string name="trash_a1">Papel</string>
     <string name="trash_a2">Cartón</string>
     <string name="trash_a3">Vidrio</string>
-    <string name="trash_a4">Plástico</string>
+    <string name="trash_a4">PEBD</string>
     <string name="trash_a5">Aluminio</string>
     <string name="trash_a6">PET</string>
     <string name="trash_a7">Estaño</string>
     <string name="trash_a8">Acero</string>
     <string name="trash_a9">Tetrapak</string>
+
+    <!--Orgánicos-->
+    <string name="trash_b1">Cáscara\nde huevo</string>
+    <string name="trash_b2">Cáscara\nde fruta</string>
+    <string name="trash_b3">Aceite</string>
+    <string name="trash_b4">Lana</string>
+    <string name="trash_b5">Madera</string>
+    <string name="trash_b6">Cera</string>
+    <string name="trash_b7">Ropa</string>
+    <string name="trash_b8">Cuero</string>
+    <string name="trash_b9">Ramas</string>
 
     <!--Juego-->
     <string name="your_points">Tus puntos: </string>

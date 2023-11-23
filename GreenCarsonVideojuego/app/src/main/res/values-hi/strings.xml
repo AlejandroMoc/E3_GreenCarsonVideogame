@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--Login screen-->
+    <!--सामान्य-->
     <string name="app_name">Green Carson - खेल</string>
+
+    <!--लॉगिन स्क्रीन-->
     <string name="userEmail">ईमेल</string>
     <string name="userPassword">पासवर्ड</string>
     <string name="userEmail_missing">कृपया एक मान्य ईमेल दर्ज करें।</string>
@@ -21,7 +23,7 @@
     <string name="reset_successful">पासवर्ड रीसेट लिंक आपके अनुरोधित ईमेल पर भेजा गया है।</string>
     <string name="reset_failed">पासवर्ड रीसेट लिंक विफल हुआ।</string>
 
-    <!--Global elements-->
+    <!--वैश्विक तत्व-->
     <string name="logoDescription">ग्रीनकार्सन फाउंडेशन लोगो</string>
     <string name="start_game_button">खेल शुरू करें</string>
     <string name="go_back_button">पीछे जाएं</string>
@@ -29,7 +31,7 @@
     <string name="help_button">सहायता</string>
     <string name="background">पृष्ठभूमि चित्र</string>
 
-    <!--Level selection screen-->
+    <!--स्तर चयन स्क्रीन-->
     <string name="basicLevel">मूलभूत</string>
     <string name="interLevel">इंटरमीडिएट</string>
     <string name="advancedLevel">उन्नत</string>
@@ -54,7 +56,7 @@
     <string name="dialog_leave">निकलें</string>
     <string name="dialog_logout">लॉगआउट</string>
 
-    <!--Tutorial description-->
+    <!--ट्यूटोरियल विवरण-->
     <string name="tutorial_buttonSel">प्ले करें</string>
     <string name="tutorial_instruction">और जानने के लिए कूड़ादान पर टच करें</string>
     <string name="trashCan1">हरा कूड़ादान</string>
@@ -86,16 +88,34 @@
     <string name="dialog_trashcan41">विशेष हैंडलिंग अपशिष्ट</string>
     <string name="dialog_trashcan42">वे सभी अपशिष्ट पदार्थ हैं जो अब और उपयोग नहीं हो सकते हैं और सतर्कता के साथ निपटाने की आवश्यकता होती है।\n\n<b>जैसे:</b>\n\nविषाक्त अपशिष्ट\nचिकित्सा अपशिष्ट\nऔद्योगिक अपशिष्ट\nखतरनाक अपशिष्ट\nनिर्माण अपशिष्ट</string>
 -->
+
     <!--कचरा-->
+    <!--मूल्ययुक्त अपशिष्ट-->
     <string name="trash_a1">कागज़</string>
     <string name="trash_a2">कार्टन</string>
     <string name="trash_a3">कांच</string>
-    <string name="trash_a4">प्लास्टिक</string>
+    <string name="trash_a4">लोघन पोलीथीन</string>
     <string name="trash_a5">एल्यूमिनियम</string>
     <string name="trash_a6">पीईटी</string>
     <string name="trash_a7">तांबे की डिब्बी</string>
     <string name="trash_a8">स्टील</string>
     <string name="trash_a9">टेट्रापैक</string>
+
+    <!--कार्बनिक अपशिष्ट-->
+    <string name="trash_b1">अंडे की खोपड़ी</string>
+    <string name="trash_b2">फल का छिलका</string>
+    <string name="trash_b3">तेल</string>
+    <string name="trash_b4">ऊन</string>
+    <string name="trash_b5">लकड़ी</string>
+    <string name="trash_b6">मोम</string>
+    <string name="trash_b7">कपड़े</string>
+    <string name="trash_b8">चमड़ा</string>
+    <string name="trash_b9">डालीयों</string>
+
+    <!--अकार्बनिक अपशिष्ट-->
+
+
+    <!--विशेष प्रबंधन अपशिष्ट-->
 
     <!--खेल-->
     <string name="your_points">तुम्हारे स्कोर: </string>
@@ -126,7 +146,7 @@
     <string name="points_placeholder">%1$d</string>
     <string name="highest_placeholder">%1$d</string>
 
-    <!--Ranking-->
+    <!--पदक्रम-->
     <string name="points_ranking">" अंक"</string>
     <string name="ranking_ranking">रैंक</string>
     <string name="number_ranking">0</string>

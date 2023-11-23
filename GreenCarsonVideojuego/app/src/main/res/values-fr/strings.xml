@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--General-->
+    <!--Général-->
     <string name="app_name">Green Carson - JEU</string>
 
-    <!--Login screen-->
+    <!--Écran de connexion-->
     <string name="userEmail">E-mail</string>
     <string name="userPassword">Mot de passe</string>
     <string name="userEmail_missing">Veuillez entrer une adresse e-mail valide.</string>
@@ -23,7 +23,7 @@
     <string name="reset_successful">Le lien de réinitialisation du mot de passe a été envoyé à votre adresse e-mail demandée.</string>
     <string name="reset_failed">Échec du lien de réinitialisation du mot de passe.</string>
 
-    <!--Global elements-->
+    <!--Éléments globaux-->
     <string name="logoDescription">Logo de la Fondation GreenCarson</string>
     <string name="start_game_button">Démarrer le jeu</string>
     <string name="go_back_button">Retour</string>
@@ -31,7 +31,7 @@
     <string name="help_button">Aide</string>
     <string name="background">Image de fond</string>
 
-    <!--Level selection screen-->
+    <!--Écran de sélection de niveau-->
     <string name="basicLevel">Niveau de base</string>
     <string name="interLevel">Niveau intermédiaire</string>
     <string name="advancedLevel">Niveau avancé</string>
@@ -56,7 +56,7 @@
     <string name="dialog_leave">Sortir</string>
     <string name="dialog_logout">Se déconnecter</string>
 
-    <!--Tutorial description-->
+    <!--Description du tutoriel-->
     <string name="tutorial_buttonSel">Jouer</string>
     <string name="tutorial_instruction">Appuyez sur les poubelles\npour en savoir plus</string>
     <string name="trashCan1">Poubelle verte</string>
@@ -90,15 +90,27 @@
 -->
 
     <!--Déchets-->
+    <!--Déchets valorisables-->
     <string name="trash_a1">Papier</string>
     <string name="trash_a2">Carton</string>
     <string name="trash_a3">Verre</string>
-    <string name="trash_a4">Plastique</string>
+    <string name="trash_a4">LDPE</string>
     <string name="trash_a5">Aluminium</string>
     <string name="trash_a6">PET</string>
     <string name="trash_a7">Étain</string>
     <string name="trash_a8">Acier</string>
     <string name="trash_a9">Tetra Pak</string>
+
+    <!--Déchets organiques-->
+    <string name="trash_b1">Coquille d\'œuf</string>
+    <string name="trash_b2">Épluchure de fruit</string>
+    <string name="trash_b3">Huile</string>
+    <string name="trash_b4">Laine</string>
+    <string name="trash_b5">Bois</string>
+    <string name="trash_b6">Cire</string>
+    <string name="trash_b7">Vêtements</string>
+    <string name="trash_b8">Cuir</string>
+    <string name="trash_b9">Branches</string>
 
     <!--Jeu-->
     <string name="your_points">Votre score : </string>

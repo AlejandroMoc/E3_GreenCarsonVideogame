@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--General-->
+    <!--Geral-->
     <string name="app_name">Green Carson - JOGO</string>
 
-    <!--Login screen-->
+    <!--Tela de login-->
     <string name="userEmail">E-mail</string>
     <string name="userPassword">Senha</string>
     <string name="userEmail_missing">Por favor, insira um e-mail válido.</string>
@@ -23,7 +23,7 @@
     <string name="reset_successful">O link de redefinição de senha foi enviado para o seu e-mail solicitado.</string>
     <string name="reset_failed">Falha no link de redefinição de senha.</string>
 
-    <!--Global elements-->
+    <!--Elementos globais-->
     <string name="logoDescription">Logotipo da Fundação GreenCarson</string>
     <string name="start_game_button">Iniciar Jogo</string>
     <string name="go_back_button">Voltar</string>
@@ -31,7 +31,7 @@
     <string name="help_button">Ajuda</string>
     <string name="background">Imagem de Fundo</string>
 
-    <!--Level selection screen-->
+    <!--Tela de seleção de nível-->
     <string name="basicLevel">Básico</string>
     <string name="interLevel">Intermediário</string>
     <string name="advancedLevel">Avançado</string>
@@ -56,7 +56,7 @@
     <string name="dialog_leave">Sair</string>
     <string name="dialog_logout">Sair</string>
 
-    <!--Tutorial description-->
+    <!--Descrição do tutorial-->
     <string name="tutorial_buttonSel">Jogar</string>
     <string name="tutorial_instruction">Toque nas lixeiras\npara aprender mais</string>
     <string name="trashCan1">Lixeira verde</string>
@@ -90,15 +90,27 @@
 -->
 
     <!--Lixo-->
+    <!--Resíduos valorizáveis-->
     <string name="trash_a1">Papel</string>
     <string name="trash_a2">Papelão</string>
     <string name="trash_a3">Vidro</string>
-    <string name="trash_a4">Plástico</string>
+    <string name="trash_a4">PEBD</string>
     <string name="trash_a5">Alumínio</string>
     <string name="trash_a6">PET</string>
     <string name="trash_a7">Lata</string>
     <string name="trash_a8">Aço</string>
     <string name="trash_a9">Tetra Pak</string>
+
+    <!--Resíduos orgânicos-->
+    <string name="trash_b1">Casca\nde ovo</string>
+    <string name="trash_b2">Casca\nde frutas</string>
+    <string name="trash_b3">Óleo</string>
+    <string name="trash_b4">Lã</string>
+    <string name="trash_b5">Madeira</string>
+    <string name="trash_b6">Cera</string>
+    <string name="trash_b7">Roupas</string>
+    <string name="trash_b8">Couro</string>
+    <string name="trash_b9">Galhos</string>
 
     <!--Jogo-->
     <string name="your_points">Sua pontuação: </string>
