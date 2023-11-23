@@ -73,6 +73,7 @@ public class GameView extends View {
     final int[] imageList;
     Random rand;
     int randomImage;
+    Point size;
     public GameView(Context context, int levelNumber) {
 
         super(context);
@@ -86,9 +87,9 @@ public class GameView extends View {
         background = BitmapFactory.decodeResource(getResources(), randomImage);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
 
+        //Música
         startMusic(context);
-        //stopAudio(context);
-
+        //stopMusic(context);
         trashcan_ad = MediaPlayer.create(context, R.raw.trashcan);
 
         //Para medidas de corazón
@@ -114,6 +115,7 @@ public class GameView extends View {
 
         } else if (levelNumber == 3) {
             Log.d("3", "Se envia a nivel avanzado");
+            trashDensity = 2;
             //minPoints=300;
             //life=5;
             //pointsSum=10;
@@ -143,7 +145,7 @@ public class GameView extends View {
         }
 
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
-        Point size = new Point();
+        size = new Point();
         display.getSize(size);
         dWidth = size.x;
         dHeight = size.y;
@@ -197,7 +199,6 @@ public class GameView extends View {
         //Generar basuras en arreglos
         //FALTA ver si se puede convertir a un mapa
         for (i = 0; i < trashDensity; i++) {
-
             trash = new Trash(context, 1, levelNumber);
             trashesA.add(trash);
             trash = new Trash(context, 2, levelNumber);
@@ -209,6 +210,30 @@ public class GameView extends View {
                 trash = new Trash(context, 4, levelNumber);
                 trashesD.add(trash);
             }
+        }
+    }
+    //Para pausar y resumir música
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            resumeMusic();
+        } else {
+            pauseMusic();
+        }
+    }
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+    }
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (!mediaPlayer.isPlaying()) {
+            mediaPlayer.start();
         }
     }
 
@@ -281,7 +306,7 @@ public class GameView extends View {
         //Falta checar qué condición dejar
         if (life <= 0 || points >= minPoints) {
 
-            stopAudio();
+            stopMusic();
             gameOver = true;
             if (points >= minPoints) {
                 winningState = 1;
@@ -470,47 +495,27 @@ public class GameView extends View {
         }
     }
 
-    /*@Override
-    public void surfaceCreated(@NonNull SurfaceHolder holder) {
-
-    }
-
-    @Override
-    public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
-
-    }
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
-        boolean retry = true;
-        while (retry) {
-            try {
-                if (mediaPlayer.isPlaying()) {
-                    mediaPlayer.stop();
-                }
-                retry = false;
-            } catch (Exception e) {
-                // manejar excepción
-            }
-        }
-    }*/
-
     //Para manejar la música
     private void startMusic(Context context) {
         mediaPlayer = MediaPlayer.create(context, R.raw.lvl_music);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
     }
-
-    public void stopAudio() {
-        //FALTA AQUI URGENTÍSIMO AÑADIR DETECCION SI LA PANTALLA ESTÁ APAGADA, SI SE ESTÁ EN SEGUNDO PLANO, ETC
-        //Y PODER RETOMARLO
-        //if (mediaPlayer != null || !isAppInForeground(context)) {
+    public void stopMusic() {
         if (mediaPlayer != null) {
-        //if (isScreenOff()) {
             mediaPlayer.stop();
             mediaPlayer.release();
             mediaPlayer = null;
+        }
+    }
+    public void pauseMusic() {
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+    }
+    public void resumeMusic() {
+        if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
+            mediaPlayer.start();
         }
     }
 }
