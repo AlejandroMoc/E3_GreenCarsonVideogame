@@ -124,6 +124,12 @@
     <string name="trash_c9">कंक्रीट</string>
 
     <!--विशेष प्रबंधन अपशिष्ट-->
+    <string name="trash_d1">कारोसिव</string>
+    <string name="trash_d2">इलेक्ट्रॉनिक्स</string>
+    <string name="trash_d3">इलेक्ट्रॉनिक उपकरण</string>
+    <string name="trash_d4">जीवाणुओं\nसे जुड़े खतरे</string>
+    <string name="trash_d5">सफाई</string>
+    <string name="trash_d6">आग लगने वाला</string> [^1^][1]
 
     <!--खेल-->
     <string name="your_points">तुम्हारे स्कोर: </string>

@@ -124,7 +124,12 @@
     <string name="trash_c9">Béton</string>
 
     <!--Déchets dangereux-->
-
+    <string name="trash_d1">Corrosives</string>
+    <string name="trash_d2">Electronics</string>
+    <string name="trash_d3">Home appliances</string>
+    <string name="trash_d4">Biological hazards</string>
+    <string name="trash_d5">Cleaning</string>
+    <string name="trash_d6">Flammable</string>
 
     <!--Jeu-->
     <string name="your_points">Votre score : </string>

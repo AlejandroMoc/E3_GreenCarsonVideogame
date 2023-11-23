@@ -125,15 +125,16 @@
     <string name="trash_c9">Concrete</string>
 
     <!--Hazardous waste-->
-    <string name="trash_d1">Placeholder</string>
-    <string name="trash_d2">Placeholder</string>
-    <string name="trash_d3">Placeholder</string>
-    <string name="trash_d4">Placeholder</string>
-    <string name="trash_d5">Placeholder</string>
-    <string name="trash_d6">Placeholder</string>
-    <string name="trash_d7">Placeholder</string>
-    <string name="trash_d8">Placeholder</string>
-    <string name="trash_d9">Placeholder</string>
+    <string name="trash_d1">Corrosives</string>
+    <string name="trash_d2">Electronics</string>
+    <string name="trash_d3">Home appliances</string>
+    <string name="trash_d4">Biological hazards</string>
+    <string name="trash_d5">Cleaning</string>
+    <string name="trash_d6">Flammable</string>
+<!--    <string name="trash_d6">Placeholder</string>
+        <string name="trash_d7">Placeholder</string>
+        <string name="trash_d8">Placeholder</string>
+        <string name="trash_d9">Placeholder</string>-->
 
     <!--Game-->
     <string name="your_points">Your score: </string>

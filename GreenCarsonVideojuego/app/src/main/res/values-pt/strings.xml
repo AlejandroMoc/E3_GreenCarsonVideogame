@@ -124,6 +124,12 @@
     <string name="trash_c9">Concreto</string>
 
     <!--Resíduos perigosos-->
+    <string name="trash_d1">Corrosivos</string>
+    <string name="trash_d2">Eletrônicos</string>
+    <string name="trash_d3">Eletrodomésticos</string>
+    <string name="trash_d4">Riscos\nbiológicos</string>
+    <string name="trash_d5">Limpeza</string>
+    <string name="trash_d6">Inflamáveis</string>
 
     <!--Jogo-->
     <string name="your_points">Sua pontuação: </string>

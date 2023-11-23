@@ -124,6 +124,12 @@
     <string name="trash_c9">Hormigón</string>
 
     <!--Manejo especial-->
+    <string name="trash_d1">Corrosivos</string>
+    <string name="trash_d2">Electrónicos</string>
+    <string name="trash_d3">Electrodomésticos</string>
+    <string name="trash_d4">Riesgos\nbiológicos</string>
+    <string name="trash_d5">Limpieza</string>
+    <string name="trash_d6">Inflamables</string>
 
     <!--Juego-->
     <string name="your_points">Tus puntos: </string>
