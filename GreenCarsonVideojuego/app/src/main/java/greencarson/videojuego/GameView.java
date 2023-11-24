@@ -152,7 +152,7 @@ public class GameView extends View {
             //life=5;
             //pointsSum=10;
             minPoints = 200;
-            life = 1;
+            life = 10;
             pointsSum = 10;
         }
 
