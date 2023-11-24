@@ -1,7 +1,9 @@
 package greencarson.videojuego;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,8 +17,12 @@ import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
@@ -31,10 +37,10 @@ public class GameView extends View {
     final Bitmap background;
     final Bitmap ground;
     Bitmap dumpsterA, dumpsterB, dumpsterC, dumpsterD;
-    final Bitmap heart;
-    final Rect rectBackground;
-    final Rect rectGround;
-    final Rect rectHeart;
+    final Bitmap heart, restart, quit;
+    final Rect rectBackground, rectGround, rectQuit, rectRestart, rectHeart;
+    final Drawable quitDrawable = ContextCompat.getDrawable(getContext(), R.drawable.logo_back);
+    final Drawable restartDrawable = ContextCompat.getDrawable(getContext(), R.drawable.logo_restart);
     final Drawable heartDrawable = ContextCompat.getDrawable(getContext(), R.drawable.logo_heart);
     final Drawable heartDrawableGolden = ContextCompat.getDrawable(getContext(), R.drawable.logo_heart_golden);
     final Context context;
@@ -55,8 +61,8 @@ public class GameView extends View {
     final int levelNumber;
     static int dWidth;
     static int dHeight;
-    static final int heartSize = 120;
-    static final int heartMargin = 100;
+    static final int heartSize = 120, quitSize = 120, restartSize = 120;
+    static final int heartMargin = 100, quitMargin1 = 60, quitMargin2 = 120, restartMargin1 = 240, restartMargin2 = 120;
     boolean gameOver = false;
     final Random random;
     //FALTA AQUI VER CÓMO CONVERTIR A MAPA
@@ -74,6 +80,8 @@ public class GameView extends View {
     Random rand;
     int randomImage;
     Point size;
+    private boolean isDialogShowing = false;
+
     public GameView(Context context, int levelNumber) {
 
         super(context);
@@ -93,6 +101,8 @@ public class GameView extends View {
         trashcan_ad = MediaPlayer.create(context, R.raw.trashcan);
 
         //Para medidas de corazón
+        quit = BitmapFactory.decodeResource(getResources(), R.drawable.logo_back);
+        restart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_restart);
         heart = BitmapFactory.decodeResource(getResources(), R.drawable.logo_heart);
         dumpsterA = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_1);
         dumpsterB = BitmapFactory.decodeResource(getResources(), R.drawable.trashcan_2);
@@ -154,6 +164,8 @@ public class GameView extends View {
         rectBackground = new Rect(0, 0, dWidth, dHeight);
         rectGround = new Rect(0, dHeight - ground.getHeight(), dWidth, dHeight);
         rectHeart = new Rect(0, 0, dWidth, dHeight);
+        rectQuit = new Rect(0, 0, dWidth, dHeight);
+        rectRestart = new Rect(0, 0, dWidth, dHeight);
         handler = new Handler();
         runnable = this::invalidate;
 
@@ -173,6 +185,11 @@ public class GameView extends View {
         Objects.requireNonNull(heartDrawableGolden).setBounds(rectHeart.left, rectHeart.top, rectHeart.left + rectHeart.width(), rectHeart.top + rectHeart.height());
         heartDrawable.setBounds(dWidth - heartSize - heartMargin, heartMargin, dWidth - heartMargin, heartMargin + heartSize);
         heartDrawableGolden.setBounds(dWidth - heartSize - heartMargin, heartMargin, dWidth - heartMargin, heartMargin + heartSize);
+
+        Objects.requireNonNull(quitDrawable).setBounds(rectQuit.left, rectQuit.top, rectQuit.left + rectQuit.width(), rectQuit.top + rectQuit.height());
+        quitDrawable.setBounds(quitMargin1, quitMargin2, quitMargin1 + quitSize, quitMargin2 + quitSize);
+        Objects.requireNonNull(restartDrawable).setBounds(rectRestart.left, rectRestart.top, rectRestart.left + rectRestart.width(), rectRestart.top + rectRestart.height());
+        restartDrawable.setBounds(restartMargin1, restartMargin2, restartMargin1 + restartSize, restartMargin2 + restartSize);
 
         random = new Random();
 
@@ -249,54 +266,58 @@ public class GameView extends View {
             canvas.drawBitmap(background, null, rectBackground, null);
             canvas.drawBitmap(ground, null, rectGround, null);
 
-            //Dibujar basuras
-            for (i = 0; i < trashDensity; i++) {
+            if (!isDialogShowing) {
+                //Dibujar basuras
+                for (i = 0; i < trashDensity; i++) {
 
-                canvas.drawBitmap(trashesA.get(i).getTrash(trashesA.get(i).trashFrame), trashesA.get(i).trashX, trashesA.get(i).trashY, null);
-                canvas.drawBitmap(trashesB.get(i).getTrash(trashesB.get(i).trashFrame), trashesB.get(i).trashX, trashesB.get(i).trashY, null);
-                canvas.drawBitmap(trashesC.get(i).getTrash(trashesC.get(i).trashFrame), trashesC.get(i).trashX, trashesC.get(i).trashY, null);
+                    canvas.drawBitmap(trashesA.get(i).getTrash(trashesA.get(i).trashFrame), trashesA.get(i).trashX, trashesA.get(i).trashY, null);
+                    canvas.drawBitmap(trashesB.get(i).getTrash(trashesB.get(i).trashFrame), trashesB.get(i).trashX, trashesB.get(i).trashY, null);
+                    canvas.drawBitmap(trashesC.get(i).getTrash(trashesC.get(i).trashFrame), trashesC.get(i).trashX, trashesC.get(i).trashY, null);
 
-                trashesA.get(i).trashY += trashesA.get(i).trashVelocity;
-                trashesB.get(i).trashY += trashesB.get(i).trashVelocity;
-                trashesC.get(i).trashY += trashesC.get(i).trashVelocity;
+                    trashesA.get(i).trashY += trashesA.get(i).trashVelocity;
+                    trashesB.get(i).trashY += trashesB.get(i).trashVelocity;
+                    trashesC.get(i).trashY += trashesC.get(i).trashVelocity;
 
-                floorCollision(trashesA, levelNumber);
-                floorCollision(trashesB, levelNumber);
-                floorCollision(trashesC, levelNumber);
+                    floorCollision(trashesA, levelNumber);
+                    floorCollision(trashesB, levelNumber);
+                    floorCollision(trashesC, levelNumber);
+
+                    if (levelNumber == 4) {
+                        canvas.drawBitmap(trashesD.get(i).getTrash(trashesD.get(i).trashFrame), trashesD.get(i).trashX, trashesD.get(i).trashY, null);
+                        trashesD.get(i).trashY += trashesD.get(i).trashVelocity;
+                        floorCollision(trashesD, levelNumber);
+                    }
+                }
+
+                //Actualizar frames explosiones
+                iterator = explosions.iterator();
+                while (iterator.hasNext()) {
+                    explosion = iterator.next();
+                    canvas.drawBitmap(explosion.getExplosion(explosion.explosionFrame), explosion.explosionX, explosion.explosionY, null);
+                    explosion.explosionFrame++;
+                    if (explosion.explosionFrame > 3) {
+                        iterator.remove();
+                    }
+                }
+
+                //Dibujar elementos
+                canvas.drawBitmap(dumpsterA, dumpsterAX, dumpstersY, null);
+                canvas.drawBitmap(dumpsterB, dumpsterBX, dumpstersY, null);
+                canvas.drawBitmap(dumpsterC, dumpsterCX, dumpstersY, null);
 
                 if (levelNumber == 4) {
-                    canvas.drawBitmap(trashesD.get(i).getTrash(trashesD.get(i).trashFrame), trashesD.get(i).trashX, trashesD.get(i).trashY, null);
-                    trashesD.get(i).trashY += trashesD.get(i).trashVelocity;
-                    floorCollision(trashesD, levelNumber);
+                    canvas.drawBitmap(dumpsterD, dumpsterDX, dumpstersY, null);
+                    heartDrawableGolden.draw(canvas);
+                    canvas.drawText("" + points, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
+                } else {
+                    heartDrawable.draw(canvas);
+                    canvas.drawText("" + points + "/" + minPoints, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
                 }
+                quitDrawable.draw(canvas);
+                restartDrawable.draw(canvas);
+                canvas.drawText("x" + life, dWidth - 150, Math.floorDiv(dHeight, 6) - lifeTextSize - 80, lifeNumber);
+                handler.postDelayed(runnable, UPDATE_MILLIS);
             }
-
-            //Actualizar frames explosiones
-            iterator = explosions.iterator();
-            while (iterator.hasNext()) {
-                explosion = iterator.next();
-                canvas.drawBitmap(explosion.getExplosion(explosion.explosionFrame), explosion.explosionX, explosion.explosionY, null);
-                explosion.explosionFrame++;
-                if (explosion.explosionFrame > 3) {
-                    iterator.remove();
-                }
-            }
-
-            //Dibujar elementos
-            canvas.drawBitmap(dumpsterA, dumpsterAX, dumpstersY, null);
-            canvas.drawBitmap(dumpsterB, dumpsterBX, dumpstersY, null);
-            canvas.drawBitmap(dumpsterC, dumpsterCX, dumpstersY, null);
-
-            if (levelNumber == 4) {
-                canvas.drawBitmap(dumpsterD, dumpsterDX, dumpstersY, null);
-                heartDrawableGolden.draw(canvas);
-                canvas.drawText("" + points, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
-            } else {
-                heartDrawable.draw(canvas);
-                canvas.drawText("" + points + "/" + minPoints, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
-            }
-            canvas.drawText("x" + life, dWidth - 150, Math.floorDiv(dHeight, 6) - lifeTextSize - 80, lifeNumber);
-            handler.postDelayed(runnable, UPDATE_MILLIS);
         }
     }
 
@@ -329,9 +350,43 @@ public class GameView extends View {
         float touchX = event.getX();
         float touchY = event.getY();
 
+        if (action == MotionEvent.ACTION_DOWN) {
+            int x = (int) event.getX();
+            int y = (int) event.getY();
+
+            if (quitDrawable.getBounds().contains(x, y)) {
+                Log.d("25", "QUIT");
+                showDialog();
+            } else if (restartDrawable.getBounds().contains(x, y)) {
+                Log.d("25", "RESTART");
+                trashesA.clear();
+                trashesB.clear();
+                trashesC.clear();
+                if (levelNumber == 4) {
+                    trashesD.clear();
+                }
+                points = 0;
+                life = 10;
+
+                for (i = 0; i < trashDensity; i++) {
+                    trash = new Trash(context, 1, levelNumber);
+                    trashesA.add(trash);
+                    trash = new Trash(context, 2, levelNumber);
+                    trashesB.add(trash);
+                    trash = new Trash(context, 3, levelNumber);
+                    trashesC.add(trash);
+
+                    if (levelNumber == 4) {
+                        trash = new Trash(context, 4, levelNumber);
+                        trashesD.add(trash);
+                    }
+                }
+                //invalidate();
+            }
+        }
+
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-
                 //AQUI CHECAR LÍMITES DEL TOUCH
                 if (touchY < dHeight - ground.getHeight() - 200) {
                     Log.d("11", "Tocando");
@@ -405,6 +460,34 @@ public class GameView extends View {
         //Redibujar vista
         invalidate();
         return true;
+    }
+
+    //Acá hay errores de rendering
+    //Y quiero que el dialog sea transparente
+    public void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = inflater.inflate(R.layout.dialog_warningleave, viewGroup, false);
+
+        Button buttonLeave = dialogView.findViewById(R.id.buttonLeave);
+        Button buttonBack = dialogView.findViewById(R.id.buttonBack);
+
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        buttonLeave.setOnClickListener(v1 -> {
+            Intent intent = new Intent(context, SelectLevelActivity.class);
+            context.startActivity(intent);
+        });
+        buttonBack.setOnClickListener(v1 -> {
+            isDialogShowing = false;
+            dialog.dismiss();
+        });
+
+        dialog.show();
+        isDialogShowing = true;
     }
 
     //Checar si se toca basura
