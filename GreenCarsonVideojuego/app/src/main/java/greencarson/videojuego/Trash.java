@@ -102,17 +102,17 @@ public class Trash {
         //AQUI AHORA ESTO SE DEBE AJUSTAR DE ACUERDO CON EL NIVEL (3 BASURAS INICIALES PARA UN NIVEL, 6 PARA EL 2, 9 PARA EL 3)
         if (levelNumber == 4) {
             trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
-            trashVelocity = 6 + random.nextInt(4);
+            trashVelocity = 5 + random.nextInt(4);
         } else if (levelNumber == 3) {
             trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
-            trashVelocity = 5 + random.nextInt(4);
+            trashVelocity = 4 + random.nextInt(4);
         } else if (levelNumber == 2) {
             trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
-            trashVelocity = 4 + random.nextInt(4);
+            trashVelocity = 3 + random.nextInt(4);
         } else {
             //FALTA ADAPTAR ESTE (NO SE SI ASÍ ESTÁ BIEN)
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
-            trashVelocity = 3 + random.nextInt(4);
+            trashVelocity = 2 + random.nextInt(4);
         }
 
         //FALTA AQUÍ AÑADIR UNA VELOCIDAD ACELERADA PARA QUE CADA VEZ SE VAYA MÁS RÁPIDO

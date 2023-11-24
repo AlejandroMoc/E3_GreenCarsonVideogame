@@ -70,6 +70,16 @@
     <string name="trashCan4_help">Conoce más sobre el bote rojo</string>
 
     <string name="dialog_trashcan11">Valorizables</string>
+    <string name="dialog_trashcan12">Todos aquellos residuos que se pueden reutilizar y no se descomponen con facilidad.</string>
+    <string name="dialog_trashcan21">Orgánicos</string>
+    <string name="dialog_trashcan22">Todos aquellos residuos que son restos biodegradables de plantas y animales.</string>
+    <string name="dialog_trashcan31">Inorgánicos</string>
+    <string name="dialog_trashcan32">Todos aquellos residuos que no son naturales pero se pueden reciclar.</string>
+    <string name="dialog_trashcan41">Manejo especial</string>
+    <string name="dialog_trashcan42">Todos aquellos residuos que ya no se pueden reutilizar y deben ser desechados con precaución.</string>
+
+<!--
+    <string name="dialog_trashcan11">Valorizables</string>
     <string name="dialog_trashcan12">Todos aquellos residuos que se pueden reutilizar y no se descomponen con facilidad.\n\n<b>Como:</b>\n\nCartón\nPapel\nPet\nHDPE\nVidrio\nMetales\nElectrodomesticos</string>
     <string name="dialog_trashcan21">Orgánicos</string>
     <string name="dialog_trashcan22">Todos aquellos residuos que son restos biodegradables de plantas y animales.\n\n<b>Como:</b>\n\nPlantas\nHuesos\nCáscaras\nExcrementos\nRamas u hojas\nResiduos de Comida\nPapel o cartón sucios</string>
@@ -77,6 +87,49 @@
     <string name="dialog_trashcan32">Todos aquellos residuos que no son naturales pero se pueden reciclar.\n\n<b>Como:</b>\n\nPapel\nCartón\nVidrio\nMetales\nRopa\nCuero\nLatas</string>
     <string name="dialog_trashcan41">Manejo especial</string>
     <string name="dialog_trashcan42">Todos aquellos residuos que ya no se pueden reutilizar y deben ser desechados con precaución.\n\nComo:\n\nResiduos tóxicos\nResiduos médicos\nResiduos industriales\nResiduos peligrosos\nResiduos de construcción</string>
+-->
+
+    <!--Basuras-->
+    <!--Valorizables-->
+    <string name="trash_a1">Papel</string>
+    <string name="trash_a2">Cartón</string>
+    <string name="trash_a3">Vidrio</string>
+    <string name="trash_a4">PEBD</string>
+    <string name="trash_a5">Aluminio</string>
+    <string name="trash_a6">PET</string>
+    <string name="trash_a7">Estaño</string>
+    <string name="trash_a8">Acero</string>
+    <string name="trash_a9">Tetrapak</string>
+
+    <!--Orgánicos-->
+    <string name="trash_b1">Cáscara\nde huevo</string>
+    <string name="trash_b2">Cáscara\nde fruta</string>
+    <string name="trash_b3">Aceite</string>
+    <string name="trash_b4">Lana</string>
+    <string name="trash_b5">Madera</string>
+    <string name="trash_b6">Cera</string>
+    <string name="trash_b7">Ropa</string>
+    <string name="trash_b8">Cuero</string>
+    <string name="trash_b9">Ramas</string>
+
+    <!--Inorgánicos-->
+    <string name="trash_c1">Caucho</string>
+    <string name="trash_c2">Cemento</string>
+    <string name="trash_c3">PVC</string>
+    <string name="trash_c4">Nylon</string>
+    <string name="trash_c5">Piedras</string>
+    <string name="trash_c6">Cerámica</string>
+    <string name="trash_c7">Resina</string>
+    <string name="trash_c8">Porcelana</string>
+    <string name="trash_c9">Hormigón</string>
+
+    <!--Manejo especial-->
+    <string name="trash_d1">Corrosivos</string>
+    <string name="trash_d2">Electrónicos</string>
+    <string name="trash_d3">Electrodomésticos</string>
+    <string name="trash_d4">Riesgos\nbiológicos</string>
+    <string name="trash_d5">Limpieza</string>
+    <string name="trash_d6">Inflamables</string>
 
     <!--Juego-->
     <string name="your_points">Tus puntos: </string>
@@ -118,6 +171,5 @@
     <string name="number_3">3</string>
     <string name="number_4">4</string>
     <string name="number_5">5</string>
-
 
 </resources>

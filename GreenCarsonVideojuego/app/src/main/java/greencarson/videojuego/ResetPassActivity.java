@@ -28,7 +28,7 @@ public class ResetPassActivity extends Activity {
         setContentView(R.layout.activity_resetpass);
 
         btnBack = findViewById(R.id.buttonBack);
-        btnReset = findViewById(R.id.buttonReset);
+        btnReset = findViewById(R.id.buttonLeft);
         edtEmail = findViewById(R.id.textEmailReset);
 
         mAuth = FirebaseAuth.getInstance();
