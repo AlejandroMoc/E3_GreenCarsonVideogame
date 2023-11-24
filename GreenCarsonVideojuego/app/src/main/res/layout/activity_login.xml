@@ -204,9 +204,9 @@
         android:layout_marginStart="10dp"
         android:background="@drawable/logo_visible"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/textEmail"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinePass_Horizontal"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight_Start"
-        app:layout_constraintTop_toTopOf="@+id/textEmail" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinePass_Horizontal" />
 
     <!--Botón de ¿Olvidaste contraseña? E-mail-->
     <Button
