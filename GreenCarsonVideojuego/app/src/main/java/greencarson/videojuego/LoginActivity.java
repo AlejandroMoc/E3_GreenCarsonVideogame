@@ -23,14 +23,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
@@ -39,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText aTxt, bTxt;
     Button buttonLog, buttonSee;
     FirebaseAuth mAuth;
+    FirebaseFirestore db;
 
     private GoogleSignInClient client;
 
@@ -76,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonLog = findViewById(R.id.buttonLogin);
         buttonSee = findViewById(R.id.buttonSee);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         buttonSee.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,32 +146,57 @@ public class LoginActivity extends AppCompatActivity {
         if (requestCode == 1234) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                // El inicio de sesión con Google fue exitoso, autentica con Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account.getIdToken());
+                if (account != null) {
+                    AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+                    mAuth.signInWithCredential(credential)
+                            .addOnCompleteListener(this, task1 -> {
+                                if (task1.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), getString(R.string.logingoogle_success), Toast.LENGTH_SHORT).show();
+                                    aTxt.setBackgroundResource(R.drawable.gradient_textview);
+                                    bTxt.setBackgroundResource(R.drawable.gradient_textview);
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    createDocument(user);
+                                    Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(LoginActivity.this, getString(R.string.logingoogle_failed), Toast.LENGTH_SHORT).show();
+                                    aTxt.setBackgroundResource(R.drawable.gradient_textview2);
+                                    bTxt.setBackgroundResource(R.drawable.gradient_textview2);
+                                }
+                            });
+                }
             } catch (ApiException e) {
-                // El inicio de sesión con Google falló, actualiza la UI apropiadamente
-                Log.w("20", "El inicio de sesión con Google falló.", e);
+                e.printStackTrace();
+                Toast.makeText(LoginActivity.this, getString(R.string.logingoogle_failed), Toast.LENGTH_SHORT).show();
+                aTxt.setBackgroundResource(R.drawable.gradient_textview2);
+                bTxt.setBackgroundResource(R.drawable.gradient_textview2);
             }
         }
     }
 
-    private void firebaseAuthWithGoogle(String idToken) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
-        mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+    private void createDocument(FirebaseUser user) {
+        DocumentReference docRef = db.collection("usuarios").document(user.getUid());
+
+        Map<String, Object> userData = new HashMap<>();
+        userData.put("nombres", user.getDisplayName());
+        userData.put("highest1", 0);
+        userData.put("rank_points", 0);
+
+        docRef.set(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    if (user != null) {
-                        Toast.makeText(LoginActivity.this, getString(R.string.login_success), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
-                }
+            public void onSuccess(Void unused) {
+                Log.d("30", "Documento");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("30", "No Documento :C");
             }
         });
     }
+
 
     //Diálogo de advertencia
     public void dialogWarningQuit(View v) {
