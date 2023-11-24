@@ -54,7 +54,7 @@ public class RankingActivity extends Activity {
                         for (QueryDocumentSnapshot document : task.getResult()) {
 
                             if (document.getId().equals(userId)) {
-                                nameRanking.setText(document.getString("nombre_s"));
+                                nameRanking.setText(document.getString("nombres"));
 
                                 //pointsPersonal.setText(document.getLong("rank_points").toString(), TextView.BufferType.valueOf(getResources().getString(R.string.points_ranking)));
 
@@ -68,32 +68,32 @@ public class RankingActivity extends Activity {
                             }
 
                             if (position == 1) {
-                                n1.setText(document.getString("nombre_s"));
+                                n1.setText(document.getString("nombres"));
                                 //p1.setText(document.getLong("rank_points").toString());
                                 pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p1.setText(pointsSum);
 
                             } else if (position == 2) {
-                                n2.setText(document.getString("nombre_s"));
+                                n2.setText(document.getString("nombres"));
                                 pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p2.setText(pointsSum);
 
                             } else if (position == 3) {
-                                n3.setText(document.getString("nombre_s"));
+                                n3.setText(document.getString("nombres"));
                                 pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p3.setText(pointsSum);
 
                             } else if (position == 4) {
-                                n4.setText(document.getString("nombre_s"));
+                                n4.setText(document.getString("nombres"));
                                 pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p4.setText(pointsSum);
 
                             } else if (position == 5) {
-                                n5.setText(document.getString("nombre_s"));
+                                n5.setText(document.getString("nombres"));
                                 pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p5.setText(pointsSum);
