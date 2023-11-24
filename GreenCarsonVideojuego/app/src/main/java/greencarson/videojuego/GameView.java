@@ -8,10 +8,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -150,7 +152,7 @@ public class GameView extends View {
             //life=5;
             //pointsSum=10;
             minPoints = 200;
-            life = 10;
+            life = 1;
             pointsSum = 10;
         }
 
@@ -242,8 +244,10 @@ public class GameView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (mediaPlayer.isPlaying()) {
-            mediaPlayer.pause();
+        if (mediaPlayer != null) {
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+            }
         }
     }
     @Override
@@ -476,6 +480,8 @@ public class GameView extends View {
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
+
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         buttonLeave.setOnClickListener(v1 -> {
             Intent intent = new Intent(context, SelectLevelActivity.class);
