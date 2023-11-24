@@ -178,9 +178,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void createDocument(FirebaseUser user) {
         DocumentReference docRef = db.collection("usuarios").document(user.getUid());
+        String fullName = user.getDisplayName();
+        String firstName = fullName.split(" ")[0];
 
         Map<String, Object> userData = new HashMap<>();
-        userData.put("nombres", user.getDisplayName());
+        userData.put("nombres", firstName);
         userData.put("highest1", 0);
         userData.put("rank_points", 0);
 
