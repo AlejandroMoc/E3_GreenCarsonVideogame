@@ -59,6 +59,13 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.81" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonRight_End"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
     <!--Guías horizontales-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButton_Top"
@@ -89,18 +96,39 @@
         app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineDescr_Vertical"
+        android:id="@+id/guidelineDescr_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDescr_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineEmail_Horizontal"
+        android:id="@+id/guidelineDescr_Bottom"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.64" />
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEmail_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+    
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEmail_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineReset_Top"
@@ -109,6 +137,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.72" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineReset_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+    
     <!--Botón de Quit-->
     <Button
         android:id="@+id/buttonBack"
@@ -128,20 +163,21 @@
     <!--984 × 559px-->
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/logoDescription"
         app:layout_constraintBottom_toTopOf="@+id/guidelineGAME_Bottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_Start"
         app:layout_constraintTop_toTopOf="@+id/guidelineGAME_Top"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo_game" />
 
     <!--Colocar E-mail-->
     <EditText
         android:id="@+id/textEmailReset"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:autofillHints=""
         android:background="@drawable/gradient_textview"
         android:ems="10"
@@ -153,18 +189,15 @@
         android:textColor="@color/jadeBlue"
         android:textColorHint="@color/jadeBlue"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineEmail_Horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineEmail_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Horizontal" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Top" />
 
-    <!--Colocar Contraseña-->
-
-    <!--Botón de ¿Olvidaste contraseña? E-mail-->
-        <!--style="?android:attr/borderlessButtonStyle"-->
+    <!--Instrucciones colocar contraseña-->
     <Button
         android:id="@+id/textForgot"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/transparent"
         android:text="@string/reset_password2"
@@ -172,16 +205,17 @@
         android:textColor="@color/jadeBlue"
         android:textSize="16sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineDescr_Vertical"
-        app:layout_constraintEnd_toEndOf="@+id/backgroundImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineDescr_Vertical" />
+
+        app:layout_constraintBottom_toTopOf="@+id/guidelineDescr_Top"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_Start"
+        app:layout_constraintTop_toTopOf="@+id/guidelineDescr_Bottom" />
 
     <!--Botones de inicio de sesión-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLeft"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/reset_password"
         android:text="@string/reset_password"
@@ -190,6 +224,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineReset_Bottom"
         app:layout_constraintTop_toTopOf="@+id/guidelineReset_Top" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

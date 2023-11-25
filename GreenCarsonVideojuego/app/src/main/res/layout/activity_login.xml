@@ -90,18 +90,32 @@
         app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineEmail_Horizontal"
+        android:id="@+id/guidelineEmail_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.47" />
+        app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelinePass_Horizontal"
+        android:id="@+id/guidelineEmail_Bottom"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.56" />
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePass_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.53" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePass_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineLogin_Top"
@@ -111,6 +125,13 @@
         app:layout_constraintGuide_percent="0.64" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLogin_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineForgot_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
@@ -118,11 +139,25 @@
         app:layout_constraintGuide_percent="0.72" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineForgot_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineGoogle_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.80" />
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineGoogle_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89" />
 
     <!--Botón de Quit-->
     <Button
@@ -150,17 +185,16 @@
         android:contentDescription="@string/logoDescription"
         app:layout_constraintBottom_toTopOf="@+id/guidelineGAME_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintHorizontal_bias="0.985"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toTopOf="@+id/guidelineGAME_Top"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_game" />
 
+    <!--Falta aquí revisar las constraints de textEmail y textPassword-->
     <EditText
         android:id="@+id/textEmail"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
+        android:layout_height="0dp"
+        android:autofillHints="@string/space"
         android:background="@drawable/gradient_textview"
         android:ems="10"
         android:hint="@string/userEmail"
@@ -171,48 +205,48 @@
         android:textColor="@color/jadeBlue"
         android:textColorHint="@color/jadeBlue"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineEmail_Horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineEmail_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Horizontal" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Top" />
 
     <!--Colocar Contraseña-->
     <EditText
         android:id="@+id/textPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:autofillHints=""
+        android:autofillHints="@string/space"
         android:background="@drawable/gradient_textview"
         android:ems="10"
         android:hint="@string/userPassword"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingRight="45dp"
         android:textColor="@color/jadeBlue"
         android:textColorHint="@color/jadeBlue"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/guidelinePass_Horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelinePass_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelinePass_Horizontal" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinePass_Top" />
 
     <Button
         android:id="@+id/buttonSee"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="-50dp"
         android:background="@drawable/logo_visible"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guidelinePass_Horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinePass_Bottom"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight_Start"
-        app:layout_constraintTop_toTopOf="@+id/guidelinePass_Horizontal" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinePass_Top" />
 
     <!--Botón de ¿Olvidaste contraseña? E-mail-->
     <Button
         android:id="@+id/buttonForgot"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/transparent"
         android:onClick="goToResetPass"
         android:text="@string/forgotPassword"
@@ -220,6 +254,7 @@
         android:textColor="@color/jadeBlue"
         android:textSize="16sp"
         android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineForgot_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
         app:layout_constraintTop_toTopOf="@+id/guidelineForgot_Top" />
@@ -228,7 +263,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLogin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/loginButton"
         android:text="@string/loginButton"
@@ -237,12 +272,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
-        app:layout_constraintTop_toTopOf="@+id/guidelineLogin_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineLogin_Top"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineLogin_Bottom" />
 
     <!--Botones de redes sociales-->
     <Button
         android:id="@+id/buttonLoginGoogle"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/googleColor"
         android:contentDescription="@string/googleLogin"
@@ -253,9 +289,9 @@
         android:textAllCaps="false"
         android:textColor="@color/gray_mid"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineGoogle_Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
         app:layout_constraintTop_toTopOf="@+id/guidelineGoogle_Top" />
 
     <!--    <Button
@@ -275,7 +311,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonLoginGoogle"
-            app:layout_constraintVertical_bias="0"
             tools:ignore="HardcodedText" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

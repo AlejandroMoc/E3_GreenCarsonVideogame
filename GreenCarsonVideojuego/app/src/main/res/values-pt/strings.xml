@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Geral-->
-    <string name="app_name">Green Carson - JOGO</string>
+    <string name="app_name">Reecicla! - JOGO</string>
 
     <!--Tela de login-->
     <string name="userEmail">E-mail</string>

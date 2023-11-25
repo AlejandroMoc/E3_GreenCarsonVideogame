@@ -31,6 +31,20 @@
         app:layout_constraintGuide_percent="0.19" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePlay_Start"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePlay_End"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonRight_Start"
         android:layout_width="1dp"
         android:layout_height="match_parent"
@@ -72,6 +86,27 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePlay_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePlay_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTrashCans_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
 
     <!--Botón de Regresar-->
     <Button
@@ -117,12 +152,11 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineGAME_Top"
         app:srcCompat="@drawable/logo_game" />
     
-    <!--Botón de tutorial-->
+    <!--Botón de Play-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLevel"
-        android:layout_width="200dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_button3"
         android:contentDescription="@string/bas_levelSel"
         android:onClick="playLevel"
@@ -130,9 +164,10 @@
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toBottomOf="@+id/logoGame" />
+        app:layout_constraintBottom_toBottomOf="@+id/guidelinePlay_Bottom"
+        app:layout_constraintEnd_toEndOf="@+id/guidelinePlay_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelinePlay_Start"
+        app:layout_constraintTop_toTopOf="@+id/guidelinePlay_Top" />
 
     <!--Texto de instrucción-->
     <TextView
@@ -188,62 +223,64 @@
     
     
     <!--Botes de basura-->
+
     <ImageView
         android:id="@+id/trashCan1"
         android:layout_width="0dp"
-        android:layout_height="220dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="-70dp"
         android:contentDescription="@string/trashCan1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintWidth_percent="0.25"
-        app:srcCompat="@drawable/trashcan_1"
-        tools:ignore="VisualLintBounds"
         android:onClick="dialog_trashcans"
-        app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintEnd_toEndOf="@id/guideline1" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinePlay_Start"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTrashCans_Top"
+        app:srcCompat="@drawable/trashcan_1"
+        tools:ignore="VisualLintBounds" />
+    <!--app:layout_constraintWidth_percent="0.25"-->
 
     <ImageView
         android:id="@+id/trashCan2"
         android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:layout_marginEnd="4dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="-70dp"
         android:contentDescription="@string/trashCan2"
         android:onClick="dialog_trashcans"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/trashCan3"
-        app:layout_constraintStart_toEndOf="@+id/trashCan1"
-        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toStartOf="@+id/guidelinePlay_Start"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTrashCans_Top"
         app:srcCompat="@drawable/trashcan_2"
         tools:ignore="VisualLintBounds" />
 
     <ImageView
         android:id="@+id/trashCan3"
         android:layout_width="0dp"
-        android:layout_height="220dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="-70dp"
         android:contentDescription="@string/trashCan3"
         android:onClick="dialog_trashcans"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinePlay_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTrashCans_Top"
         app:srcCompat="@drawable/trashcan_3"
         tools:ignore="VisualLintBounds" />
 
     <ImageView
         android:id="@+id/trashCan4"
         android:layout_width="0dp"
-        android:layout_height="220dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="-70dp"
         android:contentDescription="@string/trashCan4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintWidth_percent="0.25"
-        app:srcCompat="@drawable/trashcan_4"
-        tools:ignore="VisualLintBounds"
         android:onClick="dialog_trashcans"
-        app:layout_constraintStart_toStartOf="@id/guideline4"
-        app:layout_constraintEnd_toEndOf="@id/guideline4" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelinePlay_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTrashCans_Top"
+        app:srcCompat="@drawable/trashcan_4"
+        tools:ignore="VisualLintBounds" />
     
     <ImageView
         android:id="@+id/trashCan1_help"

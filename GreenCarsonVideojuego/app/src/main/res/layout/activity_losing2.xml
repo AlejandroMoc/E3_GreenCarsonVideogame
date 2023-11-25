@@ -16,19 +16,15 @@
         android:contentDescription="@string/background" />
 
     <!--Imágen de decoración-->
-
-    <!--Botón de Siguiente-->
     <ImageView
         android:id="@+id/imageDecoration"
         android:layout_width="300dp"
         android:layout_height="500dp"
-        android:layout_marginBottom="-150dp"
+        android:background="@drawable/decoration_losing"
         android:contentDescription="@string/losing_picture"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/decoration_losing"  />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelinePicture_Top" />
 
     <!--Guías verticales-->
     <androidx.constraintlayout.widget.Guideline
@@ -75,11 +71,25 @@
         app:layout_constraintGuide_percent="0.20" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineMessage_Horizontal"
+        android:id="@+id/guidelineLevelName_Bottom"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMessage_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.31" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMessage_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineReplay_Top"
@@ -89,13 +99,34 @@
         app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineReplay_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineExit_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
 
-    <!--Botón de Regresar-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineExit_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePicture_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
+
+    <!--Botón de Siguiente-->
     <Button
         android:id="@+id/buttonRight"
         android:layout_width="0dp"
@@ -114,7 +145,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLevel"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/gradient_losing1"
@@ -122,6 +153,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLevelName_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
         app:layout_constraintTop_toTopOf="@+id/guidelineLevelName_Top" />
@@ -130,7 +162,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/stateDescription"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_losing2"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -138,37 +170,43 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineMessage_Horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineMessage_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineMessage_Horizontal" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineMessage_Top" />
 
     <!--Botones-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonGo"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/gradient_winning1"
         android:onClick="playLevelAgain"
         android:text="@string/dialog_go"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineReplay_Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
         app:layout_constraintTop_toTopOf="@+id/guidelineReplay_Top" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonQuit"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/gradient_losing1"
         android:onClick="goToLevels"
         android:text="@string/dialog_leave"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineExit_Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
         app:layout_constraintTop_toTopOf="@+id/guidelineExit_Top" />
 </androidx.constraintlayout.widget.ConstraintLayout>

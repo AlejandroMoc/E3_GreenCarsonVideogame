@@ -88,11 +88,32 @@
         app:layout_constraintGuide_percent="0.20" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank1_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.26" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRank1_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank1_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank2_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRank2_Horizontal"
@@ -102,11 +123,39 @@
         app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank2_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank3_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRank3_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank3_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank4_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.56" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRank4_Horizontal"
@@ -116,11 +165,32 @@
         app:layout_constraintGuide_percent="0.6" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank4_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank5_Top"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRank5_Horizontal"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRank5_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.74" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelinePersonalBG_Top"
@@ -162,7 +232,7 @@
     <!--FALTA AQUI CORREGIR EL LOGO, SE ESTÁ ESTIRANDO DE FORMAS MUY RARAS-->
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/logo_game"
         app:layout_constraintDimensionRatio="H,1.6:1"
@@ -179,10 +249,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineRank1_Horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank1_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
-        app:layout_constraintTop_toTopOf="@+id/guidelineRank1_Horizontal"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank1_Top"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <ImageView
@@ -191,10 +261,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineRank2_Horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank2_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
-        app:layout_constraintTop_toTopOf="@+id/guidelineRank2_Horizontal"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank2_Top"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <ImageView
@@ -203,10 +273,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineRank3_Horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank3_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
-        app:layout_constraintTop_toTopOf="@+id/guidelineRank3_Horizontal"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank3_Top"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <ImageView
@@ -215,10 +285,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineRank4_Horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank4_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
-        app:layout_constraintTop_toTopOf="@+id/guidelineRank4_Horizontal"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank4_Top"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <ImageView
@@ -227,10 +297,10 @@
         android:layout_height="60dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineRank5_Horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineRank5_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
-        app:layout_constraintTop_toTopOf="@+id/guidelineRank5_Horizontal"
+        app:layout_constraintTop_toTopOf="@+id/guidelineRank5_Top"
         tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
 
     <!--Ranking grupal-->

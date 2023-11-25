@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Général-->
-    <string name="app_name">Green Carson - JEU</string>
+    <string name="app_name">Reecicla! - JEU</string>
 
     <!--Écran de connexion-->
     <string name="userEmail">E-mail</string>

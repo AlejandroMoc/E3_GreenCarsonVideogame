@@ -113,11 +113,25 @@
         app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBasic_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineInter_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineInter_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.61" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineAdvan_Top"
@@ -127,11 +141,25 @@
         app:layout_constraintGuide_percent="0.63" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineAdvan_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineNight_Top"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.73" />
+        app:layout_constraintGuide_percent="0.72" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineNight_Bottom"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.79" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineStartTop"
@@ -202,7 +230,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBasic"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/bas_levelSel"
         android:onClick="selectLevel"
@@ -212,12 +240,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineBasic_Bottom"
         app:layout_constraintTop_toTopOf="@+id/guidelineBasic_Top" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonInter"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_button2"
         android:contentDescription="@string/inter_levelSel"
         android:onClick="selectLevel"
@@ -227,12 +256,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineInter_Bottom"
         app:layout_constraintTop_toTopOf="@+id/guidelineInter_Top" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAdvan"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_button"
         android:contentDescription="@string/adv_levelSel"
         android:onClick="selectLevel"
@@ -242,6 +272,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineAdvan_Bottom"
         app:layout_constraintTop_toTopOf="@+id/guidelineAdvan_Top" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -255,9 +286,9 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTop"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineNight_Bottom"
         app:layout_constraintTop_toTopOf="@+id/guidelineNight_Top" />
 
     <!--Botón de Empezar-->
@@ -285,10 +316,8 @@
         android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonInter"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
-        app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintTop_toTopOf="@+id/buttonInter"
-        app:layout_constraintVertical_bias="0.533"
         app:srcCompat="@drawable/logo_lock" />
 
     <ImageView
@@ -299,10 +328,8 @@
         android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonAdvan"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
-        app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintTop_toTopOf="@+id/buttonAdvan"
-        app:layout_constraintVertical_bias="0.089"
         app:srcCompat="@drawable/logo_lock" />
 
     <ImageView
@@ -313,10 +340,8 @@
         android:elevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineStartTop"
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
-        app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintTop_toTopOf="@+id/buttonNightmare"
-        app:layout_constraintVertical_bias="0.123"
         app:srcCompat="@drawable/logo_lock" />
 
     <!--Candados (chambear)-->

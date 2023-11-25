@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--General-->
-    <string name="app_name">Green Carson - GAME</string>
+    <string name="app_name">Reecicla! - GAME</string>
 
     <!--Pantalla de login-->
     <string name="userEmail">Email</string>
@@ -51,7 +51,7 @@
     <string name="dialog_warningQuit">¿Quieres salir\nde la aplicación?</string>
     <string name="dialog_warningExit">¿Quieres cerrar\nsesión?</string>
     <string name="dialog_warningAlert">¡Aun no eliges\nun nivel!</string>
-    <string name="dialog_warningLeave">¿Quieres salir\\nde la partida?</string>
+    <string name="dialog_warningLeave">¿Quieres salir\nde la partida?</string>
     <string name="dialog_quit">Salir</string>
     <string name="dialog_leave">Salir</string>
     <string name="dialog_logout">Salir</string>

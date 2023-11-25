@@ -14,7 +14,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.Objects;
 
 public class RankingActivity extends Activity {
-
     TextView nameRanking, pointsPersonal, numberPersonal;
     String pointsString, rankPoints, pointsSum;
     TextView n1, n2, n3, n4, n5, p1, p2, p3, p4, p5;
@@ -53,17 +52,16 @@ public class RankingActivity extends Activity {
                         int position = 1;
                         for (QueryDocumentSnapshot document : task.getResult()) {
 
+                            pointsString = getResources().getString(R.string.points_ranking);
+
                             if (document.getId().equals(userId)) {
                                 nameRanking.setText(document.getString("nombres"));
 
                                 //pointsPersonal.setText(document.getLong("rank_points").toString(), TextView.BufferType.valueOf(getResources().getString(R.string.points_ranking)));
-
                                 pointsPersonal.setText(Objects.requireNonNull(document.getLong("rank_points")).toString());
-                                pointsString = getResources().getString(R.string.points_ranking);
                                 rankPoints = Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = rankPoints + pointsString;
                                 pointsPersonal.setText(pointsSum);
-
                                 numberPersonal.setText(Integer.toString(position));
                             }
 

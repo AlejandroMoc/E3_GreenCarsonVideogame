@@ -83,16 +83,13 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        buttonSee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
-                    bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    buttonSee.setBackground(getDrawable(R.drawable.logo_visible));
-                } else {
-                    bTxt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    buttonSee.setBackground(getDrawable(R.drawable.logo_invisible));
-                }
+        buttonSee.setOnClickListener(v -> {
+            if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                buttonSee.setBackground(getDrawable(R.drawable.logo_visible));
+            } else {
+                bTxt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                buttonSee.setBackground(getDrawable(R.drawable.logo_visibleno));
             }
         });
 
@@ -186,19 +183,8 @@ public class LoginActivity extends AppCompatActivity {
         userData.put("highest1", 0);
         userData.put("rank_points", 0);
 
-        docRef.set(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Log.d("30", "Documento");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("30", "No Documento :C");
-            }
-        });
+        docRef.set(userData).addOnSuccessListener(unused -> Log.d("30", "Documento")).addOnFailureListener(e -> Log.d("30", "No Documento :C"));
     }
-
 
     //Diálogo de advertencia
     public void dialogWarningQuit(View v) {

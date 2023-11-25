@@ -2,7 +2,7 @@
 <resources>
     <!--FALTA AQUI QUITAR NO USADOS EN LA VERSION FINAL-->
     <!--General-->
-    <string name="app_name">Green Carson - GAME</string>
+    <string name="app_name">Reecicla! - GAME</string>
 
     <!--Login screen-->
     <string name="userEmail">E-mail</string>
@@ -176,5 +176,7 @@
     <string name="number_3">3</string>
     <string name="number_4">4</string>
     <string name="number_5">5</string>
+
+    <string name="default_web_client_id">901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com</string>
 
 </resources>
