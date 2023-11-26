@@ -348,6 +348,21 @@ public class GameView extends View {
         }
     }
 
+    public void fakeOnTouchEvent(int x, int y) {
+        long downTime = System.currentTimeMillis();
+        long eventTime = System.currentTimeMillis() + 100;
+        int metaState = 0;
+        MotionEvent motionEvent = MotionEvent.obtain(
+                downTime,
+                eventTime,
+                MotionEvent.ACTION_UP,
+                x,
+                y,
+                metaState
+        );
+
+        onTouchEvent(motionEvent);
+    }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
@@ -490,6 +505,7 @@ public class GameView extends View {
         buttonBack.setOnClickListener(v1 -> {
             isDialogShowing = false;
             dialog.dismiss();
+            fakeOnTouchEvent(0, 0);
         });
 
         dialog.show();
