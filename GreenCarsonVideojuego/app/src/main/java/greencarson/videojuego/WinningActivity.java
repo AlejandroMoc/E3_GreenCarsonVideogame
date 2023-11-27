@@ -2,6 +2,7 @@ package greencarson.videojuego;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,6 +16,8 @@ public class WinningActivity extends Activity {
     int winningState, levelNumber;
     boolean second = false;
 
+    MediaPlayer loseWahWah, winWoo;
+
     //Crear pantalla de estado (ganado/perdido)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +28,16 @@ public class WinningActivity extends Activity {
         levelNumber = Objects.requireNonNull(getIntent().getExtras()).getInt("levelNumber");
         second = getIntent().getExtras().getBoolean("second");
 
+        loseWahWah = MediaPlayer.create(this, R.raw.losewahwah);
+        winWoo = MediaPlayer.create(this, R.raw.winwoo);
+
 
         //Decidir a qué pantalla enviar
         //Si se ganó
-        if (winningState==1 && !second)
+        if (winningState==1 && !second) {
+            winWoo.start();
             setContentView(R.layout.activity_winning);
+        }
         else if (winningState == 1){
             setContentView(R.layout.activity_winning2);
 
@@ -42,10 +50,13 @@ public class WinningActivity extends Activity {
         }
 
         //Si se perdió
-        else if (winningState==0 && !second)
+        else if (winningState==0 && !second) {
+            loseWahWah.start();
             setContentView(R.layout.activity_losing);
-        else if (winningState == 0)
+        }
+        else if (winningState == 0) {
             setContentView(R.layout.activity_losing2);
+        }
     }
 
     //Para ir a niveles
@@ -68,6 +79,21 @@ public class WinningActivity extends Activity {
         GameView gameView = new GameView(this, levelNumber);
         setContentView(gameView);
         //finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (loseWahWah != null) {
+            loseWahWah.stop();
+            loseWahWah.release();
+            loseWahWah = null;
+        }
+        if (winWoo != null) {
+            winWoo.stop();
+            winWoo.release();
+            winWoo = null;
+        }
     }
 
 }

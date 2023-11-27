@@ -2,6 +2,7 @@ package greencarson.videojuego;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -112,4 +113,5 @@ public class GameOver extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }
