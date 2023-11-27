@@ -24,7 +24,8 @@
         android:contentDescription="@string/losing_picture"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelinePicture_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinePicture_Top"
+        tools:ignore="VisualLintBounds" />
 
     <!--Guías verticales-->
     <androidx.constraintlayout.widget.Guideline
@@ -156,7 +157,9 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineLevelName_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineLevelName_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineLevelName_Top"
+        app:layout_constraintHeight_max="70dp"
+        app:layout_constraintWidth_max="250dp" />
 
     <!--Tip-->
     <androidx.appcompat.widget.AppCompatButton
@@ -173,7 +176,9 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineMessage_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineMessage_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineMessage_Top"
+        app:layout_constraintHeight_max="200dp"
+        app:layout_constraintWidth_max="320dp" />
 
     <!--Botones-->
     <androidx.appcompat.widget.AppCompatButton
@@ -191,7 +196,9 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineReplay_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineReplay_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineReplay_Top"
+        app:layout_constraintHeight_max="70dp"
+        app:layout_constraintWidth_max="250dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonQuit"
@@ -208,5 +215,8 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineExit_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineExit_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineExit_Top"
+        app:layout_constraintHeight_max="70dp"
+        app:layout_constraintWidth_max="250dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

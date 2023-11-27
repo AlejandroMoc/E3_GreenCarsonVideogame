@@ -23,6 +23,7 @@
     <string name="reset_password2">Enter the email address of the account for which you want to reset the password.</string>
     <string name="reset_successful">Reset password link has been sent to your requested email.</string>
     <string name="reset_failed">Reset password link has failed.</string>
+    <string name="toggle_pass">Toggle between displaying the password as visible or invisible.</string>
 
     <!--Global elements-->
     <string name="logoDescription">GreenCarson Foundation Logotype</string>
@@ -56,6 +57,7 @@
     <string name="dialog_quit">Quit</string>
     <string name="dialog_leave">Exit</string>
     <string name="dialog_logout">Sign out</string>
+    <string name="achievements">Achievements</string>
 
     <!--Tutorial description-->
     <string name="tutorial_buttonSel">Play</string>
@@ -177,6 +179,6 @@
     <string name="number_4">4</string>
     <string name="number_5">5</string>
 
-    <string name="default_web_client_id">901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com</string>
 
 </resources>

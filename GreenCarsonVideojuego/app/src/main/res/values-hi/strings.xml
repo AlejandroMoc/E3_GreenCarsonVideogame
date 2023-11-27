@@ -22,6 +22,7 @@
     <string name="reset_password2">पासवर्ड रीसेट करने के लिए खाते का ईमेल पता दर्ज करें।</string>
     <string name="reset_successful">पासवर्ड रीसेट लिंक आपके अनुरोधित ईमेल पर भेजा गया है।</string>
     <string name="reset_failed">पासवर्ड रीसेट लिंक विफल हुआ।</string>
+    <string name="toggle_pass">दिखाई या छिपाई गई पासवर्ड के बीच टॉगल करें।</string>
 
     <!--वैश्विक तत्व-->
     <string name="logoDescription">ग्रीनकार्सन फाउंडेशन लोगो</string>
@@ -55,6 +56,7 @@
     <string name="dialog_quit">बंद करें</string>
     <string name="dialog_leave">निकलें</string>
     <string name="dialog_logout">लॉगआउट</string>
+    <string name="achievements">प्राप्तियाँ</string>
 
     <!--ट्यूटोरियल विवरण-->
     <string name="tutorial_buttonSel">प्ले करें</string>

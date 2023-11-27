@@ -2,7 +2,6 @@ package greencarson.videojuego;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,6 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
 
+/** @noinspection unused*/
 public class GameOver extends AppCompatActivity {
 
     TextView tvPoints;
@@ -43,7 +43,7 @@ public class GameOver extends AppCompatActivity {
         levelNumber = Objects.requireNonNull(getIntent().getExtras()).getInt("levelNumber");
 
         tvPoints.setText(getString(R.string.points_placeholder, points));
-        sharedPreferences=getSharedPreferences("my_pref",0);
+        sharedPreferences = getSharedPreferences("my_pref",0);
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();

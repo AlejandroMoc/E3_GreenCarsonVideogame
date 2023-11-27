@@ -1,0 +1,15 @@
+<!--Aquí se declaran los tips para la pantalla de ganado.-->
+<resources>
+    <string-array name="winning_tips">
+        <item>@string/winning_tip1</item>
+        <item>@string/winning_tip2</item>
+        <item>@string/winning_tip3</item>
+        <item>@string/winning_tip4</item>
+        <item>@string/winning_tip5</item>
+        <item>@string/winning_tip6</item>
+        <item>@string/winning_tip7</item>
+        <item>@string/winning_tip8</item>
+        <item>@string/winning_tip9</item>
+        <item>@string/winning_tip10</item>
+    </string-array>
+</resources>

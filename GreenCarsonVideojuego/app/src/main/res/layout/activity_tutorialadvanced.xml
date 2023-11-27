@@ -167,7 +167,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/guidelinePlay_Bottom"
         app:layout_constraintEnd_toEndOf="@+id/guidelinePlay_End"
         app:layout_constraintStart_toStartOf="@+id/guidelinePlay_Start"
-        app:layout_constraintTop_toTopOf="@+id/guidelinePlay_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinePlay_Top"
+        app:layout_constraintHeight_max="80dp"
+        app:layout_constraintWidth_max="200dp" />
 
     <!--Texto de instrucción-->
     <TextView
@@ -183,7 +185,9 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLevel" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLevel"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintWidth_max="250dp" />
 
     <!--Guías-->
     <androidx.constraintlayout.widget.Guideline

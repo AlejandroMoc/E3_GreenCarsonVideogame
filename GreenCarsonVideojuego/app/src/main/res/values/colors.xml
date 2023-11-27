@@ -18,21 +18,22 @@
     <!--Paleta de Green Carson (Variaciones para la app)-->
     <color name="green_deactivated">#05823b</color>
     <color name="cyan_deactivated">#07676d</color>
+    <color name="cyan_text">#065257</color>
 
     <!--Colores para fondos de elementos-->
     <color name="gray_darkened">#44000000</color>
     <color name="gray_mid">#757575</color>
-    <color name="gray_lighted">#dedede</color>          <!--Falta revisar y confirmar los colores de los gradientes-->
+    <color name="gray_lock">#aab8c2</color>
     <color name="red_lighted">#f3c1c2</color>
     <color name="softBlue">#c6ddeb</color>              <!--Introducción de datos-->
     <color name="cyan_lighted">#bddced</color>
     <color name="green_lighted">#cbe5ce</color>
     <color name="yellow_lighted">#fbf3c8</color>
+
     <color name="mustardYellow">#F1D14A</color>         <!--Amarillo botones-->
-<!--    <color name="mustardYellowMid">#eac112</color>-->
     <color name="mustardYellowMid">#FFC107</color>
-    <color name="honeyYellow">#fdb72d</color>           <!--Falta combinar este-->
-    <color name="burntHoney">#a24406</color>            <!--con este-->
+    <color name="honeyYellow">#fdb72d</color>
+    <color name="burntHoney">#a24406</color>
     <color name="red_intense">#d72e31</color>
     <color name="red_darkened">#500001</color>
 
@@ -48,16 +49,10 @@
 
     <color name="green_50">#E8F5E9</color>
     <color name="green_200">#A5D6A7</color>
-    <color name="green_300">#81C784</color>
-    <color name="green_400">#66BB6A</color>
-    <color name="green_500">#4CAF50</color>
     <color name="green_700">#388E3C</color>
 
     <color name="blue_50">#E3F2FD</color>
-    <color name="blue_100">#BBDEFB</color>
     <color name="blue_200">#81D4FA</color>
-    <color name="blue_300">#64B5F6</color>
-    <color name="blue_400">#42A5F5</color>
     <color name="blue_500">#2196F3</color>
     <color name="blue_700">#0288D1</color>
 
@@ -68,7 +63,6 @@
     <color name="brown_200">#BCAAA4</color>
 
     <!--Añadidos para el juego-->
-    <color name="purple_500">#9C27B0</color>
     <color name="purple_700">#7B1FA2</color>
 
 </resources>

@@ -208,28 +208,32 @@
         app:layout_constraintBottom_toBottomOf="@+id/guidelineEmail_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Top"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintWidth_max="250dp" />
 
     <!--Colocar Contraseña-->
     <EditText
         android:id="@+id/textPassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:autofillHints="@string/space"
         android:background="@drawable/gradient_textview"
         android:ems="10"
         android:hint="@string/userPassword"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="45dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="45dp"
         android:textColor="@color/jadeBlue"
         android:textColorHint="@color/jadeBlue"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/guidelinePass_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelinePass_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinePass_Top"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintWidth_max="250dp" />
 
     <Button
         android:id="@+id/buttonSee"
@@ -237,11 +241,30 @@
         android:layout_height="35dp"
         android:layout_marginStart="-50dp"
         android:background="@drawable/logo_visible"
+        android:contentDescription="@string/toggle_pass"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/guidelinePass_Bottom"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintTop_toTopOf="@+id/guidelinePass_Top" />
-
+    
+    <!--Botones de inicio de sesión-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_button"
+        android:contentDescription="@string/loginButton"
+        android:text="@string/loginButton"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLogin_Top"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineLogin_Bottom"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintWidth_max="200dp" />
+    
     <!--Botón de ¿Olvidaste contraseña? E-mail-->
     <Button
         android:id="@+id/buttonForgot"
@@ -257,24 +280,10 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineForgot_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineForgot_Top" />
-
-    <!--Botones de inicio de sesión-->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLogin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/gradient_button"
-        android:contentDescription="@string/loginButton"
-        android:text="@string/loginButton"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
-        app:layout_constraintTop_toTopOf="@+id/guidelineLogin_Top"
-        app:layout_constraintBottom_toBottomOf="@+id/guidelineLogin_Bottom" />
-
+        app:layout_constraintTop_toTopOf="@+id/guidelineForgot_Top"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintWidth_max="250dp" />
+    
     <!--Botones de redes sociales-->
     <Button
         android:id="@+id/buttonLoginGoogle"
@@ -286,13 +295,18 @@
         android:maxWidth="250dp"
         android:stateListAnimator="@null"
         android:text="@string/googleLogin"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/gray_mid"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineGoogle_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintHeight_max="100dp"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineGoogle_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineGoogle_Top"
+        app:layout_constraintWidth_max="250dp" />
+    
+    <!--android:drawableStart="@drawable/logo_google"-->
 
     <!--    <Button
             android:id="@+id/buttonLoginFB"
