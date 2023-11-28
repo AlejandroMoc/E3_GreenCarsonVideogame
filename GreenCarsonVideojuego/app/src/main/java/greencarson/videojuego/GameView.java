@@ -382,10 +382,16 @@ public class GameView extends View {
                 trashesB.clear();
                 trashesC.clear();
                 if (levelNumber == 4) {
+                    life = 25;
                     trashesD.clear();
+                } else if (levelNumber == 3) {
+                    life = 20;
+                } else if (levelNumber == 2) {
+                    life = 15;
+                } else {
+                    life = 10;
                 }
                 points = 0;
-                life = 10;
 
                 for (i = 0; i < trashDensity; i++) {
                     trash = new Trash(context, 1, levelNumber);
@@ -407,7 +413,7 @@ public class GameView extends View {
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 //AQUI CHECAR LÍMITES DEL TOUCH
-                if (touchY < dHeight - ground.getHeight() - 200) {
+                if (touchY < dHeight - ground.getHeight() - (levelNumber < 4 ? 200 : 100)) {
                     Log.d("11", "Tocando");
                     for (Trash trash : trashesA) {
                         if (isTouchWithinTrash(trash, touchX, touchY)) {
