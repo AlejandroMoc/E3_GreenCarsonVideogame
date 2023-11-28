@@ -3,7 +3,6 @@ package greencarson.videojuego;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-
 import java.util.Random;
 
 public class Trash {
@@ -18,8 +17,6 @@ public class Trash {
     public Trash(Context context, int trashType, int levelNumber){
 
         trashTypeMine= trashType;
-
-        //FALTA AQUI reemplazar algunos assets (URGENTE) FOTOREALISMO
 
         //Basura tipo A - Valorizables                                                              //Listo
         trash[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);
@@ -44,15 +41,15 @@ public class Trash {
         trash[17] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_b9);
 
         //Basura tipo C - Inorgánicos
-        trash[18] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c1);      //Quizá cambiar este (puede ser manejo especial)
+        trash[18] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c1);
         trash[19] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c2);
         trash[20] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c3);
         trash[21] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c4);
         trash[22] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c5);
-        trash[23] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c6);      //Quizá cambiar este (puede ser biohazard)
+        trash[23] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c6);
         trash[24] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c7);
         trash[25] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c8);
-        trash[26] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c9);      //Quizá cambiar este (puede ser biohazard)
+        trash[26] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_c9);
 
         //Basura tipo D - Manejo Especial
         trash[27] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_d1);
@@ -101,6 +98,7 @@ public class Trash {
 
         //AQUI AHORA ESTO SE DEBE AJUSTAR DE ACUERDO CON EL NIVEL (3 BASURAS INICIALES PARA UN NIVEL, 6 PARA EL 2, 9 PARA EL 3)
         if (levelNumber == 4) {
+            //Aquí no entiendo por qué ponerle una velocidad diferente
             if (trashType == 4) {
                 trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
             } else {
@@ -118,7 +116,6 @@ public class Trash {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
             trashVelocity = 2 + random.nextInt(4);
         }
-
         //FALTA AQUÍ AÑADIR UNA VELOCIDAD ACELERADA PARA QUE CADA VEZ SE VAYA MÁS RÁPIDO
     }
 

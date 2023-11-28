@@ -229,7 +229,6 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineButton_Top" />
 
     <!--Logo Reecicla Ranking-->
-    <!--FALTA AQUI CORREGIR EL LOGO, SE ESTÁ ESTIRANDO DE FORMAS MUY RARAS-->
     <ImageView
         android:id="@+id/logoGame"
         android:layout_width="0dp"
@@ -240,68 +239,79 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineLogoBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineGAME_Start"
-        app:layout_constraintTop_toTopOf="@+id/guidelineButton_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton_Top"
+        app:layout_constraintWidth_max="320dp" />
 
     <!--Fondos de Ranking Grupal-->
     <ImageView
         android:id="@+id/ranking1_BG"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@id/guidelineRank1_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
         app:layout_constraintTop_toTopOf="@+id/guidelineRank1_Top"
-        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
+        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize"
+        app:layout_constraintHeight_max="80dp"
+        app:layout_constraintWidth_max="1100dp" />
 
     <ImageView
         android:id="@+id/ranking2_BG"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@id/guidelineRank2_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
         app:layout_constraintTop_toTopOf="@+id/guidelineRank2_Top"
-        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
+        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize"
+        app:layout_constraintHeight_max="80dp"
+        app:layout_constraintWidth_max="1100dp" />
 
     <ImageView
         android:id="@+id/ranking3_BG"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@id/guidelineRank3_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
         app:layout_constraintTop_toTopOf="@+id/guidelineRank3_Top"
-        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
+        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize"
+        app:layout_constraintHeight_max="80dp"
+        app:layout_constraintWidth_max="1100dp" />
 
     <ImageView
         android:id="@+id/ranking4_BG"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@id/guidelineRank4_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
         app:layout_constraintTop_toTopOf="@+id/guidelineRank4_Top"
-        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
+        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize"
+        app:layout_constraintHeight_max="80dp"
+        app:layout_constraintWidth_max="1100dp" />
 
     <ImageView
         android:id="@+id/ranking5_BG"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
         android:background="@drawable/gradient_ranking"
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@id/guidelineRank5_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineGAME_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineName_Vertical"
         app:layout_constraintTop_toTopOf="@+id/guidelineRank5_Top"
-        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize" />
+        tools:ignore="SpeakableTextPresentCheck,VisualLintButtonSize"
+        app:layout_constraintHeight_max="80dp"
+        app:layout_constraintWidth_max="1100dp" />
 
     <!--Ranking grupal-->
     <TextView

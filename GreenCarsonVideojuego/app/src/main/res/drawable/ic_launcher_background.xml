@@ -7,17 +7,14 @@
         android:startColor = "@color/cyan"
         android:endColor = "@color/purple_700"
         android:type = "linear" />
+
     <!--android:startColor = "@color/green"
         android:endColor = "@color/cyan"-->
-
 
     <!--
     Falta checar qué color dejar como definitivo
 
-
-    AQUI AHORA VERIFICAR SI SE QUEDA CYAN O BLUE_200
-
-
+    VERIFICAR SI SE QUEDA CYAN O BLUE_200
 
     Verificar si el gradiente cumple con
     https://m2.material.io/design/iconography/product-icons.html#specs

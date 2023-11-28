@@ -64,7 +64,6 @@ public class TutorialActivity extends AppCompatActivity {
         ViewGroup viewGroup = findViewById(android.R.id.content);
         View dialogView;
 
-        //FALTA CAMBIAR == A EQUALS
         if (buttonId == R.id.trashCan4 || buttonId == R.id.trashCan4_help){
             dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_trashcan4, viewGroup, false);
         } else if (buttonId == R.id.trashCan3 || buttonId == R.id.trashCan3_help){
@@ -83,7 +82,7 @@ public class TutorialActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    //Enviar a nivel respectivo
+    //Enviar a respectivo nivel
     public void playLevel(View v){
         GameView gameView = new GameView(this, levelNumber);
         setContentView(gameView);

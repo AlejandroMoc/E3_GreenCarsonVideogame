@@ -96,6 +96,31 @@ public class GameView extends View {
         background = BitmapFactory.decodeResource(getResources(), randomImage);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
 
+/*
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(getResources(), randomImage, options);
+
+        int imageWidth = options.outWidth;
+        int imageHeight = options.outHeight;
+
+        //Calcular aspect radio
+        int targetWidth;
+        int targetHeight;
+        if (imageWidth >= imageHeight) {
+            targetWidth = dWidth;
+            targetHeight = (int) ((float) imageHeight / imageWidth * targetWidth);
+        } else {
+            targetHeight = dHeight;
+            targetWidth = (int) ((float) imageWidth / imageHeight * targetHeight);
+        }
+
+        //Hacer imágen con fondo
+        Bitmap originalBitmap = BitmapFactory.decodeResource(getResources(), randomImage);
+        background = Bitmap.createScaledBitmap(originalBitmap, targetWidth, targetHeight, true);
+*/
+
+
         //Música
         startMusic(context);
         //stopMusic(context);
@@ -191,7 +216,6 @@ public class GameView extends View {
         quitDrawable.setBounds(quitMargin1, quitMargin2, quitMargin1 + quitSize, quitMargin2 + quitSize);
         Objects.requireNonNull(restartDrawable).setBounds(rectRestart.left, rectRestart.top, rectRestart.left + rectRestart.width(), rectRestart.top + rectRestart.height());
         restartDrawable.setBounds(restartMargin1, restartMargin2, restartMargin1 + restartSize, restartMargin2 + restartSize);
-
         random = new Random();
 
         //Posición de los botes
@@ -327,7 +351,6 @@ public class GameView extends View {
     //Función para enviar a gameOver
     private void setGameOver(Context context) {
 
-        //Falta checar qué condición dejar
         if (life <= 0 || points >= minPoints) {
 
             stopMusic();
