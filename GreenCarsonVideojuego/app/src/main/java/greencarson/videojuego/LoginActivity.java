@@ -13,18 +13,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,10 +41,11 @@ public class LoginActivity extends AppCompatActivity {
     // Variables
     EditText aTxt, bTxt;
     Button buttonLog, buttonSee;
+    Drawable eyeDrawable;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
-
     private GoogleSignInClient client;
+    private ActivityResultLauncher<Intent> signInLauncher;
 
     @Override
     public void onStart() {
@@ -86,10 +86,12 @@ public class LoginActivity extends AppCompatActivity {
         buttonSee.setOnClickListener(v -> {
             if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                 bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                buttonSee.setBackground(getDrawable(R.drawable.logo_visible));
+                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visible);
+                buttonSee.setBackground(eyeDrawable);
             } else {
                 bTxt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                buttonSee.setBackground(getDrawable(R.drawable.logo_visibleno));
+                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visibleno);
+                buttonSee.setBackground(eyeDrawable);
             }
         });
 
@@ -103,21 +105,27 @@ public class LoginActivity extends AppCompatActivity {
 
         client = GoogleSignIn.getClient(this, options);
 
+        //Checar si se puede cambiar esto
         textViewGoogle.setOnClickListener(view -> {
             Intent i = client.getSignInIntent();
             startActivityForResult(i, 1234);
         });
+        //por esto
+/*        textViewGoogle.setOnClickListener(view -> {
+            Intent i = client.getSignInIntent();
+            signInLauncher.launch(i);
+        });*/
 
         buttonLog.setOnClickListener(view -> {
             String email = aTxt.getText().toString();
             String password = bTxt.getText().toString();
 
             if (TextUtils.isEmpty(email)) {
-                Toast.makeText(LoginActivity.this, getString(R.string.userEmail), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getString(R.string.userEmail_missing), Toast.LENGTH_SHORT).show();
                 return;
             }
             if (TextUtils.isEmpty(password)) {
-                Toast.makeText(LoginActivity.this, getString(R.string.userPassword), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getString(R.string.userPassword_missing), Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -154,6 +162,10 @@ public class LoginActivity extends AppCompatActivity {
                                     aTxt.setBackgroundResource(R.drawable.gradient_textview);
                                     bTxt.setBackgroundResource(R.drawable.gradient_textview);
                                     createDocument(user);
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    if (user != null) {
+                                        createDocument(user);
+                                    }
                                     Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
                                     startActivity(intent);
                                     finish();
@@ -176,7 +188,10 @@ public class LoginActivity extends AppCompatActivity {
     private void createDocument(FirebaseUser user) {
         DocumentReference docRef = db.collection("usuarios").document(user.getUid());
         String fullName = user.getDisplayName();
-        String firstName = fullName.split(" ")[0];
+        String firstName = null;
+        if (fullName != null) {
+            firstName = fullName.split(" ")[0];
+        }
 
         Map<String, Object> userData = new HashMap<>();
         userData.put("nombres", firstName);

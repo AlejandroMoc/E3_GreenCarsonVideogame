@@ -22,6 +22,7 @@
     <string name="reset_password2">Entrez l\'adresse e-mail du compte pour lequel vous souhaitez réinitialiser le mot de passe.</string>
     <string name="reset_successful">Le lien de réinitialisation du mot de passe a été envoyé à votre adresse e-mail demandée.</string>
     <string name="reset_failed">Échec du lien de réinitialisation du mot de passe.</string>
+    <string name="toggle_pass">Basculer entre l\'affichage du mot de passe en tant que visible ou invisible.</string>
 
     <!--Éléments globaux-->
     <string name="logoDescription">Logo de la Fondation GreenCarson</string>
@@ -55,6 +56,7 @@
     <string name="dialog_quit">Quitter</string>
     <string name="dialog_leave">Sortir</string>
     <string name="dialog_logout">Se déconnecter</string>
+    <string name="achievements">Réalisations</string>
 
     <!--Description du tutoriel-->
     <string name="tutorial_buttonSel">Jouer</string>

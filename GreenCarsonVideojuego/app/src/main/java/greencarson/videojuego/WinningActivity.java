@@ -15,7 +15,6 @@ public class WinningActivity extends Activity {
 
     int winningState, levelNumber;
     boolean second = false;
-
     MediaPlayer loseWahWah, winWoo;
 
     //Crear pantalla de estado (ganado/perdido)
@@ -28,8 +27,8 @@ public class WinningActivity extends Activity {
         levelNumber = Objects.requireNonNull(getIntent().getExtras()).getInt("levelNumber");
         second = getIntent().getExtras().getBoolean("second");
 
-        loseWahWah = MediaPlayer.create(this, R.raw.losewahwah);
-        winWoo = MediaPlayer.create(this, R.raw.winwoo);
+        loseWahWah = MediaPlayer.create(this, R.raw.losing_wah);
+        winWoo = MediaPlayer.create(this, R.raw.winning_woo);
 
 
         //Decidir a qué pantalla enviar
@@ -45,8 +44,15 @@ public class WinningActivity extends Activity {
             AppCompatButton buttonTip = findViewById(R.id.stateDescription);
             Random random = new Random();
             int randomNumber = random.nextInt(10) + 1;
-            int stringResource = getResources().getIdentifier("winning_tip" + randomNumber, "string", getPackageName());
-            buttonTip.setText(stringResource);
+
+            //int stringResource = getResources().getIdentifier("winning_tip" + randomNumber, "string", getPackageName());
+            //buttonTip.setText(stringResource);
+
+            //Usar un .xml para sortear los tips
+            String[] winningTips = getResources().getStringArray(R.array.winning_tips);
+            int index = randomNumber - 1;
+            String tip = winningTips[index];
+            buttonTip.setText(tip);
         }
 
         //Si se perdió

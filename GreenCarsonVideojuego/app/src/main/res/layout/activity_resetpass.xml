@@ -192,9 +192,11 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineEmail_Bottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
-        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineEmail_Top"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintWidth_max="250dp" />
 
-    <!--Instrucciones colocar contraseña-->
+    <!--Texto de instrucción-->
     <Button
         android:id="@+id/textForgot"
         android:layout_width="0dp"
@@ -205,11 +207,12 @@
         android:textColor="@color/jadeBlue"
         android:textSize="16sp"
         android:textStyle="italic"
-
         app:layout_constraintBottom_toTopOf="@+id/guidelineDescr_Top"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_Start"
-        app:layout_constraintTop_toTopOf="@+id/guidelineDescr_Bottom" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineDescr_Bottom"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintWidth_max="250dp" />
 
     <!--Botones de inicio de sesión-->
     <androidx.appcompat.widget.AppCompatButton
@@ -225,6 +228,8 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineTrophy_End"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenterLeft"
         app:layout_constraintBottom_toBottomOf="@+id/guidelineReset_Bottom"
-        app:layout_constraintTop_toTopOf="@+id/guidelineReset_Top" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineReset_Top"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintWidth_max="200dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

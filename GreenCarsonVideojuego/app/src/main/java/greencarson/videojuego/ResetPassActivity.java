@@ -7,19 +7,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ResetPassActivity extends Activity {
     Button btnBack, btnReset;
     EditText edtEmail;
-    ProgressBar progressBar;
     FirebaseAuth mAuth;
     String strEmail;
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +43,13 @@ public class ResetPassActivity extends Activity {
         btnReset.setVisibility(View.INVISIBLE);
         mAuth.sendPasswordResetEmail(strEmail)
                 .addOnSuccessListener(unused -> {
-                    Toast.makeText(ResetPassActivity.this, "Reset password link has been sent to your requested email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetPassActivity.this, getString(R.string.reset_successful), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ResetPassActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(ResetPassActivity.this, "Reset password link has failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetPassActivity.this, getString(R.string.reset_failed), Toast.LENGTH_SHORT).show();
                     Toast.makeText(ResetPassActivity.this, getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
                     btnReset.setVisibility(View.INVISIBLE);
                 });

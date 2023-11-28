@@ -1,9 +1,9 @@
 package greencarson.videojuego;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,7 +24,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
@@ -79,9 +78,9 @@ public class GameView extends View {
     MediaPlayer mediaPlayer;
     final MediaPlayer trashcan_ad;
     final int[] imageList;
-    Random rand;
-    int randomImage;
-    Point size;
+    final Random rand;
+    final int randomImage;
+    final Point size;
     private boolean isDialogShowing = false;
 
     public GameView(Context context, int levelNumber) {
@@ -363,6 +362,7 @@ public class GameView extends View {
 
         onTouchEvent(motionEvent);
     }
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
@@ -496,12 +496,13 @@ public class GameView extends View {
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
 
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         buttonLeave.setOnClickListener(v1 -> {
             Intent intent = new Intent(context, SelectLevelActivity.class);
             context.startActivity(intent);
         });
+
         buttonBack.setOnClickListener(v1 -> {
             isDialogShowing = false;
             dialog.dismiss();

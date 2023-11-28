@@ -11,11 +11,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class RankingActivity extends Activity {
     TextView nameRanking, pointsPersonal, numberPersonal;
-    String pointsString, rankPoints, pointsSum;
+    String pointsString, pointsSum;
+    Long rankPoints;
     TextView n1, n2, n3, n4, n5, p1, p2, p3, p4, p5;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
@@ -59,10 +61,20 @@ public class RankingActivity extends Activity {
 
                                 //pointsPersonal.setText(document.getLong("rank_points").toString(), TextView.BufferType.valueOf(getResources().getString(R.string.points_ranking)));
                                 pointsPersonal.setText(Objects.requireNonNull(document.getLong("rank_points")).toString());
-                                rankPoints = Objects.requireNonNull(document.getLong("rank_points")).toString();
+
+                                rankPoints = document.getLong("rank_points");
+                                if (rankPoints != null) {
+                                    String formattedRankPoints = String.format(Locale.getDefault(), "%d", rankPoints);
+                                    pointsPersonal.setText(formattedRankPoints);
+                                }
+
+                                //rankPoints = Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = rankPoints + pointsString;
                                 pointsPersonal.setText(pointsSum);
-                                numberPersonal.setText(Integer.toString(position));
+
+                                //numberPersonal.setText(Integer.toString(position));
+                                String formattedNumber = String.format(Locale.getDefault(), "%d", position);
+                                numberPersonal.setText(formattedNumber);
                             }
 
                             if (position == 1) {
@@ -113,5 +125,4 @@ public class RankingActivity extends Activity {
         startActivity(intent);
         finish();
     }
-
 }
