@@ -1,6 +1,7 @@
 package greencarson.videojuego;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -151,7 +152,6 @@ public class LoginActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                FirebaseUser user = mAuth.getCurrentUser();
 
                 if (account != null) {
                     AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
@@ -161,7 +161,6 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), getString(R.string.logingoogle_success), Toast.LENGTH_SHORT).show();
                                     aTxt.setBackgroundResource(R.drawable.gradient_textview);
                                     bTxt.setBackgroundResource(R.drawable.gradient_textview);
-                                    createDocument(user);
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     if (user != null) {
                                         createDocument(user);
