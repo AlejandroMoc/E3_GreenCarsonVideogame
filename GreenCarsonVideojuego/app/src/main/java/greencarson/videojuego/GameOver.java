@@ -24,7 +24,7 @@ public class GameOver extends AppCompatActivity {
     TextView tvHighest;
     SharedPreferences sharedPreferences;
     ImageView ivNewHighest;
-    int winningState, points, levelNumber, highest1, highest2, highest3, highest4;
+    int winningState, points, levelNumber, highest1, highest2, highest3, highest4, rank_points;
 
     FirebaseAuth mAuth;
     FirebaseFirestore db;
@@ -60,6 +60,7 @@ public class GameOver extends AppCompatActivity {
                             highest2 = document.contains("highest2") ? Objects.requireNonNull(document.getLong("highest2")).intValue() : 0;
                             highest3 = document.contains("highest3") ? Objects.requireNonNull(document.getLong("highest3")).intValue() : 0;
                             highest4 = document.contains("highest4") ? Objects.requireNonNull(document.getLong("highest4")).intValue() : 0;
+                            rank_points = document.contains("rank_points") ? Objects.requireNonNull(document.getLong("rank_points")).intValue() : 0;
 
                             if (levelNumber == 1 && points > highest1) {
                                 ivNewHighest.setVisibility(View.VISIBLE);
@@ -94,9 +95,7 @@ public class GameOver extends AppCompatActivity {
                                 tvHighest.setText(getString(R.string.highest_placeholder, highest4));
                             }
 
-                            int rank_points = highest1 + highest2 + highest3 + highest4;
-
-                            docRef.update("rank_points", rank_points);
+                            docRef.update("rank_points", rank_points + points);
 
                         }
                     }

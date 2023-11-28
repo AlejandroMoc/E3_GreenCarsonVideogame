@@ -138,12 +138,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1234) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
+                FirebaseUser user = mAuth.getCurrentUser();
+
                 if (account != null) {
                     AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
                     mAuth.signInWithCredential(credential)
@@ -152,7 +153,6 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), getString(R.string.logingoogle_success), Toast.LENGTH_SHORT).show();
                                     aTxt.setBackgroundResource(R.drawable.gradient_textview);
                                     bTxt.setBackgroundResource(R.drawable.gradient_textview);
-                                    FirebaseUser user = mAuth.getCurrentUser();
                                     createDocument(user);
                                     Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
                                     startActivity(intent);
