@@ -176,8 +176,6 @@
 
     <!--Logo Reecicla GAME-->
     <!--984 × 559px-->
-
-    <!--Colocar E-mail-->
     <ImageView
         android:id="@+id/logoGame"
         android:layout_width="wrap_content"
@@ -189,6 +187,7 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineGAME_Top"
         app:srcCompat="@drawable/logo_game" />
 
+    <!--Colocar E-mail-->
     <EditText
         android:id="@+id/textEmail"
         android:layout_width="0dp"
@@ -240,7 +239,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="-50dp"
-        android:background="@drawable/logo_visible_padded"
+        android:background="@drawable/logo_visibleno_padded"
         android:contentDescription="@string/toggle_pass"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/guidelinePass_Bottom"

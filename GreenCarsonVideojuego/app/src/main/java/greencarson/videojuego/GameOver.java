@@ -1,5 +1,6 @@
 package greencarson.videojuego;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -113,4 +114,9 @@ public class GameOver extends AppCompatActivity {
         finish();
     }
 
+    //Función nativa de regresar
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+    }
 }

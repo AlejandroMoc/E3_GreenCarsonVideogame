@@ -1,5 +1,6 @@
 package greencarson.videojuego;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -87,11 +88,11 @@ public class LoginActivity extends AppCompatActivity {
         buttonSee.setOnClickListener(v -> {
             if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                 bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visible_padded);
+                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visibleno_padded);
                 buttonSee.setBackground(eyeDrawable);
             } else {
                 bTxt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visibleno_padded);
+                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visible_padded);
                 buttonSee.setBackground(eyeDrawable);
             }
         });
@@ -201,9 +202,10 @@ public class LoginActivity extends AppCompatActivity {
 
     //Diálogo de advertencia
     public void dialogWarningQuit(View v) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
         ViewGroup viewGroup = findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_warningquit, viewGroup, false);
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_warningquit, viewGroup, false);
 
         Button buttonBack = dialogView.findViewById(R.id.buttonBack);
         Button buttonQuit = dialogView.findViewById(R.id.buttonQuit);
@@ -213,10 +215,9 @@ public class LoginActivity extends AppCompatActivity {
 
         Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
-        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
-        buttonQuit.setOnClickListener(v1 -> {
+        buttonBack.setOnClickListener(view -> alertDialog.dismiss());
+        buttonQuit.setOnClickListener(view -> {
             alertDialog.dismiss();
-            //Cerrar la app
             finishAffinity();
         });
 
@@ -230,4 +231,10 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
+    //Función nativa de regresar
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+        dialogWarningQuit(null);
+    }
 }

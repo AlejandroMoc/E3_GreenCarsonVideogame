@@ -180,7 +180,13 @@ public class GameView extends View {
         handler = new Handler();
         runnable = this::invalidate;
 
-        pointsNumber.setColor(ContextCompat.getColor(context, R.color.black));
+        //Cambiar texto dependiendo del fondo
+        if (randomImage==R.drawable.background_1){
+            pointsNumber.setColor(ContextCompat.getColor(context, R.color.white));
+        } else{
+            pointsNumber.setColor(ContextCompat.getColor(context, R.color.black));
+        }
+
         pointsNumber.setTextSize(pointsTextSize);
         pointsNumber.setTextAlign(Paint.Align.LEFT);
         pointsNumber.setTypeface(Typeface.DEFAULT_BOLD);

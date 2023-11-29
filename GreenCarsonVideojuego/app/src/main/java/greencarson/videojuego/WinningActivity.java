@@ -1,5 +1,6 @@
 package greencarson.videojuego;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -102,4 +103,10 @@ public class WinningActivity extends Activity {
         }
     }
 
+
+    //Quitar capacidad de regresar
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+    }
 }

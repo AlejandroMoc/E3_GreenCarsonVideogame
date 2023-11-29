@@ -11,6 +11,8 @@ A01736278 - José Luis Zago Guevara
 
 A01734997 - Christian Flores Alberto
 
+El repositorio de IOS se encuentra en https://github.com/GhulRasal/E4_AppGreenCaron_iOS/commits/main
+
 ### Desarrolladores de Android Studio
 A01656774 - César Guerra Martínez
 

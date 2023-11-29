@@ -1,5 +1,6 @@
 package greencarson.videojuego;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -58,6 +59,14 @@ public class ResetPassActivity extends Activity {
 
     //Para regresar a pantalla de login
     public void goToLogin(View v){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    //Función nativa de regresar
+    @Override
+    public void onBackPressed() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();

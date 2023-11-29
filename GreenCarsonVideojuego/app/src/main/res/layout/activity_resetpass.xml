@@ -8,15 +8,18 @@
     android:fitsSystemWindows="true" >
 
     <!--Fondo de aplicación-->
+
+    <!--Guías verticales-->
     <ImageView
         android:id="@+id/backgroundImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/background_tiles"
+        android:contentDescription="@string/background"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/background" />
+        android:src="@drawable/background_tiles"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="0dp" />
 
-    <!--Guías verticales-->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonLeft_Start"
         android:layout_width="1dp"
@@ -165,13 +168,13 @@
         android:id="@+id/logoGame"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/logo_game"
         android:contentDescription="@string/logoDescription"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineGAME_Bottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_End"
-        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_Start"
-        app:layout_constraintTop_toTopOf="@+id/guidelineGAME_Top"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_game" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineDescr_Top"
+        app:layout_constraintDimensionRatio="H,1.7:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight_Start"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft_End"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton_Bottom" />
 
     <!--Colocar E-mail-->
     <EditText

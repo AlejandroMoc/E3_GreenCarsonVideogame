@@ -1,4 +1,5 @@
 package greencarson.videojuego;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -113,6 +114,14 @@ public class RankingActivity extends Activity {
 
     //Para ir a niveles
     public void goToLevels(View v){
+        Intent intent = new Intent(this, SelectLevelActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    //Función nativa de regresar
+    @Override
+    public void onBackPressed() {
         Intent intent = new Intent(this, SelectLevelActivity.class);
         startActivity(intent);
         finish();
