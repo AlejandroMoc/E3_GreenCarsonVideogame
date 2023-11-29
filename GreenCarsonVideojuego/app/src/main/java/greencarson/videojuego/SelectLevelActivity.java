@@ -100,7 +100,6 @@ public class SelectLevelActivity extends AppCompatActivity {
 
         viewId = v.getId();
 
-        //FALTA AQUI SIMPLIFICAR PARA QUE LOS PRIMEROS 4 CASOS USEN LO MISMO
         if (levelNumber == 1 && viewId == R.id.buttonBasic){
             levelNumber = 0;
             buttonBasic.setBackgroundResource(R.drawable.gradient_button);

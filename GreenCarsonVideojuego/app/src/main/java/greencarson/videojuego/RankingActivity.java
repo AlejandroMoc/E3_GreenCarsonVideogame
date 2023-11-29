@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -58,28 +57,22 @@ public class RankingActivity extends Activity {
 
                             if (document.getId().equals(userId)) {
                                 nameRanking.setText(document.getString("nombres"));
-
-                                //pointsPersonal.setText(document.getLong("rank_points").toString(), TextView.BufferType.valueOf(getResources().getString(R.string.points_ranking)));
                                 pointsPersonal.setText(Objects.requireNonNull(document.getLong("rank_points")).toString());
-
                                 rankPoints = document.getLong("rank_points");
+
                                 if (rankPoints != null) {
                                     String formattedRankPoints = String.format(Locale.getDefault(), "%d", rankPoints);
                                     pointsPersonal.setText(formattedRankPoints);
                                 }
 
-                                //rankPoints = Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = rankPoints + pointsString;
                                 pointsPersonal.setText(pointsSum);
-
-                                //numberPersonal.setText(Integer.toString(position));
                                 String formattedNumber = String.format(Locale.getDefault(), "%d", position);
                                 numberPersonal.setText(formattedNumber);
                             }
 
                             if (position == 1) {
                                 n1.setText(document.getString("nombres"));
-                                //p1.setText(document.getLong("rank_points").toString());
                                 pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p1.setText(pointsSum);
@@ -107,7 +100,6 @@ public class RankingActivity extends Activity {
                                 pointsSum= Objects.requireNonNull(document.getLong("rank_points")).toString();
                                 pointsSum = pointsSum + pointsString;
                                 p5.setText(pointsSum);
-
                             }
 
                             Log.d("20", position + " - " + document.getId() + " => " + document.getData());

@@ -18,19 +18,18 @@
     <!--Paleta de Green Carson (Variaciones para la app)-->
     <color name="green_deactivated">#05823b</color>
     <color name="cyan_deactivated">#07676d</color>
-    <color name="cyan_text">#065257</color>
 
     <!--Colores para fondos de elementos-->
     <color name="gray_darkened">#44000000</color>
     <color name="gray_mid">#757575</color>
     <color name="gray_lock">#aab8c2</color>
     <color name="red_lighted">#f3c1c2</color>
-    <color name="softBlue">#c6ddeb</color>              <!--Introducción de datos-->
+    <color name="softBlue">#c6ddeb</color>              <!--Juntar estos dos-->
     <color name="cyan_lighted">#bddced</color>
     <color name="green_lighted">#cbe5ce</color>
     <color name="yellow_lighted">#fbf3c8</color>
 
-    <color name="mustardYellow">#F1D14A</color>         <!--Amarillo botones-->
+    <color name="mustardYellow">#F1D14A</color>         <!--Warnings y botones-->
     <color name="mustardYellowMid">#FFC107</color>
     <color name="honeyYellow">#fdb72d</color>
     <color name="burntHoney">#a24406</color>
@@ -40,29 +39,24 @@
     <!--Colores para el texto-->
     <color name="jadeBlue">#07676d</color>         <!--Hint de texto-->
     <color name="jade_deactivated">#83bba8</color>
+    <color name="cyan_text">#065257</color>
 
-    <!--Colores default y de la paleta Material-->
-    <!--Colores sacados de https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors-->
+    <!--Colores de la paleta Material-->
+    <!--https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors-->
     <color name="transparent">#00000000</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="green_50">#E8F5E9</color>
     <color name="green_200">#A5D6A7</color>
     <color name="green_700">#388E3C</color>
-
     <color name="blue_50">#E3F2FD</color>
     <color name="blue_200">#81D4FA</color>
     <color name="blue_500">#2196F3</color>
     <color name="blue_700">#0288D1</color>
-
     <color name="yellow_50">#FFFDE7</color>
     <color name="yellow_200">#FFF59D</color>
-
     <color name="brown_50">#EFEBE9</color>
     <color name="brown_200">#BCAAA4</color>
-
-    <!--Añadidos para el juego-->
     <color name="purple_700">#7B1FA2</color>
 
 </resources>

@@ -87,16 +87,15 @@ public class LoginActivity extends AppCompatActivity {
         buttonSee.setOnClickListener(v -> {
             if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                 bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visible);
+                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visible_padded);
                 buttonSee.setBackground(eyeDrawable);
             } else {
                 bTxt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visibleno);
+                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visibleno_padded);
                 buttonSee.setBackground(eyeDrawable);
             }
         });
 
-        //Iniciar login de Google
         // Login Google
         TextView textViewGoogle = findViewById(R.id.buttonLoginGoogle);
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

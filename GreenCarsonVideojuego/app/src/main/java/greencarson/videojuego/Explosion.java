@@ -17,7 +17,7 @@ public class Explosion {
         explosion[3] = BitmapFactory.decodeResource(context.getResources(), R.drawable.explote3);
     }
 
-    public Bitmap getExplosion(int explosionFrame){
+    public Bitmap getFrame(int explosionFrame){
         return explosion[explosionFrame];
     }
 }

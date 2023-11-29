@@ -50,7 +50,7 @@ public class GameView extends View {
     final Runnable runnable;
     final Paint pointsNumber = new Paint();
     final Paint lifeNumber = new Paint();
-    final int pointsTextSize = 120;
+    final int pointsTextSize = 100;
     final int lifeTextSize = 70;
     final int dumpsterAX;
     final int dumpsterBX;
@@ -86,7 +86,6 @@ public class GameView extends View {
     public GameView(Context context, int levelNumber) {
 
         super(context);
-        //getHolder().addCallback(this);
         this.context = context;
         this.levelNumber = levelNumber;
 
@@ -114,16 +113,13 @@ public class GameView extends View {
             targetHeight = dHeight;
             targetWidth = (int) ((float) imageWidth / imageHeight * targetHeight);
         }
-
         //Hacer imágen con fondo
         Bitmap originalBitmap = BitmapFactory.decodeResource(getResources(), randomImage);
         background = Bitmap.createScaledBitmap(originalBitmap, targetWidth, targetHeight, true);
 */
 
-
         //Música
         startMusic(context);
-        //stopMusic(context);
         trashcan_ad = MediaPlayer.create(context, R.raw.trashcan);
 
         //Para medidas de corazón
@@ -144,17 +140,12 @@ public class GameView extends View {
             dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth() - dumpsterD.getWidth() / 3, dumpsterD.getHeight() - dumpsterD.getHeight() / 3, true);
             minPoints = Integer.MAX_VALUE;
             trashDensity = 2;
-            //life=10;
-            //pointsSum=10;
             life = 25;
             pointsSum = 30;
 
         } else if (levelNumber == 3) {
             Log.d("3", "Se envia a nivel avanzado");
             trashDensity = 2;
-            //minPoints=300;
-            //life=5;
-            //pointsSum=10;
             minPoints = 800;
             life = 20;
             pointsSum = 20;
@@ -162,9 +153,6 @@ public class GameView extends View {
         } else if (levelNumber == 2) {
             Log.d("2", "Se envia a nivel intermedio");
             trashDensity = 2;
-            //minPoints=250;
-            //life=5;
-            //pointsSum=10;
             minPoints = 500;
             life = 15;
             pointsSum = 15;
@@ -172,9 +160,6 @@ public class GameView extends View {
         } else if (levelNumber == 1) {
             Log.d("1", "Se envia a nivel básico");
             trashDensity = 1;
-            //minPoints=200;
-            //life=5;
-            //pointsSum=10;
             minPoints = 200;
             life = 10;
             pointsSum = 10;
@@ -320,7 +305,7 @@ public class GameView extends View {
                 iterator = explosions.iterator();
                 while (iterator.hasNext()) {
                     explosion = iterator.next();
-                    canvas.drawBitmap(explosion.getExplosion(explosion.explosionFrame), explosion.explosionX, explosion.explosionY, null);
+                    canvas.drawBitmap(explosion.getFrame(explosion.explosionFrame), explosion.explosionX, explosion.explosionY, null);
                     explosion.explosionFrame++;
                     if (explosion.explosionFrame > 3) {
                         iterator.remove();
@@ -338,7 +323,7 @@ public class GameView extends View {
                     canvas.drawText("" + points, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
                 } else {
                     heartDrawable.draw(canvas);
-                    canvas.drawText("" + points + "/" + minPoints, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
+                    canvas.drawText("" + points + "/" + minPoints, Math.floorDiv(dWidth, 2) - 100, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
                 }
                 quitDrawable.draw(canvas);
                 restartDrawable.draw(canvas);
@@ -382,7 +367,6 @@ public class GameView extends View {
                 y,
                 metaState
         );
-
         onTouchEvent(motionEvent);
     }
     @SuppressLint("ClickableViewAccessibility")
@@ -435,7 +419,6 @@ public class GameView extends View {
 
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                //AQUI CHECAR LÍMITES DEL TOUCH
                 if (touchY < dHeight - ground.getHeight() - (levelNumber < 4 ? 200 : 100)) {
                     Log.d("11", "Tocando");
                     for (Trash trash : trashesA) {
@@ -484,7 +467,7 @@ public class GameView extends View {
                 }
                 break;
 
-            //Checar si se está tocando alguna basura
+            //Checar si se está moviendo alguna basura
             case MotionEvent.ACTION_MOVE:
                 if (touchY < dHeight - ground.getHeight() - 200) {
                     if (trashTouched) {
@@ -510,8 +493,6 @@ public class GameView extends View {
         return true;
     }
 
-    //Acá hay errores de rendering
-    //Y quiero que el dialog sea transparente
     public void showDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
@@ -554,7 +535,7 @@ public class GameView extends View {
         trashType = trashNow.trashTypeMine;
         action = event.getAction();
 
-        //FALTA AQUÍ SIMPLIFICAR PARA SOLO USAR LOS TRUES Y DEJAR EL RESTO EN FALSES
+        //FALTA AQUÍ SIMPLIFICAR PARA SOLO USAR LOS TRUES Y DEJAR EL RESTO EN FALSE
         switch (trashType) {
             case 1:
                 dumpsterCollision(trashNow, dumpsterA, true, levelNumber);
@@ -581,7 +562,6 @@ public class GameView extends View {
                 dumpsterCollision(trashNow, dumpsterD, true, levelNumber);
                 break;
         }
-
     }
 
     //AQUI AHORA VERIFICAR COMO SIMPLIFICAR DUMPSTER Y DUMPSTER X EN UN SOLO VALOR (sin ifs)
@@ -608,7 +588,6 @@ public class GameView extends View {
             } else {
                 life--;
             }
-
             trashNow.resetTrash(trashType, levelNumber);
             trashcan_ad.start();
         }

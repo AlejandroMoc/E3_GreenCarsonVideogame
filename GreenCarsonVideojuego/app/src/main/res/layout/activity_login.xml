@@ -237,10 +237,10 @@
     <!--Falta revisar este gráfico para ponerle borde-->
     <Button
         android:id="@+id/buttonSee"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="-50dp"
-        android:background="@drawable/logo_visible"
+        android:background="@drawable/logo_visible_padded"
         android:contentDescription="@string/toggle_pass"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/guidelinePass_Bottom"

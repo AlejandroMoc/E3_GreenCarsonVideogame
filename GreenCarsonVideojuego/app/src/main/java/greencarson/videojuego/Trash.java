@@ -10,15 +10,14 @@ public class Trash {
     final Bitmap[] trash =new Bitmap[32];
     final Random random = new Random();
     int trashFrame, trashSum, trashVelocity;
-    float trashX;
-    float trashY;
+    float trashX, trashY;
 
     //Constructor
     public Trash(Context context, int trashType, int levelNumber){
 
         trashTypeMine= trashType;
 
-        //Basura tipo A - Valorizables                                                              //Listo
+        //Basura tipo A - Valorizables
         trash[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a1);
         trash[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a2);
         trash[2] = BitmapFactory.decodeResource(context.getResources(), R.drawable.trash_a3);
@@ -96,9 +95,7 @@ public class Trash {
                 break;
         }
 
-        //AQUI AHORA ESTO SE DEBE AJUSTAR DE ACUERDO CON EL NIVEL (3 BASURAS INICIALES PARA UN NIVEL, 6 PARA EL 2, 9 PARA EL 3)
         if (levelNumber == 4) {
-            //Aquí no entiendo por qué ponerle una velocidad diferente
             if (trashType == 4) {
                 trashFrame = new Random().nextInt(levelNumber + 1) + trashSum;
             } else {
@@ -107,12 +104,11 @@ public class Trash {
             trashVelocity = 5 + random.nextInt(4);
         } else if (levelNumber == 3) {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
-            trashVelocity = 4 + random.nextInt(4);
+            trashVelocity = 2 + random.nextInt(4);
         } else if (levelNumber == 2) {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
-            trashVelocity = 3 + random.nextInt(4);
+            trashVelocity = 2 + random.nextInt(2);
         } else {
-            //FALTA ADAPTAR ESTE (NO SE SI ASÍ ESTÁ BIEN)
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
             trashVelocity = 2 + random.nextInt(4);
         }

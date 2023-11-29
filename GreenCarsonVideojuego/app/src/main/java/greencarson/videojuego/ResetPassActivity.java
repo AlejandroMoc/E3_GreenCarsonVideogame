@@ -27,7 +27,7 @@ public class ResetPassActivity extends Activity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        //Reset button listener
+        //Resetear button listener
         btnReset.setOnClickListener(v -> {
             strEmail = edtEmail.getText().toString().trim();
             if (!TextUtils.isEmpty(strEmail)){
