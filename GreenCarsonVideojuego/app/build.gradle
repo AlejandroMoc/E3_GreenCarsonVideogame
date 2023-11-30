@@ -11,8 +11,9 @@ android {
         applicationId "greencarson.videojuego"
         minSdk 24
         targetSdk 34
-        versionCode 60
-        versionName "0.60"
+        //En cada nueva versión subir el número
+        versionCode 61
+        versionName "0.61"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
