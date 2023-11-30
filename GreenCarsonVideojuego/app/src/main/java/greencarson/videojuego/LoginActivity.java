@@ -86,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         buttonSee.setOnClickListener(v -> {
+            Log.d("50", "Estoy");
             if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                 bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visibleno_padded);
@@ -108,6 +109,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Checar si se puede cambiar esto
         textViewGoogle.setOnClickListener(view -> {
+            Log.d("50", "Estas?");
             Intent i = client.getSignInIntent();
             startActivityForResult(i, 1234);
         });
@@ -147,39 +149,36 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {super.onActivityResult(requestCode, resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1234) {
+            Log.d("50", "Alo");
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.d("50", "Tonotos");
 
                 if (account != null) {
+                    Log.d("50", "Llego");
                     AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
                     mAuth.signInWithCredential(credential)
                             .addOnCompleteListener(this, task1 -> {
+                                Log.d("50", "Llegó acá");
                                 if (task1.isSuccessful()) {
+                                    Log.d("50", "Llego hasta acá");
                                     Toast.makeText(getApplicationContext(), getString(R.string.logingoogle_success), Toast.LENGTH_SHORT).show();
-                                    aTxt.setBackgroundResource(R.drawable.gradient_textview);
-                                    bTxt.setBackgroundResource(R.drawable.gradient_textview);
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    if (user != null) {
-                                        createDocument(user);
-                                    }
                                     Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
+                                    Log.d("50", "Llego al else");
                                     Toast.makeText(LoginActivity.this, getString(R.string.logingoogle_failed), Toast.LENGTH_SHORT).show();
-                                    aTxt.setBackgroundResource(R.drawable.gradient_textview2);
-                                    bTxt.setBackgroundResource(R.drawable.gradient_textview2);
                                 }
                             });
                 }
             } catch (ApiException e) {
+                Log.d("50", ":c");
                 e.printStackTrace();
                 Toast.makeText(LoginActivity.this, getString(R.string.logingoogle_failed), Toast.LENGTH_SHORT).show();
-                aTxt.setBackgroundResource(R.drawable.gradient_textview2);
-                bTxt.setBackgroundResource(R.drawable.gradient_textview2);
             }
         }
     }
