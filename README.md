@@ -1,10 +1,12 @@
-# Green Carson - Videojuego
+# Green Carson - Reecicla! GAME
 
 ## Integración de seguridad informática en redes y sistemas de software (Gpo 602)
+### En colaboraciòn con el Instituto Tecnològico y de Estudios Superiores de Monterrey y la empresa Green Carson.
 
-Desarrollada aplicación del 22 de septiembre al __ de diciembre de 2023.
+Desarrollada aplicación del 22 de septiembre al 1 de diciembre de 2023.
 
-Entrega prevista para el __ de noviembre de 2023
+Entrega prevista para el 1 de diciembre de 2023.
+
 
 ### Desarrolladores de IOS
 A01736278 - José Luis Zago Guevara
