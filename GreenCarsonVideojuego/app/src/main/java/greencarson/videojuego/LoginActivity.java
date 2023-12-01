@@ -27,12 +27,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -70,6 +68,9 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
             startActivity(intent);
             finish();
+
+            //Ver si esto sirve
+            createDocument(currentUser);
         }
     }
 
@@ -205,8 +206,6 @@ public class LoginActivity extends AppCompatActivity {
 
         Map<String, Object> userData = new HashMap<>();
         userData.put("nombres", firstName);
-        userData.put("highest1", 0);
-        userData.put("rank_points", 0);
 
         docRef.set(userData).addOnSuccessListener(unused -> Log.d("30", "Documento")).addOnFailureListener(e -> Log.d("30", "No Documento :C"));
     }
