@@ -1,7 +1,7 @@
 # Green Carson - Reecicla! GAME
 
 ## Integración de seguridad informática en redes y sistemas de software (Gpo 602)
-### En colaboraciòn con el Instituto Tecnològico y de Estudios Superiores de Monterrey y la empresa Green Carson.
+### En colaboración con el Instituto Tecnológico y de Estudios Superiores de Monterrey y la empresa Green Carson.
 
 Desarrollada aplicación del 22 de septiembre al 1 de diciembre de 2023.
 
