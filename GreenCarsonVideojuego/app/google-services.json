@@ -159,14 +159,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "901697229886-2bqtbvlhdguqu92rqn9kk2p14ft84b74.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.reciclaapp",
-            "certificate_hash": "fce1cda700fab76104bb22423fb6af73ac523543"
-          }
-        },
-        {
           "client_id": "901697229886-i47uvilfh598vueops47ooisdbhkeqc1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -174,50 +166,6 @@
             "certificate_hash": "ef4fb3c4abba66963efe1b10c4c2f7dff07e50d9"
           }
         },
-        {
-          "client_id": "901697229886-pjq3fvdm0r56vnnvnf7aeujsvg0n6sfv.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.reciclaapp",
-            "certificate_hash": "4427d2344f1eb4ce1d898d057f2e3a82f9829a69"
-          }
-        },
-        {
-          "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDWtFdrIsOaLEN3q9iZeukgClUJKq2IpXE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "901697229886-0jmpicgnf24mf8929auf0svg3j73dh34.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "mx.tec.A01735425.RecolectoresIOSApp"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:901697229886:android:6b0c0aea1eed9ed9a32d6f",
-        "android_client_info": {
-          "package_name": "com.example.reciclaapp_android"
-        }
-      },
-      "oauth_client": [
         {
           "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
           "client_type": 3
@@ -255,46 +203,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "901697229886-6uvr4hudv15p1kbrfbqam69c3oke9j8g.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.greencarson.reciclaapp",
-            "certificate_hash": "b2e86acdfa265beab3a7c29ae23f568f995273a0"
-          }
-        },
-        {
-          "client_id": "901697229886-82eb6d0urqkchgsehmhif75uj6njmnhp.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.greencarson.reciclaapp",
-            "certificate_hash": "ef4fb3c4abba66963efe1b10c4c2f7dff07e50d9"
-          }
-        },
-        {
-          "client_id": "901697229886-9epn60ps3fsg0tqn94kl8sl50nftmauo.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.greencarson.reciclaapp",
-            "certificate_hash": "b1d8adcfc326c297c15a64a163ca1117db028460"
-          }
-        },
-        {
-          "client_id": "901697229886-jh1rj4ra33he1d6e5u1lg4scnchsuhfd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.greencarson.reciclaapp",
-            "certificate_hash": "4427d2344f1eb4ce1d898d057f2e3a82f9829a69"
-          }
-        },
-        {
-          "client_id": "901697229886-vol44frsv5bgdlnehvs006e9nl1jb2vf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.greencarson.reciclaapp",
-            "certificate_hash": "fce1cda700fab76104bb22423fb6af73ac523543"
-          }
-        },
-        {
           "client_id": "901697229886-hhlg1ttba01pkmicerijb5hn5chgkp91.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -330,14 +238,6 @@
         }
       },
       "oauth_client": [
-        {
-          "client_id": "901697229886-2lcq9u4r3jg011vom96pgobl1iapkgjd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "greencarson.videojuego",
-            "certificate_hash": "c750d91a0f4ff563c04b50b106869e3bd6d8abe3"
-          }
-        },
         {
           "client_id": "901697229886-f5dbq03vqpn2u2i95smfe7jebhudemot.apps.googleusercontent.com",
           "client_type": 1,

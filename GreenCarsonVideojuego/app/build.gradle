@@ -12,8 +12,8 @@ android {
         minSdk 24
         targetSdk 34
         //En cada nueva versión subir el número
-        versionCode 62
-        versionName "0.62"
+        versionCode 66
+        versionName "0.66"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
