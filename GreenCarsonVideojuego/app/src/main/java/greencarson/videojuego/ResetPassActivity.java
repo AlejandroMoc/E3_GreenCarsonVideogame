@@ -1,6 +1,16 @@
-package greencarson.videojuego;
+/*
+    Nombre del archivo: ResetPassActivity.java
+    Nombre del proyecto: Green Carson Reecicla! Game
 
-import android.annotation.SuppressLint;
+    Creado y Desarrollado por:
+
+    Alejandro Daniel Moctezuma Cruz
+
+    En colaboración con el Instituto Tecnológico y
+    de Estudios Superiores de Monterrey y la empresa Green Carson.
+*/
+
+package greencarson.videojuego;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

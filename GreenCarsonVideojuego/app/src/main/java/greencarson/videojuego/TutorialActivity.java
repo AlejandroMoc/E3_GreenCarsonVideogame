@@ -1,3 +1,15 @@
+/*
+    Nombre del archivo: TutorialActivity.java
+    Nombre del proyecto: Green Carson Reecicla! Game
+
+    Creado y Desarrollado por:
+
+    Alejandro Daniel Moctezuma Cruz
+
+    En colaboración con el Instituto Tecnológico y
+    de Estudios Superiores de Monterrey y la empresa Green Carson.
+*/
+
 package greencarson.videojuego;
 
 import android.annotation.SuppressLint;

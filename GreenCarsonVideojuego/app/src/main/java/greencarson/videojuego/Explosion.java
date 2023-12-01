@@ -1,3 +1,16 @@
+/*
+    Nombre del archivo: Explosion.java
+    Nombre del proyecto: Green Carson Reecicla! Game
+
+    Creado y Desarrollado por:
+
+    César Guerra Martínez
+    Alejandro Daniel Moctezuma Cruz
+
+    En colaboración con el Instituto Tecnológico y
+    de Estudios Superiores de Monterrey y la empresa Green Carson.
+*/
+
 package greencarson.videojuego;
 
 import android.content.Context;
