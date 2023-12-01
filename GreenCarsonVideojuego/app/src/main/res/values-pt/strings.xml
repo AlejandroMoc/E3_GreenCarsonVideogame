@@ -173,5 +173,6 @@
     <string name="number_3">3</string>
     <string name="number_4">4</string>
     <string name="number_5">5</string>
+    <string name="user_not_found">No se encuentra un usuario de Google. Por favor, registrate primero en la aplicación de Green Carson.</string>
 
 </resources>

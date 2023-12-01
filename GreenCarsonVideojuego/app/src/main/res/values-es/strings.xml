@@ -10,7 +10,7 @@
     <string name="userPassword_missing">Por favor introduzca una contraseña válida.</string>
     <string name="loginButton">Inicia Sesión</string>
     <string name="forgotPassword">¿Olvidaste la contraseña?</string>
-    <string name="googleLogin">Inicia sesióncon Google</string>
+    <string name="googleLogin">Inicia sesión con Google</string>
     <string name="facebookLogin">Inicia sesión con Facebook</string>
     <string name="login_success">Inicio de sesión exitoso.</string>
     <string name="login_failed">Inicio de sesión fallido.</string>
@@ -173,5 +173,6 @@
     <string name="number_3">3</string>
     <string name="number_4">4</string>
     <string name="number_5">5</string>
+    <string name="user_not_found">No se encuentra un usuario de Google. Por favor, registrate primero en la aplicación de Green Carson.</string>
 
 </resources>

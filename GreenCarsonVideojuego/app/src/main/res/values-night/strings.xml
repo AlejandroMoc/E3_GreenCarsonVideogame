@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="user_not_found">No se encuentra un usuario de Google. Por favor, registrate primero en la aplicación de Green Carson.</string>
 </resources>
