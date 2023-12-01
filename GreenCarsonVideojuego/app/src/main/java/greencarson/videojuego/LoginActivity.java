@@ -1,21 +1,6 @@
-/*
-    Nombre del archivo: LoginActivity.java
-    Nombre del proyecto: Green Carson Reecicla! Game
-
-    Creado y Desarrollado por:
-
-    César Guerra Martínez
-    Alejandro Daniel Moctezuma Cruz
-
-    En colaboración con el Instituto Tecnológico y
-    de Estudios Superiores de Monterrey y la empresa Green Carson.
-*/
-
 package greencarson.videojuego;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -27,21 +12,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.activity.result.ActivityResultLauncher;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.content.res.AppCompatResources;
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -53,11 +43,10 @@ public class LoginActivity extends AppCompatActivity {
     // Variables
     EditText aTxt, bTxt;
     Button buttonLog, buttonSee;
-    Drawable eyeDrawable;
     FirebaseAuth mAuth;
     FirebaseFirestore db;
+
     private GoogleSignInClient client;
-    private ActivityResultLauncher<Intent> signInLauncher;
 
     @Override
     public void onStart() {
@@ -68,9 +57,6 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
             startActivity(intent);
             finish();
-
-            //Ver si esto sirve
-            createDocument(currentUser);
         }
     }
 
@@ -99,18 +85,16 @@ public class LoginActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         buttonSee.setOnClickListener(v -> {
-            Log.d("50", "Estoy");
             if (bTxt.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
                 bTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visibleno_padded);
-                buttonSee.setBackground(eyeDrawable);
+                buttonSee.setBackground(getDrawable(R.drawable.logo_visible));
             } else {
                 bTxt.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                eyeDrawable = AppCompatResources.getDrawable(this, R.drawable.logo_visible_padded);
-                buttonSee.setBackground(eyeDrawable);
+                buttonSee.setBackground(getDrawable(R.drawable.logo_visibleno));
             }
         });
 
+        //Iniciar login de Google
         // Login Google
         TextView textViewGoogle = findViewById(R.id.buttonLoginGoogle);
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -120,28 +104,21 @@ public class LoginActivity extends AppCompatActivity {
 
         client = GoogleSignIn.getClient(this, options);
 
-        //Checar si se puede cambiar esto
         textViewGoogle.setOnClickListener(view -> {
-            Log.d("50", "Estas?");
             Intent i = client.getSignInIntent();
             startActivityForResult(i, 1234);
         });
-        //por esto
-/*        textViewGoogle.setOnClickListener(view -> {
-            Intent i = client.getSignInIntent();
-            signInLauncher.launch(i);
-        });*/
 
         buttonLog.setOnClickListener(view -> {
             String email = aTxt.getText().toString();
             String password = bTxt.getText().toString();
 
             if (TextUtils.isEmpty(email)) {
-                Toast.makeText(LoginActivity.this, getString(R.string.userEmail_missing), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getString(R.string.userEmail), Toast.LENGTH_SHORT).show();
                 return;
             }
             if (TextUtils.isEmpty(password)) {
-                Toast.makeText(LoginActivity.this, getString(R.string.userPassword_missing), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getString(R.string.userPassword), Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -162,36 +139,48 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {super.onActivityResult(requestCode, resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1234) {
-            Log.d("50", "Alo");
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                Log.d("50", "Tonotos");
 
-                if (account != null) {
-                    Log.d("50", "Llego");
+                if (account != null)  {
                     AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
                     mAuth.signInWithCredential(credential)
                             .addOnCompleteListener(this, task1 -> {
-                                Log.d("50", "Llegó acá");
                                 if (task1.isSuccessful()) {
-                                    Log.d("50", "Llego hasta acá");
+                                    String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+                                    FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(getApplicationContext(), getString(R.string.logingoogle_success), Toast.LENGTH_SHORT).show();
+                                    aTxt.setBackgroundResource(R.drawable.gradient_textview);
+                                    bTxt.setBackgroundResource(R.drawable.gradient_textview);
+
+                                    db.collection("usuarios").document(userId).get().
+                                            addOnCompleteListener(task2 -> {
+                                                if (task2.isSuccessful()) {
+                                                    DocumentSnapshot document = task2.getResult();
+                                                    if (!document.exists())  {
+                                                        createDocument(user);
+                                                    }
+                                                }
+                                            });
+
                                     Intent intent = new Intent(getApplicationContext(), SelectLevelActivity.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    Log.d("50", "Llego al else");
                                     Toast.makeText(LoginActivity.this, getString(R.string.logingoogle_failed), Toast.LENGTH_SHORT).show();
+                                    aTxt.setBackgroundResource(R.drawable.gradient_textview2);
+                                    bTxt.setBackgroundResource(R.drawable.gradient_textview2);
                                 }
                             });
                 }
             } catch (ApiException e) {
-                Log.d("50", ":c");
                 e.printStackTrace();
                 Toast.makeText(LoginActivity.this, getString(R.string.logingoogle_failed), Toast.LENGTH_SHORT).show();
+                aTxt.setBackgroundResource(R.drawable.gradient_textview2);
+                bTxt.setBackgroundResource(R.drawable.gradient_textview2);
             }
         }
     }
@@ -199,23 +188,21 @@ public class LoginActivity extends AppCompatActivity {
     private void createDocument(FirebaseUser user) {
         DocumentReference docRef = db.collection("usuarios").document(user.getUid());
         String fullName = user.getDisplayName();
-        String firstName = null;
-        if (fullName != null) {
-            firstName = fullName.split(" ")[0];
-        }
+        String firstName = fullName.split(" ")[0];
 
         Map<String, Object> userData = new HashMap<>();
         userData.put("nombres", firstName);
+        userData.put("highest1", 0);
+        userData.put("rank_points", 0);
 
         docRef.set(userData).addOnSuccessListener(unused -> Log.d("30", "Documento")).addOnFailureListener(e -> Log.d("30", "No Documento :C"));
     }
 
     //Diálogo de advertencia
     public void dialogWarningQuit(View v) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         ViewGroup viewGroup = findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_warningquit, viewGroup, false);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.dialog_warningquit, viewGroup, false);
 
         Button buttonBack = dialogView.findViewById(R.id.buttonBack);
         Button buttonQuit = dialogView.findViewById(R.id.buttonQuit);
@@ -225,9 +212,10 @@ public class LoginActivity extends AppCompatActivity {
 
         Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
-        buttonBack.setOnClickListener(view -> alertDialog.dismiss());
-        buttonQuit.setOnClickListener(view -> {
+        buttonBack.setOnClickListener(v1 -> alertDialog.dismiss());
+        buttonQuit.setOnClickListener(v1 -> {
             alertDialog.dismiss();
+            //Cerrar la app
             finishAffinity();
         });
 
@@ -241,10 +229,4 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    //Función nativa de regresar
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onBackPressed() {
-        dialogWarningQuit(null);
-    }
 }
