@@ -47,9 +47,8 @@ import java.util.Random;
 public class GameView extends View {
     private boolean trashTouched = false;
     private float trashTouchOffsetX, trashTouchOffsetY;
-    Trash draggedTrash;
-    final Bitmap background;
-    final Bitmap ground;
+    TrashComponent draggedTrash;
+    final Bitmap background, ground;
     Bitmap dumpsterA, dumpsterB, dumpsterC, dumpsterD;
     final Bitmap heart, restart, quit;
     final Rect rectBackground, rectGround, rectQuit, rectRestart, rectHeart;
@@ -61,37 +60,26 @@ public class GameView extends View {
     final Handler handler;
     final long UPDATE_MILLIS = 30;
     final Runnable runnable;
-    final Paint pointsNumber = new Paint();
-    final Paint lifeNumber = new Paint();
-    final int pointsTextSize = 100;
-    final int lifeTextSize = 70;
-    final int dumpsterAX;
-    final int dumpsterBX;
-    final int dumpsterCX;
-    final int dumpsterDX;
-    final int dumpstersY;
+    final Paint pointsNumber = new Paint(), lifeNumber = new Paint();
+    final int pointsTextSize = 100, lifeTextSize = 70;
+    final int dumpsterAX, dumpsterBX, dumpsterCX, dumpsterDX, dumpstersY;
     float dumpsterX;
-    int points, pointsSum, action, i, trashType, winningState, minPoints, trashDensity, life;
+    int currentPoints, pointsSum, action, i, trashType, winningState, minPoints, trashDensity, lifeCount;
     final int levelNumber;
-    static int dWidth;
-    static int dHeight;
+    static int dWidth, dHeight;
     static final int heartSize = 120, quitSize = 120, restartSize = 120;
     static final int heartMargin = 100, quitMargin1 = 60, quitMargin2 = 120, restartMargin1 = 240, restartMargin2 = 120;
-    boolean gameOver = false;
-    final Random random;
+    final Random randomComponent;
+
     //FALTA AQUI VER CÓMO CONVERTIR A MAPA
-    final ArrayList<Trash> trashesA;
-    final ArrayList<Trash> trashesB;
-    final ArrayList<Trash> trashesC;
-    final ArrayList<Trash> trashesD;
-    final ArrayList<Explosion> explosions;
-    Explosion explosion;
-    Trash trash;
-    Iterator<Explosion> iterator;
+    final ArrayList<TrashComponent> trashesA, trashesB, trashesC, trashesD;
+    final ArrayList<ExplosionComponent> explosions;
+    ExplosionComponent explosion;
+    TrashComponent trash;
+    Iterator<ExplosionComponent> iterator;
     MediaPlayer mediaPlayer;
-    final MediaPlayer trashcan_ad;
+    final MediaPlayer trashcan_audio;
     final int[] imageList;
-    final Random rand;
     final int randomImage;
     final Point size;
     private boolean isDialogShowing = false;
@@ -103,12 +91,12 @@ public class GameView extends View {
         this.levelNumber = levelNumber;
 
         imageList = new int[]{R.drawable.background_1, R.drawable.background_2, R.drawable.background_3, R.drawable.background_4, R.drawable.background_5};
-        rand = new Random();
-        randomImage = imageList[rand.nextInt(imageList.length)];
+        randomComponent = new Random();
+        randomImage = imageList[randomComponent.nextInt(imageList.length)];
         background = BitmapFactory.decodeResource(getResources(), randomImage);
         ground = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
 
-/*
+        /*
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(getResources(), randomImage, options);
@@ -129,11 +117,11 @@ public class GameView extends View {
         //Hacer imágen con fondo
         Bitmap originalBitmap = BitmapFactory.decodeResource(getResources(), randomImage);
         background = Bitmap.createScaledBitmap(originalBitmap, targetWidth, targetHeight, true);
-*/
+        */
 
         //Música
         startMusic(context);
-        trashcan_ad = MediaPlayer.create(context, R.raw.trashcan);
+        trashcan_audio = MediaPlayer.create(context, R.raw.trashcan);
 
         //Para medidas de corazón
         quit = BitmapFactory.decodeResource(getResources(), R.drawable.logo_back);
@@ -153,28 +141,28 @@ public class GameView extends View {
             dumpsterD = Bitmap.createScaledBitmap(dumpsterD, dumpsterD.getWidth() - dumpsterD.getWidth() / 3, dumpsterD.getHeight() - dumpsterD.getHeight() / 3, true);
             minPoints = Integer.MAX_VALUE;
             trashDensity = 2;
-            life = 25;
+            lifeCount = 25;
             pointsSum = 30;
 
         } else if (levelNumber == 3) {
             Log.d("3", "Se envia a nivel avanzado");
             trashDensity = 2;
             minPoints = 800;
-            life = 20;
+            lifeCount = 20;
             pointsSum = 20;
 
         } else if (levelNumber == 2) {
             Log.d("2", "Se envia a nivel intermedio");
             trashDensity = 2;
             minPoints = 500;
-            life = 15;
+            lifeCount = 15;
             pointsSum = 15;
 
         } else if (levelNumber == 1) {
             Log.d("1", "Se envia a nivel básico");
             trashDensity = 1;
             minPoints = 200;
-            life = 10;
+            lifeCount = 10;
             pointsSum = 10;
         }
 
@@ -220,7 +208,6 @@ public class GameView extends View {
         quitDrawable.setBounds(quitMargin1, quitMargin2, quitMargin1 + quitSize, quitMargin2 + quitSize);
         Objects.requireNonNull(restartDrawable).setBounds(rectRestart.left, rectRestart.top, rectRestart.left + rectRestart.width(), rectRestart.top + rectRestart.height());
         restartDrawable.setBounds(restartMargin1, restartMargin2, restartMargin1 + restartSize, restartMargin2 + restartSize);
-        random = new Random();
 
         //Posición de los botes
         if (levelNumber == 4) {
@@ -245,20 +232,21 @@ public class GameView extends View {
         //Generar basuras en arreglos
         //FALTA ver si se puede convertir a un mapa
         for (i = 0; i < trashDensity; i++) {
-            trash = new Trash(context, 1, levelNumber);
+            trash = new TrashComponent(context, 1, levelNumber);
             trashesA.add(trash);
-            trash = new Trash(context, 2, levelNumber);
+            trash = new TrashComponent(context, 2, levelNumber);
             trashesB.add(trash);
-            trash = new Trash(context, 3, levelNumber);
+            trash = new TrashComponent(context, 3, levelNumber);
             trashesC.add(trash);
 
             if (levelNumber == 4) {
-                trash = new Trash(context, 4, levelNumber);
+                trash = new TrashComponent(context, 4, levelNumber);
                 trashesD.add(trash);
             }
         }
     }
-    //Para pausar y resumir música
+
+    //Windows Music Control
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
@@ -288,10 +276,10 @@ public class GameView extends View {
     @Override
     protected void onDraw(@NonNull Canvas canvas) {
 
-        //Checar si es gameOver en cada iteración
-        setGameOver(context);
-
-        if (!gameOver) {
+        if (lifeCount <= 0 || currentPoints >= minPoints) {
+            setGameOver(context);
+        }
+        else {
             super.onDraw(canvas);
             //Falta cambiar fondo para que se dibuje sin estiramiento
             canvas.drawBitmap(background, null, rectBackground, null);
@@ -339,39 +327,34 @@ public class GameView extends View {
                 if (levelNumber == 4) {
                     canvas.drawBitmap(dumpsterD, dumpsterDX, dumpstersY, null);
                     heartDrawableGolden.draw(canvas);
-                    canvas.drawText("" + points, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
+                    canvas.drawText("" + currentPoints, Math.floorDiv(dWidth, 2) - 200, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
                 } else {
                     heartDrawable.draw(canvas);
-                    canvas.drawText("" + points + "/" + minPoints, Math.floorDiv(dWidth, 2) - 100, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
+                    canvas.drawText("" + currentPoints + "/" + minPoints, Math.floorDiv(dWidth, 2) - 100, Math.floorDiv(dHeight, 7) - pointsTextSize, pointsNumber);
                 }
                 quitDrawable.draw(canvas);
                 restartDrawable.draw(canvas);
-                canvas.drawText("x" + life, dWidth - 150, Math.floorDiv(dHeight, 6) - lifeTextSize - 80, lifeNumber);
+                canvas.drawText("x" + lifeCount, dWidth - 150, Math.floorDiv(dHeight, 6) - lifeTextSize - 80, lifeNumber);
                 handler.postDelayed(runnable, UPDATE_MILLIS);
             }
         }
     }
 
-    //Función para enviar a gameOver
     private void setGameOver(Context context) {
-
-        if (life <= 0 || points >= minPoints) {
-
-            stopMusic();
-            gameOver = true;
-            if (points >= minPoints) {
-                winningState = 1;
-            } else {
-                winningState = 0;
-            }
-            Intent intent = new Intent(context, GameOver.class);
-            intent.putExtra("points", points);
-            intent.putExtra("winningState", winningState);
-            intent.putExtra("levelNumber", levelNumber);
-
-            ((Activity) context).finish();
-            context.startActivity(intent);
+        stopMusic();
+        if (currentPoints >= minPoints) {
+            winningState = 1;
+        } else {
+            winningState = 0;
         }
+        Intent intent = new Intent(context, GameOver.class);
+        intent.putExtra("points", currentPoints);
+        intent.putExtra("winningState", winningState);
+        intent.putExtra("levelNumber", levelNumber);
+
+        ((Activity) context).finish();
+        context.startActivity(intent);
+
     }
 
     public void fakeOnTouchEvent(int x, int y) {
@@ -408,27 +391,27 @@ public class GameView extends View {
                 trashesB.clear();
                 trashesC.clear();
                 if (levelNumber == 4) {
-                    life = 25;
+                    lifeCount = 25;
                     trashesD.clear();
                 } else if (levelNumber == 3) {
-                    life = 20;
+                    lifeCount = 20;
                 } else if (levelNumber == 2) {
-                    life = 15;
+                    lifeCount = 15;
                 } else {
-                    life = 10;
+                    lifeCount = 10;
                 }
-                points = 0;
+                currentPoints = 0;
 
                 for (i = 0; i < trashDensity; i++) {
-                    trash = new Trash(context, 1, levelNumber);
+                    trash = new TrashComponent(context, 1, levelNumber);
                     trashesA.add(trash);
-                    trash = new Trash(context, 2, levelNumber);
+                    trash = new TrashComponent(context, 2, levelNumber);
                     trashesB.add(trash);
-                    trash = new Trash(context, 3, levelNumber);
+                    trash = new TrashComponent(context, 3, levelNumber);
                     trashesC.add(trash);
 
                     if (levelNumber == 4) {
-                        trash = new Trash(context, 4, levelNumber);
+                        trash = new TrashComponent(context, 4, levelNumber);
                         trashesD.add(trash);
                     }
                 }
@@ -440,7 +423,7 @@ public class GameView extends View {
             case MotionEvent.ACTION_DOWN:
                 if (touchY < dHeight - ground.getHeight() - (levelNumber < 4 ? 200 : 100)) {
                     Log.d("11", "Tocando");
-                    for (Trash trash : trashesA) {
+                    for (TrashComponent trash : trashesA) {
                         if (isTouchWithinTrash(trash, touchX, touchY)) {
 
                             //FALTA AQUÍ SIMPLIFICAR CON UNA SOLA FUNCIÓN
@@ -454,7 +437,7 @@ public class GameView extends View {
                             break;
                         }
                     }
-                    for (Trash trash : trashesB) {
+                    for (TrashComponent trash : trashesB) {
                         if (isTouchWithinTrash(trash, touchX, touchY)) {
                             trashTouched = true;
                             trashTouchOffsetX = touchX - trash.trashX;
@@ -463,7 +446,7 @@ public class GameView extends View {
                             break;
                         }
                     }
-                    for (Trash trash : trashesC) {
+                    for (TrashComponent trash : trashesC) {
                         if (isTouchWithinTrash(trash, touchX, touchY)) {
                             trashTouched = true;
                             trashTouchOffsetX = touchX - trash.trashX;
@@ -473,7 +456,7 @@ public class GameView extends View {
                         }
                     }
                     if (levelNumber == 4) {
-                        for (Trash trash : trashesD) {
+                        for (TrashComponent trash : trashesD) {
                             if (isTouchWithinTrash(trash, touchX, touchY)) {
                                 trashTouched = true;
                                 trashTouchOffsetX = touchX - trash.trashX;
@@ -543,48 +526,40 @@ public class GameView extends View {
     }
 
     //Checar si se toca basura
-    private boolean isTouchWithinTrash(Trash trash, float touchX, float touchY) {
+    private boolean isTouchWithinTrash(TrashComponent trash, float touchX, float touchY) {
         //Checar si el touch está tocando el área de la basura
         return touchX >= trash.trashX && touchX <= (trash.trashX + trash.getTrash(trash.trashFrame).getWidth()) &&
                 touchY >= trash.trashY && touchY <= (trash.trashY + trash.getTrash(trash.trashFrame).getHeight());
     }
 
-    private void movementCollision(MotionEvent event, Trash trashNow) {
+    private void movementCollision(MotionEvent event, TrashComponent trashNow) {
 
         trashType = trashNow.trashTypeMine;
         action = event.getAction();
 
-        //FALTA AQUÍ SIMPLIFICAR PARA SOLO USAR LOS TRUES Y DEJAR EL RESTO EN FALSE
+        dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
+        dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
+        dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
+        dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
+
         switch (trashType) {
             case 1:
                 dumpsterCollision(trashNow, dumpsterA, true, levelNumber);
-                dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
-                dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
-                dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
                 break;
             case 2:
-                dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
                 dumpsterCollision(trashNow, dumpsterB, true, levelNumber);
-                dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
-                dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
                 break;
             case 3:
-                dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
-                dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
                 dumpsterCollision(trashNow, dumpsterC, true, levelNumber);
-                dumpsterCollision(trashNow, dumpsterD, false, levelNumber);
                 break;
             case 4:
-                dumpsterCollision(trashNow, dumpsterA, false, levelNumber);
-                dumpsterCollision(trashNow, dumpsterB, false, levelNumber);
-                dumpsterCollision(trashNow, dumpsterC, false, levelNumber);
                 dumpsterCollision(trashNow, dumpsterD, true, levelNumber);
                 break;
         }
     }
 
-    //AQUI AHORA VERIFICAR COMO SIMPLIFICAR DUMPSTER Y DUMPSTER X EN UN SOLO VALOR (sin ifs)
-    private void dumpsterCollision(Trash trashNow, Bitmap dumpster, boolean state, int levelNumber) {
+    //AQUI AHORA VERIFICAR COMO SIMPLIFICAR DUMPSTER Y DUMPSTER X EN UN solo valor (sin ifs)
+    private void dumpsterCollision(TrashComponent trashNow, Bitmap dumpster, boolean state, int levelNumber) {
 
         if (dumpster.equals(dumpsterA)) {
             dumpsterX = dumpsterAX;
@@ -603,20 +578,20 @@ public class GameView extends View {
                 && trashNow.trashY + trashNow.getTrashWidth() <= dumpstersY + dumpster.getHeight()) {
 
             if (state) {
-                points += pointsSum;
+                currentPoints += pointsSum;
             } else {
-                life--;
+                lifeCount--;
             }
             trashNow.resetTrash(trashType, levelNumber);
-            trashcan_ad.start();
+            trashcan_audio.start();
         }
     }
 
-    private void floorCollision(ArrayList<Trash> trashy, int levelNumber) {
+    private void floorCollision(ArrayList<TrashComponent> trashy, int levelNumber) {
         if (trashy.get(i).trashY + trashy.get(i).getTrashHeight() >= dHeight - ground.getHeight()) {
             //Restar vida
-            life--;
-            explosion = new Explosion(context);
+            lifeCount--;
+            explosion = new ExplosionComponent(context);
             explosion.explosionX = trashy.get(i).trashX;
             explosion.explosionY = trashy.get(i).trashY;
             explosions.add(explosion);
@@ -628,9 +603,9 @@ public class GameView extends View {
         }
     }
 
-    //Para manejar la música
+    //Music Control
     private void startMusic(Context context) {
-        mediaPlayer = MediaPlayer.create(context, R.raw.lvl_music);
+        mediaPlayer = MediaPlayer.create(context, R.raw.music_level);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
     }
@@ -641,6 +616,7 @@ public class GameView extends View {
             mediaPlayer = null;
         }
     }
+
     public void pauseMusic() {
         if (mediaPlayer != null && mediaPlayer.isPlaying()) {
             mediaPlayer.pause();

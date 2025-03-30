@@ -28,8 +28,8 @@ import java.util.Random;
 public class WinningActivity extends Activity {
 
     int winningState, levelNumber;
-    boolean second = false;
-    MediaPlayer loseWahWah, winWoo;
+    boolean isSecondState = false;
+    MediaPlayer effectLoseWah, effectWinWoo;
 
     //Crear pantalla de estado (ganado/perdido)
     @Override
@@ -39,16 +39,15 @@ public class WinningActivity extends Activity {
         //Recuperar datos
         winningState = Objects.requireNonNull(getIntent().getExtras()).getInt("winningState");
         levelNumber = Objects.requireNonNull(getIntent().getExtras()).getInt("levelNumber");
-        second = getIntent().getExtras().getBoolean("second");
+        isSecondState = getIntent().getExtras().getBoolean("isSecondState");
 
-        loseWahWah = MediaPlayer.create(this, R.raw.losing_wah);
-        winWoo = MediaPlayer.create(this, R.raw.winning_woo);
-
+        effectLoseWah = MediaPlayer.create(this, R.raw.effect_losing);
+        effectWinWoo = MediaPlayer.create(this, R.raw.effect_winning);
 
         //Decidir a qué pantalla enviar
         //Si se ganó
-        if (winningState==1 && !second) {
-            winWoo.start();
+        if (winningState == 1 && !isSecondState) {
+            effectWinWoo.start();
             setContentView(R.layout.activity_winning);
         }
         else if (winningState == 1){
@@ -56,8 +55,8 @@ public class WinningActivity extends Activity {
 
             //Seleccionar cadena aleatoria y poner tip aleatorio
             AppCompatButton buttonTip = findViewById(R.id.stateDescription);
-            Random random = new Random();
-            int randomNumber = random.nextInt(10) + 1;
+            Random randomComponent = new Random();
+            int randomNumber = randomComponent.nextInt(10) + 1;
 
             //int stringResource = getResources().getIdentifier("winning_tip" + randomNumber, "string", getPackageName());
             //buttonTip.setText(stringResource);
@@ -70,8 +69,8 @@ public class WinningActivity extends Activity {
         }
 
         //Si se perdió
-        else if (winningState==0 && !second) {
-            loseWahWah.start();
+        else if (winningState == 0 && !isSecondState) {
+            effectLoseWah.start();
             setContentView(R.layout.activity_losing);
         }
         else if (winningState == 0) {
@@ -88,7 +87,7 @@ public class WinningActivity extends Activity {
 
     public void goToSecondPart(View v){
         Intent intent = new Intent(this, WinningActivity.class);
-        intent.putExtra("second", true);
+        intent.putExtra("isSecondState", true);
         intent.putExtra("levelNumber", levelNumber);
         intent.putExtra("winningState", winningState);
         startActivity(intent);
@@ -104,19 +103,18 @@ public class WinningActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (loseWahWah != null) {
-            loseWahWah.stop();
-            loseWahWah.release();
-            loseWahWah = null;
+        if (effectLoseWah != null) {
+            effectLoseWah.stop();
+            effectLoseWah.release();
+            effectLoseWah = null;
         }
-        if (winWoo != null) {
-            winWoo.stop();
-            winWoo.release();
-            winWoo = null;
+        if (effectWinWoo != null) {
+            effectWinWoo.stop();
+            effectWinWoo.release();
+            effectWinWoo = null;
         }
     }
-
-
+    
     //Quitar capacidad de regresar
     @SuppressLint("MissingSuperCall")
     @Override

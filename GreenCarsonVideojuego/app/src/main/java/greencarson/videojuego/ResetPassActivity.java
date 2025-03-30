@@ -27,6 +27,7 @@ public class ResetPassActivity extends Activity {
     EditText edtEmail;
     FirebaseAuth mAuth;
     String strEmail;
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);

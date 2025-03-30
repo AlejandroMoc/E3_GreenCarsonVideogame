@@ -205,16 +205,12 @@ public class SelectLevelActivity extends AppCompatActivity {
     //Para enviar a tutoriales
     public void startTutorial(View v){
         Intent intent;
-        //Mandar a java de tutoriales
         if (levelNumber>0 && levelNumber<5) {
             Log.d("100", "Se manda a tutorial");
             intent = new Intent(this, TutorialActivity.class);
             intent.putExtra("levelNumber", levelNumber);
             startActivity(intent);
             finish();
-        } else {
-            dialogWarningAlert();
-            Log.d("--1", "Nunca de los nuncas debería pasar este error");
         }
     }
 
@@ -226,7 +222,7 @@ public class SelectLevelActivity extends AppCompatActivity {
 
         Button buttonBack = dialogView.findViewById(R.id.buttonBack);
         Button buttonLogOut = dialogView.findViewById(R.id.buttonLogOut);
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         builder.setView(dialogView);
 

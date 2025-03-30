@@ -33,10 +33,10 @@
     <string name="background">Image de fond</string>
 
     <!--Écran de sélection de niveau-->
-    <string name="basicLevel">Niveau de base</string>
-    <string name="interLevel">Niveau intermédiaire</string>
-    <string name="advancedLevel">Niveau avancé</string>
-    <string name="nightmareLevel">Niveau cauchemar</string>
+    <string name="basicLevel">Base</string>
+    <string name="interLevel">Intermédiaire</string>
+    <string name="advancedLevel">Avancé</string>
+    <string name="nightmareLevel">Cauchemar</string>
     <string name="padlock">Cadenas</string>
 
     <string name="bas_levelSel">Sélection du niveau de base</string>
@@ -127,10 +127,10 @@
 
     <!--Déchets dangereux-->
     <string name="trash_d1">Corrosives</string>
-    <string name="trash_d2">Electronics</string>
-    <string name="trash_d3">Home appliances</string>
-    <string name="trash_d4">Biological hazards</string>
-    <string name="trash_d5">Cleaning</string>
+    <string name="trash_d2">Électronique</string>
+    <string name="trash_d3">Appareils électroménagers</string>
+    <string name="trash_d4">Risques biologiques</string>
+    <string name="trash_d5">Nettoyage</string>
     <string name="trash_d6">Flammable</string>
 
     <!--Jeu-->
@@ -156,23 +156,17 @@
 
     <string name="losing_tip">Cependant, il n\'est jamais trop tard pour changer le monde réel. Voulez-vous essayer à nouveau ?</string>
     <string name="dialog_go">Allons-y !</string>
-    <string name="space">" "</string>
     <string name="trophy">Trophée</string>
-
-    <string name="points_placeholder">%1$d</string>
-    <string name="highest_placeholder">%1$d</string>
 
     <!--Classement-->
     <string name="points_ranking">" pts"</string>
     <string name="ranking_ranking">Classement</string>
     <string name="number_ranking">0</string>
-    <string name="ranking_null_name">----------</string>
-    <string name="ranking_null_number">----</string>
     <string name="number_1">1</string>
     <string name="number_2">2</string>
     <string name="number_3">3</string>
     <string name="number_4">4</string>
     <string name="number_5">5</string>
-    <string name="user_not_found">No se encuentra un usuario de Google. Por favor, registrate primero en la aplicación de Green Carson.</string>
+    <string name="user_not_found">Aucun utilisateur Google trouvé. Veuillez d'abord vous inscrire dans l'application Green Carson.</string>
 
 </resources>

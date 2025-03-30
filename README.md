@@ -1,21 +1,20 @@
 # Green Carson - Reecicla! GAME
 
-## Integración de seguridad informática en redes y sistemas de software (Gpo 602)
-### En colaboración con el Instituto Tecnológico y de Estudios Superiores de Monterrey y la empresa Green Carson.
+Android Studio video game about recycling and waste sorting, made in collaboration with ITESM and Green Carson.
 
-Desarrollada aplicación del 22 de septiembre al 1 de diciembre de 2023.
+Developed from September 22 to December 1, 2023; delivered to the organization on December 1, 2023.
 
-Entrega prevista para el 1 de diciembre de 2023.
+### IOS Version and Developers
+The repository for the iOS version of the mobile game can be found [here](https://github.com/GhulRasal/E4_AppGreenCaron_iOS/).
+
+[José Luis Zago Guevara](https://github.com/GhulRasal)
+
+[Christian Flores Alberto](https://github.com/christian1444)
 
 
-### Desarrolladores de IOS
-A01736278 - José Luis Zago Guevara
+### Android Version and Developers
+The current repository corresponds to the Android Studio development of the mobile game.
 
-A01734997 - Christian Flores Alberto
+[César Guerra Martínez](https://github.com/CesarGMtz)
 
-El repositorio de IOS se encuentra en https://github.com/GhulRasal/E4_AppGreenCaron_iOS/commits/main
-
-### Desarrolladores de Android Studio
-A01656774 - César Guerra Martínez
-
-A01736353 - Alejandro Daniel Moctezuma Cruz
+[Alejandro Daniel Moctezuma Cruz](https://github.com/AlejandroMoc)

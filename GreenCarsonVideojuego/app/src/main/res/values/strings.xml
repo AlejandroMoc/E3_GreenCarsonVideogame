@@ -92,7 +92,7 @@
     <string name="dialog_trashcan42">All those waste materials that can no longer be reused and must be disposed of with caution.\n\n<b>Like:</b>\n\nToxic waste\nMedical waste\nIndustrial waste\nHazardous waste\nConstruction waste</string>
 -->
 
-    <!--Trash-->
+    <!--TrashComponent-->
     <!--Valorizable waste-->
     <string name="trash_a1">Paper</string>
     <string name="trash_a2">Cardboard</string>
@@ -133,10 +133,6 @@
     <string name="trash_d4">Biological hazards</string>
     <string name="trash_d5">Cleaning</string>
     <string name="trash_d6">Flammable</string>
-<!--    <string name="trash_d6">Placeholder</string>
-        <string name="trash_d7">Placeholder</string>
-        <string name="trash_d8">Placeholder</string>
-        <string name="trash_d9">Placeholder</string>-->
 
     <!--Game-->
     <string name="your_points">Your score: </string>
@@ -161,18 +157,18 @@
 
     <string name="losing_tip">However, it\'s never too late to change the real world. Would you like to try again?</string>
     <string name="dialog_go">Let\'s go!</string>
-    <string name="space">" "</string>
+    <string name="space" translatable="false">" "</string>
     <string name="trophy">Trophy</string>
 
-    <string name="points_placeholder">%1$d</string>
-    <string name="highest_placeholder">%1$d</string>
+    <string name="points_placeholder" translatable="false">%1$d</string>
+    <string name="highest_placeholder" translatable="false">%1$d</string>
 
     <!--Ranking-->
     <string name="points_ranking">" pts"</string>
     <string name="ranking_ranking">Rank</string>
     <string name="number_ranking">0</string>
-    <string name="ranking_null_name">----------</string>
-    <string name="ranking_null_number">----</string>
+    <string name="ranking_null_name" translatable="false">----------</string>
+    <string name="ranking_null_number" translatable="false">----</string>
     <string name="number_1">1</string>
     <string name="number_2">2</string>
     <string name="number_3">3</string>

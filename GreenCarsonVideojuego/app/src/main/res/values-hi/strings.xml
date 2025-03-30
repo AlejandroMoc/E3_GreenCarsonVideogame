@@ -156,23 +156,17 @@
 
     <string name="losing_tip">हालांकि, वास्तविक दुनिया को बदलने के लिए कभी भी देर नहीं होती। क्या आप फिर से प्रयास करना चाहेंगे?</string>
     <string name="dialog_go">चलो चलते हैं!</string>
-    <string name="space">" "</string>
     <string name="trophy">ट्रॉफ़ी</string>
-
-    <string name="points_placeholder">%1$d</string>
-    <string name="highest_placeholder">%1$d</string>
 
     <!--पदक्रम-->
     <string name="points_ranking">" अंक"</string>
     <string name="ranking_ranking">रैंक</string>
     <string name="number_ranking">0</string>
-    <string name="ranking_null_name">----------</string>
-    <string name="ranking_null_number">----</string>
     <string name="number_1">1</string>
     <string name="number_2">2</string>
     <string name="number_3">3</string>
     <string name="number_4">4</string>
     <string name="number_5">5</string>
-    <string name="user_not_found">No se encuentra un usuario de Google. Por favor, registrate primero en la aplicación de Green Carson.</string>
+    <string name="user_not_found">कोई Google उपयोगकर्ता नहीं मिला। कृपया पहले Green Carson ऐप में पंजीकरण करें।</string>
 
 </resources>

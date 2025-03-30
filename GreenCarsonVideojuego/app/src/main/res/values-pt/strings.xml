@@ -156,18 +156,12 @@
 
     <string name="losing_tip">No entanto, nunca é tarde demais para mudar o mundo real. Gostaria de tentar novamente?</string>
     <string name="dialog_go">Vamos lá!</string>
-    <string name="space">" "</string>
     <string name="trophy">Troféu</string>
-
-    <string name="points_placeholder">%1$d</string>
-    <string name="highest_placeholder">%1$d</string>
 
     <!--Ranking-->
     <string name="points_ranking">" pts"</string>
     <string name="ranking_ranking">Classificação</string>
     <string name="number_ranking">0</string>
-    <string name="ranking_null_name">----------</string>
-    <string name="ranking_null_number">----</string>
     <string name="number_1">1</string>
     <string name="number_2">2</string>
     <string name="number_3">3</string>

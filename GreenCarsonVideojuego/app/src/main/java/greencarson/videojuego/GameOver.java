@@ -34,11 +34,10 @@ import java.util.Objects;
 /** @noinspection unused*/
 public class GameOver extends AppCompatActivity {
 
-    TextView tvPoints;
-    TextView tvHighest;
+    TextView tvPoints, tvHighest;
     SharedPreferences sharedPreferences;
     ImageView ivNewHighest;
-    int winningState, points, levelNumber, highest1, highest2, highest3, highest4, rank_points;
+    int winningState, currentPoints, levelNumber, highest1, highest2, highest3, highest4, rank_points;
 
     FirebaseAuth mAuth;
     FirebaseFirestore db;
@@ -52,11 +51,11 @@ public class GameOver extends AppCompatActivity {
         tvPoints = findViewById(R.id.tvPoints);
         tvHighest = findViewById(R.id.tvHighest);
         ivNewHighest = findViewById(R.id.ivNewHighest);
-        points = Objects.requireNonNull(getIntent().getExtras()).getInt("points");
+        currentPoints = Objects.requireNonNull(getIntent().getExtras()).getInt("points");
         winningState = Objects.requireNonNull(getIntent().getExtras()).getInt("winningState");
         levelNumber = Objects.requireNonNull(getIntent().getExtras()).getInt("levelNumber");
 
-        tvPoints.setText(getString(R.string.points_placeholder, points));
+        tvPoints.setText(getString(R.string.points_placeholder, currentPoints));
         sharedPreferences = getSharedPreferences("my_pref",0);
 
         mAuth = FirebaseAuth.getInstance();
@@ -76,40 +75,33 @@ public class GameOver extends AppCompatActivity {
                             highest4 = document.contains("highest4") ? Objects.requireNonNull(document.getLong("highest4")).intValue() : 0;
                             rank_points = document.contains("rank_points") ? Objects.requireNonNull(document.getLong("rank_points")).intValue() : 0;
 
-                            if (levelNumber == 1 && points > highest1) {
+                            if (levelNumber == 1 && currentPoints > highest1) {
                                 ivNewHighest.setVisibility(View.VISIBLE);
-                                highest1 = points;
-                                docRef.update("highest1", points);
-                            }
-                            if (levelNumber == 1) {
+                                highest1 = currentPoints;
+                                docRef.update("highest1", currentPoints);
+                            } else if (levelNumber == 1) {
                                 tvHighest.setText(getString(R.string.highest_placeholder, highest1));
-                            }
-                            if (levelNumber == 2 && points > highest2) {
+                            } else if (levelNumber == 2 && currentPoints > highest2) {
                                 ivNewHighest.setVisibility(View.VISIBLE);
-                                highest2 = points;
-                                docRef.update("highest2", points);
-                            }
-                            if (levelNumber == 2) {
+                                highest2 = currentPoints;
+                                docRef.update("highest2", currentPoints);
+                            } else if (levelNumber == 2) {
                                 tvHighest.setText(getString(R.string.highest_placeholder, highest2));
-                            }
-                            if (levelNumber == 3 && points > highest3) {
+                            } else if (levelNumber == 3 && currentPoints > highest3) {
                                 ivNewHighest.setVisibility(View.VISIBLE);
-                                highest3 = points;
-                                docRef.update("highest3", points);
-                            }
-                            if (levelNumber == 3) {
+                                highest3 = currentPoints;
+                                docRef.update("highest3", currentPoints);
+                            } else if (levelNumber == 3) {
                                 tvHighest.setText(getString(R.string.highest_placeholder, highest3));
-                            }
-                            if (levelNumber == 4 && points > highest4) {
+                            } else if (levelNumber == 4 && currentPoints > highest4) {
                                 ivNewHighest.setVisibility(View.VISIBLE);
-                                highest4 = points;
+                                highest4 = currentPoints;
                                 docRef.update("highest4", highest4);
-                            }
-                            if (levelNumber == 4) {
+                            } else if (levelNumber == 4) {
                                 tvHighest.setText(getString(R.string.highest_placeholder, highest4));
                             }
 
-                            docRef.update("rank_points", rank_points + points);
+                            docRef.update("rank_points", rank_points + currentPoints);
 
                         }
                     }
@@ -122,7 +114,9 @@ public class GameOver extends AppCompatActivity {
         intent = new Intent(this, WinningActivity.class);
         intent.putExtra("winningState", winningState);
         intent.putExtra("levelNumber", levelNumber);
-        //Pasar aquí levelNumber (experimental)
+
+        //TODO Pasar aquí levelNumber
+
         startActivity(intent);
         finish();
     }

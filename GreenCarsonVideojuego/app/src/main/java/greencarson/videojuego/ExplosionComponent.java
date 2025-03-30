@@ -1,5 +1,5 @@
 /*
-    Nombre del archivo: Explosion.java
+    Nombre del archivo: ExplosionComponent.java
     Nombre del proyecto: Green Carson Reecicla! Game
 
     Creado y Desarrollado por:
@@ -17,13 +17,13 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-public class Explosion {
+public class ExplosionComponent {
     final Bitmap[] explosion = new Bitmap[4];
     int explosionFrame = 0;
     float explosionX, explosionY;
 
     //Constructor
-    public Explosion(Context context){
+    public ExplosionComponent(Context context){
         explosion[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.explote0);
         explosion[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.explote1);
         explosion[2] = BitmapFactory.decodeResource(context.getResources(), R.drawable.explote2);

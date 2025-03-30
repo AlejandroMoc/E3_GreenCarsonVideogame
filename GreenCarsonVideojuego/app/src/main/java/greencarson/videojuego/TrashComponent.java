@@ -1,5 +1,5 @@
 /*
-    Nombre del archivo: Trash.java
+    Nombre del archivo: TrashComponent.java
     Nombre del proyecto: Green Carson Reecicla! Game
 
     Creado y Desarrollado por:
@@ -18,15 +18,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import java.util.Random;
 
-public class Trash {
+public class TrashComponent {
     public final int trashTypeMine;
     final Bitmap[] trash =new Bitmap[32];
-    final Random random = new Random();
+    final Random randomComponent = new Random();
     int trashFrame, trashSum, trashVelocity;
     float trashX, trashY;
 
     //Constructor
-    public Trash(Context context, int trashType, int levelNumber){
+    public TrashComponent(Context context, int trashType, int levelNumber){
 
         trashTypeMine= trashType;
 
@@ -87,8 +87,8 @@ public class Trash {
     }
 
     public void resetTrash(int trashType, int levelNumber) {
-        trashX = random.nextInt(GameView.dWidth - getTrashWidth());
-        trashY = -200 + random.nextInt(600) * -1;
+        trashX = randomComponent.nextInt(GameView.dWidth - getTrashWidth());
+        trashY = -200 + randomComponent.nextInt(600) * -1;
 
         //Asset aleatorio de acuerdo con tipo
         switch (trashType) {
@@ -114,16 +114,16 @@ public class Trash {
             } else {
                 trashFrame = new Random().nextInt((levelNumber - 1) * 3) + trashSum;
             }
-            trashVelocity = 5 + random.nextInt(4);
+            trashVelocity = 5 + randomComponent.nextInt(4);
         } else if (levelNumber == 3) {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
-            trashVelocity = 2 + random.nextInt(4);
+            trashVelocity = 2 + randomComponent.nextInt(4);
         } else if (levelNumber == 2) {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
-            trashVelocity = 2 + random.nextInt(2);
+            trashVelocity = 2 + randomComponent.nextInt(2);
         } else {
             trashFrame = new Random().nextInt(levelNumber * 3) + trashSum;
-            trashVelocity = 2 + random.nextInt(4);
+            trashVelocity = 2 + randomComponent.nextInt(4);
         }
         //FALTA AQUÍ AÑADIR UNA VELOCIDAD ACELERADA PARA QUE CADA VEZ SE VAYA MÁS RÁPIDO
     }
