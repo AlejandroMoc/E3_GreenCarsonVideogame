@@ -4,6 +4,8 @@ Android Studio video game about recycling and waste sorting, made in collaborati
 
 Developed from September 22 to December 1, 2023; delivered to the organization on December 1, 2023.
 
+<img src="doc/screenshot_2.png" alt="Game screenshot" width="250">
+
 ## iOS Version
 
 The repository for the iOS version of the mobile game can be found in its [corresponding repository](https://github.com/GhulRasal/E4_AppGreenCaron_iOS/).
